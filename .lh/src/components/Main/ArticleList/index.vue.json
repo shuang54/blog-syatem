@@ -1,0 +1,194 @@
+{
+    "sourceFile": "src/components/Main/ArticleList/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 44,
+            "patches": [
+                {
+                    "date": 1645537103322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645537125279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,7 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  display: flex;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537143744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-    <h3>{{ title }}</h3>\r\n-    <span>{{ classification }}</span>\r\n+    <h3>\r\n+      {{ title }}\r\n+      <span>{{ classification }}</span>\r\n+    </h3>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537153849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-    <h3>\r\n-      {{ title }}\r\n-      <span>{{ classification }}</span>\r\n-    </h3>\r\n+    <h3>{{ title }}</h3>\r\n+    <span>{{ classification }}</span>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537226055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-    <h3>{{ title }}</h3>\r\n-    <span>{{ classification }}</span>\r\n+    <h3 class=\"title\">{{ title }}</h3>\r\n+    <span class=\"classification\">{{ classification }}</span>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537291828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,7 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   display: flex;\r\n+  flex-\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537311390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   display: flex;\r\n-  flex-\r\n+  flex-flow: row;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537330195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,8 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   display: flex;\r\n-  flex-flow: row;\r\n+  flex-flow: row nowrap;\r\n+  ju\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537340782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   display: flex;\r\n   flex-flow: row nowrap;\r\n-  ju\r\n+  justify-content: space-between;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537361089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  text-align: center;\r\n   display: flex;\r\n   flex-flow: row nowrap;\r\n   justify-content: space-between;\r\n }\r\n"
+                },
+                {
+                    "date": 1645537383188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,12 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n-  text-align: center;\r\n   display: flex;\r\n   flex-flow: row nowrap;\r\n   justify-content: space-between;\r\n+  .classification {\r\n+    text-align: center;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537530834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,8 @@\n   flex-flow: row nowrap;\r\n   justify-content: space-between;\r\n   .classification {\r\n     text-align: center;\r\n+    line-height: 50px;\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537572309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-    <h3 class=\"title\">{{ title }}</h3>\r\n-    <span class=\"classification\">{{ classification }}</span>\r\n+    <div>\r\n+      <p class=\"title\">{{ title }}</p>\r\n+      <span class=\"classification\">{{ classification }}</span>\r\n+    </div>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537642615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-    <div>\r\n-      <p class=\"title\">{{ title }}</p>\r\n-      <span class=\"classification\">{{ classification }}</span>\r\n-    </div>\r\n+\r\n+    <p class=\"title\">{{ title }}</p>\r\n+    <span class=\"classification\">{{ classification }}</span>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537701365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-\r\n-    <p class=\"title\">{{ title }}</p>\r\n-    <span class=\"classification\">{{ classification }}</span>\r\n+    <div>\r\n+      <p class=\"title\">{{ title }}</p>\r\n+      <span class=\"classification\">{{ classification }}</span>\r\n+    </div>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537708279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n-    <div>\r\n+    <div class=\"list\">\r\n       <p class=\"title\">{{ title }}</p>\r\n       <span class=\"classification\">{{ classification }}</span>\r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645537721335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n-#article-list-container {\r\n+.list {\r\n   display: flex;\r\n   flex-flow: row nowrap;\r\n   justify-content: space-between;\r\n   .classification {\r\n"
+                },
+                {
+                    "date": 1645537737398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n-    <time>{{ createTime }}</time>\r\n     <div class=\"list\">\r\n       <p class=\"title\">{{ title }}</p>\r\n       <span class=\"classification\">{{ classification }}</span>\r\n     </div>\r\n+    <time>{{ createTime }}</time>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537767089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"list\">\r\n       <p class=\"title\">{{ title }}</p>\r\n       <span class=\"classification\">{{ classification }}</span>\r\n     </div>\r\n-    <time>{{ createTime }}</time>\r\n+    <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645537787583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,8 @@\n     text-align: center;\r\n     line-height: 50px;\r\n   }\r\n }\r\n+.time {\r\n+  float: right;\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537853914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,6 +32,7 @@\n   }\r\n }\r\n .time {\r\n   float: right;\r\n+  margin-top: -10px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537876162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,6 +33,8 @@\n }\r\n .time {\r\n   float: right;\r\n   margin-top: -10px;\r\n+  color: #ccc;\r\n+  font-size: 10em;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537881925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n .time {\r\n   float: right;\r\n   margin-top: -10px;\r\n   color: #ccc;\r\n-  font-size: 10em;\r\n+  font-size: 0.8em;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645612871754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,10 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n .list {\r\n+  width: 100%;\r\n+  height: 100$;\r\n   display: flex;\r\n   flex-flow: row nowrap;\r\n   justify-content: space-between;\r\n   .classification {\r\n"
+                },
+                {
+                    "date": 1645612898767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,22 +21,24 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n-.list {\r\n-  width: 100%;\r\n-  height: 100$;\r\n-  display: flex;\r\n-  flex-flow: row nowrap;\r\n-  justify-content: space-between;\r\n-  .classification {\r\n-    text-align: center;\r\n-    line-height: 50px;\r\n+#article-list-container {\r\n+  .list {\r\n+    width: 100%;\r\n+    height: 100%;\r\n+    display: flex;\r\n+    flex-flow: row nowrap;\r\n+    justify-content: space-between;\r\n+    .classification {\r\n+      text-align: center;\r\n+      line-height: 50px;\r\n+    }\r\n   }\r\n+  .time {\r\n+    float: right;\r\n+    margin-top: -10px;\r\n+    color: #ccc;\r\n+    font-size: 0.8em;\r\n+  }\r\n }\r\n-.time {\r\n-  float: right;\r\n-  margin-top: -10px;\r\n-  color: #ccc;\r\n-  font-size: 0.8em;\r\n-}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645612936072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,10 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  width: 100%;\r\n+  height: 10%;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1645612960332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,8 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n-  width: 100%;\r\n-  height: 10%;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1645612977679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  background-color: #ffffcc;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1645613042194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,10 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  width: 100%;\r\n+  height: 100$;\r\n   background-color: #ffffcc;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1645613071158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   width: 100%;\r\n-  height: 100$;\r\n+  height: 200px;\r\n   background-color: #ffffcc;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1645613097361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   width: 100%;\r\n-  height: 200px;\r\n+  margin-top: 20px;\r\n   background-color: #ffffcc;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1645613107481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   width: 100%;\r\n-  margin-top: 20px;\r\n+  margin-top: 10px;\r\n   background-color: #ffffcc;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1645613148898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,8 @@\n       line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n-    float: right;\r\n     margin-top: -10px;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n"
+                },
+                {
+                    "date": 1645613204662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,10 @@\n       line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n+    text-align: right\r\n+    ;\r\n     margin-top: -10px;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n"
+                },
+                {
+                    "date": 1645613223994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,9 @@\n       line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n-    text-align: right\r\n-    ;\r\n+    margin-right: 0;\r\n     margin-top: -10px;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n"
+                },
+                {
+                    "date": 1645613263118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,8 @@\n       line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n-    margin-right: 0;\r\n     margin-top: -10px;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n"
+                },
+                {
+                    "date": 1645613302525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,11 @@\n       line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n-    margin-top: -10px;\r\n+    position: absolute;\r\n+    right: 0;\r\n+    bottom: 0;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1645613314380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  position: relative;\r\n   width: 100%;\r\n   margin-top: 10px;\r\n   background-color: #ffffcc;\r\n   .list {\r\n"
+                },
+                {
+                    "date": 1645613350660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   position: relative;\r\n+  padding: 10px 20px;\r\n   width: 100%;\r\n   margin-top: 10px;\r\n   background-color: #ffffcc;\r\n   .list {\r\n"
+                },
+                {
+                    "date": 1645613366454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   position: relative;\r\n-  padding: 10px 20px;\r\n+  padding: 10px 10px;\r\n   width: 100%;\r\n   margin-top: 10px;\r\n   background-color: #ffffcc;\r\n   .list {\r\n"
+                },
+                {
+                    "date": 1645613381334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n-    right: 0;\r\n-    bottom: 0;\r\n+    right: 10px;\r\n+    bottom: 10px;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1645613388006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n-    right: 10px;\r\n-    bottom: 10px;\r\n+    right: 5px;\r\n+    bottom: 5px;\r\n     color: #ccc;\r\n     font-size: 0.8em;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1645613787410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   position: relative;\r\n   padding: 10px 10px;\r\n   width: 100%;\r\n   margin-top: 10px;\r\n-  background-color: #ffffcc;\r\n+  border-bottom: 1px solid #ccc;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1645615387280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,17 +27,18 @@\n   padding: 10px 10px;\r\n   width: 100%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n+\r\n+  text-align: center;\r\n+  line-height: 50px;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n     flex-flow: row nowrap;\r\n     justify-content: space-between;\r\n     .classification {\r\n-      text-align: center;\r\n-      line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1645615392605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,18 +27,20 @@\n   padding: 10px 10px;\r\n   width: 100%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n-\r\n-  text-align: center;\r\n-  line-height: 50px;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n     flex-flow: row nowrap;\r\n     justify-content: space-between;\r\n+\r\n+    text-align: center;\r\n+    line-height: 50px;\r\n     .classification {\r\n+      text-align: center;\r\n+      line-height: 50px;\r\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n"
+                }
+            ],
+            "date": 1645537103322,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div id=\"article-list-container\">\r\n    <time>{{ createTime }}</time>\r\n    <h3>{{ title }}</h3>\r\n    <span>{{ classification }}</span>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  data() {\r\n    return {\r\n      createTime: '2020-02-20',\r\n      title: '标题',\r\n      classification: '分类',\r\n    }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style scoped lang=\"less\">\r\n#article-list-container {\r\n}\r\n</style>"
+        }
+    ]
+}

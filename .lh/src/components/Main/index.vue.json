@@ -1,0 +1,126 @@
+{
+    "sourceFile": "src/components/Main/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1645535501316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645535513174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \r\n <script>\r\n import ArticleList from './ArticleList'\r\n export default {\r\n+  components: ['ArticleList']\r\n \r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1645535524671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n \r\n <script>\r\n import ArticleList from './ArticleList'\r\n export default {\r\n-  components: ['ArticleList']\r\n+  components: {\r\n+    ArticleList\r\n+  },\r\n \r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1645535540009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\r\n-  <div id=\"main-container\"></div>\r\n+  <div id=\"main-container\">\r\n+    <ArticleList></ArticleList>\r\n+  </div>\r\n </template>\r\n \r\n <script>\r\n import ArticleList from './ArticleList'\r\n"
+                },
+                {
+                    "date": 1645536725720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n \r\n }\r\n </script>\r\n \r\n-<style>\r\n+<style scoped lang=\"less\">\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645536742473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,7 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n+#main-container {\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537047568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,7 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n+  border: ;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537055505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  border: ;\r\n+  border: 10px 30px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537070343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  border: 10px 30px;\r\n+  padding: 10px 30px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537077816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  padding: 10px 30px;\r\n+  margin: 10px 30px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537103326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n+  background-color: #ffffcc;\r\n+  color: #3b3b3b;\r\n   margin: 10px 30px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537112078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n <style scoped lang=\"less\">\r\n #main-container {\r\n   background-color: #ffffcc;\r\n   color: #3b3b3b;\r\n-  margin: 10px 30px;\r\n+  padding: 10px 30px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645537460406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,10 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n+  width: 80%;\r\n+  height: 10%px;\r\n   background-color: #ffffcc;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645537474756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   width: 80%;\r\n-  height: 10%px;\r\n+  height: 100px;\r\n   background-color: #ffffcc;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645537491612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   width: 80%;\r\n-  height: 100px;\r\n+  height: 50px;\r\n   background-color: #ffffcc;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645537821729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   width: 80%;\r\n-  height: 50px;\r\n+  height: 60px;\r\n   background-color: #ffffcc;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645537894722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  width: 80%;\r\n+  width: 50%;\r\n   height: 60px;\r\n   background-color: #ffffcc;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645612782596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n@@ -16,10 +17,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   width: 50%;\r\n-  height: 60px;\r\n-  background-color: #ffffcc;\r\n+  height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645613480309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n+  margin: 0 auto;\r\n   width: 50%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645613617100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   margin: 0 auto;\r\n-  width: 50%;\r\n+  width: 53%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645613645543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,11 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  margin: 0 auto;\r\n-  width: 53%;\r\n+  position: relative;\r\n+\r\n+  width: 30%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645613665834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   position: relative;\r\n-\r\n+  top: 50%;\r\n+  left: 50%;\r\n   width: 30%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645613680286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n <style scoped lang=\"less\">\r\n #main-container {\r\n   position: relative;\r\n   top: 50%;\r\n-  left: 50%;\r\n+  right: -50%;\r\n   width: 30%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645613688232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n <style scoped lang=\"less\">\r\n #main-container {\r\n   position: relative;\r\n   top: 50%;\r\n-  right: -50%;\r\n+  left: -50%;\r\n   width: 30%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645613702202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   position: relative;\r\n-  top: 50%;\r\n-  left: -50%;\r\n+  left: 50%;\r\n   width: 30%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645613716627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   position: relative;\r\n-  left: 50%;\r\n+  left: 10%;\r\n   width: 30%;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1645615162738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,11 @@\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n   position: relative;\r\n-  left: 10%;\r\n+  left: 25%;\r\n   width: 30%;\r\n+  display: inline;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645615171269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n #main-container {\r\n   position: relative;\r\n   left: 25%;\r\n   width: 30%;\r\n-  display: inline;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                }
+            ],
+            "date": 1645535501316,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div id=\"main-container\"></div>\r\n</template>\r\n\r\n<script>\r\nimport ArticleList from './ArticleList'\r\nexport default {\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n</style>"
+        }
+    ]
+}

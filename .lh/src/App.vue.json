@@ -1,0 +1,146 @@
+{
+    "sourceFile": "src/App.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1645530111266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645530122747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n <template>\n   <div id=\"app\">\n-    <nav>\n-      <router-link to=\"/\">Home</router-link>|\n-      <router-link to=\"/about\">About</router-link>\n-    </nav>\n+    <nav></nav>\n     <router-view />\n   </div>\n </template>\n <script>\n@@ -12,25 +9,5 @@\n \n }\n </script>\n <style>\n-#app {\n-  font-family: Avenir, Helvetica, Arial, sans-serif;\n-  -webkit-font-smoothing: antialiased;\n-  -moz-osx-font-smoothing: grayscale;\n-  text-align: center;\n-  color: #2c3e50;\n-}\n-\n-nav {\n-  padding: 30px;\n-}\n-\n-nav a {\n-  font-weight: bold;\n-  color: #2c3e50;\n-}\n-\n-nav a.router-link-exact-active {\n-  color: #42b983;\n-}\n </style>\n"
+                },
+                {
+                    "date": 1645530129950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n <template>\n-  <div id=\"app\">\n-    <nav></nav>\n-    <router-view />\n-  </div>\n+  <div id=\"app\"></div>\n </template>\n <script>\n export default {\n \n"
+                },
+                {
+                    "date": 1645530140868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\n-  <div id=\"app\"></div>\n+  <div id=\"app\">\n+    <p>hello</p>\n+  </div>\n </template>\n <script>\n export default {\n \n"
+                },
+                {
+                    "date": 1645530151643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n export default {\n \n }\n </script>\n-<style>\n+<style scoped lang=\"less\">\n </style>\n"
+                },
+                {
+                    "date": 1645530313108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n   <div id=\"app\">\n-    <p>hello</p>\n+    <p>hello world</p>\n   </div>\n </template>\n <script>\n export default {\n"
+                },
+                {
+                    "date": 1645530331667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n export default {\n \n }\n </script>\n-<style scoped lang=\"less\">\n+<style >\n </style>\n"
+                },
+                {
+                    "date": 1645530354334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n <template>\n   <div id=\"app\">\n     <p>hello world</p>\n+    <h1>dd</h1>\n   </div>\n </template>\n <script>\n export default {\n \n }\n </script>\n-<style >\n+<style scoped lang=\"less\">\n </style>\n"
+                },
+                {
+                    "date": 1645530472307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\n   <div id=\"app\">\n     <p>hello world</p>\n     <h1>dd</h1>\n+    <nav></nav>\n   </div>\n </template>\n <script>\n export default {\n"
+                },
+                {
+                    "date": 1645530571204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n <template>\n   <div id=\"app\">\n     <p>hello world</p>\n-    <h1>dd</h1>\n-    <nav></nav>\n   </div>\n </template>\n <script>\n export default {\n"
+                },
+                {
+                    "date": 1645530641285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n <template>\n-  <div id=\"app\">\n-    <p>hello world</p>\n-  </div>\n+  <div id=\"app\"></div>\n </template>\n <script>\n export default {\n \n"
+                },
+                {
+                    "date": 1645535584484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\n   <div id=\"app\"></div>\n </template>\n <script>\n+import Main from ''\n export default {\n \n }\n </script>\n"
+                },
+                {
+                    "date": 1645535636946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n   <div id=\"app\"></div>\n </template>\n <script>\n-import Main from ''\n+import Main from '@/components/Main'\n export default {\n \n }\n </script>\n"
+                },
+                {
+                    "date": 1645535654804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n   <div id=\"app\"></div>\n </template>\n <script>\n-import Main from '@/components/Main'\n+// import Main from '@/components/Main'\n export default {\n \n }\n </script>\n"
+                },
+                {
+                    "date": 1645535687243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n <template>\n   <div id=\"app\"></div>\n </template>\n <script>\n-// import Main from '@/components/Main'\n+import Main from '@/components/Main'\n export default {\n-\n+  components: {\n+    Main\n+  },\n }\n </script>\n <style scoped lang=\"less\">\n </style>\n"
+                },
+                {
+                    "date": 1645535712232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <template>\n   <div id=\"app\"></div>\n </template>\n <script>\n-import Main from '@/components/Main'\n+import Main from '@/components/Main/index.vue'\n export default {\n   components: {\n-    Main\n+    Main,\n   },\n }\n </script>\n <style scoped lang=\"less\">\n"
+                },
+                {
+                    "date": 1645535859105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\n-  <div id=\"app\"></div>\n+  <div id=\"app\">\n+    <Main></Main>\n+  </div>\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n export default {\n"
+                },
+                {
+                    "date": 1645535879310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\n   <div id=\"app\">\n+    <nav></nav>\n     <Main></Main>\n   </div>\n </template>\n <script>\n"
+                },
+                {
+                    "date": 1645535885147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\n   <div id=\"app\">\n-    <nav></nav>\n+    <nav>\n+      <p>dd</p>\n+    </nav>\n     <Main></Main>\n   </div>\n </template>\n <script>\n"
+                },
+                {
+                    "date": 1645536000168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n export default {\n+  name: App\n   components: {\n     Main,\n   },\n }\n"
+                },
+                {
+                    "date": 1645536083025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n export default {\n-  name: App\n+  name: App,\n   components: {\n     Main,\n   },\n }\n </script>\n-<style scoped lang=\"less\">\n+<style>\n </style>\n"
+                },
+                {
+                    "date": 1645536315360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,11 @@\n   name: App,\n   components: {\n     Main,\n   },\n+  created() {\n+    console.log('a');\n+  }\n }\n </script>\n-<style>\n+<style scoped lang=\"less\">\n </style>\n"
+                },
+                {
+                    "date": 1645536463419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   components: {\n     Main,\n   },\n   created() {\n-    console.log('a');\n+    console.log('aa');\n   }\n }\n </script>\n <style scoped lang=\"less\">\n"
+                },
+                {
+                    "date": 1645536605018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n export default {\n-  name: App,\n   components: {\n     Main,\n   },\n   created() {\n"
+                },
+                {
+                    "date": 1645536616960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,8 @@\n export default {\n   components: {\n     Main,\n   },\n-  created() {\n-    console.log('aa');\n-  }\n }\n </script>\n <style scoped lang=\"less\">\n </style>\n"
+                },
+                {
+                    "date": 1645613445977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n <template>\n   <div id=\"app\">\n-    <nav>\n-      <p>dd</p>\n-    </nav>\n     <Main></Main>\n   </div>\n </template>\n <script>\n@@ -14,5 +11,8 @@\n   },\n }\n </script>\n <style scoped lang=\"less\">\n+#app {\n+  background-color: #99cccc;\n+}\n </style>\n"
+                },
+                {
+                    "date": 1645613453985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n-  background-color: #99cccc;\n+  background-color: #ccffcc;\n }\n </style>\n"
+                },
+                {
+                    "date": 1645613530926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,9 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n+  width: 100%;\n+  height: 100%;\n   background-color: #ccffcc;\n }\n </style>\n"
+                },
+                {
+                    "date": 1645613551394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,7 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n-  width: 100%;\n-  height: 100%;\n   background-color: #ccffcc;\n }\n </style>\n"
+                },
+                {
+                    "date": 1645614406309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <template>\n   <div id=\"app\">\n     <Main></Main>\n+    <MyNav></MyNav>\n   </div>\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n"
+                },
+                {
+                    "date": 1645614459429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   </div>\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n+import MyNav from '@/components/MyNav'\n export default {\n   components: {\n     Main,\n   },\n"
+                },
+                {
+                    "date": 1645614466062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n import MyNav from '@/components/MyNav'\n export default {\n   components: {\n     Main,\n+    MyNav,\n   },\n }\n </script>\n <style scoped lang=\"less\">\n"
+                },
+                {
+                    "date": 1645615138728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div id=\"app\">\n+    <MyNav></MyNav>\n     <Main></Main>\n-    <MyNav></MyNav>\n   </div>\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n"
+                }
+            ],
+            "date": 1645530111266,
+            "name": "Commit-0",
+            "content": "<template>\n  <div id=\"app\">\n    <nav>\n      <router-link to=\"/\">Home</router-link>|\n      <router-link to=\"/about\">About</router-link>\n    </nav>\n    <router-view />\n  </div>\n</template>\n<script>\nexport default {\n\n}\n</script>\n<style>\n#app {\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n}\n\nnav {\n  padding: 30px;\n}\n\nnav a {\n  font-weight: bold;\n  color: #2c3e50;\n}\n\nnav a.router-link-exact-active {\n  color: #42b983;\n}\n</style>\n"
+        }
+    ]
+}

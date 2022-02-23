@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1645615315356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645615334074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Vue from 'vue'\r\n import App from './App.vue'\r\n import router from './router'\r\n import store from './store'\r\n-import ''\r\n+import '@/assets/css/base.css'\r\n \r\n Vue.config.productionTip = false\r\n \r\n new Vue({\r\n"
+                }
+            ],
+            "date": 1645615315356,
+            "name": "Commit-0",
+            "content": "import Vue from 'vue'\r\nimport App from './App.vue'\r\nimport router from './router'\r\nimport store from './store'\r\nimport ''\r\n\r\nVue.config.productionTip = false\r\n\r\nnew Vue({\r\n  router,\r\n  store,\r\n  render: h => h(App)\r\n}).$mount('#app')\r\n"
+        }
+    ]
+}

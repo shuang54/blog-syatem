@@ -1,0 +1,202 @@
+{
+    "sourceFile": "src/components/MyNav/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 46,
+            "patches": [
+                {
+                    "date": 1645614431496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645614508710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<template></template>\r\n+<template>div#my-nav-contr</template>\r\n \r\n <script>\r\n export default {\r\n \r\n"
+                },
+                {
+                    "date": 1645614569866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-<template>div#my-nav-contr</template>\r\n+<template>\r\n+  <div id=\"my-nav-container\">ddd</div>\r\n+</template>\r\n \r\n <script>\r\n export default {\r\n \r\n"
+                },
+                {
+                    "date": 1645614594737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n \r\n }\r\n </script>\r\n \r\n-<style>\r\n+<style scoped lang=\"less\">\r\n+#my-nav-container {\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645614606874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-\r\n+  name: 'MyNav'\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1645614940070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n <template>\r\n-  <div id=\"my-nav-container\">ddd</div>\r\n+  <div id=\"my-nav-container\">\r\n+    <a href=\"#\">首页</a>\r\n+    <a href=\"#\">username</a>\r\n+  </div>\r\n </template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'MyNav'\r\n+  name: 'MyNav',\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1645615010503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n+    <img src=\"@/assets/images/avataaars.png\" />\r\n     <a href=\"#\">首页</a>\r\n     <a href=\"#\">username</a>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1645615039275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,11 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n+  background-color: pink;\r\n+  img {\r\n+    width: 50px;\r\n+    height: 50px;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615090408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,10 @@\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n   }\r\n+  a {\r\n+    color: #666;\r\n+    text-decoration: none;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615122430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,11 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n+  position: relative;\r\n+  top: 0;\r\n+  left: 0;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615178989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n #my-nav-container {\r\n   position: relative;\r\n   top: 0;\r\n   left: 0;\r\n+  display: inline;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615189986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n #my-nav-container {\r\n   position: relative;\r\n   top: 0;\r\n   left: 0;\r\n-  display: inline;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615214219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  position: relative;\r\n+  position: absolute;\r\n   top: 0;\r\n   left: 0;\r\n   background-color: pink;\r\n   img {\r\n"
+                },
+                {
+                    "date": 1645615246962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  position: absolute;\r\n+  position: relative;\r\n   top: 0;\r\n   left: 0;\r\n   background-color: pink;\r\n   img {\r\n"
+                },
+                {
+                    "date": 1645615347378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,6 @@\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n   }\r\n-  a {\r\n-    color: #666;\r\n-    text-decoration: none;\r\n-  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615428420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n-  top: 0;\r\n-  left: 0;\r\n+  top: 10;\r\n+  left: 10;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615435963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n-  top: 10;\r\n-  left: 10;\r\n+  top: 10px;\r\n+  left: 10px;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615488682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n   top: 10px;\r\n-  left: 10px;\r\n+  right: 10px;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615506818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n   top: 10px;\r\n-  right: 10px;\r\n+  right: 0;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615524008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n   top: 10px;\r\n-  right: 0;\r\n+  right: 0px;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615537714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n   top: 10px;\r\n-  right: 0px;\r\n+  right: 50%;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615546927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   position: relative;\r\n   top: 10px;\r\n-  right: 50%;\r\n+  right: 0;\r\n   background-color: pink;\r\n   img {\r\n     width: 50px;\r\n     height: 50px;\r\n"
+                },
+                {
+                    "date": 1645615563719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n-    <img src=\"@/assets/images/avataaars.png\" />\r\n-    <a href=\"#\">首页</a>\r\n-    <a href=\"#\">username</a>\r\n+    <nav>\r\n+      <img src=\"@/assets/images/avataaars.png\" />\r\n+      <a href=\"#\">首页</a>\r\n+      <a href=\"#\">username</a>\r\n+    </nav>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645615571745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,12 @@\n   position: relative;\r\n   top: 10px;\r\n   right: 0;\r\n   background-color: pink;\r\n-  img {\r\n-    width: 50px;\r\n-    height: 50px;\r\n+  nav {\r\n+    img {\r\n+      width: 50px;\r\n+      height: 50px;\r\n+    }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615589235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,11 @@\n   top: 10px;\r\n   right: 0;\r\n   background-color: pink;\r\n   nav {\r\n+    position: absolute;\r\n+    top: 0;\r\n+    right: 0;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645615601095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background-color: pink;\r\n   nav {\r\n     position: absolute;\r\n     top: 0;\r\n-    right: 0;\r\n+    right: 25%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645615711591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background-color: pink;\r\n   nav {\r\n     position: absolute;\r\n     top: 0;\r\n-    right: 25%;\r\n+    right: 100px;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645615759896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background-color: pink;\r\n   nav {\r\n     position: absolute;\r\n     top: 0;\r\n-    right: 100px;\r\n+    right: 20%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645615770323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background-color: pink;\r\n   nav {\r\n     position: absolute;\r\n     top: 0;\r\n-    right: 20%;\r\n+    right: 10%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645615783353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background-color: pink;\r\n   nav {\r\n     position: absolute;\r\n     top: 0;\r\n-    right: 10%;\r\n+    right: 25%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645615810339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,9 @@\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n+    a {\r\n+    }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615836203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n     a {\r\n+      color: #;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615848150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n     a {\r\n-      color: #;\r\n+      color: #99cccc;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615873656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n     a {\r\n-      color: #99cccc;\r\n+      color: #000;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615890675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n       height: 50px;\r\n     }\r\n     a {\r\n       color: #000;\r\n+      font-size: 10px;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615899141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       height: 50px;\r\n     }\r\n     a {\r\n       color: #000;\r\n-      font-size: 10px;\r\n+      font-size: 0.8em;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615904916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       height: 50px;\r\n     }\r\n     a {\r\n       color: #000;\r\n-      font-size: 0.8em;\r\n+      font-size: 1em;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615970583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,12 @@\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n     a {\r\n+      width: 50px;\r\n+      height: 100%;\r\n       color: #000;\r\n-      font-size: 1em;\r\n+      font-size: 1rem;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645615989256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,10 @@\n     }\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n+      padding: 10px 20px;\r\n+\r\n       color: #000;\r\n       font-size: 1rem;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1645616002349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background-color: pink;\r\n   nav {\r\n     position: absolute;\r\n     top: 0;\r\n-    right: 25%;\r\n+    right: 20%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645616013729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n-      <img src=\"@/assets/images/avataaars.png\" />\r\n       <a href=\"#\">首页</a>\r\n       <a href=\"#\">username</a>\r\n+      <img src=\"@/assets/images/avataaars.png\" />\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1645616123806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   top: 10px;\r\n   right: 0;\r\n   background-color: pink;\r\n   nav {\r\n+    vertical-align: middle;\r\n     position: absolute;\r\n     top: 0;\r\n     right: 20%;\r\n     img {\r\n"
+                },
+                {
+                    "date": 1645616218086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n-\r\n+      margin-bottom: -3px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1645616224069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n-      margin-bottom: -3px;\r\n+      margin-bottom: 10px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1645616267369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,14 +27,14 @@\n     right: 20%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n+      margin-bottom: 10px;\r\n     }\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n-      margin-bottom: 10px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1645616327090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     right: 20%;\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n-      margin-bottom: 10px;\r\n+      margin-bottom: 13px;\r\n     }\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n"
+                },
+                {
+                    "date": 1645616399526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <a href=\"#\">首页</a>\r\n-      <a href=\"#\">username</a>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                }
+            ],
+            "date": 1645614431496,
+            "name": "Commit-0",
+            "content": "<template></template>\r\n\r\n<script>\r\nexport default {\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n</style>"
+        }
+    ]
+}

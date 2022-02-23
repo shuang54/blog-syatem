@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/components/ArticleList/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1645530846697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645530909602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,15 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n+  data() {\r\n+    return {\r\n+      createTime: '2020-02-20',\r\n \r\n+    }\r\n+  }\r\n+\r\n }\r\n </script>\r\n \r\n <style>\r\n"
+                },
+                {
+                    "date": 1645530925453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n export default {\r\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n+      title: '标题',\r\n \r\n     }\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1645530957682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n       title: '标题',\r\n-\r\n+      classification: '',\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1645531006478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n <template>\r\n-  <div id=\"article-list-container\"></div>\r\n+  <div id=\"article-list-container\">\r\n+    <p></p>\r\n+  </div>\r\n </template>\r\n \r\n <script>\r\n export default {\r\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n       title: '标题',\r\n-      classification: '',\r\n+      classification: '分类',\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1645531034391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n-    <p></p>\r\n+    <time>{{ createTime }}</time>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645531048786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n+    <h3>{{ title }}</h3>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645531061270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <time>{{ createTime }}</time>\r\n     <h3>{{ title }}</h3>\r\n+    <span>{{ classification }}</span>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645531311647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,9 @@\n \r\n }\r\n </script>\r\n \r\n-<style>\r\n+<style scoped lang=\"less\">\r\n+#article-list-container {\r\n+  background-color: #ffffcc;\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645531320641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,7 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   background-color: #ffffcc;\r\n+  color: #000;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645531358269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   background-color: #ffffcc;\r\n-  color: #000;\r\n+  color: #3b3b3b;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1645530846697,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div id=\"article-list-container\"></div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n</style>"
+        }
+    ]
+}
