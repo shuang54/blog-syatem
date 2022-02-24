@@ -25,7 +25,7 @@ export default {
 #article-list-container {
   position: relative;
   padding: 10px 10px;
-  width: 100%;
+  width: 30%;
   margin-top: 10px;
   border-bottom: 1px solid #ccc;
   .list {

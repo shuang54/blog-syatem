@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 32,
+            "activePatchIndex": 41,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -136,6 +136,42 @@
                 {
                     "date": 1645615138728,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div id=\"app\">\n+    <MyNav></MyNav>\n     <Main></Main>\n-    <MyNav></MyNav>\n   </div>\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n"
+                },
+                {
+                    "date": 1645617053648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\n   <div id=\"app\">\n     <MyNav></MyNav>\n     <Main></Main>\n+    \n   </div>\n </template>\n <script>\n import Main from '@/components/Main/index.vue'\n"
+                },
+                {
+                    "date": 1645617064643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,20 @@\n <template>\n   <div id=\"app\">\n     <MyNav></MyNav>\n     <Main></Main>\n-    \n+    <AddFile></AddFile>\n   </div>\n </template>\n <script>\n-import Main from '@/components/Main/index.vue'\n+import MyMain from '@/components/Main/index.vue'\n import MyNav from '@/components/MyNav'\n+import AddFile from '@/components/AddFile'\n export default {\n   components: {\n-    Main,\n+    MyMain,\n     MyNav,\n+    AddFile,\n   },\n }\n </script>\n <style scoped lang=\"less\">\n"
+                },
+                {
+                    "date": 1645617075229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div id=\"app\">\n     <MyNav></MyNav>\n-    <Main></Main>\n+    <MyMain></MyMain>\n     <AddFile></AddFile>\n   </div>\n </template>\n <script>\n"
+                },
+                {
+                    "date": 1645617085609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div id=\"app\">\n     <MyNav></MyNav>\n-    <MyMain></MyMain>\n+    <!-- <MyMain></MyMain> -->\n     <AddFile></AddFile>\n   </div>\n </template>\n <script>\n"
+                },
+                {
+                    "date": 1645621801384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\n   <div id=\"app\">\n     <MyNav></MyNav>\n-    <!-- <MyMain></MyMain> -->\n+    <MyMain></MyMain>\n     <AddFile></AddFile>\n   </div>\n </template>\n <script>\n"
+                },
+                {
+                    "date": 1645622709370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,7 @@\n </script>\n <style scoped lang=\"less\">\n #app {\n   background-color: #ccffcc;\n+  overflow: hidden;\n }\n </style>\n"
+                },
+                {
+                    "date": 1645700684157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <template>\n   <div id=\"app\">\n     <MyNav></MyNav>\n     <MyMain></MyMain>\n-    <AddFile></AddFile>\n   </div>\n </template>\n <script>\n import MyMain from '@/components/Main/index.vue'\n"
+                },
+                {
+                    "date": 1645700734170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,19 +6,19 @@\n </template>\n <script>\n import MyMain from '@/components/Main/index.vue'\n import MyNav from '@/components/MyNav'\n-import AddFile from '@/components/AddFile'\n export default {\n   components: {\n     MyMain,\n     MyNav,\n-    AddFile,\n   },\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n+  width: 100%;\n+  height: 100%;\n   background-color: #ccffcc;\n   overflow: hidden;\n }\n </style>\n"
+                },
+                {
+                    "date": 1645700748896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,8 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n-  width: 100%;\n-  height: 100%;\n   background-color: #ccffcc;\n   overflow: hidden;\n }\n </style>\n"
                 }
             ],
             "date": 1645530111266,

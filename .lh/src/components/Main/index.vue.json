@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 27,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1645535501316,
@@ -116,6 +116,34 @@
                 {
                     "date": 1645615171269,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n #main-container {\r\n   position: relative;\r\n   left: 25%;\r\n   width: 30%;\r\n-  display: inline;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645621923573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,18 @@\n <template>\r\n   <div id=\"main-container\">\r\n-    <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>\r\n+    <!-- <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>-->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n import ArticleList from './ArticleList'\r\n+import AddFile from '../AddFile'\r\n export default {\r\n   components: {\r\n-    ArticleList\r\n+    ArticleList,\r\n+    AddFile,\r\n   },\r\n \r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1645621979167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\r\n   <div id=\"main-container\">\r\n-    <!-- <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>-->\r\n+    <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>\r\n+    <!-- <AddFile></AddFile> -->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645622069909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,12 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  position: relative;\r\n-  left: 25%;\r\n-  width: 30%;\r\n+  // position: relative;\r\n+  // left: 25%;\r\n+  // width: 30%;\r\n+  margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645622085590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,11 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  // position: relative;\r\n-  // left: 25%;\r\n+  position: relative;\r\n+  left: 25%;\r\n   // width: 30%;\r\n-  margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645700583158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,21 @@\n   <div id=\"main-container\">\r\n     <ArticleList></ArticleList>\r\n     <ArticleList></ArticleList>\r\n     <!-- <AddFile></AddFile> -->\r\n+    <Article></Article>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n import ArticleList from './ArticleList'\r\n import AddFile from '../AddFile'\r\n+import Article from '../Main/Article'\r\n export default {\r\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n+    Article\r\n   },\r\n \r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1645701005044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"main-container\">\r\n-    <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>\r\n+    <!-- <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>-->\r\n     <!-- <AddFile></AddFile> -->\r\n     <Article></Article>\r\n   </div>\r\n </template>\r\n@@ -22,11 +22,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #main-container {\r\n-  position: relative;\r\n-  left: 25%;\r\n-  // width: 30%;\r\n+  margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n"
+                },
+                {
+                    "date": 1645701294770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- <ArticleList></ArticleList>\r\n     <ArticleList></ArticleList>-->\r\n-    <!-- <AddFile></AddFile> -->\r\n-    <Article></Article>\r\n+    <AddFile></AddFile>\r\n+    <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
                 }
             ],
             "date": 1645535501316,

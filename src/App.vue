@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <MyNav></MyNav>
-    <Main></Main>
+    <MyMain></MyMain>
   </div>
 </template>
 <script>
-import Main from '@/components/Main/index.vue'
+import MyMain from '@/components/Main/index.vue'
 import MyNav from '@/components/MyNav'
 export default {
   components: {
-    Main,
+    MyMain,
     MyNav,
   },
 }
@@ -17,5 +17,6 @@ export default {
 <style scoped lang="less">
 #app {
   background-color: #ccffcc;
+  overflow: hidden;
 }
 </style>

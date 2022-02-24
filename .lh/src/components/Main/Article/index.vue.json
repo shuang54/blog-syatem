@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/components/Main/Article/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1645699977225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645700182450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,12 @@\n <template>\r\n-  <div id=\"article-container\"></div>\r\n+  <div id=\"article-container\">\r\n+    <div class=\"file-name\"></div>\r\n+    <div class=\"box\">\r\n+      <div class=\"box-header\"></div>\r\n+      <div class=\"box-body\"></div>\r\n+    </div>\r\n+  </div>\r\n </template>\r\n \r\n <script>\r\n export default {\r\n"
+                },
+                {
+                    "date": 1645700195532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-\r\n+  name: 'Article'\r\n }\r\n </script>\r\n \r\n <style>\r\n"
+                },
+                {
+                    "date": 1645700207548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-  name: 'Article'\r\n+  name: 'Article',\r\n }\r\n </script>\r\n \r\n-<style>\r\n+<style scoped lang=\"less\">\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645700253363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n <template>\r\n   <div id=\"article-container\">\r\n-    <div class=\"file-name\"></div>\r\n     <div class=\"box\">\r\n-      <div class=\"box-header\"></div>\r\n       <div class=\"box-body\"></div>\r\n     </div>\r\n   </div>\r\n </template>\r\n@@ -14,5 +12,10 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n+#article-container {\r\n+  .box-body {\r\n+    background-color: pink;\r\n+  }\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645700529838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n <template>\r\n   <div id=\"article-container\">\r\n     <div class=\"box\">\r\n-      <div class=\"box-body\"></div>\r\n+      <div class=\"box-body\">\r\n+        <pre class=\"md\"></pre>\r\n+      </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n@@ -15,7 +17,9 @@\n <style scoped lang=\"less\">\r\n #article-container {\r\n   .box-body {\r\n     background-color: pink;\r\n+    .md {\r\n+    }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645700541727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n #article-container {\r\n   .box-body {\r\n     background-color: pink;\r\n     .md {\r\n+      width: 100%;\r\n+      height: 100%;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645700627720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n+  height: 100px;\r\n   .box-body {\r\n     background-color: pink;\r\n     .md {\r\n       width: 100%;\r\n"
+                },
+                {
+                    "date": 1645700640382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,11 @@\n <style scoped lang=\"less\">\r\n #article-container {\r\n   height: 100px;\r\n   .box-body {\r\n-    background-color: pink;\r\n     .md {\r\n+      background-color: pink;\r\n+\r\n       width: 100%;\r\n       height: 100%;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1645700915296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,13 @@\n <template>\r\n   <div id=\"article-container\">\r\n     <div class=\"box\">\r\n       <div class=\"box-body\">\r\n-        <pre class=\"md\"></pre>\r\n+        <pre class=\"md\">\r\n+\r\n+          # 上线前测试\r\n+# 网页正式上线\r\n+        </pre>\r\n       </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1645700953750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <div class=\"box-body\">\r\n         <pre class=\"md\">\r\n \r\n           # 上线前测试\r\n-# 网页正式上线\r\n+          # 网页正式上线\r\n         </pre>\r\n       </div>\r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645700965758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n #article-container {\r\n   height: 100px;\r\n   .box-body {\r\n     .md {\r\n-      background-color: pink;\r\n+      background-color: white;\r\n \r\n       width: 100%;\r\n       height: 100%;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645701208400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  height: 100px;\r\n   .box-body {\r\n     .md {\r\n       background-color: white;\r\n \r\n"
+                }
+            ],
+            "date": 1645699977225,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div id=\"article-container\"></div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n</style>"
+        }
+    ]
+}

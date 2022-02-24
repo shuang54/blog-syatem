@@ -15,15 +15,10 @@ export default {
 
 <style scoped lang="less">
 #my-nav-container {
-  position: relative;
-  top: 10px;
-  right: 0;
+  padding: 5px 20px;
   background-color: pink;
   nav {
     vertical-align: middle;
-    position: absolute;
-    top: 0;
-    right: 20%;
     img {
       width: 50px;
       height: 50px;
