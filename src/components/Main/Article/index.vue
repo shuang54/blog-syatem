@@ -4,7 +4,7 @@
       <div class="box-body">
         <mavon-editor
           class="md"
-          :value="articleData"
+          :value="articleData.markdown"
           :subfield="false"
           :defaultOpen="'preview'"
           :toolbarsFlag="false"
@@ -18,15 +18,21 @@
 </template>
 
 <script>
-
+import { mapState } from "vuex"
 export default {
   name: 'Article',
-  components: {
+  computed: {
+    ...mapState({
+      articleData: state => state.Article.article
+    })
   },
   data() {
     return {
-      articleData: '# 标题',
     }
+  },
+  created() {
+    this.id = this.$route.params.id
+    this.$store.dispatch('getArticle', this.id)
   }
 }
 </script>

@@ -6,7 +6,8 @@ import store from '@/store'
 const requests = axios.create({
   //配置对象
   //基础路径
-  baseURL: "https://mock.apipost.cn/app/mock/project/dc05a74e-8292-4fd7-b7a8-ff491962b806/blog",
+  // baseURL: "https://mock.apipost.cn/app/mock/project/dc05a74e-8292-4fd7-b7a8-ff491962b806/blog",
+  baseURL: "http://127.0.0.1:8000/blog",
   timeout: 5000,
 })
 //请求拦截器:在发送请求之前，可以做一些事情

@@ -4,6 +4,7 @@
     <ArticleList
       v-for="item in Alist"
       :key="item.id"
+      :id="item.id"
       :title="item.title"
       :createTime="item.createTime"
       :category="item.category"
@@ -36,7 +37,7 @@ export default {
   },
 
   created() {
-    this.$store.dispatch('getArticleList')
+    this.$store.dispatch('getArticleList', { page: 0, num: 2 })
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="article-list-container">
     <div class="list">
-      <router-link class="title" :to="{ name: 'article' }">{{ title }}</router-link>
+      <router-link class="title" :to="{ name: 'article', params: { 'id': id } }">{{ title }}</router-link>
       <span class="classification">{{ category }}</span>
     </div>
     <time class="time">{{ createTime }}</time>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  props: ['title', 'createTime', 'category'],
+  props: ['title', 'createTime', 'category', 'id'],
   data() {
     return {
     }

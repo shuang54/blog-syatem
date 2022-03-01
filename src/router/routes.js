@@ -6,7 +6,7 @@ export default [
     path: '/', component: main
   },
   {
-    path: '/article', component: () => import('@/components/Main/Article'), name: 'article'
+    path: '/article/:id', component: () => import('@/components/Main/Article'), name: 'article'
   },
   {
     path: '/articlelist', component: articlelist, name: 'articleList'
