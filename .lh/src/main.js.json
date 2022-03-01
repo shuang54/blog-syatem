@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1645615315356,
@@ -12,6 +12,54 @@
                 {
                     "date": 1645615334074,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Vue from 'vue'\r\n import App from './App.vue'\r\n import router from './router'\r\n import store from './store'\r\n-import ''\r\n+import '@/assets/css/base.css'\r\n \r\n Vue.config.productionTip = false\r\n \r\n new Vue({\r\n"
+                },
+                {
+                    "date": 1645943807835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n import App from './App.vue'\r\n import router from './router'\r\n import store from './store'\r\n import '@/assets/css/base.css'\r\n-\r\n+import { mavonEditor } from 'mavon-editor'\r\n+import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n \r\n new Vue({\r\n   router,\r\n"
+                },
+                {
+                    "date": 1645944058801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n+Vue.components({ mavonEditor })\r\n \r\n new Vue({\r\n   router,\r\n   store,\r\n"
+                },
+                {
+                    "date": 1645944103649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.components({ mavonEditor })\r\n+Vue.component({ mavonEditor })\r\n \r\n new Vue({\r\n   router,\r\n   store,\r\n"
+                },
+                {
+                    "date": 1645944183038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.component({ mavonEditor })\r\n+Vue.component('mavonEditor')\r\n \r\n new Vue({\r\n   router,\r\n   store,\r\n"
+                },
+                {
+                    "date": 1645944293193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.component('mavonEditor')\r\n+Vue.component('mavon-editor')\r\n \r\n new Vue({\r\n   router,\r\n   store,\r\n"
+                },
+                {
+                    "date": 1645944330675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.component('mavon-editor')\r\n+Vue.component('mavonEditor')\r\n \r\n new Vue({\r\n   router,\r\n   store,\r\n"
+                },
+                {
+                    "date": 1645944398546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.component('mavonEditor')\r\n+Vue.component('mavonEditor', mavonEditor)\r\n \r\n new Vue({\r\n   router,\r\n   store,\r\n"
+                },
+                {
+                    "date": 1645944465553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n Vue.component('mavonEditor', mavonEditor)\r\n-\r\n+Vue.use(mavonEditor)\r\n new Vue({\r\n   router,\r\n   store,\r\n   render: h => h(App)\r\n"
+                },
+                {
+                    "date": 1645944472005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n Vue.component('mavonEditor', mavonEditor)\r\n-Vue.use(mavonEditor)\r\n new Vue({\r\n   router,\r\n   store,\r\n   render: h => h(App)\r\n"
+                },
+                {
+                    "date": 1645944506236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.component('mavonEditor', mavonEditor)\r\n+Vue.component('mavon-editor', mavonEditor)\r\n new Vue({\r\n   router,\r\n   store,\r\n   render: h => h(App)\r\n"
+                },
+                {
+                    "date": 1645944512977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,9 @@\n import App from './App.vue'\r\n import router from './router'\r\n import store from './store'\r\n import '@/assets/css/base.css'\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n-Vue.component('mavon-editor', mavonEditor)\r\n new Vue({\r\n   router,\r\n   store,\r\n   render: h => h(App)\r\n"
+                },
+                {
+                    "date": 1645944744652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n+Vue.\r\n new Vue({\r\n   router,\r\n   store,\r\n   render: h => h(App)\r\n"
                 }
             ],
             "date": 1645615315356,

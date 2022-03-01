@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 63,
+            "activePatchIndex": 68,
             "patches": [
                 {
                     "date": 1645617001356,
@@ -260,6 +260,26 @@
                 {
                     "date": 1645703294337,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,14 +64,14 @@\n   margin: 0 auto;\r\n   background-color: white;\r\n   .file-name {\r\n     width: 100%;\r\n-    height: 40px;\r\n+    height: 60px;\r\n     display: flex;\r\n     flex-direction: row;\r\n     justify-content: space-between;\r\n     background-color: #ccc;\r\n-    line-height: 40px;\r\n+    line-height: 60px;\r\n     margin-bottom: 10px;\r\n     .btn {\r\n       margin: 10px;\r\n       width: 80px;\r\n"
+                },
+                {
+                    "date": 1645943807939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,10 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n \r\n+\r\n export default {\r\n   components: {\r\n     mavonEditor,//mavon-editor组件\r\n   },\r\n"
+                },
+                {
+                    "date": 1645944005108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,11 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+import { mavonEditor } from 'mavon-editor'\r\n+import 'mavon-editor/dist/css/index.css'\r\n \r\n-\r\n export default {\r\n   components: {\r\n     mavonEditor,//mavon-editor组件\r\n   },\r\n"
+                },
+                {
+                    "date": 1645944185827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,10 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n \r\n+\r\n export default {\r\n   components: {\r\n     mavonEditor,//mavon-editor组件\r\n   },\r\n"
+                },
+                {
+                    "date": 1645944516417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,11 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+import { mavonEditor } from 'mavon-editor'\r\n+import 'mavon-editor/dist/css/index.css'\r\n \r\n-\r\n export default {\r\n   components: {\r\n     mavonEditor,//mavon-editor组件\r\n   },\r\n"
+                },
+                {
+                    "date": 1645944898877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,14 +16,12 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n \r\n export default {\r\n   components: {\r\n-    mavonEditor,//mavon-editor组件\r\n+    // mavonEditor,//mavon-editor组件\r\n   },\r\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n"
                 }
             ],
             "date": 1645617001356,

@@ -1,0 +1,102 @@
+{
+    "sourceFile": "src/store/Article.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1645860327507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645860348588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\r\n+import \r\n const state = {\r\n }\r\n const getters = {\r\n }\r\n"
+                },
+                {
+                    "date": 1645860445200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n-import \r\n+\r\n const state = {\r\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n }\r\n const actions = {\r\n }\r\n+export default\r\n \r\n"
+                },
+                {
+                    "date": 1645860469967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,11 @@\n const mutations = {\r\n }\r\n const actions = {\r\n }\r\n-export default\r\n+export default {\r\n+  state,\r\n+  getters,\r\n+  mutations,\r\n+  actions,\r\n+}\r\n \r\n"
+                },
+                {
+                    "date": 1645860620855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n \r\n const state = {\r\n+  articleList=[],\r\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n"
+                },
+                {
+                    "date": 1645860630767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \r\n const state = {\r\n-  articleList=[],\r\n+  articleList: [],\r\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n"
+                },
+                {
+                    "date": 1645860679834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n }\r\n const mutations = {\r\n }\r\n const actions = {\r\n+  async getArticleList()\r\n }\r\n export default {\r\n   state,\r\n   getters,\r\n"
+                },
+                {
+                    "date": 1645860694826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n }\r\n const mutations = {\r\n }\r\n const actions = {\r\n-  async getArticleList()\r\n+  async getArticleList({ commit })\r\n }\r\n export default {\r\n   state,\r\n   getters,\r\n"
+                },
+                {
+                    "date": 1645860750907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,17 @@\n-\r\n+import { reqArticleList } from \"@/API\"\r\n const state = {\r\n   articleList: [],\r\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n }\r\n const actions = {\r\n-  async getArticleList({ commit })\r\n+  async getArticleList({ commit }) {\r\n+    let result = await reqArticleList()\r\n+    if (result.code)\r\n+  }\r\n }\r\n export default {\r\n   state,\r\n   getters,\r\n"
+                },
+                {
+                    "date": 1645860799583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n-    if (result.code)\r\n+    if (result.code == 200)\r\n   }\r\n }\r\n export default {\r\n   state,\r\n"
+                },
+                {
+                    "date": 1645860810789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,11 @@\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n-    if (result.code == 200)\r\n+    if (result.code == 200) {\r\n+      console.log(result);\r\n+    }\r\n   }\r\n }\r\n export default {\r\n   state,\r\n"
+                },
+                {
+                    "date": 1645860844982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n     let result = await reqArticleList()\r\n     if (result.code == 200) {\r\n       console.log(result);\r\n     }\r\n+    return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n }\r\n export default {\r\n   state,\r\n"
+                },
+                {
+                    "date": 1645860963264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { reqArticleList } from \"@/API\"\r\n+import { reqArticleList } from \"@/API/index\"\r\n const state = {\r\n   articleList: [],\r\n }\r\n const getters = {\r\n"
+                },
+                {
+                    "date": 1645861316753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n+\r\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n"
+                },
+                {
+                    "date": 1645861403707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     let result = await reqArticleList()\r\n     if (result.code == 200) {\r\n       console.log(result);\r\n     }\r\n+    console.log(result);\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n }\r\n export default {\r\n"
+                },
+                {
+                    "date": 1645861535058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n+    console.log(result);\r\n     if (result.code == 200) {\r\n-      console.log(result);\r\n     }\r\n     console.log(result);\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n"
+                },
+                {
+                    "date": 1645861712597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n-    console.log(result);\r\n+    console.log(1);\r\n     if (result.code == 200) {\r\n     }\r\n     console.log(result);\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n"
+                },
+                {
+                    "date": 1645862032348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,17 +4,16 @@\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n-\r\n+  GETaRTICLElIST({ })\r\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n-    console.log(1);\r\n     if (result.code == 200) {\r\n+      return commit(GETaRTICLElIST(result.data))\r\n     }\r\n-    console.log(result);\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n }\r\n export default {\r\n"
+                },
+                {
+                    "date": 1645862038788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n-  GETaRTICLElIST({ })\r\n+  GETaRTICLElIST({ state })\r\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n"
+                },
+                {
+                    "date": 1645862059917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n }\r\n const getters = {\r\n }\r\n const mutations = {\r\n-  GETaRTICLElIST({ state })\r\n+  GETaRTICLElIST(state, data) {\r\n+    state.articleList = data\r\n+  }\r\n }\r\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n"
+                },
+                {
+                    "date": 1645862106094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n     if (result.code == 200) {\r\n-      return commit(GETaRTICLElIST(result.data))\r\n+      return commit('GETaRTICLElIST', 'result.data')\r\n     }\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1645862118918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n     if (result.code == 200) {\r\n-      return commit('GETaRTICLElIST', 'result.data')\r\n+      return commit('GETaRTICLElIST', result.data)\r\n     }\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1645860327507,
+            "name": "Commit-0",
+            "content": "\r\nconst state = {\r\n}\r\nconst getters = {\r\n}\r\nconst mutations = {\r\n}\r\nconst actions = {\r\n}\r\n\r\n"
+        }
+    ]
+}

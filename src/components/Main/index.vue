@@ -1,8 +1,16 @@
 <template>
   <div id="main-container">
-    <!-- <ArticleList></ArticleList>
-    <ArticleList></ArticleList>-->
-    <AddFile></AddFile>
+    <!-- 文章列表 -->
+    <ArticleList
+      v-for="item in Alist"
+      :key="item.id"
+      :title="item.title"
+      :createTime="item.createTime"
+      :category="item.category"
+    ></ArticleList>
+    <!-- 添加文章 -->
+    <!-- <AddFile></AddFile> -->
+    <!-- 文章详情 -->
     <!-- <Article></Article> -->
   </div>
 </template>
@@ -11,13 +19,25 @@
 import ArticleList from './ArticleList'
 import AddFile from '../AddFile'
 import Article from '../Main/Article'
+import { mapState } from 'vuex'
 export default {
   components: {
     ArticleList,
     AddFile,
     Article
   },
+  computed: {
+    ...mapState({
+      Alist: state => state.Article.articleList
+    })
+  },
+  methods: {
 
+  },
+
+  created() {
+    this.$store.dispatch('getArticleList')
+  }
 }
 </script>
 

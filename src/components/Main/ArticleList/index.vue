@@ -1,8 +1,8 @@
 <template>
   <div id="article-list-container">
     <div class="list">
-      <p class="title">{{ title }}</p>
-      <span class="classification">{{ classification }}</span>
+      <router-link class="title" :to="{ name: 'article' }">{{ title }}</router-link>
+      <span class="classification">{{ category }}</span>
     </div>
     <time class="time">{{ createTime }}</time>
   </div>
@@ -10,11 +10,9 @@
 
 <script>
 export default {
+  props: ['title', 'createTime', 'category'],
   data() {
     return {
-      createTime: '2020-02-20',
-      title: '标题',
-      classification: '分类',
     }
   }
 
@@ -23,6 +21,7 @@ export default {
 
 <style scoped lang="less">
 #article-list-container {
+  margin: 0 auto;
   position: relative;
   padding: 10px 10px;
   width: 30%;

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <MyNav></MyNav>
-    <MyMain></MyMain>
+    <!-- <MyMain></MyMain> -->
+    <router-view></router-view>
   </div>
 </template>
 <script>

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 45,
+            "activePatchIndex": 60,
             "patches": [
                 {
                     "date": 1645537103322,
@@ -188,6 +188,66 @@
                 {
                     "date": 1645621996941,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n   position: relative;\r\n   padding: 10px 10px;\r\n-  width: 100%;\r\n+  width: 30%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n   .list {\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1645852105759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  margin: 0 auto;\r\n   position: relative;\r\n   padding: 10px 10px;\r\n   width: 30%;\r\n   margin-top: 10px;\r\n"
+                },
+                {
+                    "date": 1645862853094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,11 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n+  props: [\r\n+    { name: 'title', }\r\n+  ],\r\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n       title: '标题',\r\n"
+                },
+                {
+                    "date": 1645862910130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n <script>\r\n export default {\r\n   props: [\r\n-    { name: 'title', }\r\n+    'title': {}\r\n   ],\r\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n"
+                },
+                {
+                    "date": 1645862916795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n <script>\r\n export default {\r\n   props: [\r\n-    'title': {}\r\n+    'title': String,\r\n   ],\r\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n"
+                },
+                {
+                    "date": 1645862952875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,13 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-  props: [\r\n+  props: {\r\n     'title': String,\r\n-  ],\r\n+    'createTime': String,\r\n+    'category': String,\r\n+  },\r\n   data() {\r\n     return {\r\n       createTime: '2020-02-20',\r\n       title: '标题',\r\n"
+                },
+                {
+                    "date": 1645862980033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n       <p class=\"title\">{{ title }}</p>\r\n-      <span class=\"classification\">{{ classification }}</span>\r\n+      <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n </template>\r\n@@ -16,11 +16,8 @@\n     'category': String,\r\n   },\r\n   data() {\r\n     return {\r\n-      createTime: '2020-02-20',\r\n-      title: '标题',\r\n-      classification: '分类',\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1645863233402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,13 +9,9 @@\n </template>\r\n \r\n <script>\r\n export default {\r\n-  props: {\r\n-    'title': String,\r\n-    'createTime': String,\r\n-    'category': String,\r\n-  },\r\n+  props: ['title', 'createTime', 'category'],\r\n   data() {\r\n     return {\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1645863300125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,11 @@\n   props: ['title', 'createTime', 'category'],\r\n   data() {\r\n     return {\r\n     }\r\n+  },\r\n+  created() {\r\n+    console.log(title);\r\n   }\r\n \r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1645864126945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,8 @@\n   props: ['title', 'createTime', 'category'],\r\n   data() {\r\n     return {\r\n     }\r\n-  },\r\n-  created() {\r\n-    console.log(title);\r\n   }\r\n \r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1645864169097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <p class=\"title\">{{ title }}</p>\r\n+      <router-link class=\"title\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645864231008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\">{{ title }}</router-link>\r\n+      <router-link class=\"title\" :to>{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645864243919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\" :to>{{ title }}</router-link>\r\n+      <router-link class=\"title\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645864500898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\">{{ title }}</router-link>\r\n+      <router-link class=\"title\" :to=\"article\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645864811891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\" :to=\"article\">{{ title }}</router-link>\r\n+      <router-link class=\"title\" :to=\"{ name: 'art' }\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645864822424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\" :to=\"{ name: 'art' }\">{{ title }}</router-link>\r\n+      <router-link class=\"title\" :to=\"{ name: 'article' }\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
                 }
             ],
             "date": 1645537103322,

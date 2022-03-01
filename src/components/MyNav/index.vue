@@ -1,7 +1,7 @@
 <template>
   <div id="my-nav-container">
     <nav>
-      <a href="#">首页</a>
+      <router-link :to="{ path: '/' }">首页</router-link>
       <img src="@/assets/images/avataaars.png" />
     </nav>
   </div>

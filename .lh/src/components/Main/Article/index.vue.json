@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1645699977225,
@@ -56,6 +56,54 @@
                 {
                     "date": 1645701208400,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  height: 100px;\r\n   .box-body {\r\n     .md {\r\n       background-color: white;\r\n \r\n"
+                },
+                {
+                    "date": 1645865596342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,12 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n+  margin: 0 auto;\r\n+  height: 100%;\r\n+  color: #3b3b3b;\r\n+  padding: 10px 30px;\r\n   .box-body {\r\n     .md {\r\n       background-color: white;\r\n \r\n"
+                },
+                {
+                    "date": 1645943327064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+import mavonEditor from 'mavon-editor'\r\n+import 'mavon-editor/dist/css/index.css'\r\n export default {\r\n   name: 'Article',\r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1645943371737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,18 @@\n <template>\r\n   <div id=\"article-container\">\r\n     <div class=\"box\">\r\n       <div class=\"box-body\">\r\n-        <pre class=\"md\">\r\n-\r\n-          # 上线前测试\r\n-          # 网页正式上线\r\n-        </pre>\r\n+        <mavon-editor\r\n+          class=\"md\"\r\n+          :value=\"detailContent.content\"\r\n+          :subfield=\"false\"\r\n+          :defaultOpen=\"'preview'\"\r\n+          :toolbarsFlag=\"false\"\r\n+          :editable=\"false\"\r\n+          :scrollStyle=\"true\"\r\n+          :ishljs=\"true\"\r\n+        ></mavon-editor>\r\n       </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1645943704135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"box\">\r\n       <div class=\"box-body\">\r\n         <mavon-editor\r\n           class=\"md\"\r\n-          :value=\"detailContent.content\"\r\n+          :value=\"articleData\"\r\n           :subfield=\"false\"\r\n           :defaultOpen=\"'preview'\"\r\n           :toolbarsFlag=\"false\"\r\n           :editable=\"false\"\r\n@@ -21,8 +21,13 @@\n import mavonEditor from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n export default {\r\n   name: 'Article',\r\n+  data() {\r\n+    return {\r\n+      articleData: '# 标题',\r\n+    }\r\n+  }\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1645943778672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import mavonEditor from 'mavon-editor'\r\n+import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n export default {\r\n   name: 'Article',\r\n   data() {\r\n"
+                },
+                {
+                    "date": 1645943829785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,8 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n export default {\r\n   name: 'Article',\r\n   data() {\r\n     return {\r\n"
+                },
+                {
+                    "date": 1645944526409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+import { mavonEditor } from 'mavon-editor'\r\n+import 'mavon-editor/dist/css/index.css'\r\n export default {\r\n   name: 'Article',\r\n   data() {\r\n     return {\r\n"
+                },
+                {
+                    "date": 1645944557457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n           :toolbarsFlag=\"false\"\r\n           :editable=\"false\"\r\n           :scrollStyle=\"true\"\r\n           :ishljs=\"true\"\r\n-        ></mavon-editor>\r\n+        />\r\n       </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1645944693082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,11 @@\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n export default {\r\n   name: 'Article',\r\n+  components: {\r\n+    mavonEditor\r\n+  },\r\n   data() {\r\n     return {\r\n       articleData: '# 标题',\r\n     }\r\n"
+                },
+                {
+                    "date": 1645944744708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,9 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n+\r\n export default {\r\n   name: 'Article',\r\n   components: {\r\n     mavonEditor\r\n"
+                },
+                {
+                    "date": 1645944883056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \r\n export default {\r\n   name: 'Article',\r\n   components: {\r\n-    mavonEditor\r\n+    // mavonEditor\r\n   },\r\n   data() {\r\n     return {\r\n       articleData: '# 标题',\r\n"
+                },
+                {
+                    "date": 1645944898924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n \r\n export default {\r\n   name: 'Article',\r\n   components: {\r\n-    // mavonEditor\r\n   },\r\n   data() {\r\n     return {\r\n       articleData: '# 标题',\r\n"
                 }
             ],
             "date": 1645699977225,

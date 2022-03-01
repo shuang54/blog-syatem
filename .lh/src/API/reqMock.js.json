@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/API/reqMock.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1645856478678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645858037301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n //利用axios对象的create方法,创建一个axios实例\r\n const requests = axios.create({\r\n   //配置对象\r\n   //基础路径\r\n-  baseURL: \"/mock\",\r\n+  baseURL: \"/mock/blog/\",\r\n   timeout: 5000,\r\n })\r\n //请求拦截器:在发送请求之前，可以做一些事情\r\n requests.interceptors.request.use((config) => {\r\n"
+                }
+            ],
+            "date": 1645856478678,
+            "name": "Commit-0",
+            "content": "import axios from 'axios'\r\nimport * as nProgress from 'nprogress';\r\nimport 'nprogress/nprogress.css'\r\n//利用axios对象的create方法,创建一个axios实例\r\nconst requests = axios.create({\r\n  //配置对象\r\n  //基础路径\r\n  baseURL: \"/mock\",\r\n  timeout: 5000,\r\n})\r\n//请求拦截器:在发送请求之前，可以做一些事情\r\nrequests.interceptors.request.use((config) => {\r\n  nProgress.start()\r\n  return config;\r\n})\r\n//响应拦截器\r\nrequests.interceptors.response.use((res) => {\r\n  nProgress.done()\r\n  return res.data\r\n}, (error) => {\r\n  return Promise.reject(new Error('响应失败'))\r\n})\r\n// console.log(requests.prototype);\r\nexport default requests"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 34,
+            "activePatchIndex": 68,
             "patches": [
                 {
                     "date": 1645535501316,
@@ -144,6 +144,142 @@
                 {
                     "date": 1645701294770,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- <ArticleList></ArticleList>\r\n     <ArticleList></ArticleList>-->\r\n-    <!-- <AddFile></AddFile> -->\r\n-    <Article></Article>\r\n+    <AddFile></AddFile>\r\n+    <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645852071516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"main-container\">\r\n-    <!-- <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>-->\r\n-    <AddFile></AddFile>\r\n+    <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>\r\n+    <!-- <AddFile></AddFile> -->\r\n     <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1645854161545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"main-container\">\r\n-    <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>\r\n+    <!-- <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>-->\r\n     <!-- <AddFile></AddFile> -->\r\n-    <!-- <Article></Article> -->\r\n+    <Article></Article>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645854903024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- <ArticleList></ArticleList>\r\n     <ArticleList></ArticleList>-->\r\n-    <!-- <AddFile></AddFile> -->\r\n-    <Article></Article>\r\n+    <AddFile></AddFile>\r\n+    <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1645856019957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     ArticleList,\r\n     AddFile,\r\n     Article\r\n   },\r\n-\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1645856177212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"main-container\">\r\n-    <!-- <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>-->\r\n-    <AddFile></AddFile>\r\n+    <ArticleList></ArticleList>\r\n+    <ArticleList></ArticleList>\r\n+    <!-- <AddFile></AddFile> -->\r\n     <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1645861316892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,11 @@\n     ArticleList,\r\n     AddFile,\r\n     Article\r\n   },\r\n+  created() {\r\n+    this.$store.dispatch('getArticleList')\r\n+  }\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1645862227677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,18 @@\n <script>\r\n import ArticleList from './ArticleList'\r\n import AddFile from '../AddFile'\r\n import Article from '../Main/Article'\r\n+import { mapState } from 'vuex'\r\n export default {\r\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n     Article\r\n   },\r\n+  computed: {\r\n+    ...mapState\r\n+  },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1645862274420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n     AddFile,\r\n     Article\r\n   },\r\n   computed: {\r\n-    ...mapState\r\n+    ...mapState({\r\n+\r\n+    })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n   }\r\n"
+                },
+                {
+                    "date": 1645862299626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     Article\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-\r\n+      articleList=(state) => state.article.articleList\r\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n"
+                },
+                {
+                    "date": 1645862310120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     Article\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      articleList=(state) => state.article.articleList\r\n+      articleList: state => state.article.articleList\r\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n"
+                },
+                {
+                    "date": 1645862373245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n <template>\r\n   <div id=\"main-container\">\r\n+    <!-- 文章列表 -->\r\n     <ArticleList></ArticleList>\r\n-    <ArticleList></ArticleList>\r\n+    <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n+    <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1645862725188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n-    <ArticleList></ArticleList>\r\n+    <ArticleList v-for=\"item in articleList\" :key=\"item.id\"></ArticleList>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645862777471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,14 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n-    <ArticleList v-for=\"item in articleList\" :key=\"item.id\"></ArticleList>\r\n+    <ArticleList\r\n+      v-for=\"item in articleList\"\r\n+      :key=\"item.id\"\r\n+      :title=\"item.title\"\r\n+      :createTime=\"item.createTime\"\r\n+      :category=\"item.category\"\r\n+    ></ArticleList>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645863045566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n     <ArticleList\r\n-      v-for=\"item in articleList\"\r\n+      v-for=\"item in list\"\r\n       :key=\"item.id\"\r\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n@@ -27,9 +27,9 @@\n     Article\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      articleList: state => state.article.articleList\r\n+      list: state => state.article.articleList\r\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n"
+                },
+                {
+                    "date": 1645863061306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     Article\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      list: state => state.article.articleList\r\n+      list: state => state.articleList\r\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n"
+                },
+                {
+                    "date": 1645863409663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,11 @@\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n+  },\r\n+  Mounted() {\r\n+    console.log(list);\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1645863436998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n   },\r\n   Mounted() {\r\n-    console.log(list);\r\n+    console.log(this.list);\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1645863447493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n   },\r\n-  Mounted() {\r\n+  mounted() {\r\n     console.log(this.list);\r\n   }\r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1645863463500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,8 @@\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n-  },\r\n-  mounted() {\r\n-    console.log(this.list);\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1645863472529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n+    <span>{{ list }}</span>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645863482044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <span>{{ list }}</span>\r\n+    <span>{{ 33 }}</span>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645863612145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <span>{{ 33 }}</span>\r\n+    <span>{{ $state }}</span>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645863618996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <span>{{ $state }}</span>\r\n+    <span>{{ state }}</span>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645863633554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <span>{{ state }}</span>\r\n+    <span>{{ this.$state }}</span>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645863699637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,14 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n     <ArticleList\r\n-      v-for=\"item in list\"\r\n+      v-for=\"item in Alist\"\r\n       :key=\"item.id\"\r\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <span>{{ this.$state }}</span>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n@@ -28,9 +27,9 @@\n     Article\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      list: state => state.articleList\r\n+      Alist: state => state.articleList\r\n     })\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n"
+                },
+                {
+                    "date": 1645863765195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n+    <button @click=\"cli\">ddd</button>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n@@ -30,8 +31,14 @@\n     ...mapState({\r\n       Alist: state => state.articleList\r\n     })\r\n   },\r\n+  methods: {\r\n+    cli() {\r\n+      console.log(this.$store);\r\n+    }\r\n+  },\r\n+\r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1645863809750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     Article\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      Alist: state => state.articleList\r\n+      Alist: state => state.Article.articleList\r\n     })\r\n   },\r\n   methods: {\r\n     cli() {\r\n"
+                },
+                {
+                    "date": 1645863829027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <button @click=\"cli\">ddd</button>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n@@ -32,11 +31,9 @@\n       Alist: state => state.Article.articleList\r\n     })\r\n   },\r\n   methods: {\r\n-    cli() {\r\n-      console.log(this.$store);\r\n-    }\r\n+\r\n   },\r\n \r\n   created() {\r\n     this.$store.dispatch('getArticleList')\r\n"
+                },
+                {
+                    "date": 1645864637973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n+    <router-view></router-view>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645864667465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <router-view></router-view>\r\n+    <!-- <router-view></router-view> -->\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645865083774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <!-- <router-view></router-view> -->\r\n+    <router-view></router-view>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645865416355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n     ></ArticleList>\r\n-    <router-view></router-view>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n"
+                },
+                {
+                    "date": 1645944604130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n-    <ArticleList\r\n+    <!-- <ArticleList\r\n       v-for=\"item in Alist\"\r\n       :key=\"item.id\"\r\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n-    ></ArticleList>\r\n+    ></ArticleList>-->\r\n     <!-- 添加文章 -->\r\n-    <!-- <AddFile></AddFile> -->\r\n+    <AddFile></AddFile>\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1645944627689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n-    <!-- <ArticleList\r\n+    <ArticleList\r\n       v-for=\"item in Alist\"\r\n       :key=\"item.id\"\r\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n-    ></ArticleList>-->\r\n+    ></ArticleList>\r\n     <!-- 添加文章 -->\r\n-    <AddFile></AddFile>\r\n+    <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n"
                 }
             ],
             "date": 1645535501316,

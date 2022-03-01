@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/API/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1645856506489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645859427292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import requests from \"./request\";\r\n-import reqMock from './reqMock'\r\n \r\n export const reqCategoryList = () => {\r\n   return requests({ url: \"/product/getBaseCategoryList\", method: 'get' })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645859594131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import requests from \"./request\";\r\n \r\n export const reqCategoryList = () => {\r\n-  return requests({ url: \"/product/getBaseCategoryList\", method: 'get' })\r\n+  return requests({ url: \"/article/addarticle\", method: 'get' })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645859634491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import requests from \"./request\";\r\n \r\n-export const reqCategoryList = () => {\r\n-  return requests({ url: \"/article/addarticle\", method: 'get' })\r\n+export const reqArticleList = () => {\r\n+  return requests({ url: \"/article/articlelist\", method: 'get' })\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645860933889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,3 @@\n import requests from \"./request\";\r\n \r\n-export const reqArticleList = () => {\r\n-  return requests({ url: \"/article/articlelist\", method: 'get' })\r\n-}\n\\ No newline at end of file\n+export const reqArticleList = () => requests({ url: \"/article/articlelist\", method: 'get' })\r\n"
+                },
+                {
+                    "date": 1645861130866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-import requests from \"./request\";\r\n+import requests from \"./requests\";\r\n \r\n export const reqArticleList = () => requests({ url: \"/article/articlelist\", method: 'get' })\r\n"
+                }
+            ],
+            "date": 1645856506489,
+            "name": "Commit-0",
+            "content": "import requests from \"./request\";\r\nimport reqMock from './reqMock'\r\n\r\nexport const reqCategoryList = () => {\r\n  return requests({ url: \"/product/getBaseCategoryList\", method: 'get' })\r\n}"
+        }
+    ]
+}

@@ -17,12 +17,10 @@
 </template>
 
 <script>
-import { mavonEditor } from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
 
 export default {
   components: {
-    mavonEditor,//mavon-editor组件
+    // mavonEditor,//mavon-editor组件
   },
   data() {
     return {

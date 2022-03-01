@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1645530197803,
@@ -36,6 +36,22 @@
                 {
                     "date": 1645536545769,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,15 @@\n import Vue from 'vue'\n+import VueRouter from 'vue-router'\n \n Vue.use(VueRouter)\n \n const routes = [\n-\n-\n-\n ]\n \n const router = new VueRouter({\n-  // mode: 'history',\n-  // base: process.env.BASE_URL,\n+  mode: 'history',\n+  base: process.env.BASE_URL,\n   routes\n })\n \n export default router\n"
+                },
+                {
+                    "date": 1645864231048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import Vue from 'vue'\n import VueRouter from 'vue-router'\n-\n+import Article from '@/components/Main/Article'\n Vue.use(VueRouter)\n \n const routes = [\n ]\n"
+                },
+                {
+                    "date": 1645864267335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,11 @@\n import Article from '@/components/Main/Article'\n Vue.use(VueRouter)\n \n const routes = [\n+  {\n+\n+  }\n ]\n \n const router = new VueRouter({\n   mode: 'history',\n"
+                },
+                {
+                    "date": 1645864327034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,11 @@\n import Vue from 'vue'\n import VueRouter from 'vue-router'\n-import Article from '@/components/Main/Article'\n+import routes from '@/router/routes'\n Vue.use(VueRouter)\n \n-const routes = [\n-  {\n+const routes = routes\n \n-  }\n-]\n-\n const router = new VueRouter({\n   mode: 'history',\n   base: process.env.BASE_URL,\n   routes\n"
+                },
+                {
+                    "date": 1645864332731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n import VueRouter from 'vue-router'\n import routes from '@/router/routes'\n Vue.use(VueRouter)\n \n-const routes = routes\n \n const router = new VueRouter({\n   mode: 'history',\n   base: process.env.BASE_URL,\n"
                 }
             ],
             "date": 1645530197803,

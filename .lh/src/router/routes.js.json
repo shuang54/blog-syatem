@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/router/routes.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1645864401501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645864414025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n export default [\r\n+\r\n   {\r\n-    {\r\n-    path: '/', component: () =>import '@/components/Main' }\r\n+    path: '/', component: () => import('@/components/Main')\r\n   }\r\n+\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645864486844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n export default [\r\n \r\n   {\r\n     path: '/', component: () => import('@/components/Main')\r\n+  },\r\n+  {\r\n+    path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   }\r\n \r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645864984836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,10 @@\n     path: '/', component: () => import('@/components/Main')\r\n   },\r\n   {\r\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n+  },\r\n+  {\r\n+    path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n   }\r\n \r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645865360657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n export default [\r\n \r\n+  // {\r\n+  //   path: '/', component: () => import('@/components/Main')\r\n+  // },\r\n   {\r\n-    path: '/', component: () => import('@/components/Main')\r\n-  },\r\n-  {\r\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   },\r\n   {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n"
+                },
+                {
+                    "date": 1645865409163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n export default [\r\n \r\n-  // {\r\n-  //   path: '/', component: () => import('@/components/Main')\r\n-  // },\r\n   {\r\n+    path: '/', component: () => import('@/components/Main')\r\n+  },\r\n+  {\r\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   },\r\n   {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n"
+                },
+                {
+                    "date": 1645865456124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n export default [\r\n \r\n+  // {\r\n+  //   path: '/', component: () => import('@/components/Main')\r\n+  // },\r\n   {\r\n-    path: '/', component: () => import('@/components/Main')\r\n-  },\r\n-  {\r\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   },\r\n   {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n"
+                },
+                {
+                    "date": 1645865485270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n export default [\r\n \r\n-  // {\r\n-  //   path: '/', component: () => import('@/components/Main')\r\n-  // },\r\n   {\r\n+    path: '/', component: () => import('@/components/Main')\r\n+  },\r\n+  {\r\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   },\r\n   {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n"
+                },
+                {
+                    "date": 1645943134746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+export default [\r\n+\r\n+  {\r\n+    path: '/', component: () => import('@/components/Main')\r\n+  },\r\n+  {\r\n+    path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n+  },\r\n+  {\r\n+    path: '/articlelist', component: () => import('@/components/Main'), name: 'articleList'\r\n+  }\r\n+\r\n+]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645943153770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,21 +6,8 @@\n   {\r\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   },\r\n   {\r\n-    path: '/articlelist', component: () => import('@/components/Main'), name: 'articleList'\r\n-  }\r\n-\r\n-]\n-export default [\r\n-\r\n-  {\r\n-    path: '/', component: () => import('@/components/Main')\r\n-  },\r\n-  {\r\n-    path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n-  },\r\n-  {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n   }\r\n \r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645945180979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,10 @@\n     path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n   },\r\n   {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n+  },\r\n+  {\r\n+    path:\r\n   }\r\n \r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645945267680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n   {\r\n     path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n   },\r\n   {\r\n-    path:\r\n+    path: '/addarticle', component: () => import('@/components/AddFile'), name: 'addarticle'\r\n   }\r\n \r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645945372771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import addArticle from '@/components/AddFile'\r\n+\r\n export default [\r\n \r\n   {\r\n     path: '/', component: () => import('@/components/Main')\r\n"
+                },
+                {
+                    "date": 1645945418993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n-import addArticle from '@/components/AddFile'\r\n-\r\n+import articlelist from '@/components/Main/ArticleList'\r\n+import article from '@/components/Main/Article'\r\n+import main from '@/components/Main'\r\n export default [\r\n \r\n   {\r\n     path: '/', component: () => import('@/components/Main')\r\n"
+                },
+                {
+                    "date": 1645945429502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n   {\r\n     path: '/', component: () => import('@/components/Main')\r\n   },\r\n   {\r\n-    path: '/article', component: () => import('@/components/Main/Article'), name: 'article'\r\n+    path: '/article', component: article, name: 'article'\r\n   },\r\n   {\r\n-    path: '/articlelist', component: () => import('@/components/Main/ArticleList'), name: 'articleList'\r\n+    path: '/articlelist', component: articlelist, name: 'articleList'\r\n   },\r\n   {\r\n     path: '/addarticle', component: () => import('@/components/AddFile'), name: 'addarticle'\r\n   }\r\n"
+                },
+                {
+                    "date": 1645945441172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import main from '@/components/Main'\r\n export default [\r\n \r\n   {\r\n-    path: '/', component: () => import('@/components/Main')\r\n+    path: '/', component: main\r\n   },\r\n   {\r\n     path: '/article', component: article, name: 'article'\r\n   },\r\n"
+                },
+                {
+                    "date": 1645945502406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import articlelist from '@/components/Main/ArticleList'\r\n import article from '@/components/Main/Article'\r\n import main from '@/components/Main'\r\n+import addArticle from '@/components/AddFile'\r\n export default [\r\n \r\n   {\r\n     path: '/', component: main\r\n"
+                },
+                {
+                    "date": 1645945540415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import articlelist from '@/components/Main/ArticleList'\r\n import article from '@/components/Main/Article'\r\n import main from '@/components/Main'\r\n-import addArticle from '@/components/AddFile'\r\n export default [\r\n \r\n   {\r\n     path: '/', component: main\r\n"
+                },
+                {
+                    "date": 1645945600763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import articlelist from '@/components/Main/ArticleList'\r\n-import article from \r\n import main from '@/components/Main'\r\n export default [\r\n \r\n   {\r\n"
+                }
+            ],
+            "date": 1645864401501,
+            "name": "Commit-0",
+            "content": "export default [\r\n  {\r\n    {\r\n    path: '/', component: () =>import '@/components/Main' }\r\n  }\r\n]"
+        }
+    ]
+}

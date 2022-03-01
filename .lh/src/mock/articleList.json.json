@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/mock/articleList.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1645857246912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645857263637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n-{\r\n-  \"code\": 200,\r\n-  \"message\": \"成功\",\r\n-  \"data\": {\r\n-    [\r\n+[\r\n+  {\r\n+    \"code\": 200,\r\n+    \"message\": \"成功\",\r\n+    \"data\": {\r\n+      [\r\n       id: '1',\r\n       categoryId: '1',\r\n       title: '标题',\r\n       createTime: '创建时间',\r\n\\ No newline at end of file\n       category: '分类',\r\n-    ],\r\n+      ],\r\n         ···\r\n-  },\r\n-  \"ok\": true\r\n-}\n+    },\r\n+    \"ok\": true\r\n+  }\r\n+]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645857269787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n       title: '标题',\r\n       createTime: '创建时间',\r\n       category: '分类',\r\n       ],\r\n-        ···\r\n     },\r\n     \"ok\": true\r\n   }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645857326947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n [\r\n   {\r\n     \"code\": 200,\r\n     \"message\": \"成功\",\r\n-    \"data\": {\r\n+    \"data\": [\r\n       [\r\n       id: '1',\r\n       categoryId: '1',\r\n       title: '标题',\r\n       createTime: '创建时间',\r\n       category: '分类',\r\n-      ],\r\n-    },\r\n+      ]\r\n+    ],\r\n     \"ok\": true\r\n   }\r\n ]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645857350681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       id: '1',\r\n       categoryId: '1',\r\n       title: '标题',\r\n       createTime: '创建时间',\r\n-      category: '分类',\r\n+      category: '分类'\r\n       ]\r\n     ],\r\n     \"ok\": true\r\n   }\r\n"
+                },
+                {
+                    "date": 1645857466980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \"message\": \"成功\",\r\n     \"data\": [\r\n       {\r\n         \"id\": \"1\",\r\n-        \"categoryId\": '1',\r\n+        \"categoryId\": '1,\r\n         \"title\": \"标题\",\r\n         \"createTime\": \"创建时间\",\r\n         \"category\": \"分类\"\r\n       ]\r\n"
+                }
+            ],
+            "date": 1645857246912,
+            "name": "Commit-0",
+            "content": "{\r\n  \"code\": 200,\r\n  \"message\": \"成功\",\r\n  \"data\": {\r\n    [\r\n      id: '1',\r\n      categoryId: '1',\r\n      title: '标题',\r\n      createTime: '创建时间',\r\n      category: '分类',\r\n    ],\r\n        ···\r\n  },\r\n  \"ok\": true\r\n}"
+        }
+    ]
+}
