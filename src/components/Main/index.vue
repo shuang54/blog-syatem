@@ -7,7 +7,7 @@
       :id="item.id"
       :title="item.title"
       :createTime="item.createTime"
-      :category="item.category"
+      :categoryName="item.categoryName"
     ></ArticleList>
     <!-- 添加文章 -->
     <!-- <AddFile></AddFile> -->
@@ -37,7 +37,7 @@ export default {
   },
 
   created() {
-    this.$store.dispatch('getArticleList', { page: 0, num: 2 })
+    this.$store.dispatch('getArticleList', { page: 0, num: 10 })
   }
 }
 </script>

@@ -1,8 +1,16 @@
 <template>
   <div id="add-file-container">
     <div class="file-name">
-      <h2>filename</h2>
-      <input class="btn" type="button" value="提交" />
+      <el-select v-model="categoryName" placeholder="请选择文章分类">
+        <el-option
+          v-for="item in category"
+          :key="item.id"
+          :label="item.categoryName"
+          :value="item.id"
+        ></el-option>
+      </el-select>
+      <el-input v-model="title" placeholder="请输入标题"></el-input>
+      <Button type="button" class="btn">提交</Button>
     </div>
     <div class="box">
       <mavon-editor
@@ -17,7 +25,8 @@
 </template>
 
 <script>
-
+import 'element-ui/lib/theme-chalk/index.css';
+import { mapState } from 'vuex';
 export default {
   components: {
     // mavonEditor,//mavon-editor组件
@@ -26,6 +35,9 @@ export default {
     return {
       content: '', // 输入的markdown
       html: '',    // 转成的html
+
+      categoryName: '',
+      title: ''
     }
   },
   methods: {
@@ -52,6 +64,14 @@ export default {
       })
     },
   },
+  computed: {
+    ...mapState({
+      category: state => state.Article.category
+    })
+  },
+  created() {
+    this.$store.dispatch('getCategory')
+  }
 }
 </script>
 
@@ -72,7 +92,7 @@ export default {
     margin-bottom: 10px;
     .btn {
       margin: 10px;
-      width: 80px;
+      width: 156px;
       height: 40px;
       border-radius: 5px;
       line-height: 40px;

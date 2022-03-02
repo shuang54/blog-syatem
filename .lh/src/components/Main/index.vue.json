@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 68,
+            "activePatchIndex": 71,
             "patches": [
                 {
                     "date": 1645535501316,
@@ -280,6 +280,18 @@
                 {
                     "date": 1645944627689,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n <template>\r\n   <div id=\"main-container\">\r\n     <!-- 文章列表 -->\r\n-    <!-- <ArticleList\r\n+    <ArticleList\r\n       v-for=\"item in Alist\"\r\n       :key=\"item.id\"\r\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n       :category=\"item.category\"\r\n-    ></ArticleList>-->\r\n+    ></ArticleList>\r\n     <!-- 添加文章 -->\r\n-    <AddFile></AddFile>\r\n+    <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n     <!-- <Article></Article> -->\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1646221254304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,52 @@\n+<template>\r\n+  <div id=\"main-container\">\r\n+    <!-- 文章列表 -->\r\n+    <ArticleList\r\n+      v-for=\"item in Alist\"\r\n+      :key=\"item.id\"\r\n+      :id=\"item.id\"\r\n+      :title=\"item.title\"\r\n+      :createTime=\"item.createTime\"\r\n+      :category=\"item.category\"\r\n+    ></ArticleList>\r\n+    <!-- 添加文章 -->\r\n+    <!-- <AddFile></AddFile> -->\r\n+    <!-- 文章详情 -->\r\n+    <!-- <Article></Article> -->\r\n+  </div>\r\n+</template>\r\n+\r\n+<script>\r\n+import ArticleList from './ArticleList'\r\n+import AddFile from '../AddFile'\r\n+import Article from '../Main/Article'\r\n+import { mapState } from 'vuex'\r\n+export default {\r\n+  components: {\r\n+    ArticleList,\r\n+    AddFile,\r\n+    Article\r\n+  },\r\n+  computed: {\r\n+    ...mapState({\r\n+      Alist: state => state.Article.articleList\r\n+    })\r\n+  },\r\n+  methods: {\r\n+\r\n+  },\r\n+\r\n+  created() {\r\n+    this.$store.dispatch('getArticleList', { page: 0, num: 2 })\r\n+  }\r\n+}\r\n+</script>\r\n+\r\n+<style scoped lang=\"less\">\r\n+#main-container {\r\n+  margin: 0 auto;\r\n+  height: 100%;\r\n+  color: #3b3b3b;\r\n+  padding: 10px 30px;\r\n+}\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646221289675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n       :key=\"item.id\"\r\n       :id=\"item.id\"\r\n       :title=\"item.title\"\r\n       :createTime=\"item.createTime\"\r\n-      :category=\"item.category\"\r\n+      :categoryName=\"item.categoryName\"\r\n     ></ArticleList>\r\n     <!-- 添加文章 -->\r\n     <!-- <AddFile></AddFile> -->\r\n     <!-- 文章详情 -->\r\n@@ -48,56 +48,5 @@\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n }\r\n-</style>\n-<template>\r\n-  <div id=\"main-container\">\r\n-    <!-- 文章列表 -->\r\n-    <ArticleList\r\n-      v-for=\"item in Alist\"\r\n-      :key=\"item.id\"\r\n-      :title=\"item.title\"\r\n-      :createTime=\"item.createTime\"\r\n-      :category=\"item.category\"\r\n-    ></ArticleList>\r\n-    <!-- 添加文章 -->\r\n-    <!-- <AddFile></AddFile> -->\r\n-    <!-- 文章详情 -->\r\n-    <!-- <Article></Article> -->\r\n-  </div>\r\n-</template>\r\n-\r\n-<script>\r\n-import ArticleList from './ArticleList'\r\n-import AddFile from '../AddFile'\r\n-import Article from '../Main/Article'\r\n-import { mapState } from 'vuex'\r\n-export default {\r\n-  components: {\r\n-    ArticleList,\r\n-    AddFile,\r\n-    Article\r\n-  },\r\n-  computed: {\r\n-    ...mapState({\r\n-      Alist: state => state.Article.articleList\r\n-    })\r\n-  },\r\n-  methods: {\r\n-\r\n-  },\r\n-\r\n-  created() {\r\n-    this.$store.dispatch('getArticleList')\r\n-  }\r\n-}\r\n-</script>\r\n-\r\n-<style scoped lang=\"less\">\r\n-#main-container {\r\n-  margin: 0 auto;\r\n-  height: 100%;\r\n-  color: #3b3b3b;\r\n-  padding: 10px 30px;\r\n-}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646225873040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n   },\r\n \r\n   created() {\r\n-    this.$store.dispatch('getArticleList', { page: 0, num: 2 })\r\n+    this.$store.dispatch('getArticleList', { page: 0, num: 10 })\r\n   }\r\n }\r\n </script>\r\n \r\n"
                 }
             ],
             "date": 1645535501316,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 60,
+            "activePatchIndex": 74,
             "patches": [
                 {
                     "date": 1645537103322,
@@ -248,6 +248,62 @@
                 {
                     "date": 1645864822424,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\" :to=\"{ name: 'art' }\">{{ title }}</router-link>\r\n+      <router-link class=\"title\" :to=\"{ name: 'article' }\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ category }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1646221289618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n <template>\r\n   <div id=\"article-list-container\">\r\n     <div class=\"list\">\r\n-      <router-link class=\"title\" :to=\"{ name: 'article' }\">{{ title }}</router-link>\r\n-      <span class=\"classification\">{{ category }}</span>\r\n+      <router-link class=\"title\" :to=\"{ name: 'article', params: { 'id': id } }\">{{ title }}</router-link>\r\n+      <span class=\"classification\">{{ categoryName }}</span>\r\n     </div>\r\n     <time class=\"time\">{{ createTime }}</time>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n export default {\r\n-  props: ['title', 'createTime', 'category'],\r\n+  props: ['title', 'createTime', 'categoryName', 'id'],\r\n   data() {\r\n     return {\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1646221341249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n #article-list-container {\r\n   margin: 0 auto;\r\n   position: relative;\r\n   padding: 10px 10px;\r\n-  width: 30%;\r\n+  width: 50%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n   .list {\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1646221369589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,12 @@\n #article-list-container {\r\n   margin: 0 auto;\r\n   position: relative;\r\n   padding: 10px 10px;\r\n-  width: 50%;\r\n+  width: 40%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n+  font-size: 20rem;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1646221374774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   padding: 10px 10px;\r\n   width: 40%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n-  font-size: 20rem;\r\n+  font-size: 1rem;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1646221389328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n   padding: 10px 10px;\r\n   width: 40%;\r\n   margin-top: 10px;\r\n   border-bottom: 1px solid #ccc;\r\n-  font-size: 1rem;\r\n   .list {\r\n     width: 100%;\r\n     height: 100%;\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1646221412132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,11 @@\n     justify-content: space-between;\r\n \r\n     text-align: center;\r\n     line-height: 50px;\r\n+    .title {\r\n+      font-size: 2rem;\r\n+    }\r\n     .classification {\r\n       text-align: center;\r\n       line-height: 50px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1646221428022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     }\r\n     .classification {\r\n       text-align: center;\r\n       line-height: 50px;\r\n+      color: #ccc;\r\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1646221435613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     }\r\n     .classification {\r\n       text-align: center;\r\n       line-height: 50px;\r\n-      color: #ccc;\r\n+      color: #cca;\r\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1646221444234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     }\r\n     .classification {\r\n       text-align: center;\r\n       line-height: 50px;\r\n-      color: #cca;\r\n+      color: #cci;\r\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1646221459153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     }\r\n     .classification {\r\n       text-align: center;\r\n       line-height: 50px;\r\n-      color: #cci;\r\n+      color: darkorange;\r\n     }\r\n   }\r\n   .time {\r\n     position: absolute;\r\n"
+                },
+                {
+                    "date": 1646221568931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,13 @@\n   props: ['title', 'createTime', 'categoryName', 'id'],\r\n   data() {\r\n     return {\r\n     }\r\n+  },\r\n+  computed: {\r\n+    cTime() {\r\n+      return this.createTime\r\n+    }\r\n   }\r\n \r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1646225584881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"list\">\r\n       <router-link class=\"title\" :to=\"{ name: 'article', params: { 'id': id } }\">{{ title }}</router-link>\r\n       <span class=\"classification\">{{ categoryName }}</span>\r\n     </div>\r\n-    <time class=\"time\">{{ createTime }}</time>\r\n+    <time class=\"time\">{{ cTime }}</time>\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime\r\n+      return this.createTime.\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1646225600928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime.\r\n+      return this.createTime.substring(0, 9)\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1646225606806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime.substring(0, 9)\r\n+      return this.createTime.substring(0, 10)\r\n     }\r\n   }\r\n \r\n }\r\n"
                 }
             ],
             "date": 1645537103322,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 68,
+            "activePatchIndex": 97,
             "patches": [
                 {
                     "date": 1645617001356,
@@ -280,6 +280,122 @@
                 {
                     "date": 1645944898877,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,14 +16,12 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mavonEditor } from 'mavon-editor'\r\n-import 'mavon-editor/dist/css/index.css'\r\n \r\n export default {\r\n   components: {\r\n-    mavonEditor,//mavon-editor组件\r\n+    // mavonEditor,//mavon-editor组件\r\n   },\r\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n"
+                },
+                {
+                    "date": 1646226135231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n-      <h2>filename</h2>\r\n+      <h2>分类</h2>\r\n       <input class=\"btn\" type=\"button\" value=\"提交\" />\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646226342266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n+      <input class=\"btn\" type=\"button\" value=\"文件名\" />\r\n       <input class=\"btn\" type=\"button\" value=\"提交\" />\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646226354856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n-      <input class=\"btn\" type=\"button\" value=\"文件名\" />\r\n+      <h2>文件名</h2>\r\n       <input class=\"btn\" type=\"button\" value=\"提交\" />\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646226964479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n       <h2>文件名</h2>\r\n-      <input class=\"btn\" type=\"button\" value=\"提交\" />\r\n+      <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n         v-model=\"content\"\r\n"
+                },
+                {
+                    "date": 1646226981777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-\r\n+import \r\n export default {\r\n   components: {\r\n     // mavonEditor,//mavon-editor组件\r\n   },\r\n"
+                },
+                {
+                    "date": 1646226999882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import \r\n+import 'element-ui/lib/theme-chalk/index.css';\r\n export default {\r\n   components: {\r\n     // mavonEditor,//mavon-editor组件\r\n   },\r\n"
+                },
+                {
+                    "date": 1646227079665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n import 'element-ui/lib/theme-chalk/index.css';\r\n export default {\r\n   components: {\r\n     // mavonEditor,//mavon-editor组件\r\n+    Button,\r\n   },\r\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n"
+                },
+                {
+                    "date": 1646227154993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n import 'element-ui/lib/theme-chalk/index.css';\r\n export default {\r\n   components: {\r\n     // mavonEditor,//mavon-editor组件\r\n-    Button,\r\n   },\r\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n"
+                },
+                {
+                    "date": 1646227300853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n       <h2>文件名</h2>\r\n-      <Button type=\"button\" class=\"btn\">提交</Button>\r\n+      <el-button type=\"button\" class=\"btn\">提交</el-button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n         v-model=\"content\"\r\n"
+                },
+                {
+                    "date": 1646227311900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n       <h2>文件名</h2>\r\n-      <el-button type=\"button\" class=\"btn\">提交</el-button>\r\n+      <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n         v-model=\"content\"\r\n"
+                },
+                {
+                    "date": 1646227362556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n       <h2>文件名</h2>\r\n+      <el-input v-model=\"categoryName\" placeholder=\"标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646227368013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n       <h2>文件名</h2>\r\n-      <el-input v-model=\"categoryName\" placeholder=\"标题\"></el-input>\r\n+      <el-input v-model=\"title\" placeholder=\"标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646227375708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n       <h2>文件名</h2>\r\n-      <el-input v-model=\"title\" placeholder=\"标题\"></el-input>\r\n+      <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646227410399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <h2>分类</h2>\r\n-      <h2>文件名</h2>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n"
+                },
+                {
+                    "date": 1646227562385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n-      <h2>分类</h2>\r\n+      <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n+        <el-option :label :value></el-option>\r\n+      </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n"
+                },
+                {
+                    "date": 1646227631820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n-        <el-option :label :value></el-option>\r\n+        <el-option :label=\"随笔\" :value=\"1\"></el-option>\r\n+        <el-option :label=\"随笔2\" :value=\"2\"></el-option>\r\n       </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1646227700627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,25 @@\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n+      options: [{\r\n+        value: '选项1',\r\n+        label: '黄金糕'\r\n+      }, {\r\n+        value: '选项2',\r\n+        label: '双皮奶'\r\n+      }, {\r\n+        value: '选项3',\r\n+        label: '蚵仔煎'\r\n+      }, {\r\n+        value: '选项4',\r\n+        label: '龙须面'\r\n+      }, {\r\n+        value: '选项5',\r\n+        label: '北京烤鸭'\r\n+      }],\r\n+      value: ''\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n"
+                },
+                {
+                    "date": 1646227709770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,14 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n-        <el-option :label=\"随笔\" :value=\"1\"></el-option>\r\n-        <el-option :label=\"随笔2\" :value=\"2\"></el-option>\r\n+        <el-option\r\n+          v-for=\"item in options\"\r\n+          :key=\"item.value\"\r\n+          :label=\"item.label\"\r\n+          :value=\"item.value\"\r\n+        ></el-option>\r\n       </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1646227715903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n       }, {\r\n         value: '选项5',\r\n         label: '北京烤鸭'\r\n       }],\r\n-      value: ''\r\n+      categoryName: ''\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n"
+                },
+                {
+                    "date": 1646227776210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n         value: '选项5',\r\n         label: '北京烤鸭'\r\n       }],\r\n       categoryName: ''\r\n+      title: ''\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n"
+                },
+                {
+                    "date": 1646227859140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n+      <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n+\r\n       <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n         <el-option\r\n           v-for=\"item in options\"\r\n           :key=\"item.value\"\r\n           :label=\"item.label\"\r\n           :value=\"item.value\"\r\n         ></el-option>\r\n       </el-select>\r\n-      <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n@@ -49,9 +50,9 @@\n       }, {\r\n         value: '选项5',\r\n         label: '北京烤鸭'\r\n       }],\r\n-      categoryName: ''\r\n+      categoryName: '',\r\n       title: ''\r\n     }\r\n   },\r\n   methods: {\r\n"
+                },
+                {
+                    "date": 1646227871203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,16 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n-      <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n-\r\n       <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n         <el-option\r\n           v-for=\"item in options\"\r\n           :key=\"item.value\"\r\n           :label=\"item.label\"\r\n           :value=\"item.value\"\r\n         ></el-option>\r\n       </el-select>\r\n+      <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n"
+                },
+                {
+                    "date": 1646227895766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,9 +97,9 @@\n     line-height: 60px;\r\n     margin-bottom: 10px;\r\n     .btn {\r\n       margin: 10px;\r\n-      width: 80px;\r\n+      width: 100px;\r\n       height: 40px;\r\n       border-radius: 5px;\r\n       line-height: 40px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1646227922067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,9 +97,9 @@\n     line-height: 60px;\r\n     margin-bottom: 10px;\r\n     .btn {\r\n       margin: 10px;\r\n-      width: 100px;\r\n+      width: 156px;\r\n       height: 40px;\r\n       border-radius: 5px;\r\n       line-height: 40px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1646229091200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,11 @@\n \r\n       })\r\n     },\r\n   },\r\n+  created() {\r\n+\r\n+  }\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1646229357606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n       })\r\n     },\r\n   },\r\n   created() {\r\n-\r\n+    this.categoryList\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1646229430071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n       })\r\n     },\r\n   },\r\n   created() {\r\n-    this.categoryList\r\n+    this.category = this.$store.dispatch('getCategory')\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1646229549254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n </template>\r\n \r\n <script>\r\n import 'element-ui/lib/theme-chalk/index.css';\r\n+import { mapState } from 'vuex';\r\n export default {\r\n   components: {\r\n     // mavonEditor,//mavon-editor组件\r\n   },\r\n@@ -77,10 +78,15 @@\n \r\n       })\r\n     },\r\n   },\r\n+  computed: {\r\n+    ...mapState({\r\n+      category: state => state.Article.category\r\n+    })\r\n+  },\r\n   created() {\r\n-    this.category = this.$store.dispatch('getCategory')\r\n+    this.$store.dispatch('getCategory')\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1646229590219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,12 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n         <el-option\r\n-          v-for=\"item in options\"\r\n-          :key=\"item.value\"\r\n-          :label=\"item.label\"\r\n-          :value=\"item.value\"\r\n+          v-for=\"item in category\"\r\n+          :key=\"item.id\"\r\n+          :label=\"item.categoryName\"\r\n+          :value=\"item.id\"\r\n         ></el-option>\r\n       </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n@@ -34,24 +34,9 @@\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n-      options: [{\r\n-        value: '选项1',\r\n-        label: '黄金糕'\r\n-      }, {\r\n-        value: '选项2',\r\n-        label: '双皮奶'\r\n-      }, {\r\n-        value: '选项3',\r\n-        label: '蚵仔煎'\r\n-      }, {\r\n-        value: '选项4',\r\n-        label: '龙须面'\r\n-      }, {\r\n-        value: '选项5',\r\n-        label: '北京烤鸭'\r\n-      }],\r\n+\r\n       categoryName: '',\r\n       title: ''\r\n     }\r\n   },\r\n"
                 }
             ],
             "date": 1645617001356,

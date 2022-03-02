@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1645856506489,
@@ -28,6 +28,14 @@
                 {
                     "date": 1645861130866,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-import requests from \"./request\";\r\n+import requests from \"./requests\";\r\n \r\n export const reqArticleList = () => requests({ url: \"/article/articlelist\", method: 'get' })\r\n"
+                },
+                {
+                    "date": 1646229091236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+import requests from \"./requests\";\r\n+\r\n+export const reqArticleList = (data) => requests({ url: `/article/articlelist?page=${data.page}&num=${data.num}`, method: 'get' })\r\n+export const reqArticle = (id) => requests({ url: `/article/details/${id}`, method: 'get' })\r\n+export const reqAddArticle = (data) => requests({ url: '/article/addarticle', method: 'post', params: data })\r\n+export const reqUpdateArticle = (data) => requests({ url: `/article/updatearticle?id=${data.id}&title=${data.title}&categoryId=${data.categoryId}&markdown=${data.markdown}`, method: 'put' })\r\n+export const reqCategory = () => ({ url: '/article/category', method: 'get' })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646229648674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,5 @@\n export const reqArticleList = (data) => requests({ url: `/article/articlelist?page=${data.page}&num=${data.num}`, method: 'get' })\r\n export const reqArticle = (id) => requests({ url: `/article/details/${id}`, method: 'get' })\r\n export const reqAddArticle = (data) => requests({ url: '/article/addarticle', method: 'post', params: data })\r\n export const reqUpdateArticle = (data) => requests({ url: `/article/updatearticle?id=${data.id}&title=${data.title}&categoryId=${data.categoryId}&markdown=${data.markdown}`, method: 'put' })\r\n-export const reqCategory = () => ({ url: '/article/category', method: 'get' })\n-import requests from \"./requests\";\r\n-\r\n-export const reqArticleList = () => requests({ url: \"/article/articlelist\", method: 'get' })\n\\ No newline at end of file\n+export const reqCategory = () => requests({ url: '/article/category', method: 'get' })\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1645856506489,

@@ -2,17 +2,22 @@
   <div id="article-list-container">
     <div class="list">
       <router-link class="title" :to="{ name: 'article', params: { 'id': id } }">{{ title }}</router-link>
-      <span class="classification">{{ category }}</span>
+      <span class="classification">{{ categoryName }}</span>
     </div>
-    <time class="time">{{ createTime }}</time>
+    <time class="time">{{ cTime }}</time>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['title', 'createTime', 'category', 'id'],
+  props: ['title', 'createTime', 'categoryName', 'id'],
   data() {
     return {
+    }
+  },
+  computed: {
+    cTime() {
+      return this.createTime.substring(0, 10)
     }
   }
 
@@ -24,7 +29,7 @@ export default {
   margin: 0 auto;
   position: relative;
   padding: 10px 10px;
-  width: 30%;
+  width: 40%;
   margin-top: 10px;
   border-bottom: 1px solid #ccc;
   .list {
@@ -36,9 +41,13 @@ export default {
 
     text-align: center;
     line-height: 50px;
+    .title {
+      font-size: 2rem;
+    }
     .classification {
       text-align: center;
       line-height: 50px;
+      color: darkorange;
     }
   }
   .time {

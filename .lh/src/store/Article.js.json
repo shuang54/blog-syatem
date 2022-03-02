@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1645860327507,
@@ -92,6 +92,42 @@
                 {
                     "date": 1645862118918,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n const actions = {\r\n   async getArticleList({ commit }) {\r\n     let result = await reqArticleList()\r\n     if (result.code == 200) {\r\n-      return commit('GETaRTICLElIST', 'result.data')\r\n+      return commit('GETaRTICLElIST', result.data)\r\n     }\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1646229136708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,36 @@\n-import { reqArticleList } from \"@/API/index\"\r\n-const state = {\r\n-  articleList: [],\r\n-}\r\n-const getters = {\r\n-}\r\n-const mutations = {\r\n-  GETaRTICLElIST(state, data) {\r\n-    state.articleList = data\r\n-  }\r\n-}\r\n+import { reqArticleList, reqUpdateArticle, reqArticle, reqCategory } from \"@/API/index\"\r\n+\r\n const actions = {\r\n-  async getArticleList({ commit }) {\r\n-    let result = await reqArticleList()\r\n+  async getArticleList({ commit }, data) {\r\n+    let result = await reqArticleList(data)\r\n     if (result.code == 200) {\r\n-      return commit('GETaRTICLElIST', result.data)\r\n+      return commit('GETARTICLElIST', result.data)\r\n     }\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n+  },\r\n+  async getArticle({ commit }, id) {\r\n+    let result = await reqArticle(id)\r\n+    if (result.code == 200) {\r\n+      return commit('GETARTICLE', result.data)\r\n+    }\r\n   }\r\n }\r\n+\r\n+const mutations = {\r\n+  GETARTICLElIST(state, data) {\r\n+    state.articleList = data\r\n+  },\r\n+  GETARTICLE(state, data) {\r\n+    state.article = data\r\n+  }\r\n+}\r\n+const state = {\r\n+  articleList: [],\r\n+  article: [],\r\n+}\r\n+const getters = {\r\n+}\r\n export default {\r\n   state,\r\n   getters,\r\n   mutations,\r\n"
+                },
+                {
+                    "date": 1646229152105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n }\r\n const state = {\r\n   articleList: [],\r\n   article: [],\r\n+  category: [],\r\n }\r\n const getters = {\r\n }\r\n export default {\r\n"
+                },
+                {
+                    "date": 1646229298684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,29 @@\n import { reqArticleList, reqUpdateArticle, reqArticle, reqCategory } from \"@/API/index\"\r\n \r\n const actions = {\r\n+  // 获取文章列表\r\n   async getArticleList({ commit }, data) {\r\n     let result = await reqArticleList(data)\r\n     if (result.code == 200) {\r\n       return commit('GETARTICLElIST', result.data)\r\n     }\r\n     return Promise.reject(new Error('获取文章列表失败'))\r\n   },\r\n+  // 获取文章内容\r\n   async getArticle({ commit }, id) {\r\n     let result = await reqArticle(id)\r\n     if (result.code == 200) {\r\n       return commit('GETARTICLE', result.data)\r\n     }\r\n+  },\r\n+  // 获取分类\r\n+  async getCategory({ commit }) {\r\n+    let result = await reqCategory()\r\n+    if (result.code == 200) {\r\n+      return commit('GETCATEGORY', result.data)\r\n+    }\r\n+    return Promise.reject(new Error('获取分类消息失败'))\r\n   }\r\n }\r\n \r\n const mutations = {\r\n"
+                },
+                {
+                    "date": 1646229311600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,11 @@\n   },\r\n   GETARTICLE(state, data) {\r\n     state.article = data\r\n   }\r\n+  GETCATEGORY(state, data) {\r\n+    state.category = data\r\n+  }\r\n }\r\n const state = {\r\n   articleList: [],\r\n   article: [],\r\n"
+                },
+                {
+                    "date": 1646229317425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,12 +31,12 @@\n     state.articleList = data\r\n   },\r\n   GETARTICLE(state, data) {\r\n     state.article = data\r\n-  }\r\n+  },\r\n   GETCATEGORY(state, data) {\r\n     state.category = data\r\n-  }\r\n+  },\r\n }\r\n const state = {\r\n   articleList: [],\r\n   article: [],\r\n"
+                },
+                {
+                    "date": 1646229357472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,15 +33,15 @@\n   GETARTICLE(state, data) {\r\n     state.article = data\r\n   },\r\n   GETCATEGORY(state, data) {\r\n-    state.category = data\r\n+    state.categoryList = data\r\n   },\r\n }\r\n const state = {\r\n   articleList: [],\r\n   article: [],\r\n-  category: [],\r\n+  categoryList: [],\r\n }\r\n const getters = {\r\n }\r\n export default {\r\n"
+                },
+                {
+                    "date": 1646229429976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,15 +33,15 @@\n   GETARTICLE(state, data) {\r\n     state.article = data\r\n   },\r\n   GETCATEGORY(state, data) {\r\n-    state.categoryList = data\r\n+    state.category = data\r\n   },\r\n }\r\n const state = {\r\n   articleList: [],\r\n   article: [],\r\n-  categoryList: [],\r\n+  category: [],\r\n }\r\n const getters = {\r\n }\r\n export default {\r\n"
+                },
+                {
+                    "date": 1646229618286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n   },\r\n   // 获取分类\r\n   async getCategory({ commit }) {\r\n     let result = await reqCategory()\r\n+    console.log(result);\r\n     if (result.code == 200) {\r\n       return commit('GETCATEGORY', result.data)\r\n     }\r\n     return Promise.reject(new Error('获取分类消息失败'))\r\n"
+                },
+                {
+                    "date": 1646229717603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,8 @@\n   },\r\n   // 获取分类\r\n   async getCategory({ commit }) {\r\n     let result = await reqCategory()\r\n-    console.log(result);\r\n     if (result.code == 200) {\r\n       return commit('GETCATEGORY', result.data)\r\n     }\r\n     return Promise.reject(new Error('获取分类消息失败'))\r\n"
                 }
             ],
             "date": 1645860327507,
