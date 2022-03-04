@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 97,
+            "activePatchIndex": 129,
             "patches": [
                 {
                     "date": 1645617001356,
@@ -396,6 +396,134 @@
                 {
                     "date": 1646229590219,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,12 @@\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n       <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n         <el-option\r\n-          v-for=\"item in options\"\r\n-          :key=\"item.value\"\r\n-          :label=\"item.label\"\r\n-          :value=\"item.value\"\r\n+          v-for=\"item in category\"\r\n+          :key=\"item.id\"\r\n+          :label=\"item.categoryName\"\r\n+          :value=\"item.id\"\r\n         ></el-option>\r\n       </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\">提交</Button>\r\n@@ -34,24 +34,9 @@\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n-      options: [{\r\n-        value: '选项1',\r\n-        label: '黄金糕'\r\n-      }, {\r\n-        value: '选项2',\r\n-        label: '双皮奶'\r\n-      }, {\r\n-        value: '选项3',\r\n-        label: '蚵仔煎'\r\n-      }, {\r\n-        value: '选项4',\r\n-        label: '龙须面'\r\n-      }, {\r\n-        value: '选项5',\r\n-        label: '北京烤鸭'\r\n-      }],\r\n+\r\n       categoryName: '',\r\n       title: ''\r\n     }\r\n   },\r\n"
+                },
+                {
+                    "date": 1646304025761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,9 @@\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n \r\n-      categoryName: '',\r\n-      title: ''\r\n+      title: '',//文章名\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n"
+                },
+                {
+                    "date": 1646304086784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"add-file-container\">\r\n     <div class=\"file-name\">\r\n-      <el-select v-model=\"categoryName\" placeholder=\"请选择文章分类\">\r\n+      <el-select v-model=\"categoryId\" placeholder=\"请选择文章分类\">\r\n         <el-option\r\n           v-for=\"item in category\"\r\n           :key=\"item.id\"\r\n           :label=\"item.categoryName\"\r\n@@ -34,9 +34,8 @@\n   data() {\r\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n-\r\n       title: '',//文章名\r\n     }\r\n   },\r\n   methods: {\r\n"
+                },
+                {
+                    "date": 1646304125509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n       title: '',//文章名\r\n+      categoryId\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n"
+                },
+                {
+                    "date": 1646304131221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     return {\r\n       content: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n       title: '',//文章名\r\n-      categoryId\r\n+      categoryId: '',\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n"
+                },
+                {
+                    "date": 1646304179091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n           :value=\"item.id\"\r\n         ></el-option>\r\n       </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n-      <Button type=\"button\" class=\"btn\">提交</Button>\r\n+      <Button type=\"button\" class=\"btn\" @click=\"submit\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n         v-model=\"content\"\r\n"
+                },
+                {
+                    "date": 1646304308743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,13 +9,13 @@\n           :value=\"item.id\"\r\n         ></el-option>\r\n       </el-select>\r\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n-      <Button type=\"button\" class=\"btn\" @click=\"submit\">提交</Button>\r\n+      <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n-        v-model=\"content\"\r\n+        v-model=\"markdown\"\r\n         ref=\"md\"\r\n         @change=\"change\"\r\n         @imgAdd=\"$imgAdd\"\r\n         style=\"min-height: 800px\"\r\n@@ -32,9 +32,9 @@\n     // mavonEditor,//mavon-editor组件\r\n   },\r\n   data() {\r\n     return {\r\n-      content: '', // 输入的markdown\r\n+      markdown: '', // 输入的markdown\r\n       html: '',    // 转成的html\r\n       title: '',//文章名\r\n       categoryId: '',\r\n     }\r\n@@ -61,8 +61,12 @@\n         }\r\n \r\n       })\r\n     },\r\n+    // 添加文章\r\n+    add() {\r\n+      let data = { markdown, title, categoryId }\r\n+    }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n       category: state => state.Article.category\r\n"
+                },
+                {
+                    "date": 1646304317619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,9 @@\n     },\r\n     // 添加文章\r\n     add() {\r\n       let data = { markdown, title, categoryId }\r\n+      console.log(data);\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1646304421709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,10 @@\n     // mavonEditor,//mavon-editor组件\r\n   },\r\n   data() {\r\n     return {\r\n+      html: '',    // 转成的html\r\n       markdown: '', // 输入的markdown\r\n-      html: '',    // 转成的html\r\n       title: '',//文章名\r\n       categoryId: '',\r\n     }\r\n   },\r\n"
+                },
+                {
+                    "date": 1646304591702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,9 @@\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n-      <mavon-editor\r\n-        v-model=\"markdown\"\r\n-        ref=\"md\"\r\n-        @change=\"change\"\r\n-        @imgAdd=\"$imgAdd\"\r\n-        style=\"min-height: 800px\"\r\n-      />\r\n+      <mavon-editor v-model ref=\"md\" @change=\"change\" @imgAdd=\"$imgAdd\" style=\"min-height: 800px\" />\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1646304601207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,15 @@\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n-      <mavon-editor v-model ref=\"md\" @change=\"change\" @imgAdd=\"$imgAdd\" style=\"min-height: 800px\" />\r\n+      <mavon-editor\r\n+        v-model=\"content\"\r\n+        ref=\"md\"\r\n+        @change=\"change\"\r\n+        @imgAdd=\"$imgAdd\"\r\n+        style=\"min-height: 800px\"\r\n+      />\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1646304607282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   },\r\n   data() {\r\n     return {\r\n       html: '',    // 转成的html\r\n-      markdown: '', // 输入的markdown\r\n+      content: '', // 输入的markdown\r\n       title: '',//文章名\r\n       categoryId: '',\r\n     }\r\n   },\r\n@@ -63,9 +63,9 @@\n       })\r\n     },\r\n     // 添加文章\r\n     add() {\r\n-      let data = { markdown, title, categoryId }\r\n+      let data = { content, title, categoryId }\r\n       console.log(data);\r\n     }\r\n   },\r\n   computed: {\r\n"
+                },
+                {
+                    "date": 1646304634351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n-        v-model=\"content\"\r\n+        v-model=\"markdown\"\r\n         ref=\"md\"\r\n         @change=\"change\"\r\n         @imgAdd=\"$imgAdd\"\r\n         style=\"min-height: 800px\"\r\n@@ -33,9 +33,9 @@\n   },\r\n   data() {\r\n     return {\r\n       html: '',    // 转成的html\r\n-      content: '', // 输入的markdown\r\n+      markdown: '', // 输入的markdown\r\n       title: '',//文章名\r\n       categoryId: '',\r\n     }\r\n   },\r\n@@ -63,9 +63,9 @@\n       })\r\n     },\r\n     // 添加文章\r\n     add() {\r\n-      let data = { content, title, categoryId }\r\n+      let data = { markdown, title, categoryId }\r\n       console.log(data);\r\n     }\r\n   },\r\n   computed: {\r\n"
+                },
+                {
+                    "date": 1646304765386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,9 @@\n   methods: {\r\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n+      this.markdown = val\r\n       console.log(this.html)\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n"
+                },
+                {
+                    "date": 1646304786088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,11 @@\n   methods: {\r\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n-      this.markdown = val\r\n+      this.markdown = value\r\n       console.log(this.html)\r\n+      console.log(this.markdown)\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n       let formdata = new FormData();\r\n"
+                },
+                {
+                    "date": 1646304868473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,9 @@\n       })\r\n     },\r\n     // 添加文章\r\n     add() {\r\n+      let { markdown, title, categoryId } = { this}\r\n       let data = { markdown, title, categoryId }\r\n       console.log(data);\r\n     }\r\n   },\r\n"
+                },
+                {
+                    "date": 1646304877141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n       })\r\n     },\r\n     // 添加文章\r\n     add() {\r\n-      let { markdown, title, categoryId } = { this}\r\n+      let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       console.log(data);\r\n     }\r\n   },\r\n"
+                },
+                {
+                    "date": 1646304920545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,8 @@\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n       this.markdown = value\r\n-      console.log(this.html)\r\n-      console.log(this.markdown)\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n       let formdata = new FormData();\r\n"
+                },
+                {
+                    "date": 1646304966574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,9 @@\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n-      <mavon-editor\r\n-        v-model=\"markdown\"\r\n-        ref=\"md\"\r\n-        @change=\"change\"\r\n-        @imgAdd=\"$imgAdd\"\r\n-        style=\"min-height: 800px\"\r\n-      />\r\n+      <mavon-editor ref=\"md\" @change=\"change\" @imgAdd=\"$imgAdd\" style=\"min-height: 800px\" />\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1646305062263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,15 @@\n       <el-input v-model=\"title\" placeholder=\"请输入标题\"></el-input>\r\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n-      <mavon-editor ref=\"md\" @change=\"change\" @imgAdd=\"$imgAdd\" style=\"min-height: 800px\" />\r\n+      <mavon-editor\r\n+        v-model=\"value\"\r\n+        ref=\"md\"\r\n+        @change=\"change\"\r\n+        @imgAdd=\"$imgAdd\"\r\n+        style=\"min-height: 800px\"\r\n+      />\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n@@ -30,15 +36,17 @@\n       html: '',    // 转成的html\r\n       markdown: '', // 输入的markdown\r\n       title: '',//文章名\r\n       categoryId: '',\r\n+      value: ''\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n       this.markdown = value\r\n+      console.log(this.value);\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n       let formdata = new FormData();\r\n"
+                },
+                {
+                    "date": 1646305082814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n-        v-model=\"value\"\r\n+        v-model=\"valuea\"\r\n         ref=\"md\"\r\n         @change=\"change\"\r\n         @imgAdd=\"$imgAdd\"\r\n         style=\"min-height: 800px\"\r\n@@ -36,17 +36,17 @@\n       html: '',    // 转成的html\r\n       markdown: '', // 输入的markdown\r\n       title: '',//文章名\r\n       categoryId: '',\r\n-      value: ''\r\n+      valuea: ''\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n       this.markdown = value\r\n-      console.log(this.value);\r\n+      console.log(this.valuea);\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n       let formdata = new FormData();\r\n"
+                },
+                {
+                    "date": 1646305106640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       <Button type=\"button\" class=\"btn\" @click=\"add\">提交</Button>\r\n     </div>\r\n     <div class=\"box\">\r\n       <mavon-editor\r\n-        v-model=\"valuea\"\r\n+        v-model=\"markdown\"\r\n         ref=\"md\"\r\n         @change=\"change\"\r\n         @imgAdd=\"$imgAdd\"\r\n         style=\"min-height: 800px\"\r\n@@ -36,17 +36,15 @@\n       html: '',    // 转成的html\r\n       markdown: '', // 输入的markdown\r\n       title: '',//文章名\r\n       categoryId: '',\r\n-      valuea: ''\r\n     }\r\n   },\r\n   methods: {\r\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n-      this.markdown = value\r\n-      console.log(this.valuea);\r\n+      console.log(this.markdown);\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n       let formdata = new FormData();\r\n"
+                },
+                {
+                    "date": 1646305137365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,8 @@\n   methods: {\r\n     change(value, render) {\r\n       //实时获取转成html的数据\r\n       this.html = render\r\n-      console.log(this.markdown);\r\n     },\r\n     // 将图片上传到服务器，返回地址替换到md中 \r\n     $imgAdd(pos, $file) {\r\n       let formdata = new FormData();\r\n"
+                },
+                {
+                    "date": 1646305222493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,12 +61,15 @@\n \r\n       })\r\n     },\r\n     // 添加文章\r\n-    add() {\r\n+    async add() {\r\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n-      console.log(data);\r\n+      const result = await this.$store.dispatch('ADDARTICLE', data)\r\n+      if (result == 200) {\r\n+        return\r\n+      }\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1646305384049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('ADDARTICLE', data)\r\n       if (result == 200) {\r\n-        return\r\n+        this.$message\r\n       }\r\n     }\r\n   },\r\n   computed: {\r\n"
+                },
+                {
+                    "date": 1646305403239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,14 @@\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('ADDARTICLE', data)\r\n       if (result == 200) {\r\n-        this.$message\r\n+        this.$message({\r\n+          type: 'success',\r\n+          message: '添加成功!'\r\n+        });\r\n+      } else {\r\n+\r\n       }\r\n     }\r\n   },\r\n   computed: {\r\n"
+                },
+                {
+                    "date": 1646305414005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,12 @@\n           type: 'success',\r\n           message: '添加成功!'\r\n         });\r\n       } else {\r\n-\r\n+        this.$message({\r\n+          type: 'info',\r\n+          message: '已取消删除'\r\n+        });\r\n       }\r\n     }\r\n   },\r\n   computed: {\r\n"
+                },
+                {
+                    "date": 1646305426888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n         });\r\n       } else {\r\n         this.$message({\r\n           type: 'info',\r\n-          message: '已取消删除'\r\n+          message: '添加失败'\r\n         });\r\n       }\r\n     }\r\n   },\r\n"
+                },
+                {
+                    "date": 1646305464289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,9 @@\n     async add() {\r\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('ADDARTICLE', data)\r\n+      console.log(result);\r\n       if (result == 200) {\r\n         this.$message({\r\n           type: 'success',\r\n           message: '添加成功!'\r\n"
+                },
+                {
+                    "date": 1646305488507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,19 +66,19 @@\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('ADDARTICLE', data)\r\n       console.log(result);\r\n-      if (result == 200) {\r\n-        this.$message({\r\n-          type: 'success',\r\n-          message: '添加成功!'\r\n-        });\r\n-      } else {\r\n-        this.$message({\r\n-          type: 'info',\r\n-          message: '添加失败'\r\n-        });\r\n-      }\r\n+      // if (result == 200) {\r\n+      //   this.$message({\r\n+      //     type: 'success',\r\n+      //     message: '添加成功!'\r\n+      //   });\r\n+      // } else {\r\n+      //   this.$message({\r\n+      //     type: 'info',\r\n+      //     message: '添加失败'\r\n+      //   });\r\n+      // }\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1646305512067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n     // 添加文章\r\n     async add() {\r\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n-      const result = await this.$store.dispatch('ADDARTICLE', data)\r\n+      const result = await this.$store.dispatch('AddArticle', data)\r\n       console.log(result);\r\n       // if (result == 200) {\r\n       //   this.$message({\r\n       //     type: 'success',\r\n"
+                },
+                {
+                    "date": 1646305580448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,19 +66,19 @@\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('AddArticle', data)\r\n       console.log(result);\r\n-      // if (result == 200) {\r\n-      //   this.$message({\r\n-      //     type: 'success',\r\n-      //     message: '添加成功!'\r\n-      //   });\r\n-      // } else {\r\n-      //   this.$message({\r\n-      //     type: 'info',\r\n-      //     message: '添加失败'\r\n-      //   });\r\n-      // }\r\n+      if (result == 200) {\r\n+        this.$message({\r\n+          type: 'success',\r\n+          message: '添加成功!'\r\n+        });\r\n+      } else {\r\n+        this.$message({\r\n+          type: 'info',\r\n+          message: '添加失败'\r\n+        });\r\n+      }\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1646305639423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,8 @@\n     async add() {\r\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('AddArticle', data)\r\n-      console.log(result);\r\n       if (result == 200) {\r\n         this.$message({\r\n           type: 'success',\r\n           message: '添加成功!'\r\n"
                 }
             ],
             "date": 1645617001356,

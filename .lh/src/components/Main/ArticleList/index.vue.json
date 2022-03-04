@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 74,
+            "activePatchIndex": 80,
             "patches": [
                 {
                     "date": 1645537103322,
@@ -304,6 +304,30 @@
                 {
                     "date": 1646225606806,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime.substring(0, 9)\r\n+      return this.createTime.substring(0, 10)\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1646400260631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,61 @@\n+<template>\r\n+  <div id=\"article-list-container\">\r\n+    <div class=\"list\">\r\n+      <router-link class=\"title\" :to=\"{ name: 'article', params: { 'id': id } }\">{{ title }}</router-link>\r\n+      <span class=\"classification\">{{ categoryName }}</span>\r\n+    </div>\r\n+    <time class=\"time\">{{ cTime }}</time>\r\n+  </div>\r\n+</template>\r\n+\r\n+<script>\r\n+export default {\r\n+  props: ['title', 'createTime', 'categoryName', 'id'],\r\n+  data() {\r\n+    return {\r\n+    }\r\n+  },\r\n+  computed: {\r\n+    cTime() {\r\n+      return this.createTime.substring(0, 10)\r\n+    }\r\n+  }\r\n+\r\n+}\r\n+</script>\r\n+\r\n+<style scoped lang=\"less\">\r\n+// #article-list-container {\r\n+//   margin: 0 auto;\r\n+//   position: relative;\r\n+//   padding: 10px 10px;\r\n+//   width: 40%;\r\n+//   margin-top: 10px;\r\n+//   border-bottom: 1px solid #ccc;\r\n+//   .list {\r\n+//     width: 100%;\r\n+//     height: 100%;\r\n+//     display: flex;\r\n+//     flex-flow: row nowrap;\r\n+//     justify-content: space-between;\r\n+\r\n+//     text-align: center;\r\n+//     line-height: 50px;\r\n+//     .title {\r\n+//       font-size: 2rem;\r\n+//     }\r\n+//     .classification {\r\n+//       text-align: center;\r\n+//       line-height: 50px;\r\n+//       color: darkorange;\r\n+//     }\r\n+//   }\r\n+//   .time {\r\n+//     position: absolute;\r\n+//     right: 5px;\r\n+//     bottom: 5px;\r\n+//     color: #ccc;\r\n+//     font-size: 0.8em;\r\n+//   }\r\n+// }\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646400266608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,69 +24,8 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n-// #article-list-container {\r\n-//   margin: 0 auto;\r\n-//   position: relative;\r\n-//   padding: 10px 10px;\r\n-//   width: 40%;\r\n-//   margin-top: 10px;\r\n-//   border-bottom: 1px solid #ccc;\r\n-//   .list {\r\n-//     width: 100%;\r\n-//     height: 100%;\r\n-//     display: flex;\r\n-//     flex-flow: row nowrap;\r\n-//     justify-content: space-between;\r\n-\r\n-//     text-align: center;\r\n-//     line-height: 50px;\r\n-//     .title {\r\n-//       font-size: 2rem;\r\n-//     }\r\n-//     .classification {\r\n-//       text-align: center;\r\n-//       line-height: 50px;\r\n-//       color: darkorange;\r\n-//     }\r\n-//   }\r\n-//   .time {\r\n-//     position: absolute;\r\n-//     right: 5px;\r\n-//     bottom: 5px;\r\n-//     color: #ccc;\r\n-//     font-size: 0.8em;\r\n-//   }\r\n-// }\r\n-</style>\n-<template>\r\n-  <div id=\"article-list-container\">\r\n-    <div class=\"list\">\r\n-      <router-link class=\"title\" :to=\"{ name: 'article', params: { 'id': id } }\">{{ title }}</router-link>\r\n-      <span class=\"classification\">{{ categoryName }}</span>\r\n-    </div>\r\n-    <time class=\"time\">{{ cTime }}</time>\r\n-  </div>\r\n-</template>\r\n-\r\n-<script>\r\n-export default {\r\n-  props: ['title', 'createTime', 'categoryName', 'id'],\r\n-  data() {\r\n-    return {\r\n-    }\r\n-  },\r\n-  computed: {\r\n-    cTime() {\r\n-      return this.createTime.substring(0, 10)\r\n-    }\r\n-  }\r\n-\r\n-}\r\n-</script>\r\n-\r\n-<style scoped lang=\"less\">\r\n #article-list-container {\r\n   margin: 0 auto;\r\n   position: relative;\r\n   padding: 10px 10px;\r\n"
+                },
+                {
+                    "date": 1646400711526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-list-container {\r\n+  font-family: \"Helvetica Neue\", Helvetica, \"PingFang SC\", \"Hiragino Sans GB\",\r\n+    \"Microsoft YaHei\", \"微软雅黑\", Arial, sans-serif;\r\n   margin: 0 auto;\r\n   position: relative;\r\n   padding: 10px 10px;\r\n   width: 40%;\r\n"
+                },
+                {
+                    "date": 1646400814743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime.substring(0, 10)\r\n+      return this.createTime.substring(0, 15)\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1646401075835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime.substring(0, 15)\r\n+      return this.createTime.substring(0, 20)\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1646401084722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     }\r\n   },\r\n   computed: {\r\n     cTime() {\r\n-      return this.createTime.substring(0, 20)\r\n+      return this.createTime.substring(0, 10)\r\n     }\r\n   }\r\n \r\n }\r\n"
                 }
             ],
             "date": 1645537103322,

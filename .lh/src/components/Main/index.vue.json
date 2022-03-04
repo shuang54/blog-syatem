@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 71,
+            "activePatchIndex": 105,
             "patches": [
                 {
                     "date": 1645535501316,
@@ -292,6 +292,142 @@
                 {
                     "date": 1646225873040,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n   },\r\n \r\n   created() {\r\n-    this.$store.dispatch('getArticleList', { page: 0, num: 2 })\r\n+    this.$store.dispatch('getArticleList', { page: 0, num: 10 })\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1646401109558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n   },\r\n \r\n   created() {\r\n-    this.$store.dispatch('getArticleList', { page: 0, num: 10 })\r\n+    this.$store.dispatch('getArticleList', { page: 0, num: 15 })\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1646401390207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,12 @@\n \r\n   },\r\n \r\n   created() {\r\n+    //获取数据\r\n     this.$store.dispatch('getArticleList', { page: 0, num: 15 })\r\n+    //监视scroll滚动条\r\n+    window.addEventListener(\"scroll\", this.isRefresh, true);\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1646401427485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,56 @@\n       Alist: state => state.Article.articleList\r\n     })\r\n   },\r\n   methods: {\r\n-\r\n+    //判断滚动条是否到底部，刷新新的数据\r\n+    isRefresh() {\r\n+      //变量scrollTop是滚动条滚动时，距离顶部的距离\r\n+      var scrollTop =\r\n+        document.documentElement.scrollTop || document.body.scrollTop;\r\n+      //变量windowHeight是可视区的高度\r\n+      var windowHeight =\r\n+        document.documentElement.clientHeight || document.body.clientHeight;\r\n+      //变量scrollHeight是滚动条的总高度\r\n+      var scrollHeight =\r\n+        document.documentElement.scrollHeight || document.body.scrollHeight;\r\n+      //滚动条到底部的条件\r\n+      // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      if (\r\n+        scrollTop + windowHeight >= scrollHeight - 200 &&\r\n+        this.isRefreshBool\r\n+      ) {\r\n+        // false防止refresh()加载数据函数多次触发\r\n+        this.isRefreshBool = false;\r\n+        this.refresh();\r\n+      }\r\n+    },\r\n+    //刷新推荐文章\r\n+    refresh() {\r\n+      let that = this;\r\n+      Axios.get(\"/blob/getwebindex\", {\r\n+        params: {\r\n+          p: that.pageNum + 1,\r\n+        },\r\n+        headers: {\r\n+          \"X-Requested-With\": \"XMLHttpRequest\",\r\n+        },\r\n+      })\r\n+        .then((Response) => {\r\n+          if (Response.data.json.code == 200) {\r\n+            that.pageNum = that.pageNum + 1;\r\n+            that.list = [...that.list, ...Response.data.json.blobList];\r\n+          }\r\n+          //refresh()加载数据函数可以触发\r\n+          that.isRefreshBool = true;\r\n+        })\r\n+        .catch((error) => {\r\n+          console.log(error);\r\n+        });\r\n+    },\r\n   },\r\n \r\n+\r\n   created() {\r\n     //获取数据\r\n     this.$store.dispatch('getArticleList', { page: 0, num: 15 })\r\n     //监视scroll滚动条\r\n"
+                },
+                {
+                    "date": 1646401591605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,27 +57,10 @@\n     },\r\n     //刷新推荐文章\r\n     refresh() {\r\n       let that = this;\r\n-      Axios.get(\"/blob/getwebindex\", {\r\n-        params: {\r\n-          p: that.pageNum + 1,\r\n-        },\r\n-        headers: {\r\n-          \"X-Requested-With\": \"XMLHttpRequest\",\r\n-        },\r\n-      })\r\n-        .then((Response) => {\r\n-          if (Response.data.json.code == 200) {\r\n-            that.pageNum = that.pageNum + 1;\r\n-            that.list = [...that.list, ...Response.data.json.blobList];\r\n-          }\r\n-          //refresh()加载数据函数可以触发\r\n-          that.isRefreshBool = true;\r\n-        })\r\n-        .catch((error) => {\r\n-          console.log(error);\r\n-        });\r\n+      let { page, num } = this\r\n+      this.$store.dispatch('getArticleList', { page: page + num, num: num })\r\n     },\r\n   },\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1646401626183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n       //变量scrollHeight是滚动条的总高度\r\n       var scrollHeight =\r\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n-      // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n         scrollTop + windowHeight >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n"
+                },
+                {
+                    "date": 1646401713861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,15 @@\n export default {\r\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n-    Article\r\n+    Article,\r\n   },\r\n+  data() {\r\n+    return {\r\n+      isRefreshBool,\r\n+    }\r\n+  },\r\n   computed: {\r\n     ...mapState({\r\n       Alist: state => state.Article.articleList\r\n     })\r\n@@ -59,8 +64,9 @@\n     refresh() {\r\n       let that = this;\r\n       let { page, num } = this\r\n       this.$store.dispatch('getArticleList', { page: page + num, num: num })\r\n+      this.isRefreshBool = true\r\n     },\r\n   },\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1646401755390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     Article,\r\n   },\r\n   data() {\r\n     return {\r\n-      isRefreshBool,\r\n+      isRefreshBool: true,\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1646401774480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,9 @@\n       }\r\n     },\r\n     //刷新推荐文章\r\n     refresh() {\r\n+      console.log('refresh执行了');\r\n       let that = this;\r\n       let { page, num } = this\r\n       this.$store.dispatch('getArticleList', { page: page + num, num: num })\r\n       this.isRefreshBool = true\r\n"
+                },
+                {
+                    "date": 1646401842757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,10 @@\n   },\r\n   data() {\r\n     return {\r\n       isRefreshBool: true,\r\n+      page: 0,\r\n+      num: 15,\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1646401851485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n \r\n \r\n   created() {\r\n     //获取数据\r\n-    this.$store.dispatch('getArticleList', { page: 0, num: 15 })\r\n+    this.$store.dispatch('getArticleList', { page: this.page, num: this.num })\r\n     //监视scroll滚动条\r\n     window.addEventListener(\"scroll\", this.isRefresh, true);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1646402087096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,10 @@\n     refresh() {\r\n       console.log('refresh执行了');\r\n       let that = this;\r\n       let { page, num } = this\r\n-      this.$store.dispatch('getArticleList', { page: page + num, num: num })\r\n+      page += num\r\n+      this.$store.dispatch('getArticleList', { page: page, num: num })\r\n       this.isRefreshBool = true\r\n     },\r\n   },\r\n \r\n"
+                },
+                {
+                    "date": 1646402167199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n       //变量scrollHeight是滚动条的总高度\r\n       var scrollHeight =\r\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n-      console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n         scrollTop + windowHeight >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n@@ -63,14 +63,14 @@\n       }\r\n     },\r\n     //刷新推荐文章\r\n     refresh() {\r\n-      console.log('refresh执行了');\r\n       let that = this;\r\n       let { page, num } = this\r\n       page += num\r\n-      this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      this.isRefreshBool = true\r\n+      let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n+      console.log(result);\r\n+\r\n     },\r\n   },\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1646402296774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       let that = this;\r\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      console.log(result);\r\n+      result.then\r\n \r\n     },\r\n   },\r\n \r\n"
+                },
+                {
+                    "date": 1646402349361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,11 @@\n       let that = this;\r\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      result.then\r\n+      if (result) {\r\n+        this.isRefreshBool = true\r\n+      }\r\n \r\n     },\r\n   },\r\n \r\n"
+                },
+                {
+                    "date": 1646402462287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,12 +67,10 @@\n       let that = this;\r\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      if (result) {\r\n-        this.isRefreshBool = true\r\n-      }\r\n \r\n+\r\n     },\r\n   },\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1646402581055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,10 +67,10 @@\n       let that = this;\r\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n+      result.then(())\r\n \r\n-\r\n     },\r\n   },\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1646402595145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,11 @@\n       let that = this;\r\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      result.then(())\r\n+      result.then(() => {\r\n+        this.isRefreshBool = true\r\n+      })\r\n \r\n     },\r\n   },\r\n \r\n"
+                },
+                {
+                    "date": 1646402645380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n       result.then(() => {\r\n-        this.isRefreshBool = true\r\n+        // this.isRefreshBool = true\r\n       })\r\n \r\n     },\r\n   },\r\n"
+                },
+                {
+                    "date": 1646402771431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n       //变量scrollHeight是滚动条的总高度\r\n       var scrollHeight =\r\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n-      // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n         scrollTop + windowHeight >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n"
+                },
+                {
+                    "date": 1646402907480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n-        scrollTop + windowHeight >= scrollHeight - 200 &&\r\n+        scrollTop + windowHeight >= scrollHeight - 400 &&\r\n         this.isRefreshBool\r\n       ) {\r\n         // false防止refresh()加载数据函数多次触发\r\n         this.isRefreshBool = false;\r\n"
+                },
+                {
+                    "date": 1646402927948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n-        scrollTop + windowHeight >= scrollHeight - 400 &&\r\n+        scrollTop + windowHeight >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n         // false防止refresh()加载数据函数多次触发\r\n         this.isRefreshBool = false;\r\n"
+                },
+                {
+                    "date": 1646403416334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n-        scrollTop + windowHeight >= scrollHeight - 200 &&\r\n+        scrollTop + windowHeight + 200 >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n         // false防止refresh()加载数据函数多次触发\r\n         this.isRefreshBool = false;\r\n"
+                },
+                {
+                    "date": 1646403453689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n-        scrollTop + windowHeight + 200 >= scrollHeight - 200 &&\r\n+        scrollTop + windowHeight >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n         // false防止refresh()加载数据函数多次触发\r\n         this.isRefreshBool = false;\r\n"
+                },
+                {
+                    "date": 1646403501846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n       if (\r\n         scrollTop + windowHeight >= scrollHeight - 200 &&\r\n         this.isRefreshBool\r\n       ) {\r\n+        console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n         // false防止refresh()加载数据函数多次触发\r\n         this.isRefreshBool = false;\r\n         this.refresh();\r\n       }\r\n"
+                },
+                {
+                    "date": 1646403520913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n       if (\r\n-        scrollTop + windowHeight >= scrollHeight - 200 &&\r\n+        scrollTop + windowHeight >= scrollHeight &&\r\n         this.isRefreshBool\r\n       ) {\r\n         console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n         // false防止refresh()加载数据函数多次触发\r\n"
+                },
+                {
+                    "date": 1646403579335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       let { page, num } = this\r\n       page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n       result.then(() => {\r\n-        // this.isRefreshBool = true\r\n+        this.isRefreshBool = true\r\n       })\r\n \r\n     },\r\n   },\r\n"
+                },
+                {
+                    "date": 1646403610657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n     //刷新推荐文章\r\n     refresh() {\r\n       let that = this;\r\n       let { page, num } = this\r\n-      page += num\r\n+      this.page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n       result.then(() => {\r\n         this.isRefreshBool = true\r\n       })\r\n"
+                },
+                {
+                    "date": 1646403825190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,10 +68,11 @@\n       let that = this;\r\n       let { page, num } = this\r\n       this.page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      result.then(() => {\r\n+      result.then((r) => {\r\n         this.isRefreshBool = true\r\n+        console.log(r);\r\n       })\r\n \r\n     },\r\n   },\r\n"
+                },
+                {
+                    "date": 1646403839636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,11 +68,10 @@\n       let that = this;\r\n       let { page, num } = this\r\n       this.page += num\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      result.then((r) => {\r\n+      result.then(() => {\r\n         this.isRefreshBool = true\r\n-        console.log(r);\r\n       })\r\n \r\n     },\r\n   },\r\n"
+                },
+                {
+                    "date": 1646404713175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,10 @@\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      Alist: state => state.Article.articleList\r\n+      Alist: state => state.Article.articleList,\r\n+      isRefreshBool: state => state.Article.isisRefreshBool\r\n     })\r\n   },\r\n   methods: {\r\n     //判断滚动条是否到底部，刷新新的数据\r\n"
+                },
+                {
+                    "date": 1646404762794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,18 +28,19 @@\n     Article,\r\n   },\r\n   data() {\r\n     return {\r\n-      isRefreshBool: true,\r\n+      // isRefreshBool: true,\r\n       page: 0,\r\n       num: 15,\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n       Alist: state => state.Article.articleList,\r\n       isRefreshBool: state => state.Article.isisRefreshBool\r\n-    })\r\n+    }),\r\n+\r\n   },\r\n   methods: {\r\n     //判断滚动条是否到底部，刷新新的数据\r\n     isRefresh() {\r\n"
+                },
+                {
+                    "date": 1646404785422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n       var scrollHeight =\r\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      console.log(isRefreshBool);\r\n       if (\r\n         scrollTop + windowHeight >= scrollHeight &&\r\n         this.isRefreshBool\r\n       ) {\r\n"
+                },
+                {
+                    "date": 1646404790961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,10 +53,10 @@\n       //变量scrollHeight是滚动条的总高度\r\n       var scrollHeight =\r\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n-      console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n-      console.log(isRefreshBool);\r\n+      // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      console.log(this.isRefreshBool);\r\n       if (\r\n         scrollTop + windowHeight >= scrollHeight &&\r\n         this.isRefreshBool\r\n       ) {\r\n"
+                },
+                {
+                    "date": 1646404808254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n   },\r\n   computed: {\r\n     ...mapState({\r\n       Alist: state => state.Article.articleList,\r\n-      isRefreshBool: state => state.Article.isisRefreshBool\r\n+      isRefreshBool: state => state.Article.isRefreshBool\r\n     }),\r\n \r\n   },\r\n   methods: {\r\n"
                 }
             ],
             "date": 1645535501316,

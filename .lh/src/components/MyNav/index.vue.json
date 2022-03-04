@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 53,
+            "activePatchIndex": 58,
             "patches": [
                 {
                     "date": 1645614431496,
@@ -220,6 +220,26 @@
                 {
                     "date": 1646225848027,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link :to=\"{ path: '/addarticle' }\">添加文章</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1646400033297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,23 +15,23 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  padding: 5px 20px;\r\n-  background-color: pink;\r\n-  nav {\r\n-    vertical-align: middle;\r\n-    img {\r\n-      width: 50px;\r\n-      height: 50px;\r\n-      margin-bottom: 13px;\r\n-    }\r\n-    a {\r\n-      width: 50px;\r\n-      height: 100%;\r\n-      padding: 10px 20px;\r\n-      color: #000;\r\n-      font-size: 1rem;\r\n-    }\r\n-  }\r\n+  // padding: 5px 20px;\r\n+  // background-color: pink;\r\n+  // nav {\r\n+  //   vertical-align: middle;\r\n+  //   img {\r\n+  //     width: 50px;\r\n+  //     height: 50px;\r\n+  //     margin-bottom: 13px;\r\n+  //   }\r\n+  //   a {\r\n+  //     width: 50px;\r\n+  //     height: 100%;\r\n+  //     padding: 10px 20px;\r\n+  //     color: #000;\r\n+  //     font-size: 1rem;\r\n+  //   }\r\n+  // }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646400044510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,23 +15,23 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  // padding: 5px 20px;\r\n-  // background-color: pink;\r\n-  // nav {\r\n-  //   vertical-align: middle;\r\n-  //   img {\r\n-  //     width: 50px;\r\n-  //     height: 50px;\r\n-  //     margin-bottom: 13px;\r\n-  //   }\r\n-  //   a {\r\n-  //     width: 50px;\r\n-  //     height: 100%;\r\n-  //     padding: 10px 20px;\r\n-  //     color: #000;\r\n-  //     font-size: 1rem;\r\n-  //   }\r\n-  // }\r\n+  padding: 5px 20px;\r\n+  background-color: pink;\r\n+  nav {\r\n+    vertical-align: middle;\r\n+    img {\r\n+      width: 50px;\r\n+      height: 50px;\r\n+      margin-bottom: 13px;\r\n+    }\r\n+    a {\r\n+      width: 50px;\r\n+      height: 100%;\r\n+      padding: 10px 20px;\r\n+      color: #000;\r\n+      font-size: 1rem;\r\n+    }\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646400247099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,23 +15,23 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  padding: 5px 20px;\r\n-  background-color: pink;\r\n-  nav {\r\n-    vertical-align: middle;\r\n-    img {\r\n-      width: 50px;\r\n-      height: 50px;\r\n-      margin-bottom: 13px;\r\n-    }\r\n-    a {\r\n-      width: 50px;\r\n-      height: 100%;\r\n-      padding: 10px 20px;\r\n-      color: #000;\r\n-      font-size: 1rem;\r\n-    }\r\n-  }\r\n+  // padding: 5px 20px;\r\n+  // background-color: pink;\r\n+  // nav {\r\n+  //   vertical-align: middle;\r\n+  //   img {\r\n+  //     width: 50px;\r\n+  //     height: 50px;\r\n+  //     margin-bottom: 13px;\r\n+  //   }\r\n+  //   a {\r\n+  //     width: 50px;\r\n+  //     height: 100%;\r\n+  //     padding: 10px 20px;\r\n+  //     color: #000;\r\n+  //     font-size: 1rem;\r\n+  //   }\r\n+  // }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646400260542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,23 +15,23 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  // padding: 5px 20px;\r\n-  // background-color: pink;\r\n-  // nav {\r\n-  //   vertical-align: middle;\r\n-  //   img {\r\n-  //     width: 50px;\r\n-  //     height: 50px;\r\n-  //     margin-bottom: 13px;\r\n-  //   }\r\n-  //   a {\r\n-  //     width: 50px;\r\n-  //     height: 100%;\r\n-  //     padding: 10px 20px;\r\n-  //     color: #000;\r\n-  //     font-size: 1rem;\r\n-  //   }\r\n-  // }\r\n+  padding: 5px 20px;\r\n+  background-color: pink;\r\n+  nav {\r\n+    vertical-align: middle;\r\n+    img {\r\n+      width: 50px;\r\n+      height: 50px;\r\n+      margin-bottom: 13px;\r\n+    }\r\n+    a {\r\n+      width: 50px;\r\n+      height: 100%;\r\n+      padding: 10px 20px;\r\n+      color: #000;\r\n+      font-size: 1rem;\r\n+    }\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1646400736635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   padding: 5px 20px;\r\n-  background-color: pink;\r\n   nav {\r\n     vertical-align: middle;\r\n     img {\r\n       width: 50px;\r\n"
                 }
             ],
             "date": 1645614431496,

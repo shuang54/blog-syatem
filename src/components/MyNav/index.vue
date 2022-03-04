@@ -17,7 +17,6 @@ export default {
 <style scoped lang="less">
 #my-nav-container {
   padding: 5px 20px;
-  background-color: pink;
   nav {
     vertical-align: middle;
     img {

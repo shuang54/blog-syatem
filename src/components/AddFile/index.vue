@@ -1,7 +1,7 @@
 <template>
   <div id="add-file-container">
     <div class="file-name">
-      <el-select v-model="categoryName" placeholder="请选择文章分类">
+      <el-select v-model="categoryId" placeholder="请选择文章分类">
         <el-option
           v-for="item in category"
           :key="item.id"
@@ -10,11 +10,11 @@
         ></el-option>
       </el-select>
       <el-input v-model="title" placeholder="请输入标题"></el-input>
-      <Button type="button" class="btn">提交</Button>
+      <Button type="button" class="btn" @click="add">提交</Button>
     </div>
     <div class="box">
       <mavon-editor
-        v-model="content"
+        v-model="markdown"
         ref="md"
         @change="change"
         @imgAdd="$imgAdd"
@@ -33,18 +33,16 @@ export default {
   },
   data() {
     return {
-      content: '', // 输入的markdown
       html: '',    // 转成的html
-
-      categoryName: '',
-      title: ''
+      markdown: '', // 输入的markdown
+      title: '',//文章名
+      categoryId: '',
     }
   },
   methods: {
     change(value, render) {
       //实时获取转成html的数据
       this.html = render
-      console.log(this.html)
     },
     // 将图片上传到服务器，返回地址替换到md中 
     $imgAdd(pos, $file) {
@@ -63,6 +61,23 @@ export default {
 
       })
     },
+    // 添加文章
+    async add() {
+      let { markdown, title, categoryId } = this
+      let data = { markdown, title, categoryId }
+      const result = await this.$store.dispatch('AddArticle', data)
+      if (result == 200) {
+        this.$message({
+          type: 'success',
+          message: '添加成功!'
+        });
+      } else {
+        this.$message({
+          type: 'info',
+          message: '添加失败'
+        });
+      }
+    }
   },
   computed: {
     ...mapState({

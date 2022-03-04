@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1645856848549,
@@ -12,6 +12,14 @@
                 {
                     "date": 1645856870495,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n   lintOnSave: false,\n   devServer: {\n     proxy: {\n       '/api': {\n-        target: 'http://39.98.123.211',\n-        // target: 'http://localhost'\n+        // target: 'http://39.98.123.211',\n+        target: 'http://localhost'\n       },\n     },\n   },\n })\n"
+                },
+                {
+                    "date": 1646305896801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,27 @@\n   transpileDependencies: true,\n   productionSourceMap: false,\n   lintOnSave: false,\n   devServer: {\n-    proxy: {\n-      '/api': {\n-        // target: 'http://39.98.123.211',\n-        target: 'http://localhost'\n-      },\n-    },\n+    open: true, //是否自动弹出浏览器页面\n+    host: \"localhost\",\n+    port: '8080',\n+    // https: false, //是否使用https协议\n+    // hotOnly: true, //是否开启热更新\n+    //设置代理，解决跨域问题的关键\n+    // proxy: {\n+    //   '^/blog': {\n+    //     target: 'http://127.0.0.1:8000', //API服务器的地址\n+    //     changeOrigin: true,\n+    //     // pathRewrite: {\n+    //     //   '^/api': ''\n+    //     // },\n+    //     // 突破host和origin的限制\n+    //     // headers: {\n+    //     //   referer: 'http://127.0.0.1:8000',\n+    //     //   origin: 'http://127.0.0.1:8000',\n+    //     //   host: '127.0.0.1:8000'\n+    //     // }\n+    //   },\n+    // },\n   },\n })\n"
+                },
+                {
+                    "date": 1646305910589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,21 +9,21 @@\n     port: '8080',\n     // https: false, //是否使用https协议\n     // hotOnly: true, //是否开启热更新\n     //设置代理，解决跨域问题的关键\n-    // proxy: {\n-    //   '^/blog': {\n-    //     target: 'http://127.0.0.1:8000', //API服务器的地址\n-    //     changeOrigin: true,\n-    //     // pathRewrite: {\n-    //     //   '^/api': ''\n-    //     // },\n-    //     // 突破host和origin的限制\n-    //     // headers: {\n-    //     //   referer: 'http://127.0.0.1:8000',\n-    //     //   origin: 'http://127.0.0.1:8000',\n-    //     //   host: '127.0.0.1:8000'\n-    //     // }\n-    //   },\n-    // },\n+    proxy: {\n+      '^/blog': {\n+        target: 'http://127.0.0.1:8000', //API服务器的地址\n+        changeOrigin: true,\n+        // pathRewrite: {\n+        //   '^/api': ''\n+        // },\n+        // 突破host和origin的限制\n+        // headers: {\n+        //   referer: 'http://127.0.0.1:8000',\n+        //   origin: 'http://127.0.0.1:8000',\n+        //   host: '127.0.0.1:8000'\n+        // }\n+      },\n+    },\n   },\n })\n"
                 }
             ],
             "date": 1645856848549,

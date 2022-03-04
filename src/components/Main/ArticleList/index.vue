@@ -26,6 +26,8 @@ export default {
 
 <style scoped lang="less">
 #article-list-container {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   margin: 0 auto;
   position: relative;
   padding: 10px 10px;
