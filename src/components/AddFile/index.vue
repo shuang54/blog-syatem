@@ -71,6 +71,7 @@ export default {
           type: 'success',
           message: '添加成功!'
         });
+        this.$router.push('/')
       } else {
         this.$message({
           type: 'info',
@@ -96,6 +97,9 @@ export default {
   height: 100%;
   margin: 0 auto;
   background-color: white;
+  @media all and(max-width:1000px) {
+    width: 100%;
+  }
   .file-name {
     width: 100%;
     height: 60px;

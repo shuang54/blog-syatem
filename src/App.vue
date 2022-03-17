@@ -5,7 +5,10 @@
         <MyNav></MyNav>
       </el-header>
       <el-main>
-        <router-view></router-view>
+        <keep-alive include="mainvue">
+          <router-view></router-view>
+        </keep-alive>
+        <!-- <MyMain></MyMain> -->
       </el-main>
     </el-container>
   </div>
@@ -39,7 +42,7 @@ export default {
   }
 
   .el-main {
-    background-color: #e9eef3;
+    background-color: honeydew;
     color: #333;
     text-align: center;
   }

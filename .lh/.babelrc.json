@@ -1,0 +1,34 @@
+{
+    "sourceFile": ".babelrc",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1647437090461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1647437128662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n-\"plugins\": [\r\n-  [\r\n-    \"transform-runtime\",\r\n-    {\r\n-      \"helpers\": false,\r\n-      \"polyfill\": false,\r\n-      \"regenerator\": true,\r\n-      \"moduleName\": \"babel-runtime\"\r\n-    }\r\n+{\r\n+  \"plugins\": [\r\n\\ No newline at end of file\n+    [\r\n+      \"transform-runtime\",\r\n+      {\r\n+        \"helpers\": false,\r\n+        \"polyfill\": false,\r\n+        \"regenerator\": true,\r\n+        \"moduleName\": \"babel-runtime\"\r\n+      }\r\n+    ]\r\n   ]\r\n-]\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647437226837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,42 @@\n {\r\n-  \"plugins\": [\r\n+  \"plugins\": []\r\n+}\r\n+{\r\n+  \"presets\": [\r\n     [\r\n-      \"transform-runtime\",\r\n+      \"env\",\r\n       {\r\n-        \"helpers\": false,\r\n-        \"polyfill\": false,\r\n-        \"regenerator\": true,\r\n-        \"moduleName\": \"babel-runtime\"\r\n+        \"modules\": false\r\n       }\r\n-    ]\r\n-  ]\r\n+    ],\r\n+    \"stage-2\"\r\n+  ],\r\n+  // 下面指的是在生成的文件中，不产生注释\r\n+  \"comments\": false,\r\n+  \"plugins\": [\r\n+    \"transform-runtime\",\r\n+    \"syntax-dynamic-import\"\r\n+  ],\r\n+  \"env\": {\r\n+    // test 是提前设置的环境变量，如果没有设置BABEL_ENV则使用NODE_ENV，如果都没有设置默认就是development\r\n+    \"test\": {\r\n+      \"presets\": [\r\n+        \"env\",\r\n+        \"stage-2\"\r\n+      ],\r\n+      // instanbul是一个用来测试转码后代码的工具\r\n+      \"plugins\": [\r\n+        \"istanbul\",\r\n+        [\r\n+          \"transform-runtime\",\r\n+          {\r\n+            \"helpers\": false,\r\n+            \"polyfill\": false,\r\n+            \"regenerator\": true,\r\n+            \"moduleName\": \"babel-runtime\"\r\n+          }\r\n+        ]\r\n+      ]\r\n+    }\r\n+  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647437234605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,5 @@\n {\r\n-  \"plugins\": []\r\n-}\r\n-{\r\n   \"presets\": [\r\n     [\r\n       \"env\",\r\n       {\r\n"
+                },
+                {
+                    "date": 1647437623096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     // test 是提前设置的环境变量，如果没有设置BABEL_ENV则使用NODE_ENV，如果都没有设置默认就是development\r\n     \"test\": {\r\n       \"presets\": [\r\n         \"env\",\r\n-        \"stage-2\",\r\n+        \"stage-2\"\r\n       ],\r\n       // instanbul是一个用来测试转码后代码的工具\r\n       \"plugins\": [\r\n         \"istanbul\",\r\n@@ -38,8 +38,9 @@\n   }\r\n }\r\n // JSON\r\n module.exports = {\r\n-  presets: [],\r\n+  presets: [\r\n+  ],\r\n   plugins: ['@babel/plugin-syntax-dynamic-import'\r\n   ]\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1647437090461,
+            "name": "Commit-0",
+            "content": "\"plugins\": [\r\n  [\r\n    \"transform-runtime\",\r\n    {\r\n      \"helpers\": false,\r\n      \"polyfill\": false,\r\n      \"regenerator\": true,\r\n      \"moduleName\": \"babel-runtime\"\r\n    }\r\n  ]\r\n]"
+        }
+    ]
+}

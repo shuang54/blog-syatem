@@ -12,7 +12,7 @@ module.exports = defineConfig({
     //设置代理，解决跨域问题的关键
     proxy: {
       '^/blog': {
-        target: 'http://127.0.0.1:8000', //API服务器的地址
+        target: 'http://www.foogeoo.ltd:9999', //API服务器的地址
         changeOrigin: true,
         // pathRewrite: {
         //   '^/api': ''

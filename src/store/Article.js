@@ -8,6 +8,7 @@ const actions = {
     let result = await reqArticleList(data)
 
     if (result.code == 200) {
+      state.isRefreshBool = true
       return commit('GETARTICLElIST', result.data)
     }
     return Promise.reject(new Error('获取文章列表失败'))
@@ -54,6 +55,11 @@ const mutations = {
   GETCATEGORY(state, data) {
     state.category = data
   },
+  //更改isRefreshBool
+  CHANGEISREGRESHBOOL(state) {
+    state.isRefreshBool = !state.isRefreshBool
+    console.log(state.isRefreshBool)
+  }
 
 }
 const state = {

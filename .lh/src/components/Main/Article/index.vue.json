@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1645699977225,
@@ -104,6 +104,14 @@
                 {
                     "date": 1645944898924,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n \r\n export default {\r\n   name: 'Article',\r\n   components: {\r\n-    // mavonEditor\r\n   },\r\n   data() {\r\n     return {\r\n       articleData: '# 标题',\r\n"
+                },
+                {
+                    "date": 1646455109364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"box\">\r\n       <div class=\"box-body\">\r\n         <mavon-editor\r\n           class=\"md\"\r\n-          :value=\"articleData\"\r\n+          :value=\"articleData.markdown\"\r\n           :subfield=\"false\"\r\n           :defaultOpen=\"'preview'\"\r\n           :toolbarsFlag=\"false\"\r\n           :editable=\"false\"\r\n@@ -17,23 +17,30 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-\r\n+import { mapState } from \"vuex\"\r\n export default {\r\n   name: 'Article',\r\n-  components: {\r\n+  computed: {\r\n+    ...mapState({\r\n+      articleData: state => state.Article.article\r\n+    })\r\n   },\r\n   data() {\r\n     return {\r\n-      articleData: '# 标题',\r\n     }\r\n+  },\r\n+  created() {\r\n+    this.id = this.$route.params.id\r\n+    this.$store.dispatch('getArticle', this.id)\r\n   }\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n+  width: 50%;\r\n   margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1646455125552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  width: 50%;\r\n+  width: 60%;\r\n   margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
                 }
             ],
             "date": 1645699977225,

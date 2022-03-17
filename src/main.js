@@ -20,5 +20,19 @@ Vue.component('mavonEditor', mavonEditor)
 new Vue({
   router,
   store,
+  data: {
+    timerId: ''
+  },
+  mounted() {
+    window.addEventListener('scroll', this.justifyPos)
+  },
+  methods: {
+    justifyPos() {
+      if (this.timerId) clearTimeout(this.timerId)
+      this.timerId = setTimeout(() => {
+        this.$route.meta.y = window.pageYOffset
+      }, 300)
+    }
+  },
   render: h => h(App)
 }).$mount('#app')

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1645536900715,
@@ -20,6 +20,10 @@
                 {
                     "date": 1645700895291,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,8 @@\n   <link rel=\"icon\" href=\"<%= BASE_URL %>favicon.ico\">\n   <title>\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n-  <style>\n-    body {\n-      width: 100%;\n-      height: 100%;\n-    }\n-  </style>\n </head>\n \n <body>\n   <noscript>\n"
+                },
+                {
+                    "date": 1646437899177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   <meta charset=\"utf-8\">\n   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n   <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n   <link rel=\"icon\" href=\"<%= BASE_URL %>favicon.ico\">\n+  <link rel=\"stylesheet\" href=\"https://unpkg.com/element-ui/lib/theme-chalk/index.css\">\n   <title>\n     <%= htmlWebpackPlugin.options.title %>\n   </title>\n </head>\n"
                 }
             ],
             "date": 1645536900715,

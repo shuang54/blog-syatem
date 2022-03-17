@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 105,
+            "activePatchIndex": 115,
             "patches": [
                 {
                     "date": 1645535501316,
@@ -428,6 +428,46 @@
                 {
                     "date": 1646404808254,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n   },\r\n   computed: {\r\n     ...mapState({\r\n       Alist: state => state.Article.articleList,\r\n-      isRefreshBool: state => state.Article.isisRefreshBool\r\n+      isRefreshBool: state => state.Article.isRefreshBool\r\n     }),\r\n \r\n   },\r\n   methods: {\r\n"
+                },
+                {
+                    "date": 1646438174100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n       if (\r\n         scrollTop + windowHeight >= scrollHeight &&\r\n         this.isRefreshBool\r\n       ) {\r\n-        console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n+        // console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n         // false防止refresh()加载数据函数多次触发\r\n         this.isRefreshBool = false;\r\n         this.refresh();\r\n       }\r\n@@ -69,9 +69,10 @@\n     //刷新推荐文章\r\n     refresh() {\r\n       let that = this;\r\n       let { page, num } = this\r\n-      this.page += num\r\n+      page += num\r\n+      this.page = page\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n       result.then(() => {\r\n         this.isRefreshBool = true\r\n       })\r\n"
+                },
+                {
+                    "date": 1646438312899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n     Article,\r\n+    isRefreshBool: true,\r\n   },\r\n   data() {\r\n     return {\r\n       // isRefreshBool: true,\r\n"
+                },
+                {
+                    "date": 1646438610506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n     Article,\r\n-    isRefreshBool: true,\r\n   },\r\n   data() {\r\n     return {\r\n       // isRefreshBool: true,\r\n@@ -62,9 +61,10 @@\n         this.isRefreshBool\r\n       ) {\r\n         // console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n         // false防止refresh()加载数据函数多次触发\r\n-        this.isRefreshBool = false;\r\n+        // this.$store.Article.isRefreshBool = false;\r\n+        console.log(this.$store.Article.isRefreshBool);\r\n         this.refresh();\r\n       }\r\n     },\r\n     //刷新推荐文章\r\n"
+                },
+                {
+                    "date": 1646438778235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,11 +61,10 @@\n         this.isRefreshBool\r\n       ) {\r\n         // console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n         // false防止refresh()加载数据函数多次触发\r\n-        // this.$store.Article.isRefreshBool = false;\r\n-        console.log(this.$store.Article.isRefreshBool);\r\n-        this.refresh();\r\n+        this.$store.\r\n+          this.refresh();\r\n       }\r\n     },\r\n     //刷新推荐文章\r\n     refresh() {\r\n"
+                },
+                {
+                    "date": 1646438969101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,17 +54,17 @@\n       var scrollHeight =\r\n         document.documentElement.scrollHeight || document.body.scrollHeight;\r\n       //滚动条到底部的条件\r\n       // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n-      console.log(this.isRefreshBool);\r\n+      // console.log(this.isRefreshBool);\r\n       if (\r\n         scrollTop + windowHeight >= scrollHeight &&\r\n         this.isRefreshBool\r\n       ) {\r\n         // console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n         // false防止refresh()加载数据函数多次触发\r\n-        this.$store.\r\n-          this.refresh();\r\n+        this.$store.commit('CHANGEISREGRESHBOOL')\r\n+        this.refresh();\r\n       }\r\n     },\r\n     //刷新推荐文章\r\n     refresh() {\r\n@@ -73,9 +73,9 @@\n       page += num\r\n       this.page = page\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n       result.then(() => {\r\n-        this.isRefreshBool = true\r\n+        this.$store.commit('CHANGEISREGRESHBOOL')\r\n       })\r\n \r\n     },\r\n   },\r\n"
+                },
+                {
+                    "date": 1646439521783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,11 +72,11 @@\n       let { page, num } = this\r\n       page += num\r\n       this.page = page\r\n       let result = this.$store.dispatch('getArticleList', { page: page, num: num })\r\n-      result.then(() => {\r\n-        this.$store.commit('CHANGEISREGRESHBOOL')\r\n-      })\r\n+      // result.then(() => {\r\n+      //   this.$store.commit('CHANGEISREGRESHBOOL')\r\n+      // })\r\n \r\n     },\r\n   },\r\n \r\n"
+                },
+                {
+                    "date": 1646440028751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n import AddFile from '../AddFile'\r\n import Article from '../Main/Article'\r\n import { mapState } from 'vuex'\r\n export default {\r\n+  name: 'main',\r\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n     Article,\r\n"
+                },
+                {
+                    "date": 1646440095281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n import AddFile from '../AddFile'\r\n import Article from '../Main/Article'\r\n import { mapState } from 'vuex'\r\n export default {\r\n-  name: 'main',\r\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n     Article,\r\n"
+                },
+                {
+                    "date": 1646440298775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n import AddFile from '../AddFile'\r\n import Article from '../Main/Article'\r\n import { mapState } from 'vuex'\r\n export default {\r\n+  name:'mainvue',\r\n   components: {\r\n     ArticleList,\r\n     AddFile,\r\n     Article,\r\n"
+                },
+                {
+                    "date": 1646440849152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,9 +87,9 @@\n     this.$store.dispatch('getArticleList', { page: this.page, num: this.num })\r\n     //监视scroll滚动条\r\n     window.addEventListener(\"scroll\", this.isRefresh, true);\r\n   },\r\n-\r\n+  \r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
                 }
             ],
             "date": 1645535501316,

@@ -39,6 +39,7 @@ export default {
 
 <style scoped lang="less">
 #article-container {
+  width: 60%;
   margin: 0 auto;
   height: 100%;
   color: #3b3b3b;

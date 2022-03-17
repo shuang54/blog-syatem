@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1645856848549,
@@ -20,6 +20,10 @@
                 {
                     "date": 1646305910589,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,21 +9,21 @@\n     port: '8080',\n     // https: false, //是否使用https协议\n     // hotOnly: true, //是否开启热更新\n     //设置代理，解决跨域问题的关键\n-    // proxy: {\n-    //   '^/blog': {\n-    //     target: 'http://127.0.0.1:8000', //API服务器的地址\n-    //     changeOrigin: true,\n-    //     // pathRewrite: {\n-    //     //   '^/api': ''\n-    //     // },\n-    //     // 突破host和origin的限制\n-    //     // headers: {\n-    //     //   referer: 'http://127.0.0.1:8000',\n-    //     //   origin: 'http://127.0.0.1:8000',\n-    //     //   host: '127.0.0.1:8000'\n-    //     // }\n-    //   },\n-    // },\n+    proxy: {\n+      '^/blog': {\n+        target: 'http://127.0.0.1:8000', //API服务器的地址\n+        changeOrigin: true,\n+        // pathRewrite: {\n+        //   '^/api': ''\n+        // },\n+        // 突破host和origin的限制\n+        // headers: {\n+        //   referer: 'http://127.0.0.1:8000',\n+        //   origin: 'http://127.0.0.1:8000',\n+        //   host: '127.0.0.1:8000'\n+        // }\n+      },\n+    },\n   },\n })\n"
+                },
+                {
+                    "date": 1647435322315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     // hotOnly: true, //是否开启热更新\n     //设置代理，解决跨域问题的关键\n     proxy: {\n       '^/blog': {\n-        target: 'http://127.0.0.1:8000', //API服务器的地址\n+        target: 'http://www.foogeoo.ltd:9999', //API服务器的地址\n         changeOrigin: true,\n         // pathRewrite: {\n         //   '^/api': ''\n         // },\n"
                 }
             ],
             "date": 1645856848549,

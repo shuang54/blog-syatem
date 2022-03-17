@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 62,
+            "activePatchIndex": 73,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -256,6 +256,50 @@
                 {
                     "date": 1646401046711,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,7 @@\n   .el-main {\n     background-color: #e9eef3;\n     color: #333;\n     text-align: center;\n-    overflow: scroll;\n   }\n }\n </style>\n"
+                },
+                {
+                    "date": 1646439847305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <router-view></router-view>\n+        <keep-alive include>\n+          <router-view></router-view>\n+        </keep-alive>\n       </el-main>\n     </el-container>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1646440028731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive include>\n+        <keep-alive include=\"main\">\n           <router-view></router-view>\n         </keep-alive>\n       </el-main>\n     </el-container>\n"
+                },
+                {
+                    "date": 1646440063473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive include=\"main\">\n+        <keep-alive include>\n           <router-view></router-view>\n         </keep-alive>\n       </el-main>\n     </el-container>\n"
+                },
+                {
+                    "date": 1646440073754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive include>\n+        <keep-alive>\n           <router-view></router-view>\n         </keep-alive>\n       </el-main>\n     </el-container>\n"
+                },
+                {
+                    "date": 1646440298810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive>\n+        <keep-alive incl>\n           <router-view></router-view>\n         </keep-alive>\n       </el-main>\n     </el-container>\n"
+                },
+                {
+                    "date": 1646440309928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive incl>\n+        <keep-alive include=\"mainvue\">\n           <router-view></router-view>\n         </keep-alive>\n       </el-main>\n     </el-container>\n"
+                },
+                {
+                    "date": 1646447050715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,12 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive include=\"mainvue\">\n+        <!-- <keep-alive include=\"mainvue\">\n           <router-view></router-view>\n-        </keep-alive>\n+        </keep-alive>-->\n+        <MyMain></MyMain>\n       </el-main>\n     </el-container>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1646450123461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <!-- <keep-alive include=\"mainvue\">\n+        <keep-alive include=\"mainvue\">\n           <router-view></router-view>\n-        </keep-alive>-->\n-        <MyMain></MyMain>\n+        </keep-alive>\n+        <!-- <MyMain></MyMain> -->\n       </el-main>\n     </el-container>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1646450185052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive include=\"mainvue\">\n+        <keep-alive include=\"['mainvue']\">\n           <router-view></router-view>\n         </keep-alive>\n         <!-- <MyMain></MyMain> -->\n       </el-main>\n"
+                },
+                {
+                    "date": 1646450220640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n       <el-main>\n-        <keep-alive include=\"['mainvue']\">\n+        <keep-alive include=\"mainvue\">\n           <router-view></router-view>\n         </keep-alive>\n         <!-- <MyMain></MyMain> -->\n       </el-main>\n"
+                },
+                {
+                    "date": 1646454884482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     text-align: center;\n   }\n \n   .el-main {\n-    background-color: #e9eef3;\n+    background-color: honeydew;\n     color: #333;\n     text-align: center;\n   }\n }\n"
                 }
             ],
             "date": 1645530111266,

@@ -4,13 +4,15 @@ import routes from '@/router/routes'
 Vue.use(VueRouter)
 
 
+const scrollBehavior = function (to, from, savedPosition) {
+  // console.log(to.meta, to);
+  return to.meta
+}
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  }
+  scrollBehavior,
 })
 
 export default router

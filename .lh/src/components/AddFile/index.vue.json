@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 129,
+            "activePatchIndex": 135,
             "patches": [
                 {
                     "date": 1645617001356,
@@ -524,6 +524,30 @@
                 {
                     "date": 1646305639423,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,8 @@\n     async add() {\r\n       let { markdown, title, categoryId } = this\r\n       let data = { markdown, title, categoryId }\r\n       const result = await this.$store.dispatch('AddArticle', data)\r\n-      console.log(result);\r\n       if (result == 200) {\r\n         this.$message({\r\n           type: 'success',\r\n           message: '添加成功!'\r\n"
+                },
+                {
+                    "date": 1647513499070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,9 @@\n         this.$message({\r\n           type: 'success',\r\n           message: '添加成功!'\r\n         });\r\n+        this.router.push({ name: 'article' })\r\n       } else {\r\n         this.$message({\r\n           type: 'info',\r\n           message: '添加失败'\r\n"
+                },
+                {
+                    "date": 1647513675404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n         this.$message({\r\n           type: 'success',\r\n           message: '添加成功!'\r\n         });\r\n-        this.router.push({ name: 'article' })\r\n+        this.$router.push({ name: 'article' })\r\n       } else {\r\n         this.$message({\r\n           type: 'info',\r\n           message: '添加失败'\r\n"
+                },
+                {
+                    "date": 1647513781901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n         this.$message({\r\n           type: 'success',\r\n           message: '添加成功!'\r\n         });\r\n-        this.$router.push({ name: 'article' })\r\n+        this.$router.push('/')\r\n       } else {\r\n         this.$message({\r\n           type: 'info',\r\n           message: '添加失败'\r\n"
+                },
+                {
+                    "date": 1647525085044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #add-file-container {\r\n-  width: 70%;\r\n+  width: 10%;\r\n   height: 100%;\r\n   margin: 0 auto;\r\n   background-color: white;\r\n   .file-name {\r\n"
+                },
+                {
+                    "date": 1647525105959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #add-file-container {\r\n-  width: 10%;\r\n+  width: 70%;\r\n   height: 100%;\r\n   margin: 0 auto;\r\n   background-color: white;\r\n   .file-name {\r\n"
+                },
+                {
+                    "date": 1647525132441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,8 +96,11 @@\n   width: 70%;\r\n   height: 100%;\r\n   margin: 0 auto;\r\n   background-color: white;\r\n+  @media all and(max-width:1000px) {\r\n+    width: 100%;\r\n+  }\r\n   .file-name {\r\n     width: 100%;\r\n     height: 60px;\r\n     display: flex;\r\n"
                 }
             ],
             "date": 1645617001356,

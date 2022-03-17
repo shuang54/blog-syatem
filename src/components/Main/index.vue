@@ -1,18 +1,7 @@
 <template>
   <div id="main-container">
     <!-- 文章列表 -->
-    <ArticleList
-      v-for="item in Alist"
-      :key="item.id"
-      :id="item.id"
-      :title="item.title"
-      :createTime="item.createTime"
-      :categoryName="item.categoryName"
-    ></ArticleList>
-    <!-- 添加文章 -->
-    <!-- <AddFile></AddFile> -->
-    <!-- 文章详情 -->
-    <!-- <Article></Article> -->
+    <ArticleList v-show="isShow" :articleList="Alist"></ArticleList>
   </div>
 </template>
 
@@ -21,7 +10,9 @@ import ArticleList from './ArticleList'
 import AddFile from '../AddFile'
 import Article from '../Main/Article'
 import { mapState } from 'vuex'
+import { throttle } from 'lodash'
 export default {
+  name: 'mainvue',
   components: {
     ArticleList,
     AddFile,
@@ -39,52 +30,70 @@ export default {
       Alist: state => state.Article.articleList,
       isRefreshBool: state => state.Article.isRefreshBool
     }),
-
+    isShow() {
+      return this.$route.path == '/'
+    },
+    // p() {
+    //   return this.$route.path
+    // }
   },
   methods: {
     //判断滚动条是否到底部，刷新新的数据
-    isRefresh() {
+    isRefresh: throttle(function () {
       //变量scrollTop是滚动条滚动时，距离顶部的距离
-      var scrollTop =
+      let scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop;
       //变量windowHeight是可视区的高度
-      var windowHeight =
+      let windowHeight =
         document.documentElement.clientHeight || document.body.clientHeight;
       //变量scrollHeight是滚动条的总高度
-      var scrollHeight =
+      let scrollHeight =
         document.documentElement.scrollHeight || document.body.scrollHeight;
       //滚动条到底部的条件
       // console.log(scrollTop + windowHeight + "--" + scrollHeight);
-      console.log(this.isRefreshBool);
+      // console.log(this.isRefreshBool);
+      //  scrollTop + windowHeight
+      let totalHeight = scrollTop + windowHeight
+      // this.$route.meta.y = totalHeight
       if (
-        scrollTop + windowHeight >= scrollHeight &&
+        totalHeight >= scrollHeight &&
         this.isRefreshBool
       ) {
-        console.log(scrollTop + windowHeight + "---" + scrollHeight);
+        // console.log(scrollTop + windowHeight + "---" + scrollHeight);
         // false防止refresh()加载数据函数多次触发
-        this.isRefreshBool = false;
+        this.$store.commit('CHANGEISREGRESHBOOL')
         this.refresh();
       }
-    },
+    }, 300),
     //刷新推荐文章
     refresh() {
       let that = this;
       let { page, num } = this
-      this.page += num
+      page += num
+      this.page = page
       let result = this.$store.dispatch('getArticleList', { page: page, num: num })
-      result.then(() => {
-        this.isRefreshBool = true
-      })
+      // result.then(() => {
+      //   this.$store.commit('CHANGEISREGRESHBOOL')
+      // })
 
     },
   },
 
-
+  watch: {
+    // p: function (newVal, oldVal) {
+    //   console.log(newVal, oldVal);
+    //   if (newVal == 'addarticle') { }
+    // }
+  },
   created() {
     //获取数据
     this.$store.dispatch('getArticleList', { page: this.page, num: this.num })
     //监视scroll滚动条
     window.addEventListener("scroll", this.isRefresh, true);
+    // console.log('created');
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.isRefresh)
   }
 }
 </script>
