@@ -27,24 +27,25 @@ export default {
 <style scoped lang="less">
 #app {
   // background-color: #ccffcc;
+  .el-container {
+    .el-header,
+    .el-footer {
+      background-color: #b3c0d1;
+      color: #333;
+      text-align: center;
+    }
 
-  .el-header,
-  .el-footer {
-    background-color: #b3c0d1;
-    color: #333;
-    text-align: center;
-  }
+    .el-aside {
+      background-color: #d3dce6;
+      color: #333;
+      text-align: center;
+    }
 
-  .el-aside {
-    background-color: #d3dce6;
-    color: #333;
-    text-align: center;
-  }
-
-  .el-main {
-    background-color: honeydew;
-    color: #333;
-    text-align: center;
+    .el-main {
+      background-color: honeydew;
+      color: #333;
+      text-align: center;
+    }
   }
 }
 </style>

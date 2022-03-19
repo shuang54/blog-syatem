@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 73,
+            "activePatchIndex": 79,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -300,6 +300,30 @@
                 {
                     "date": 1646454884482,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     text-align: center;\n   }\n \n   .el-main {\n-    background-color: #e9eef3;\n+    background-color: honeydew;\n     color: #333;\n     text-align: center;\n   }\n }\n"
+                },
+                {
+                    "date": 1647698148676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,8 @@\n   .el-main {\n     background-color: honeydew;\n     color: #333;\n     text-align: center;\n+    height: 100%;\n   }\n }\n </style>\n"
+                },
+                {
+                    "date": 1647698218923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,26 +26,26 @@\n </script>\n <style scoped lang=\"less\">\n #app {\n   // background-color: #ccffcc;\n+  .el-container {\n+    .el-header,\n+    .el-footer {\n+      background-color: #b3c0d1;\n+      color: #333;\n+      text-align: center;\n+    }\n \n-  .el-header,\n-  .el-footer {\n-    background-color: #b3c0d1;\n-    color: #333;\n-    text-align: center;\n-  }\n+    .el-aside {\n+      background-color: #d3dce6;\n+      color: #333;\n+      text-align: center;\n+    }\n \n-  .el-aside {\n-    background-color: #d3dce6;\n-    color: #333;\n-    text-align: center;\n+    .el-main {\n+      background-color: honeydew;\n+      color: #333;\n+      text-align: center;\n+    }\n   }\n-\n-  .el-main {\n-    background-color: honeydew;\n-    color: #333;\n-    text-align: center;\n-    height: 100%;\n-  }\n }\n </style>\n"
+                },
+                {
+                    "date": 1647698228499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n <style scoped lang=\"less\">\n #app {\n   // background-color: #ccffcc;\n   .el-container {\n+    height: 100%;\n     .el-header,\n     .el-footer {\n       background-color: #b3c0d1;\n       color: #333;\n"
+                },
+                {
+                    "date": 1647698269184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,8 @@\n <style scoped lang=\"less\">\n #app {\n   // background-color: #ccffcc;\n   .el-container {\n-    height: 100%;\n     .el-header,\n     .el-footer {\n       background-color: #b3c0d1;\n       color: #333;\n"
+                },
+                {
+                    "date": 1647698448012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n+  width: 100%;\n+  height: 100%;\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1647698468583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,8 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n-  width: 100%;\n-  height: 100%;\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n"
                 }
             ],
             "date": 1645530111266,

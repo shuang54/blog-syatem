@@ -9,6 +9,10 @@ const actions = {
 
     if (result.code == 200) {
       state.isRefreshBool = true
+      // 根据page判断此次请求是刷新数据还是加载数据
+      if (data.page == 0) {
+        return commit('GETARTICLElIST2', result.data)
+      }
       return commit('GETARTICLElIST', result.data)
     }
     return Promise.reject(new Error('获取文章列表失败'))
@@ -46,6 +50,16 @@ const mutations = {
       state.isRefreshBool = false
     }
     state.articleList = [...state.articleList, ...data]
+  },
+  GETARTICLElIST2(state, data) {
+    if (data.length == []) {
+      Message({
+        message: '加载失败',
+        type: 'error'
+      }, true)
+      state.isRefreshBool = false
+    }
+    state.articleList = [...data, ...state.articleList]
   },
   // 获取文章内容
   GETARTICLE(state, data) {

@@ -33,9 +33,9 @@ export default {
     isShow() {
       return this.$route.path == '/'
     },
-    // p() {
-    //   return this.$route.path
-    // }
+    p() {
+      return this.$route.path
+    }
   },
   methods: {
     //判断滚动条是否到底部，刷新新的数据
@@ -80,14 +80,15 @@ export default {
   },
 
   watch: {
-    // p: function (newVal, oldVal) {
-    //   console.log(newVal, oldVal);
-    //   if (newVal == 'addarticle') { }
-    // }
+    p: function (newVal, oldVal) {
+      if (oldVal == '/addarticle') {
+        this.$store.dispatch('getArticleList', { page: 0, num: 1 })
+      }
+    }
   },
   created() {
-    //获取数据
     this.$store.dispatch('getArticleList', { page: this.page, num: this.num })
+
     //监视scroll滚动条
     window.addEventListener("scroll", this.isRefresh, true);
     // console.log('created');

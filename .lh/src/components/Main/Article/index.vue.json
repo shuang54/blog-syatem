@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1645699977225,
@@ -112,6 +112,46 @@
                 {
                     "date": 1646455125552,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  width: 50%;\r\n+  width: 60%;\r\n   margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1647697642868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  width: 60%;\r\n+  width: 1000%;\r\n   margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1647697665813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  width: 1000%;\r\n+  width: 100%;\r\n   margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1647697683870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  width: 100%;\r\n+  width: 80%;\r\n   margin: 0 auto;\r\n   height: 100%;\r\n   color: #3b3b3b;\r\n   padding: 10px 30px;\r\n"
+                },
+                {
+                    "date": 1647697898548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,20 @@\n <template>\r\n   <div id=\"article-container\">\r\n-    <div class=\"box\">\r\n-      <div class=\"box-body\">\r\n-        <mavon-editor\r\n-          class=\"md\"\r\n-          :value=\"articleData.markdown\"\r\n-          :subfield=\"false\"\r\n-          :defaultOpen=\"'preview'\"\r\n-          :toolbarsFlag=\"false\"\r\n-          :editable=\"false\"\r\n-          :scrollStyle=\"true\"\r\n-          :ishljs=\"true\"\r\n-        />\r\n-      </div>\r\n-    </div>\r\n+    <!-- <div class=\"box\">\r\n+    <div class=\"box-body\">-->\r\n+    <mavon-editor\r\n+      class=\"md\"\r\n+      :value=\"articleData.markdown\"\r\n+      :subfield=\"false\"\r\n+      :defaultOpen=\"'preview'\"\r\n+      :toolbarsFlag=\"false\"\r\n+      :editable=\"false\"\r\n+      :scrollStyle=\"true\"\r\n+      :ishljs=\"true\"\r\n+    />\r\n+    <!-- </div>\r\n+    </div>-->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n@@ -38,19 +38,19 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  width: 80%;\r\n-  margin: 0 auto;\r\n-  height: 100%;\r\n-  color: #3b3b3b;\r\n-  padding: 10px 30px;\r\n-  .box-body {\r\n-    .md {\r\n-      background-color: white;\r\n+  // width: 80%;\r\n+  // margin: 0 auto;\r\n+  // height: 100%;\r\n+  // color: #3b3b3b;\r\n+  // padding: 10px 30px;\r\n+  // .box-body {\r\n+  //   .md {\r\n+  //     background-color: white;\r\n \r\n-      width: 100%;\r\n-      height: 100%;\r\n-    }\r\n-  }\r\n+  //     width: 100%;\r\n+  //     height: 100%;\r\n+  //   }\r\n+  // }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647697930602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n <template>\r\n   <div id=\"article-container\">\r\n-    <!-- <div class=\"box\">\r\n-    <div class=\"box-body\">-->\r\n     <mavon-editor\r\n       class=\"md\"\r\n       :value=\"articleData.markdown\"\r\n       :subfield=\"false\"\r\n@@ -11,10 +9,8 @@\n       :editable=\"false\"\r\n       :scrollStyle=\"true\"\r\n       :ishljs=\"true\"\r\n     />\r\n-    <!-- </div>\r\n-    </div>-->\r\n   </div>\r\n </template>\r\n \r\n <script>\r\n@@ -38,19 +34,6 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n-  // width: 80%;\r\n-  // margin: 0 auto;\r\n-  // height: 100%;\r\n-  // color: #3b3b3b;\r\n-  // padding: 10px 30px;\r\n-  // .box-body {\r\n-  //   .md {\r\n-  //     background-color: white;\r\n-\r\n-  //     width: 100%;\r\n-  //     height: 100%;\r\n-  //   }\r\n-  // }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647697991319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,10 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n-#article-container {\r\n+@media all and (max-width: 1000px) {\r\n+  #article-container {\r\n+    width: 70%;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647698011257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n-@media all and (max-width: 1000px) {\r\n+@media all and (min-width: 1000px) {\r\n   #article-container {\r\n     width: 70%;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1647698028316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,11 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n+#article-container {\r\n+  margin: 0 auto;\r\n+}\r\n @media all and (min-width: 1000px) {\r\n   #article-container {\r\n     width: 70%;\r\n   }\r\n"
+                },
+                {
+                    "date": 1647698342840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,11 @@\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n   margin: 0 auto;\r\n+  .md {\r\n+    height: 100$;\r\n+  }\r\n }\r\n @media all and (min-width: 1000px) {\r\n   #article-container {\r\n     width: 70%;\r\n"
+                },
+                {
+                    "date": 1647698528438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,10 @@\n <style scoped lang=\"less\">\r\n #article-container {\r\n   margin: 0 auto;\r\n   .md {\r\n-    height: 100$;\r\n+    height: 100%;\r\n+    max-height: 100%;\r\n   }\r\n }\r\n @media all and (min-width: 1000px) {\r\n   #article-container {\r\n"
                 }
             ],
             "date": 1645699977225,
