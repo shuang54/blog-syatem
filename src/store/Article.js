@@ -2,18 +2,27 @@ import { reqArticleList, reqUpdateArticle, reqArticle, reqCategory, reqAddArticl
 import { Message } from "element-ui"
 const actions = {
   // 获取文章列表
-  async getArticleList({ commit }, data) {
-    let num = data.num
-
+  async getArticleList({ commit, state }, data) {
+    data.search = state.search
     let result = await reqArticleList(data)
-
     if (result.code == 200) {
       state.isRefreshBool = true
       // 根据page判断此次请求是刷新数据还是加载数据
-      if (data.page == 0) {
+      if (data.page == 0 && data.search == '') {
         return commit('GETARTICLElIST2', result.data)
       }
+      console.log(result);
       return commit('GETARTICLElIST', result.data)
+    }
+    return Promise.reject(new Error('获取文章列表失败'))
+  },
+  // 通过搜索框获取数据
+  async getArticleListBySearch({ commit, state }, data) {
+    data.search = state.search
+    let result = await reqArticleList(data)
+    if (result.code == 200) {
+      state.isRefreshBool = true
+      return commit('GETARTICLElISTBYSEARCH', result.data)
     }
     return Promise.reject(new Error('获取文章列表失败'))
   },
@@ -49,7 +58,9 @@ const mutations = {
       }, true)
       state.isRefreshBool = false
     }
+
     state.articleList = [...state.articleList, ...data]
+
   },
   GETARTICLElIST2(state, data) {
     if (data.length == []) {
@@ -57,9 +68,23 @@ const mutations = {
         message: '加载失败',
         type: 'error'
       }, true)
-      state.isRefreshBool = false
+    }
+    if (state.articleList.length != []) {
+      let data2 = Array.from(state.articleList);
+      if (data[0].id == data2[0].id) {
+        return;
+      }
     }
     state.articleList = [...data, ...state.articleList]
+  },
+  // 通过搜索框获取数据
+  GETARTICLElISTBYSEARCH(state, data) {
+    if (data.length == []) {
+      state.isRefreshBool = false
+    }
+
+    state.articleList = data
+
   },
   // 获取文章内容
   GETARTICLE(state, data) {
@@ -81,6 +106,7 @@ const state = {
   article: [],
   category: [],
   isRefreshBool: true,
+  search: '',
 }
 const getters = {
 }

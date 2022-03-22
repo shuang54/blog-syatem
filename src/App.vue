@@ -30,19 +30,13 @@ export default {
   .el-container {
     .el-header,
     .el-footer {
-      background-color: #b3c0d1;
-      color: #333;
-      text-align: center;
-    }
-
-    .el-aside {
-      background-color: #d3dce6;
+      background-color: #c7edcc;
       color: #333;
       text-align: center;
     }
 
     .el-main {
-      background-color: honeydew;
+      background-color: #faf9de;
       color: #333;
       text-align: center;
     }

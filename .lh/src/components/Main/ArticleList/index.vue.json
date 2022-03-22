@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 97,
+            "activePatchIndex": 98,
             "patches": [
                 {
                     "date": 1645537103322,
@@ -396,6 +396,10 @@
                 {
                     "date": 1646446798065,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   },\r\n   computed: {\r\n     cTime() { }\r\n       return function (time) {\r\n-\r\n+retu\r\n     }\r\n   }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1647773170470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             </div>\r\n           </div>\r\n         </div>\r\n       </el-col>\r\n-      <el-col :span=\"6\" class=\"v\">\r\n+      <el-col :span=\"6\" class=\"hidden-xs-only\">\r\n         <div class=\"grid-content bg-purple\">\r\n           <div class=\"right\">\r\n             <el-card class=\"box-card\">\r\n               <div slot=\"header\" class=\"clearfix\">\r\n"
                 }
             ],
             "date": 1645537103322,

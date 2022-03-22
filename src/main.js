@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 import '@/assets/css/base.css'
 import { mavonEditor } from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
-import { Button, Input, Select, Option, Message, Container, Main, Header } from 'element-ui';
+// import 'mavon-editor/dist/css/index.css'
+import { Button, Input, Select, Option, Message, Container, Main, Header, Card, Col, Backtop, Row, Icon, Empty, Breadcrumb, BreadcrumbItem, Divider } from 'element-ui';
 Vue.config.productionTip = false
 Vue.use(Button)
 Vue.use(Input)
@@ -14,7 +14,15 @@ Vue.use(Option)
 Vue.use(Container)
 Vue.use(Main)
 Vue.use(Header)
-
+Vue.use(Card)
+Vue.use(Col)
+Vue.use(Backtop)
+Vue.use(Row)
+Vue.use(Icon)
+Vue.use(Empty)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Divider)
 Vue.prototype.$message = Message;
 Vue.component('mavonEditor', mavonEditor)
 new Vue({

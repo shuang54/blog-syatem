@@ -1,7 +1,7 @@
 <template>
   <div id="main-container">
     <!-- 文章列表 -->
-    <ArticleList v-show="isShow" :articleList="Alist"></ArticleList>
+    <ArticleList v-show="isShow" :articleList="Alist" @queryArticleByTitle="queryArticleByTitle"></ArticleList>
   </div>
 </template>
 
@@ -77,6 +77,11 @@ export default {
       // })
 
     },
+    //
+    async queryArticleByTitle() {
+      await this.$store.dispatch('getArticleListBySearch', { page: 0, num: 15 })
+    }
+
   },
 
   watch: {
@@ -92,6 +97,7 @@ export default {
     //监视scroll滚动条
     window.addEventListener("scroll", this.isRefresh, true);
     // console.log('created');
+    this.$on('queryArticleByTitle')
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.isRefresh)

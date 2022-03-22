@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 51,
+            "activePatchIndex": 52,
             "patches": [
                 {
                     "date": 1645860327507,
@@ -212,6 +212,10 @@
                 {
                     "date": 1646404650416,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n const state = {\r\n   articleList: [],\r\n   article: [],\r\n   category: [],\r\n-  isRefreshBool: true;\r\n+  isRefreshBool: truem\r\n }\r\n const getters = {\r\n }\r\n export default {\r\n"
+                },
+                {
+                    "date": 1647871323820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,99 @@\n+import { reqArticleList, reqUpdateArticle, reqArticle, reqCategory, reqAddArticle } from \"@/API/index\"\r\n+import { Message } from \"element-ui\"\r\n+const actions = {\r\n+  // 获取文章列表\r\n+  async getArticleList({ commit }, data) {\r\n+    let num = data.num\r\n+    data.search ? data.search : ''\r\n+    let result = await reqArticleList(data)\r\n+    if (result.code == 200) {\r\n+      state.isRefreshBool = true\r\n+      // 根据page判断此次请求是刷新数据还是加载数据\r\n+      if (data.page == 0) {\r\n+        return commit('GETARTICLElIST2', result.data)\r\n+      }\r\n+      return commit('GETARTICLElIST', result.data)\r\n+    }\r\n+    return Promise.reject(new Error('获取文章列表失败'))\r\n+  },\r\n+  // 获取文章内容\r\n+  async getArticle({ commit }, id) {\r\n+    let result = await reqArticle(id)\r\n+    if (result.code == 200) {\r\n+      return commit('GETARTICLE', result.data)\r\n+    }\r\n+  },\r\n+  // 获取分类\r\n+  async getCategory({ commit }) {\r\n+    let result = await reqCategory()\r\n+    if (result.code == 200) {\r\n+      return commit('GETCATEGORY', result.data)\r\n+    }\r\n+    return Promise.reject(new Error('获取分类消息失败'))\r\n+  },\r\n+  // 添加文章\r\n+  async AddArticle({ commit }, data) {\r\n+    let result = await reqAddArticle(data)\r\n+    return result.code\r\n+  },\r\n+}\r\n+\r\n+const mutations = {\r\n+  // 获取文章列表\r\n+  GETARTICLElIST(state, data) {\r\n+    if (data.length == []) {\r\n+      Message({\r\n+        message: '没有更多的文章了',\r\n+        type: 'error'\r\n+      }, true)\r\n+      state.isRefreshBool = false\r\n+    }\r\n+    state.articleList = [...state.articleList, ...data]\r\n+  },\r\n+  GETARTICLElIST2(state, data) {\r\n+    if (data.length == []) {\r\n+      Message({\r\n+        message: '加载失败',\r\n+        type: 'error'\r\n+      }, true)\r\n+\r\n+    }\r\n+    if (state.articleList.length != []) {\r\n+\r\n+      let data2 = Array.from(state.articleList);\r\n+      if (data[0].id == data2[0].id) {\r\n+        return;\r\n+      }\r\n+    }\r\n+    state.articleList = [...data, ...state.articleList]\r\n+  },\r\n+  // 获取文章内容\r\n+  GETARTICLE(state, data) {\r\n+    state.article = data\r\n+  },\r\n+  // 获取分类\r\n+  GETCATEGORY(state, data) {\r\n+    state.category = data\r\n+  },\r\n+  //更改isRefreshBool\r\n+  CHANGEISREGRESHBOOL(state) {\r\n+    state.isRefreshBool = !state.isRefreshBool\r\n+    console.log(state.isRefreshBool)\r\n+  }\r\n+\r\n+}\r\n+const state = {\r\n+  articleList: [],\r\n+  article: [],\r\n+  category: [],\r\n+  isRefreshBool: true,\r\n+}\r\n+const getters = {\r\n+}\r\n+export default {\r\n+  state,\r\n+  getters,\r\n+  mutations,\r\n+  actions,\r\n+}\r\n+\r\n"
                 }
             ],
             "date": 1645860327507,

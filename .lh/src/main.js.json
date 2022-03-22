@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1645615315356,
@@ -60,6 +60,10 @@
                 {
                     "date": 1645944744652,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import '@/assets/css/base.css'\r\n import { mavonEditor } from 'mavon-editor'\r\n import 'mavon-editor/dist/css/index.css'\r\n Vue.config.productionTip = false\r\n+Vue.\r\n new Vue({\r\n   router,\r\n   store,\r\n   render: h => h(App)\r\n"
+                },
+                {
+                    "date": 1647956468963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import Vue from 'vue'\r\n+import App from './App.vue'\r\n+import router from './router'\r\n+import store from './store'\r\n+import '@/assets/css/base.css'\r\n+import { mavonEditor } from 'mavon-editor'\r\n+// import 'mavon-editor/dist/css/index.css'\r\n+import { Button, Input, Select, Option, Message, Container, Main, Header, Card, Col, Backtop, Row, Icon, Empty, Breadcrumb } from 'element-ui';\r\n+Vue.config.productionTip = false\r\n+Vue.use(Button)\r\n+Vue.use(Input)\r\n+Vue.use(Select)\r\n+Vue.use(Option)\r\n+Vue.use(Container)\r\n+Vue.use(Main)\r\n+Vue.use(Header)\r\n+Vue.use(Card)\r\n+Vue.use(Col)\r\n+Vue.use(Backtop)\r\n+Vue.use(Row)\r\n+Vue.use(Icon)\r\n+Vue.use(Empty)\r\n+Vue.use(Breadcrumb)\r\n+Vue.prototype.$message = Message;\r\n+Vue.component('mavonEditor', mavonEditor)\r\n+new Vue({\r\n+  router,\r\n+  store,\r\n+  data: {\r\n+    timerId: ''\r\n+  },\r\n+  mounted() {\r\n+    window.addEventListener('scroll', this.justifyPos)\r\n+  },\r\n+  methods: {\r\n+    justifyPos() {\r\n+      if (this.timerId) clearTimeout(this.timerId)\r\n+      this.timerId = setTimeout(() => {\r\n+        this.$route.meta.y = window.pageYOffset\r\n+      }, 300)\r\n+    }\r\n+  },\r\n+  render: h => h(App)\r\n+}).$mount('#app')\r\n"
                 }
             ],
             "date": 1645615315356,

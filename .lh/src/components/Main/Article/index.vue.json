@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 45,
             "patches": [
                 {
                     "date": 1645699977225,
@@ -152,6 +152,42 @@
                 {
                     "date": 1647698528438,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,10 @@\n <style scoped lang=\"less\">\r\n #article-container {\r\n   margin: 0 auto;\r\n   .md {\r\n-    height: 100$;\r\n+    height: 100%;\r\n+    max-height: 100%;\r\n   }\r\n }\r\n @media all and (min-width: 1000px) {\r\n   #article-container {\r\n"
+                },
+                {
+                    "date": 1647956428409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,52 @@\n+<template>\r\n+  <div id=\"article-container\">\r\n+    <el-row>\r\n+      <el-col :span=\"24\"></el-col>\r\n+    </el-row>\r\n+    <mavon-editor\r\n+      class=\"md\"\r\n+      :value=\"articleData.markdown\"\r\n+      :subfield=\"false\"\r\n+      :defaultOpen=\"'preview'\"\r\n+      :toolbarsFlag=\"false\"\r\n+      :editable=\"false\"\r\n+      :scrollStyle=\"true\"\r\n+      :ishljs=\"true\"\r\n+    />\r\n+  </div>\r\n+</template>\r\n+\r\n+<script>\r\n+import { mapState } from \"vuex\"\r\n+export default {\r\n+  name: 'Article',\r\n+  computed: {\r\n+    ...mapState({\r\n+      articleData: state => state.Article.article\r\n+    })\r\n+  },\r\n+  data() {\r\n+    return {\r\n+    }\r\n+  },\r\n+  created() {\r\n+    this.id = this.$route.params.id\r\n+    this.$store.dispatch('getArticle', this.id)\r\n+  }\r\n+}\r\n+</script>\r\n+\r\n+<style scoped lang=\"less\">\r\n+#article-container {\r\n+  margin: 0 auto;\r\n+  .md {\r\n+    height: 100%;\r\n+    max-height: 100%;\r\n+  }\r\n+}\r\n+@media all and (min-width: 1000px) {\r\n+  #article-container {\r\n+    width: 70%;\r\n+  }\r\n+}\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647956450433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,15 @@\n <template>\r\n   <div id=\"article-container\">\r\n     <el-row>\r\n-      <el-col :span=\"24\"></el-col>\r\n+      <el-col :span=\"24\">\r\n+        <el-breadcrumb separator-class=\"el-icon-arrow-right\">\r\n+          <el-breadcrumb-item :to=\"{ path: '/' }\">首页</el-breadcrumb-item>\r\n+          <el-breadcrumb-item>活动管理</el-breadcrumb-item>\r\n+          <el-breadcrumb-item>活动列表</el-breadcrumb-item>\r\n+          <el-breadcrumb-item>活动详情</el-breadcrumb-item>\r\n+        </el-breadcrumb>\r\n+      </el-col>\r\n     </el-row>\r\n     <mavon-editor\r\n       class=\"md\"\r\n       :value=\"articleData.markdown\"\r\n@@ -48,54 +55,5 @@\n   #article-container {\r\n     width: 70%;\r\n   }\r\n }\r\n-</style>\n-<template>\r\n-  <div id=\"article-container\">\r\n-    <mavon-editor\r\n-      class=\"md\"\r\n-      :value=\"articleData.markdown\"\r\n-      :subfield=\"false\"\r\n-      :defaultOpen=\"'preview'\"\r\n-      :toolbarsFlag=\"false\"\r\n-      :editable=\"false\"\r\n-      :scrollStyle=\"true\"\r\n-      :ishljs=\"true\"\r\n-    />\r\n-  </div>\r\n-</template>\r\n-\r\n-<script>\r\n-import { mapState } from \"vuex\"\r\n-export default {\r\n-  name: 'Article',\r\n-  computed: {\r\n-    ...mapState({\r\n-      articleData: state => state.Article.article\r\n-    })\r\n-  },\r\n-  data() {\r\n-    return {\r\n-    }\r\n-  },\r\n-  created() {\r\n-    this.id = this.$route.params.id\r\n-    this.$store.dispatch('getArticle', this.id)\r\n-  }\r\n-}\r\n-</script>\r\n-\r\n-<style scoped lang=\"less\">\r\n-#article-container {\r\n-  margin: 0 auto;\r\n-  .md {\r\n-    height: 100%;\r\n-    max-height: 100%;\r\n-  }\r\n-}\r\n-@media all and (min-width: 1000px) {\r\n-  #article-container {\r\n-    width: 70%;\r\n-  }\r\n-}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1647956648473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n           <el-breadcrumb-item>活动列表</el-breadcrumb-item>\r\n           <el-breadcrumb-item>活动详情</el-breadcrumb-item>\r\n         </el-breadcrumb>\r\n       </el-col>\r\n+      <el-col :span=\"24\"></el-col>\r\n     </el-row>\r\n     <mavon-editor\r\n       class=\"md\"\r\n       :value=\"articleData.markdown\"\r\n"
+                },
+                {
+                    "date": 1647956674523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n           <el-breadcrumb-item>活动管理</el-breadcrumb-item>\r\n           <el-breadcrumb-item>活动列表</el-breadcrumb-item>\r\n           <el-breadcrumb-item>活动详情</el-breadcrumb-item>\r\n         </el-breadcrumb>\r\n+        <el-divider></el-divider>\r\n       </el-col>\r\n       <el-col :span=\"24\"></el-col>\r\n     </el-row>\r\n     <mavon-editor\r\n"
+                },
+                {
+                    "date": 1647956796654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n           <el-breadcrumb-item>活动详情</el-breadcrumb-item>\r\n         </el-breadcrumb>\r\n         <el-divider></el-divider>\r\n       </el-col>\r\n-      <el-col :span=\"24\"></el-col>\r\n+      <el-col :span=\"24\" class></el-col>\r\n     </el-row>\r\n     <mavon-editor\r\n       class=\"md\"\r\n       :value=\"articleData.markdown\"\r\n"
+                },
+                {
+                    "date": 1647956835179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n           <el-breadcrumb-item>活动详情</el-breadcrumb-item>\r\n         </el-breadcrumb>\r\n         <el-divider></el-divider>\r\n       </el-col>\r\n-      <el-col :span=\"24\" class></el-col>\r\n+      <el-col :span=\"24\" class=\"page-title\"></el-col>\r\n     </el-row>\r\n     <mavon-editor\r\n       class=\"md\"\r\n       :value=\"articleData.markdown\"\r\n@@ -47,8 +47,11 @@\n \r\n <style scoped lang=\"less\">\r\n #article-container {\r\n   margin: 0 auto;\r\n+  .page-title {\r\n+    background-color: pink;\r\n+  }\r\n   .md {\r\n     height: 100%;\r\n     max-height: 100%;\r\n   }\r\n"
+                },
+                {
+                    "date": 1647956844645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,8 +48,9 @@\n <style scoped lang=\"less\">\r\n #article-container {\r\n   margin: 0 auto;\r\n   .page-title {\r\n+    height: 10px;\r\n     background-color: pink;\r\n   }\r\n   .md {\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1647956853728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n <style scoped lang=\"less\">\r\n #article-container {\r\n   margin: 0 auto;\r\n   .page-title {\r\n-    height: 10px;\r\n+    height: 50px;\r\n     background-color: pink;\r\n   }\r\n   .md {\r\n     height: 100%;\r\n"
+                },
+                {
+                    "date": 1647957027803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     height: 50px;\r\n     background-color: pink;\r\n   }\r\n   .el-divider--horizontal {\r\n-    margin: 15;\r\n+    margin: 1;\r\n   }\r\n   .md {\r\n     height: 100%;\r\n     max-height: 100%;\r\n"
                 }
             ],
             "date": 1645699977225,

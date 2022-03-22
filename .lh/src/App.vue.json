@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 79,
+            "activePatchIndex": 87,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -324,6 +324,38 @@
                 {
                     "date": 1647698468583,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,8 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n-  width: 100%;\n-  height: 100%;\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1647868968018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,51 @@\n+<template>\n+  <div id=\"app\">\n+    <el-container>\n+      <el-header>\n+        <MyNav></MyNav>\n+      </el-header>\n+      <el-main>\n+        <keep-alive include=\"mainvue\">\n+          <router-view></router-view>\n+        </keep-alive>\n+        <!-- <MyMain></MyMain> -->\n+      </el-main>\n+    </el-container>\n+  </div>\n+</template>\n+<script>\n+import MyMain from '@/components/Main/index.vue'\n+import MyNav from '@/components/MyNav'\n+import 'element-ui/lib/theme-chalk/index.css';\n+export default {\n+  components: {\n+    MyMain,\n+    MyNav,\n+  },\n+}\n+</script>\n+<style scoped lang=\"less\">\n+#app {\n+  // background-color: #ccffcc;\n+  .el-container {\n+    .el-header,\n+    .el-footer {\n+      background-color: #b3c0d1;\n+      color: #333;\n+      text-align: center;\n+    }\n+\n+    .el-aside {\n+      background-color: #d3dce6;\n+      color: #333;\n+      text-align: center;\n+    }\n+\n+    .el-main {\n+      background-color: #c7edcc;\n+      color: #333;\n+      text-align: center;\n+    }\n+  }\n+}\n+</style>\n"
+                },
+                {
+                    "date": 1647869014845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,74 +29,17 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #b3c0d1;\n+      background-color: #CCE8C;\n       color: #333;\n       text-align: center;\n     }\n \n-    .el-aside {\n-      background-color: #d3dce6;\n-      color: #333;\n-      text-align: center;\n-    }\n-\n     .el-main {\n       background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n     }\n   }\n }\n </style>\n-<template>\n-  <div id=\"app\">\n-    <el-container>\n-      <el-header>\n-        <MyNav></MyNav>\n-      </el-header>\n-      <el-main>\n-        <keep-alive include=\"mainvue\">\n-          <router-view></router-view>\n-        </keep-alive>\n-        <!-- <MyMain></MyMain> -->\n-      </el-main>\n-    </el-container>\n-  </div>\n-</template>\n-<script>\n-import MyMain from '@/components/Main/index.vue'\n-import MyNav from '@/components/MyNav'\n-import 'element-ui/lib/theme-chalk/index.css';\n-export default {\n-  components: {\n-    MyMain,\n-    MyNav,\n-  },\n-}\n-</script>\n-<style scoped lang=\"less\">\n-#app {\n-  // background-color: #ccffcc;\n-  .el-container {\n-    .el-header,\n-    .el-footer {\n-      background-color: #b3c0d1;\n-      color: #333;\n-      text-align: center;\n-    }\n-\n-    .el-aside {\n-      background-color: #d3dce6;\n-      color: #333;\n-      text-align: center;\n-    }\n-\n-    .el-main {\n-      background-color: honeydew;\n-      color: #333;\n-      text-align: center;\n-    }\n-  }\n-}\n-</style>\n"
+                },
+                {
+                    "date": 1647869026423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #CCE8C;\n+      background-color: #cce8cf;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1647869048668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #cce8cf;\n+      background-color: #dce2f1;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1647869081368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n       text-align: center;\n     }\n \n     .el-main {\n-      background-color: #c7edcc;\n+      background-color: #faf9de;\n       color: #333;\n       text-align: center;\n     }\n   }\n"
+                },
+                {
+                    "date": 1647869251138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #dce2f1;\n+      background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1647869492768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #c7edcc;\n+      background-color: #faf9de;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1647869514266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #faf9de;\n+      background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n     }\n \n"
                 }
             ],
             "date": 1645530111266,
