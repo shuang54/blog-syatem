@@ -8,7 +8,7 @@
               <div class="list">
                 <router-link
                   class="title"
-                  :to="{ name: 'article', params: { 'id': item.id } }"
+                  :to="{ name: 'article', params: { 'id': item.id, 'categoryName': item.categoryName, 'title': item.title } }"
                 >{{ item.title }}</router-link>
                 <span class="classification">{{ item.categoryName }}</span>
               </div>
