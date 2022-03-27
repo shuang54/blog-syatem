@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 63,
+            "activePatchIndex": 64,
             "patches": [
                 {
                     "date": 1645614431496,
@@ -260,6 +260,10 @@
                 {
                     "date": 1647783831739,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :to=\"{ path: '/', params: { isRefresh: 'yes' } }\">首页</router-link>\r\n+      <router-link :to=\"{\r\n+      path: '/'\">首页</router-link>\r\n       <router-link :to=\"{ path: '/addarticle' }\">添加文章</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1648297817184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :to=\"{\r\n-      path: '/'\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/addarticle' }\">添加文章</router-link>\r\n+      <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
                 }
             ],
             "date": 1645614431496,

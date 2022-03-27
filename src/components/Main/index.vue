@@ -1,7 +1,15 @@
 <template>
   <div id="main-container">
     <!-- 文章列表 -->
-    <ArticleList v-show="isShow" :articleList="Alist" @queryArticleByTitle="queryArticleByTitle"></ArticleList>
+    <ArticleList
+      v-show="isShow"
+      :articleList="Alist"
+      @queryArticleByTitle="queryArticleByTitle"
+      @queryArticleByCategoryName="queryArticleByCategoryName"
+      @clearInput="clearInput"
+      @clearCategoryName="clearCategoryName"
+      :categoryName="categoryName"
+    ></ArticleList>
   </div>
 </template>
 
@@ -23,6 +31,7 @@ export default {
       // isRefreshBool: true,
       page: 0,
       num: 15,
+      categoryName: '',
     }
   },
   computed: {
@@ -71,7 +80,7 @@ export default {
       let { page, num } = this
       page += num
       this.page = page
-      let result = this.$store.dispatch('getArticleList', { page: page, num: num })
+      let result = this.$store.dispatch('getArticleList', { page: page, num: num, categoryName: this.categoryName })
       // result.then(() => {
       //   this.$store.commit('CHANGEISREGRESHBOOL')
       // })
@@ -79,9 +88,26 @@ export default {
     },
     //
     async queryArticleByTitle() {
-      await this.$store.dispatch('getArticleListBySearch', { page: 0, num: 15 })
-    }
+      await this.$store.dispatch('getArticleListBySearch', { page: 0, num: 15, categoryName: this.categoryName })
+    },
+    async queryArticleByCategoryName(categoryName) {
+      this.page = 0
+      this.num = 15
+      this.categoryName = categoryName
+      await this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
+    },
+    async clearInput() {
+      this.page = 0
+      this.num = 15
+      await this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
 
+    },
+    async clearCategoryName() {
+      this.page = 0
+      this.num = 15
+      this.categoryName = ''
+      await this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
+    }
   },
 
   watch: {
@@ -89,15 +115,19 @@ export default {
       if (oldVal == '/addarticle') {
         this.$store.dispatch('getArticleList', { page: 0, num: 1 })
       }
+      if (this.$route.query.categoryName != undefined) {
+        this.categoryName = this.$route.query.categoryName
+        this.clearInput()
+      }
     }
   },
   created() {
-    this.$store.dispatch('getArticleList', { page: this.page, num: this.num })
+    this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
 
     //监视scroll滚动条
     window.addEventListener("scroll", this.isRefresh, true);
     // console.log('created');
-    this.$on('queryArticleByTitle')
+    // this.$on('queryArticleByTitle')
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.isRefresh)

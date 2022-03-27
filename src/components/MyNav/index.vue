@@ -3,7 +3,6 @@
     <nav>
       <img src="@/assets/images/avataaars.png" />
       <router-link :to="{ path: '/' }">首页</router-link>
-      <router-link :to="{ path: '/addarticle' }">添加文章</router-link>
     </nav>
   </div>
 </template>

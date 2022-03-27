@@ -4,14 +4,19 @@ const actions = {
   // 获取文章列表
   async getArticleList({ commit, state }, data) {
     data.search = state.search
+    data.categoryName = data.categoryName || ""
     let result = await reqArticleList(data)
     if (result.code == 200) {
       state.isRefreshBool = true
+      // && (data.categoryName != '' || data.search == '')
+      if (data.page == 0) {
+        state.articleList = []
+      }
       // 根据page判断此次请求是刷新数据还是加载数据
       if (data.page == 0 && data.search == '') {
         return commit('GETARTICLElIST2', result.data)
       }
-      console.log(result);
+
       return commit('GETARTICLElIST', result.data)
     }
     return Promise.reject(new Error('获取文章列表失败'))
@@ -77,6 +82,7 @@ const mutations = {
     }
     state.articleList = [...data, ...state.articleList]
   },
+
   // 通过搜索框获取数据
   GETARTICLElISTBYSEARCH(state, data) {
     if (data.length == []) {

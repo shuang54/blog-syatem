@@ -1,7 +1,7 @@
 import requests from "./requests";
 
 //获取文章列表
-export const reqArticleList = (data) => requests({ url: `/articlelist?page=${data.page}&num=${data.num}&search=${data.search}`, method: 'get' })
+export const reqArticleList = (data) => requests({ url: `/articlelist?page=${data.page}&num=${data.num}&search=${data.search}&categoryName=${data.categoryName}`, method: 'get' })
 // 获取文章内容
 export const reqArticle = (id) => requests({ url: `/article/${id}`, method: 'get' })
 // 添加文章

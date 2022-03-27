@@ -38,8 +38,18 @@
                 v-for="item in categoryList"
                 :key="item.id"
                 class="text item"
-                @click="queryArticleByCategoryName(item.categoryName)"
-              >{{ item.categoryName }}</div>
+                :class="categoryName == item.categoryName ? 'selected' : ''"
+              >
+                <span
+                  class="cn"
+                  @click="queryArticleByCategoryName(item.categoryName)"
+                >{{ item.categoryName }}</span>
+                <i
+                  v-show="categoryName == item.categoryName"
+                  @click="clearCategoryName()"
+                  class="el-icon-close"
+                ></i>
+              </div>
             </el-card>
           </div>
         </div>
@@ -49,10 +59,11 @@
   </div>
 </template>
 
-<script>import { mapState } from "vuex"
+<script>
+import { mapState } from "vuex"
 
 export default {
-  props: ['articleList'],
+  props: ['articleList', 'categoryName'],
   data() {
     return {
       search: ''
@@ -74,17 +85,20 @@ export default {
   methods: {
     // 点击分类进行查询
     queryArticleByCategoryName(categoryName) {
-      console.log(categoryName);
+      this.$emit('queryArticleByCategoryName', categoryName)
     },
     // 根据input表单进行查询
     queryArticleByTitle() {
       this.$emit('queryArticleByTitle')
     },
-    async clearInput() {
+    clearInput() {
       this.$store.state.Article.search = ''
+      this.$emit('clearInput')
 
-      await this.$store.dispatch('getArticleListBySearch', { page: 0, num: 15 })
     },
+    clearCategoryName() {
+      this.$emit('clearCategoryName')
+    }
 
   },
   created() {
@@ -167,9 +181,14 @@ export default {
     .item {
       padding: 9px 0 9px 9px;
       cursor: pointer;
-    }
-    .item:hover {
-      color: dodgerblue;
+      .cn {
+        width: 100%;
+        height: 100%;
+        padding: 9px;
+      }
+      .cn:hover {
+        color: dodgerblue;
+      }
     }
 
     .clearfix:before,
@@ -186,6 +205,20 @@ export default {
       text-align: left;
       background-color: #ffffcc;
       // background-color: rgba(0, 0, 0, 0);
+      .selected {
+        background-color: #c7edcc;
+        border-radius: 10px;
+      }
+      .el-icon-close {
+        float: right;
+        padding-right: 10px;
+        padding-top: 0;
+        z-index: 99;
+        font-size: 25px;
+      }
+      .el-icon-close:hover {
+        color: crimson;
+      }
     }
   }
 
