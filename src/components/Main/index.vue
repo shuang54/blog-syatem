@@ -1,21 +1,17 @@
 <template>
   <div id="main-container">
     <!-- 文章列表 -->
-    <ArticleList
-      v-show="isShow"
-      :articleList="Alist"
-      @queryArticleByTitle="queryArticleByTitle"
-      @queryArticleByCategoryName="queryArticleByCategoryName"
-      @clearInput="clearInput"
-      @clearCategoryName="clearCategoryName"
-      :categoryName="categoryName"
-    ></ArticleList>
+    <ArticleList v-show="isShow" :articleList="Alist" @queryArticleByTitle="queryArticleByTitle"
+      @queryArticleByCategoryName="queryArticleByCategoryName" @clearInput="clearInput"
+      @clearCategoryName="clearCategoryName" :categoryName="categoryName">
+    </ArticleList>
+
   </div>
+
 </template>
 
 <script>
 import ArticleList from './ArticleList'
-import AddFile from '../AddFile'
 import Article from '../Main/Article'
 import { mapState } from 'vuex'
 import { throttle } from 'lodash'
@@ -23,7 +19,6 @@ export default {
   name: 'mainvue',
   components: {
     ArticleList,
-    AddFile,
     Article,
   },
   data() {
@@ -42,6 +37,9 @@ export default {
     isShow() {
       return this.$route.path == '/'
     },
+    ...mapState({
+      categoryList: state => state.Article.category
+    }),
     p() {
       return this.$route.path
     }
@@ -119,7 +117,8 @@ export default {
         this.categoryName = this.$route.query.categoryName
         this.clearInput()
       }
-    }
+    },
+
   },
   created() {
     this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
@@ -136,10 +135,4 @@ export default {
 </script>
 
 <style scoped lang="less">
-#main-container {
-  margin: 0 auto;
-  height: 100%;
-  color: #3b3b3b;
-  padding: 10px 30px;
-}
 </style>

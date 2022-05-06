@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1645859460949,
@@ -36,6 +36,10 @@
                 {
                     "date": 1647435299608,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n //利用axios对象的create方法,创建一个axios实例\r\n const requests = axios.create({\r\n   //配置对象\r\n   //基础路径\r\n-  baseURL: \"https://mock.apipost.cn/app/mock/project/dc05a74e-8292-4fd7-b7a8-ff491962b806/blog\",\r\n+  // baseURL: \"https://mock.apipost.cn/app/mock/project/dc05a74e-8292-4fd7-b7a8-ff491962b806/blog\",\r\n+  baseURL: \"http://www.foogeoo.ltd:9999/blog\",\r\n   timeout: 5000,\r\n })\r\n //请求拦截器:在发送请求之前，可以做一些事情\r\n requests.interceptors.request.use((config) => {\r\n"
+                },
+                {
+                    "date": 1648596629393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,9 @@\n   // }\r\n   // if (store.state.user.logintoken) {\r\n   // config.headers.token = store.state.user.logintoken\r\n   // }\r\n-\r\n   nProgress.start()\r\n-\r\n   return config;\r\n })\r\n //响应拦截器\r\n requests.interceptors.response.use((res) => {\r\n"
                 }
             ],
             "date": 1645859460949,

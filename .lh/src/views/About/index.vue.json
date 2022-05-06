@@ -1,0 +1,222 @@
+{
+    "sourceFile": "src/views/About/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 51,
+            "patches": [
+                {
+                    "date": 1651821189463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651835207079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\r\n-  <div></div>\r\n+  <el-row id=\"about-container\">\r\n+    <el-col :span=\"15\"></el-col>\r\n+  </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n   name: 'about',\r\n@@ -11,6 +13,7 @@\n \r\n   }\r\n }\r\n </script>\r\n-<style>\r\n+<style lang=\"less\">\r\n+.about-container {}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651835268931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,10 @@\n   }\r\n }\r\n </script>\r\n <style lang=\"less\">\r\n-.about-container {}\r\n+.about-container {\r\n+  display: flex;\r\n+  flex-direction: row;\r\n+  justify-content: center;\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651835293624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col :span=\"15\"></el-col>\r\n+    <el-col :span=\"15\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n@@ -14,9 +14,9 @@\n   }\r\n }\r\n </script>\r\n <style lang=\"less\">\r\n-.about-container {\r\n+#about-container {\r\n   display: flex;\r\n   flex-direction: row;\r\n   justify-content: center;\r\n }\r\n"
+                },
+                {
+                    "date": 1651835307382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,7 @@\n #about-container {\r\n   display: flex;\r\n   flex-direction: row;\r\n   justify-content: center;\r\n+  background-color: white;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651835336420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,11 @@\n #about-container {\r\n   display: flex;\r\n   flex-direction: row;\r\n   justify-content: center;\r\n-  background-color: white;\r\n+\r\n+  .el-col {\r\n+\r\n+    background-color: white;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651835381340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col :span=\"15\">aaa</el-col>\r\n+    <el-col :lg=\"15\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651835392109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col :lg=\"15\">aaa</el-col>\r\n+    <el-col xl=\"10\" :lg=\"15\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651835399737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col xl=\"10\" :lg=\"15\">aaa</el-col>\r\n+    <el-col xl=\"10\" :lg=\"15\" md=\"20\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651835408165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col xl=\"10\" :lg=\"15\" md=\"20\">aaa</el-col>\r\n+    <el-col xl=\"10\" :lg=\"15\" md=\"20\" sm=\"24\" xs=\"24\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651835432028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col xl=\"10\" :lg=\"15\" md=\"20\" sm=\"24\" xs=\"24\">aaa</el-col>\r\n+    <el-col xl=\"10\" lg=\"15\" md=\"20\" sm=\"24\" xs=\"24\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651835453805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col xl=\"10\" lg=\"15\" md=\"20\" sm=\"24\" xs=\"24\">aaa</el-col>\r\n+    <el-col :xl=\"10\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651838702027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col :xl=\"10\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">aaa</el-col>\r\n+    <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">aaa</el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651838815137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n-    <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">aaa</el-col>\r\n+    <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n+      <div>\r\n+        <h4>关于我</h4>\r\n+      </div>\r\n+    </el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n export default {\r\n"
+                },
+                {
+                    "date": 1651838820454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <div>\r\n-        <h4>关于我</h4>\r\n+        <h1>关于我</h4>\r\n       </div>\r\n     </el-col>\r\n   </el-row>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651838894302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n-      <div>\r\n-        <h1>关于我</h4>\r\n+      <div slot=\"header\" class=\"clearfix\">\r\n+        <span>卡片名称</span>\r\n+        <el-button style=\"float: right; padding: 3px 0\" type=\"text\">操作按钮</el-button>\r\n       </div>\r\n+      <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n+        {{ '列表内容 ' + o }}\r\n+      </div>\r\n+      </el-card>\r\n     </el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n"
+                },
+                {
+                    "date": 1651838910901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n-      <div slot=\"header\" class=\"clearfix\">\r\n-        <span>卡片名称</span>\r\n-        <el-button style=\"float: right; padding: 3px 0\" type=\"text\">操作按钮</el-button>\r\n-      </div>\r\n-      <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n-        {{ '列表内容 ' + o }}\r\n-      </div>\r\n+      <el-card>\r\n+        <div slot=\"header\" class=\"clearfix\">\r\n+          <span>卡片名称</span>\r\n+        </div>\r\n+        <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n+          {{ '列表内容 ' + o }}\r\n+        </div>\r\n       </el-card>\r\n     </el-col>\r\n   </el-row>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651838993823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <el-card>\r\n         <div slot=\"header\" class=\"clearfix\">\r\n-          <span>卡片名称</span>\r\n+          <span style=\"font-size:18px\">卡片名称</span>\r\n         </div>\r\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651839060768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <el-card>\r\n-        <div slot=\"header\" class=\"clearfix\">\r\n-          <span style=\"font-size:18px\">卡片名称</span>\r\n+        <div class=\"about-me-header\" slot=\"header\" class=\"clearfix\">\r\n+          <span style=\"font-size:18px\">关于我</span>\r\n         </div>\r\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n         </div>\r\n@@ -31,7 +31,11 @@\n \r\n   .el-col {\r\n \r\n     background-color: white;\r\n+\r\n+    .about-me-header {\r\n+      text-align: left;\r\n+    }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651839075159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <el-card>\r\n-        <div class=\"about-me-header\" slot=\"header\" class=\"clearfix\">\r\n+        <div class=\"about-me-header clearfix\" slot=\"header\">\r\n           <span style=\"font-size:18px\">关于我</span>\r\n         </div>\r\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n"
+                },
+                {
+                    "date": 1651841519459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,16 @@\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n         </div>\r\n       </el-card>\r\n+         <el-card>\r\n+        <div class=\"about-me-header clearfix\" slot=\"header\">\r\n+          <span style=\"font-size:18px\">关于我</span>\r\n+        </div>\r\n+        <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n+          {{ '列表内容 ' + o }}\r\n+        </div>\r\n+      </el-card>\r\n     </el-col>\r\n   </el-row>\r\n </template>\r\n <script >\r\n"
+                },
+                {
+                    "date": 1651841563586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n         </div>\r\n       </el-card>\r\n-         <el-card>\r\n+      <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n           <span style=\"font-size:18px\">关于我</span>\r\n         </div>\r\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n"
+                },
+                {
+                    "date": 1651841579811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         </div>\r\n       </el-card>\r\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n-          <span style=\"font-size:18px\">关于我</span>\r\n+          <span style=\"font-size:18px\">关于本站</span>\r\n         </div>\r\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842343479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n-          <span style=\"font-size:18px\">关于我</span>\r\n+          <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n           {{ '列表内容 ' + o }}\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842368815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,11 @@\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n-        <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n-          {{ '列表内容 ' + o }}\r\n+        <div>\r\n+          <p>联系</p>\r\n+\r\n         </div>\r\n       </el-card>\r\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n"
+                },
+                {
+                    "date": 1651842382266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,13 @@\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n-          <p>联系</p>\r\n+          <div>\r\n+            <p>联系</p>\r\n \r\n+          </div>\r\n+\r\n         </div>\r\n       </el-card>\r\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n"
+                },
+                {
+                    "date": 1651842403389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n-          <div>\r\n+          <div class=\"about-me-body\">\r\n             <p>联系</p>\r\n \r\n           </div>\r\n \r\n@@ -47,7 +47,11 @@\n \r\n     .about-me-header {\r\n       text-align: left;\r\n     }\r\n+\r\n+    .about-me-body {\r\n+      text-align: left;\r\n+    }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651842423499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,9 @@\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n-            <p>联系</p>\r\n-\r\n+            <h2>联系</h2>\r\n           </div>\r\n \r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651842432882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n             <h2>联系</h2>\r\n+\r\n           </div>\r\n \r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651842500981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n+            <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n \r\n           </div>\r\n \r\n"
+                },
+                {
+                    "date": 1651842576341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,11 @@\n         <div>\r\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n-\r\n+            <ul>\r\n+              <li></li>\r\n+            </ul>\r\n           </div>\r\n \r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651842717249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n-              <li></li>\r\n+              <li>GitHub:</li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842796327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n-              <li>GitHub:</li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" alt=\"\"></li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842823379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" alt=\"\"></li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\"\r\n+                  style=\"width:20px;height:20px\" alt=\"\"></li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842834163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\"\r\n-                  style=\"width:20px;height:20px\" alt=\"\"></li>\r\n+                  style=\"width:30px;height:30px\" alt=\"\"></li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842895431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\"\r\n-                  style=\"width:30px;height:30px\" alt=\"\"></li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+              </li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n@@ -54,8 +54,14 @@\n     }\r\n \r\n     .about-me-body {\r\n       text-align: left;\r\n+\r\n+      .icon {\r\n+        width: 30px;\r\n+        height: 30px;\r\n+        border-radius: 10px;\r\n+      }\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651842912771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-              </li>\r\n+                GitHub:</li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651842928180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n     }\r\n \r\n     .about-me-body {\r\n       text-align: left;\r\n+      font-size: 18px;\r\n \r\n       .icon {\r\n         width: 30px;\r\n         height: 30px;\r\n"
+                },
+                {
+                    "date": 1651842975268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n \r\n       .icon {\r\n         width: 30px;\r\n         height: 30px;\r\n-        border-radius: 10px;\r\n+        border-radius: 15px;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1651843037290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n             <h2>联系</h2>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                Gitee:https://gitee.com/foochange</li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n@@ -59,9 +61,9 @@\n \r\n       .icon {\r\n         width: 30px;\r\n         height: 30px;\r\n-        border-radius: 15px;\r\n+        border-radius: 10px;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1651843063556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                Gitee:https://gitee.com/foochange</li>\r\n+                Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651843115809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,10 @@\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n"
+                },
+                {
+                    "date": 1651843183208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n+                Email: <a href=\"shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n"
+                },
+                {
+                    "date": 1651843196873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                Email: <a href=\"shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n+                Email: <email href=\"shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n"
+                },
+                {
+                    "date": 1651843215394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                Email: <email href=\"shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n+                Email: <a href=\"shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n"
+                },
+                {
+                    "date": 1651843221197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             <h2>关于我</h2>\r\n             <h2>联系</h2>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                Email: <a href=\"shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n+                Email: <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 GitHub:</li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n"
+                },
+                {
+                    "date": 1651843285276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n                 Email: <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                GitHub:</li>\r\n+                GitHub: <a href=\"https://github.com/shuang54\">https://github.com/shuang54</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n                 Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n             </ul>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1651843317552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n-          <span style=\"font-size:18px\">个人资料</span>\r\n+          <h1 style=\"font-size:18px\">个人资料</h1>\r\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n             <h2>关于我</h2>\r\n"
+                },
+                {
+                    "date": 1651843335050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,14 @@\n   <el-row id=\"about-container\">\r\n     <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n       <el-card>\r\n         <div class=\"about-me-header clearfix\" slot=\"header\">\r\n-          <h1 style=\"font-size:18px\">个人资料</h1>\r\n+          <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n-            <h2>关于我</h2>\r\n-            <h2>联系</h2>\r\n+            <p>关于我</p>\r\n+            <p>联系</p>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n                 Email: <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n"
+                },
+                {
+                    "date": 1651843457085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,8 @@\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n-            <p>关于我</p>\r\n-            <p>联系</p>\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n                 Email: <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n"
+                },
+                {
+                    "date": 1651843861972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,13 +8,16 @@\n         <div>\r\n           <div class=\"about-me-body\">\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                Email: <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a></li>\r\n+                <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a>\r\n+              </li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                GitHub: <a href=\"https://github.com/shuang54\">https://github.com/shuang54</a></li>\r\n+                <a href=\"https://github.com/shuang54\">https://github.com/shuang54</a>\r\n+              </li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                Gitee: <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a></li>\r\n+                <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a>\r\n+              </li>\r\n             </ul>\r\n           </div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651843879562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n         <div>\r\n           <div class=\"about-me-body\">\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a>\r\n+                <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n               </li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://github.com/shuang54\">https://github.com/shuang54</a>\r\n+                <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n               </li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a>\r\n+                <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n               </li>\r\n             </ul>\r\n           </div>\r\n \r\n"
+                }
+            ],
+            "date": 1651821189463,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div></div>\r\n</template>\r\n<script >\r\nexport default {\r\n  name: 'about',\r\n  data: {\r\n\r\n  },\r\n  methods: {\r\n\r\n  }\r\n}\r\n</script>\r\n<style>\r\n</style>"
+        }
+    ]
+}

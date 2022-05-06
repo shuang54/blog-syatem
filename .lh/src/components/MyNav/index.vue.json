@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 64,
+            "activePatchIndex": 103,
             "patches": [
                 {
                     "date": 1645614431496,
@@ -264,6 +264,162 @@
                 {
                     "date": 1648297817184,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :to=\"{\r\n-      path: '/'\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/addarticle' }\">添加文章</router-link>\r\n+      <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651803097169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link>个人详情</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n@@ -15,15 +16,18 @@\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   padding: 5px 20px;\r\n+\r\n   nav {\r\n     vertical-align: middle;\r\n+\r\n     img {\r\n       width: 50px;\r\n       height: 50px;\r\n       margin-bottom: 13px;\r\n     }\r\n+\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n"
+                },
+                {
+                    "date": 1651803134178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link>个人详情</router-link>\r\n+      <router-link :to=\"{ path: '/' }\"></router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651803146172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/' }\"></router-link>\r\n+      <router-link :to=\"{ path: '/' }\">个人详情</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651821043375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/' }\">个人详情</router-link>\r\n+      <router-link :to=\"{ path: '/' }\">博主的详细信息</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651821061771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/' }\">博主的详细信息</router-link>\r\n+      <router-link :to=\"{ path: '/' }\">个人</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651821077882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/' }\">个人</router-link>\r\n+      <router-link :to=\"{ path: '/' }\"></router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651821228687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/' }\"></router-link>\r\n+      <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651833851612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n-    <nav>\r\n+    <nav class=\"menu\">\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n       <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n@@ -35,5 +35,61 @@\n       font-size: 1rem;\r\n     }\r\n   }\r\n }\r\n+\r\n+.menu {\r\n+  /* 为了在窗口小的情况下，不变形 */\r\n+  display: flex;\r\n+  list-style: none;\r\n+  padding: 0;\r\n+  margin: 0;\r\n+  position: absolute;\r\n+  top: 50%;\r\n+  left: 50%;\r\n+  transform: translate(-50%, -50%);\r\n+  background-color: #34495e;\r\n+  border-radius: 5px;\r\n+  line-height: 50px;\r\n+  padding: 0px 10px;\r\n+}\r\n+\r\n+.menu-item {\r\n+  width: 100px;\r\n+  display: inline-block;\r\n+  font-size: 15px;\r\n+  text-align: center;\r\n+  text-decoration: none;\r\n+  color: #FFFFFF;\r\n+  transition: .3s;\r\n+  position: relative;\r\n+}\r\n+\r\n+.bg {\r\n+  position: absolute;\r\n+  height: 100%;\r\n+  width: 100px;\r\n+  z-index: -1;\r\n+  border-radius: 5px;\r\n+  left: 10px;\r\n+  top: 0;\r\n+  background-color: #1abc9c;\r\n+  transition: .3s;\r\n+}\r\n+\r\n+.menu-item:hover {\r\n+  font-weight: bold;\r\n+  transform: scale(1.3);\r\n+}\r\n+\r\n+.menu-item:nth-child(2):hover~.bg {\r\n+  left: 110px;\r\n+}\r\n+\r\n+.menu-item:nth-child(3):hover~.bg {\r\n+  left: 210px;\r\n+}\r\n+\r\n+.menu-item:nth-child(4):hover~.bg {\r\n+  left: 310px;\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651833866914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav class=\"menu\">\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n+      <router-link :to=\"{ path: '/' }\" class=\"menu-item \">首页</router-link>\r\n+      <router-link :to=\"{ path: '/about' }\" class=\"menu-item\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651833902788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n     <nav class=\"menu\">\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\" class=\"menu-item \">首页</router-link>\r\n       <router-link :to=\"{ path: '/about' }\" class=\"menu-item\">关于</router-link>\r\n+      <a href=\"#\" class=\"bg\"></a>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n@@ -42,11 +43,9 @@\n   display: flex;\r\n   list-style: none;\r\n   padding: 0;\r\n   margin: 0;\r\n-  position: absolute;\r\n-  top: 50%;\r\n-  left: 50%;\r\n+\r\n   transform: translate(-50%, -50%);\r\n   background-color: #34495e;\r\n   border-radius: 5px;\r\n   line-height: 50px;\r\n"
+                },
+                {
+                    "date": 1651833915103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,12 +41,9 @@\n .menu {\r\n   /* 为了在窗口小的情况下，不变形 */\r\n   display: flex;\r\n   list-style: none;\r\n-  padding: 0;\r\n-  margin: 0;\r\n \r\n-  transform: translate(-50%, -50%);\r\n   background-color: #34495e;\r\n   border-radius: 5px;\r\n   line-height: 50px;\r\n   padding: 0px 10px;\r\n"
+                },
+                {
+                    "date": 1651834087708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n .menu {\r\n   /* 为了在窗口小的情况下，不变形 */\r\n   display: flex;\r\n   list-style: none;\r\n-\r\n+  position: relative;\r\n   background-color: #34495e;\r\n   border-radius: 5px;\r\n   line-height: 50px;\r\n   padding: 0px 10px;\r\n"
+                },
+                {
+                    "date": 1651834147666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n-    <nav class=\"menu\">\r\n+    <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :to=\"{ path: '/' }\" class=\"menu-item \">首页</router-link>\r\n-      <router-link :to=\"{ path: '/about' }\" class=\"menu-item\">关于</router-link>\r\n+      <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n       <a href=\"#\" class=\"bg\"></a>\r\n     </nav>\r\n   </div>\r\n </template>\r\n@@ -36,56 +36,5 @@\n       font-size: 1rem;\r\n     }\r\n   }\r\n }\r\n-\r\n-.menu {\r\n-  /* 为了在窗口小的情况下，不变形 */\r\n-  display: flex;\r\n-  list-style: none;\r\n-  position: relative;\r\n-  background-color: #34495e;\r\n-  border-radius: 5px;\r\n-  line-height: 50px;\r\n-  padding: 0px 10px;\r\n-}\r\n-\r\n-.menu-item {\r\n-  width: 100px;\r\n-  display: inline-block;\r\n-  font-size: 15px;\r\n-  text-align: center;\r\n-  text-decoration: none;\r\n-  color: #FFFFFF;\r\n-  transition: .3s;\r\n-  position: relative;\r\n-}\r\n-\r\n-.bg {\r\n-  position: absolute;\r\n-  height: 100%;\r\n-  width: 100px;\r\n-  z-index: -1;\r\n-  border-radius: 5px;\r\n-  left: 10px;\r\n-  top: 0;\r\n-  background-color: #1abc9c;\r\n-  transition: .3s;\r\n-}\r\n-\r\n-.menu-item:hover {\r\n-  font-weight: bold;\r\n-  transform: scale(1.3);\r\n-}\r\n-\r\n-.menu-item:nth-child(2):hover~.bg {\r\n-  left: 110px;\r\n-}\r\n-\r\n-.menu-item:nth-child(3):hover~.bg {\r\n-  left: 210px;\r\n-}\r\n-\r\n-.menu-item:nth-child(4):hover~.bg {\r\n-  left: 310px;\r\n-}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651834216665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n       <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n-      <a href=\"#\" class=\"bg\"></a>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n@@ -33,8 +32,10 @@\n       height: 100%;\r\n       padding: 10px 20px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n+\r\n+      border-bottom: 2px solid #13b9e2;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651834235472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,8 @@\n       height: 100%;\r\n       padding: 10px 20px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n-\r\n       border-bottom: 2px solid #13b9e2;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1651834259553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,11 @@\n       height: 100%;\r\n       padding: 10px 20px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n-      border-bottom: 2px solid #13b9e2;\r\n+\r\n+      &:hover {}\r\n     }\r\n+\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651834270798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,12 @@\n       padding: 10px 20px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n \r\n-      &:hover {}\r\n+      &:hover {\r\n+        border-bottom: 2px solid #13b9e2;\r\n+\r\n+      }\r\n     }\r\n-\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651834321452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link :style=\"{}\" :to=\"{ path: '/' }\">首页</router-link>\r\n       <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651834373689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link :style=\"{}\" :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/' }\">首页</router-link>\r\n       <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n@@ -38,7 +38,11 @@\n         border-bottom: 2px solid #13b9e2;\r\n \r\n       }\r\n     }\r\n+\r\n+    .bot {\r\n+      border-bottom: 2px solid #13b9e2;\r\n+    }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651834401958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/' }\">首页</router-link>\r\n-      <router-link :to=\"{ path: '/about' }\">关于</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1651834555011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#/' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651834594053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#/' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651834615785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651836480912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1651836805732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1651836818513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <div id=\"my-nav-container\">\r\n     <nav>\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/:' }\">收藏</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1651836848802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n+    <img src=\"@/assets/images/avataaars.png\" />\r\n     <nav>\r\n-      <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/:' }\">收藏</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1651836854285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n-    <img src=\"@/assets/images/avataaars.png\" />\r\n     <nav>\r\n+      <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n"
+                },
+                {
+                    "date": 1651836864731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,17 +19,19 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   padding: 5px 20px;\r\n \r\n+  img {\r\n+    width: 50px;\r\n+    height: 50px;\r\n+    margin-bottom: 13px;\r\n+  }\r\n+\r\n   nav {\r\n     vertical-align: middle;\r\n \r\n-    img {\r\n-      width: 50px;\r\n-      height: 50px;\r\n-      margin-bottom: 13px;\r\n-    }\r\n \r\n+\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n"
+                },
+                {
+                    "date": 1651836875337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n #my-nav-container {\r\n   padding: 5px 20px;\r\n \r\n   img {\r\n+    float: left;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n   }\r\n"
+                },
+                {
+                    "date": 1651836891650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n     margin-bottom: 13px;\r\n   }\r\n \r\n   nav {\r\n+    float: right;\r\n     vertical-align: middle;\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1651836904390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,16 +20,15 @@\n #my-nav-container {\r\n   padding: 5px 20px;\r\n \r\n   img {\r\n-    float: left;\r\n+    position: relative;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n   }\r\n \r\n   nav {\r\n-    float: right;\r\n     vertical-align: middle;\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1651836995610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n+    <img src=\"@/assets/images/avataaars.png\" />\r\n     <nav>\r\n-      <img src=\"@/assets/images/avataaars.png\" />\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n"
+                },
+                {
+                    "date": 1651837029086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,17 +18,20 @@\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   padding: 5px 20px;\r\n+  display: flex;\r\n \r\n   img {\r\n+    flex: 1;\r\n     position: relative;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n   }\r\n \r\n   nav {\r\n+    flex: 1;\r\n     vertical-align: middle;\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1651837036106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n   display: flex;\r\n \r\n   img {\r\n     flex: 1;\r\n-    position: relative;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n   }\r\n"
+                },
+                {
+                    "date": 1651837051387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n-    <img src=\"@/assets/images/avataaars.png\" />\r\n+    <div>\r\n+      <img src=\"@/assets/images/avataaars.png\" />\r\n+\r\n+    </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n"
+                },
+                {
+                    "date": 1651837094620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,8 @@\n   nav {\r\n     flex: 1;\r\n     vertical-align: middle;\r\n \r\n-\r\n-\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n"
+                },
+                {
+                    "date": 1651837108243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   padding: 5px 20px;\r\n   display: flex;\r\n+  align-items: center;\r\n \r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1651837142141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  padding: 5px 20px;\r\n   display: flex;\r\n   align-items: center;\r\n \r\n   img {\r\n"
                 }
             ],
             "date": 1645614431496,

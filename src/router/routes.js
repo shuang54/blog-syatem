@@ -8,7 +8,7 @@ export default [
     path: '/article/:id', component: () => import('@/components/Main/Article'), name: 'article', meta: { x: 0, y: 0 }
   },
   {
-    path: '/addarticle', component: () => import('@/components/AddFile'), name: 'addarticle'
+    path: '/about', component: () => import('@/views/About'), name: 'about', meta: { x: 0, y: 0 }
   }
 
 ]

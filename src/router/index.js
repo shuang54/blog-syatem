@@ -10,6 +10,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 }
 const router = new VueRouter({
   // mode: 'history',
+  // linkActiveClass: 'is-active',
   base: process.env.BASE_URL,
   routes,
   scrollBehavior,

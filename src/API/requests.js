@@ -18,9 +18,7 @@ requests.interceptors.request.use((config) => {
   // if (store.state.user.logintoken) {
   // config.headers.token = store.state.user.logintoken
   // }
-
   nProgress.start()
-
   return config;
 })
 //响应拦截器

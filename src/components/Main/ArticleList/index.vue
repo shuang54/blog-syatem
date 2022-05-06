@@ -1,15 +1,36 @@
 <template>
   <div id="article-list-container">
+    <!-- 使用ElementUI中的Layout布局 -->
     <el-row>
-      <el-col :sm="18" :xs="24">
+      <el-col hidden-lg-and-dow :sm="4" :md="4" :lg="3" :xs="0">
+        <div>
+          <el-card class="box-card" shadow="hover">
+            <div slot="header" class="clearfix">
+              <span style="font-size: 18px;">公告栏</span>
+            </div>
+            <p>目前系统还在开发中~~~</p>
+          </el-card>
+          <el-card class="box-card" shadow="hover">
+            <div slot="header" class="clearfix">
+              <span style="font-size: 18px;">更多功能</span>
+            </div>
+            <ul class="box-ul">
+              <li v-for="o in 4" class="box-li">粘贴板</li>
+              <li class="box-li">个人导航</li>
+            </ul>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :sm="15" :md="14" :lg="12" :xs="24">
         <div v-show="isShow" class="grid-content bg-purple-light">
           <div class="left">
+            <!-- 接受父组件传递的数据遍历文章列表 -->
             <div v-for="item in articleList" :key="item.id" class="list-box">
               <div class="list">
-                <router-link
-                  class="title"
-                  :to="{ name: 'article', params: { 'id': item.id, 'categoryName': item.categoryName, 'title': item.title } }"
-                >{{ item.title }}</router-link>
+                <!-- 使用router-link,当用户点击文章标题时跳转到相应的文章详情页 -->
+                <router-link class="title"
+                  :to="{ name: 'article', params: { 'id': item.id, 'categoryName': item.categoryName, 'title': item.title } }">
+                  {{ item.title }}</router-link>
                 <span class="classification">{{ item.categoryName }}</span>
               </div>
               <time class="time">{{ cTime(item.createTime) }}</time>
@@ -18,40 +39,25 @@
         </div>
         <el-empty v-show="!isShow" :image-size="200"></el-empty>
       </el-col>
-      <el-col :sm="6" :xs="0">
-        <div class="grid-content bg-purple">
-          <div class="right">
-            <el-input
-              placeholder="搜索文章"
-              class="search"
-              prefix-icon="el-icon-search"
-              v-model="search"
-              clearable
-              @keyup.enter.native="queryArticleByTitle"
-              @clear="clearInput"
-            ></el-input>
-            <el-card class="box-card" shadow="hover">
-              <div slot="header" class="clearfix">
-                <span style="font-size: 18px;">分类</span>
-              </div>
-              <div
-                v-for="item in categoryList"
-                :key="item.id"
-                class="text item"
-                :class="categoryName == item.categoryName ? 'selected' : ''"
-              >
-                <span
-                  class="cn"
-                  @click="queryArticleByCategoryName(item.categoryName)"
-                >{{ item.categoryName }}</span>
-                <i
-                  v-show="categoryName == item.categoryName"
-                  @click="clearCategoryName()"
-                  class="el-icon-close"
-                ></i>
-              </div>
-            </el-card>
-          </div>
+      <el-col :sm="4" :md="4" :lg="3" :xs="0">
+        <div class="right">
+          <el-input placeholder="搜索文章" class="search" prefix-icon="el-icon-search" v-model="search" clearable
+            @keyup.enter.native="queryArticleByTitle" @clear="clearInput"></el-input>
+          <el-card class="box-card" shadow="hover">
+            <div slot="header" class="clearfix">
+              <span style="font-size: 18px;">分类</span>
+            </div>
+            <div v-for="item in categoryList" :key="item.id" class="text item"
+              :class="categoryName == item.categoryName ? 'selected' : ''">
+              <span class="cn" @click="queryArticleByCategoryName(item.categoryName)">{{ item.categoryName }}</span>
+              <i v-show="categoryName == item.categoryName" @click="clearCategoryName()" class="el-icon-close"></i>
+            </div>
+          </el-card>
+          <el-card class="box-card" shadow="hover">
+            <div slot="header" class="clearfix">
+              <span style="font-size: 18px;">推荐阅读</span>
+            </div>
+          </el-card>
         </div>
       </el-col>
     </el-row>
@@ -63,6 +69,7 @@
 import { mapState } from "vuex"
 
 export default {
+  /* 接受父组件传递的数据 */
   props: ['articleList', 'categoryName'],
   data() {
     return {
@@ -94,7 +101,6 @@ export default {
     clearInput() {
       this.$store.state.Article.search = ''
       this.$emit('clearInput')
-
     },
     clearCategoryName() {
       this.$emit('clearCategoryName')
@@ -114,30 +120,39 @@ export default {
 </script>
 
 <style scoped lang="less">
+.el-row {
+  display: flex;
+  justify-content: center;
+}
+
 #article-list-container {
   .left {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
       "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     position: relative;
-    width: 70%;
-    padding-right: 50px;
+    // width: 70%;
     float: right;
+    width: 100%;
 
     @media all and(max-width:1500px) {
-      width: 70%;
+      // width: 70%;
     }
+
     @media all and(max-width:1000px) {
       width: 100%;
     }
+
     @media all and(max-width:768px) {
       float: none;
     }
+
     .list-box {
       margin: 0 auto;
       position: relative;
       padding: 10px 10px;
       margin-top: 10px;
       border-bottom: 1px solid #ccc;
+
       .list {
         width: 100%;
         height: 100%;
@@ -147,18 +162,22 @@ export default {
 
         text-align: center;
         line-height: 50px;
+
         .title {
           font-size: 1.8rem;
         }
+
         a:hover {
           color: cornflowerblue;
         }
+
         .classification {
           text-align: center;
           line-height: 50px;
           color: darkorange;
         }
       }
+
       .time {
         position: absolute;
         right: 5px;
@@ -168,12 +187,19 @@ export default {
       }
     }
   }
+
   .right {
-    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     .search {
-      width: 220px;
+      max-width: 220px !important;
+      width: 100%;
       float: left;
     }
+
     .text {
       font-size: 14px;
     }
@@ -181,11 +207,13 @@ export default {
     .item {
       padding: 9px 0 9px 9px;
       cursor: pointer;
+
       .cn {
         width: 100%;
         height: 100%;
         padding: 9px;
       }
+
       .cn:hover {
         color: dodgerblue;
       }
@@ -196,35 +224,71 @@ export default {
       display: table;
       content: "";
     }
+
     .clearfix:after {
       clear: both;
     }
 
-    .box-card {
-      width: 220px !important;
-      text-align: left;
-      background-color: #ffffcc;
-      // background-color: rgba(0, 0, 0, 0);
-      .selected {
-        background-color: #c7edcc;
-        border-radius: 10px;
-      }
-      .el-icon-close {
-        float: right;
-        padding-right: 10px;
-        padding-top: 0;
-        z-index: 99;
-        font-size: 25px;
-      }
-      .el-icon-close:hover {
-        color: crimson;
-      }
-    }
+
   }
 
   @media all and (max-width: 768px) {
     .backtop {
       right: 5px !important;
+    }
+  }
+}
+
+.box-card {
+  max-width: 220px !important;
+  width: 100%;
+  text-align: left;
+  background-color: #ffc;
+  margin-bottom: 10px !important;
+
+  // background-color: rgba(0, 0, 0, 0);
+  .selected {
+    background-color: #c7edcc;
+    border-radius: 10px;
+  }
+
+  .el-icon-close {
+    float: right;
+    padding-right: 10px;
+    padding-top: 0;
+    z-index: 99;
+    font-size: 25px;
+  }
+
+  .el-icon-close:hover {
+    color: crimson;
+  }
+}
+
+.el-card {
+  margin-bottom: 10px;
+}
+
+.box-ul {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .box-li {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    padding: 5px 0 5px 0;
+    flex: 1;
+    width: 50%;
+    min-width: 50%;
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: center;
+
+    &:hover {
+      background-color: #ccc;
+      cursor: pointer;
     }
   }
 }

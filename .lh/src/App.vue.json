@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 87,
+            "activePatchIndex": 93,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -356,6 +356,30 @@
                 {
                     "date": 1647869514266,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   // background-color: #ccffcc;\n   .el-container {\n     .el-header,\n     .el-footer {\n-      background-color: #faf9de;\n+      background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1648474910943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\n   <div id=\"app\">\n+    <!-- Container组件 -->\n     <el-container>\n       <el-header>\n         <MyNav></MyNav>\n       </el-header>\n"
+                },
+                {
+                    "date": 1648474998936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,16 @@\n <template>\n   <div id=\"app\">\n     <!-- Container组件 -->\n     <el-container>\n+      <!-- 顶栏容器 -->\n       <el-header>\n+        <!-- 自定义的头部组件 -->\n         <MyNav></MyNav>\n       </el-header>\n+      <!-- 主要区域容器 -->\n       <el-main>\n+        <!-- 路由 -->\n         <keep-alive include=\"mainvue\">\n           <router-view></router-view>\n         </keep-alive>\n         <!-- <MyMain></MyMain> -->\n"
+                },
+                {
+                    "date": 1648475030613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <MyNav></MyNav>\n       </el-header>\n       <!-- 主要区域容器 -->\n       <el-main>\n-        <!-- 路由 -->\n+        <!-- 路由组件在这里展示 -->\n         <keep-alive include=\"mainvue\">\n           <router-view></router-view>\n         </keep-alive>\n         <!-- <MyMain></MyMain> -->\n"
+                },
+                {
+                    "date": 1648475172193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,13 +18,15 @@\n     </el-container>\n   </div>\n </template>\n <script>\n+// 引入组件\n import MyMain from '@/components/Main/index.vue'\n import MyNav from '@/components/MyNav'\n import 'element-ui/lib/theme-chalk/index.css';\n export default {\n   components: {\n+\n     MyMain,\n     MyNav,\n   },\n }\n"
+                },
+                {
+                    "date": 1648475217981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n import MyMain from '@/components/Main/index.vue'\n import MyNav from '@/components/MyNav'\n import 'element-ui/lib/theme-chalk/index.css';\n export default {\n+  /* 注册组件 */\n   components: {\n-\n     MyMain,\n     MyNav,\n   },\n }\n"
+                },
+                {
+                    "date": 1651807820645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,12 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n+\n   // background-color: #ccffcc;\n   .el-container {\n+\n     .el-header,\n     .el-footer {\n       background-color: #c7edcc;\n       color: #333;\n@@ -45,8 +47,9 @@\n     .el-main {\n       background-color: #faf9de;\n       color: #333;\n       text-align: center;\n+      padding: 0px;\n     }\n   }\n }\n </style>\n"
                 }
             ],
             "date": 1645530111266,
