@@ -5,7 +5,7 @@ import store from './store'
 import '@/assets/css/base.css'
 import { mavonEditor } from 'mavon-editor'
 // import 'mavon-editor/dist/css/index.css'
-import { Button, Input, Select, Option, Message, Container, Main, Header, Card, Col, Backtop, Row, Icon, Empty, Breadcrumb, BreadcrumbItem, Divider } from 'element-ui';
+import { Button, Input, Select, Option, Message, Container, Main, Header, Card, Col, Backtop, Row, Icon, Empty, Breadcrumb, BreadcrumbItem, Divider, Progress } from 'element-ui';
 Vue.config.productionTip = false
 Vue.use(Button)
 Vue.use(Input)
@@ -23,6 +23,7 @@ Vue.use(Empty)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Divider)
+Vue.use(Progress)
 Vue.prototype.$message = Message;
 Vue.component('mavonEditor', mavonEditor)
 new Vue({

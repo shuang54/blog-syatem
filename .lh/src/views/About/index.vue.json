@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 51,
+            "activePatchIndex": 102,
             "patches": [
                 {
                     "date": 1651821189463,
@@ -212,6 +212,210 @@
                 {
                     "date": 1651843879562,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n         <div>\r\n           <div class=\"about-me-body\">\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                <a href=\"mailto:shuang.lixx@gmail.com\">shuang.lixx@gmail.com</a>\r\n+                <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n               </li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://github.com/shuang54\">https://github.com/shuang54</a>\r\n+                <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n               </li>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://gitee.com/foochange\">https://gitee.com/foochange</a>\r\n+                <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n               </li>\r\n             </ul>\r\n           </div>\r\n \r\n"
+                },
+                {
+                    "date": 1651918856927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,72 @@\n+<template>\r\n+  <el-row id=\"about-container\">\r\n+    <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n+      <el-card>\r\n+        <div class=\"about-me-header clearfix\" slot=\"header\">\r\n+          <span style=\"font-size:18px\">个人资料</span>\r\n+        </div>\r\n+        <div>\r\n+          <div class=\"about-me-body\">\r\n+            <ul>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n+                <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n+              </li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n+              </li>\r\n+              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n+              </li>\r\n+            </ul>\r\n+          </div>\r\n+        </div>\r\n+      </el-card>\r\n+      <el-card>\r\n+        <div class=\"about-me-header clearfix\" slot=\"header\">\r\n+          <span style=\"font-size:18px\">关于本站</span>\r\n+        </div>\r\n+        <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n+          {{ '列表内容 ' + o }}\r\n+        </div>\r\n+      </el-card>\r\n+    </el-col>\r\n+  </el-row>\r\n+</template>\r\n+<script >\r\n+export default {\r\n+  name: 'about',\r\n+  data: {\r\n+\r\n+  },\r\n+  methods: {\r\n+\r\n+  }\r\n+}\r\n+</script>\r\n+<style lang=\"less\">\r\n+#about-container {\r\n+  display: flex;\r\n+  flex-direction: row;\r\n+  justify-content: center;\r\n+\r\n+  .el-col {\r\n+\r\n+    background-color: white;\r\n+\r\n+    .about-me-header {\r\n+      text-align: left;\r\n+    }\r\n+\r\n+    .about-me-body {\r\n+      text-align: left;\r\n+      font-size: 18px;\r\n+\r\n+      .icon {\r\n+        width: 30px;\r\n+        height: 30px;\r\n+        border-radius: 10px;\r\n+      }\r\n+    }\r\n+  }\r\n+}\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651921095989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,8 +59,9 @@\n \r\n     .about-me-body {\r\n       text-align: left;\r\n       font-size: 18px;\r\n+      margin-top: 100px;\r\n \r\n       .icon {\r\n         width: 30px;\r\n         height: 30px;\r\n@@ -68,78 +69,5 @@\n       }\r\n     }\r\n   }\r\n }\r\n-</style>\n-<template>\r\n-  <el-row id=\"about-container\">\r\n-    <el-col :xl=\"13\" :lg=\"15\" :md=\"20\" :sm=\"24\" :xs=\"24\">\r\n-      <el-card>\r\n-        <div class=\"about-me-header clearfix\" slot=\"header\">\r\n-          <span style=\"font-size:18px\">个人资料</span>\r\n-        </div>\r\n-        <div>\r\n-          <div class=\"about-me-body\">\r\n-            <ul>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n-              </li>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n-              </li>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n-              </li>\r\n-            </ul>\r\n-          </div>\r\n-\r\n-        </div>\r\n-      </el-card>\r\n-      <el-card>\r\n-        <div class=\"about-me-header clearfix\" slot=\"header\">\r\n-          <span style=\"font-size:18px\">关于本站</span>\r\n-        </div>\r\n-        <div v-for=\"o in 4\" :key=\"o\" class=\"text item\">\r\n-          {{ '列表内容 ' + o }}\r\n-        </div>\r\n-      </el-card>\r\n-    </el-col>\r\n-  </el-row>\r\n-</template>\r\n-<script >\r\n-export default {\r\n-  name: 'about',\r\n-  data: {\r\n-\r\n-  },\r\n-  methods: {\r\n-\r\n-  }\r\n-}\r\n-</script>\r\n-<style lang=\"less\">\r\n-#about-container {\r\n-  display: flex;\r\n-  flex-direction: row;\r\n-  justify-content: center;\r\n-\r\n-  .el-col {\r\n-\r\n-    background-color: white;\r\n-\r\n-    .about-me-header {\r\n-      text-align: left;\r\n-    }\r\n-\r\n-    .about-me-body {\r\n-      text-align: left;\r\n-      font-size: 18px;\r\n-\r\n-      .icon {\r\n-        width: 30px;\r\n-        height: 30px;\r\n-        border-radius: 10px;\r\n-      }\r\n-    }\r\n-  }\r\n-}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651921140536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n   justify-content: center;\r\n \r\n   .el-col {\r\n \r\n-    background-color: white;\r\n+    // background-color: white;\r\n \r\n     .about-me-header {\r\n       text-align: left;\r\n     }\r\n"
+                },
+                {
+                    "date": 1651921191843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,8 @@\n \r\n     .about-me-body {\r\n       text-align: left;\r\n       font-size: 18px;\r\n-      margin-top: 100px;\r\n \r\n       .icon {\r\n         width: 30px;\r\n         height: 30px;\r\n"
+                },
+                {
+                    "date": 1651921212002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,9 @@\n \r\n   .el-col {\r\n \r\n     // background-color: white;\r\n-\r\n-    .about-me-header {\r\n+    .el- .about-me-header {\r\n       text-align: left;\r\n     }\r\n \r\n     .about-me-body {\r\n"
+                },
+                {
+                    "date": 1651921223488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,13 @@\n \r\n   .el-col {\r\n \r\n     // background-color: white;\r\n-    .el- .about-me-header {\r\n+    .el-card {\r\n+      margin-top: 100px;\r\n+    }\r\n+\r\n+    .about-me-header {\r\n       text-align: left;\r\n     }\r\n \r\n     .about-me-body {\r\n"
+                },
+                {
+                    "date": 1651921230362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n   .el-col {\r\n \r\n     // background-color: white;\r\n     .el-card {\r\n-      margin-top: 100px;\r\n+      margin-top: 50px;\r\n     }\r\n \r\n     .about-me-header {\r\n       text-align: left;\r\n"
+                },
+                {
+                    "date": 1651921292995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,12 +63,16 @@\n     .about-me-body {\r\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n-      .icon {\r\n-        width: 30px;\r\n-        height: 30px;\r\n-        border-radius: 10px;\r\n+      ul {\r\n+        li {\r\n+          .icon {\r\n+            width: 30px;\r\n+            height: 30px;\r\n+            border-radius: 10px;\r\n+          }\r\n+        }\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1651921311474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,10 @@\n       font-size: 18px;\r\n \r\n       ul {\r\n         li {\r\n+          line-height: 30px;\r\n+\r\n           .icon {\r\n             width: 30px;\r\n             height: 30px;\r\n             border-radius: 10px;\r\n"
+                },
+                {
+                    "date": 1651921320011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n       font-size: 18px;\r\n \r\n       ul {\r\n         li {\r\n-          line-height: 30px;\r\n+          line-height: 40px;\r\n \r\n           .icon {\r\n             width: 30px;\r\n             height: 30px;\r\n"
+                },
+                {
+                    "date": 1651921353324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n           <span style=\"font-size:18px\">个人资料</span>\r\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n+\r\n             <ul>\r\n               <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n                 <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n               </li>\r\n"
+                },
+                {
+                    "date": 1651922050364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,19 +7,22 @@\n         </div>\r\n         <div>\r\n           <div class=\"about-me-body\">\r\n \r\n-            <ul>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n-              </li>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n-              </li>\r\n-              <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n-              </li>\r\n-            </ul>\r\n+            <div>\r\n+\r\n+              <ul>\r\n+                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n+                  <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n+                </li>\r\n+                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                  <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n+                </li>\r\n+                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                  <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n+                </li>\r\n+              </ul>\r\n+            </div>\r\n           </div>\r\n         </div>\r\n       </el-card>\r\n       <el-card>\r\n"
+                },
+                {
+                    "date": 1651922063637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <div>\r\n           <div class=\"about-me-body\">\r\n \r\n             <div>\r\n-\r\n+              <p>联系我</p>\r\n               <ul>\r\n                 <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n                   <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n                 </li>\r\n"
+                },
+                {
+                    "date": 1651922106981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <div>\r\n           <div class=\"about-me-body\">\r\n \r\n             <div>\r\n-              <p>联系我</p>\r\n+              <p class=\"body-p\">联系我</p>\r\n               <ul>\r\n                 <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n                   <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n                 </li>\r\n"
+                },
+                {
+                    "date": 1651922135258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,8 +67,12 @@\n     .about-me-body {\r\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n+      .body-p {\r\n+        border-bottom: 1px solid #ccc;\r\n+      }\r\n+\r\n       ul {\r\n         li {\r\n           line-height: 40px;\r\n \r\n"
+                },
+                {
+                    "date": 1651922155697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,9 @@\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n       .body-p {\r\n+\r\n         border-bottom: 1px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922166658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n       .body-p {\r\n-\r\n+        widows: 100px;\r\n         border-bottom: 1px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922185607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n       .body-p {\r\n-        widows: 100px;\r\n+        widows: 100px !important;\r\n         border-bottom: 1px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922198316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n       .body-p {\r\n-        widows: 100px !important;\r\n+        widtj: 100px;\r\n         border-bottom: 1px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922206929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,10 +68,10 @@\n       text-align: left;\r\n       font-size: 18px;\r\n \r\n       .body-p {\r\n-        widtj: 100px;\r\n-        border-bottom: 1px solid #ccc;\r\n+        width: 100px;\r\n+        border-bottom: 2px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n         li {\r\n"
+                },
+                {
+                    "date": 1651922218856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,9 @@\n       font-size: 18px;\r\n \r\n       .body-p {\r\n         width: 100px;\r\n+        padding: 10px;\r\n         border-bottom: 2px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922224992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,8 @@\n       font-size: 18px;\r\n \r\n       .body-p {\r\n         width: 100px;\r\n-        padding: 10px;\r\n         border-bottom: 2px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922237603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,9 @@\n       font-size: 18px;\r\n \r\n       .body-p {\r\n         width: 100px;\r\n+        padding: 0 0 10px 5px;\r\n         border-bottom: 2px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922243072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       font-size: 18px;\r\n \r\n       .body-p {\r\n         width: 100px;\r\n-        padding: 0 0 10px 5px;\r\n+        padding: 0 0 5px 5px;\r\n         border-bottom: 2px solid #ccc;\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922262129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n \r\n       .body-p {\r\n         width: 100px;\r\n         padding: 0 0 5px 5px;\r\n-        border-bottom: 2px solid #ccc;\r\n+        border-bottom: 2px solid pink;\r\n       }\r\n \r\n       ul {\r\n         li {\r\n"
+                },
+                {
+                    "date": 1651922273309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,9 @@\n       .body-p {\r\n         width: 100px;\r\n         padding: 0 0 5px 5px;\r\n         border-bottom: 2px solid pink;\r\n+        color: pink;\r\n       }\r\n \r\n       ul {\r\n         li {\r\n"
+                },
+                {
+                    "date": 1651922308517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,22 @@\n                   <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n                 </li>\r\n               </ul>\r\n             </div>\r\n+            <div>\r\n+              <p class=\"body-p\">技能点</p>\r\n+              <ul>\r\n+                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n+                  <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n+                </li>\r\n+                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                  <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n+                </li>\r\n+                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n+                  <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n+                </li>\r\n+              </ul>\r\n+            </div>\r\n           </div>\r\n         </div>\r\n       </el-card>\r\n       <el-card>\r\n"
+                },
+                {
+                    "date": 1651922315192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,19 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div>\r\n               <p class=\"body-p\">技能点</p>\r\n-              <ul>\r\n-                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=https://mail.google.com\" class=\"icon\" alt=\"\">\r\n-                  <a href=\"mailto:shuang.lixx@gmail.com\"> shuang.lixx@gmail.com</a>\r\n-                </li>\r\n-                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.github.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                  <a href=\"https://github.com/shuang54\"> https://github.com/shuang54</a>\r\n-                </li>\r\n-                <li><img src=\"https://api.iowen.cn/favicon/get.php?url=www.gitee.com/favicon.ico\" class=\"icon\" alt=\"\">\r\n-                  <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n-                </li>\r\n-              </ul>\r\n+\r\n             </div>\r\n           </div>\r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651922339523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,11 @@\n               </ul>\r\n             </div>\r\n             <div>\r\n               <p class=\"body-p\">技能点</p>\r\n-\r\n+              <el-progress :percentage=\"50\"></el-progress>\r\n+              <el-progress :percentage=\"50\"></el-progress>\r\n+              <el-progress :percentage=\"50\"></el-progress>\r\n             </div>\r\n           </div>\r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651922503282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                   <a href=\"https://gitee.com/foochange\"> https://gitee.com/foochange</a>\r\n                 </li>\r\n               </ul>\r\n             </div>\r\n-            <div>\r\n+            <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n               <el-progress :percentage=\"50\"></el-progress>\r\n               <el-progress :percentage=\"50\"></el-progress>\r\n               <el-progress :percentage=\"50\"></el-progress>\r\n@@ -80,8 +80,12 @@\n         border-bottom: 2px solid pink;\r\n         color: pink;\r\n       }\r\n \r\n+      .item2 {\r\n+        width: 50%;\r\n+      }\r\n+\r\n       ul {\r\n         li {\r\n           line-height: 40px;\r\n \r\n"
+                },
+                {
+                    "date": 1651922564884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,12 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :percentage=\"50\"></el-progress>\r\n-              <el-progress :percentage=\"50\"></el-progress>\r\n-              <el-progress :percentage=\"50\"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n             </div>\r\n           </div>\r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651922656738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,8 +83,9 @@\n       }\r\n \r\n       .item2 {\r\n         width: 50%;\r\n+        line-height: 50px;\r\n       }\r\n \r\n       ul {\r\n         li {\r\n"
+                },
+                {
+                    "date": 1651922666817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n       }\r\n \r\n       .item2 {\r\n         width: 50%;\r\n-        line-height: 50px;\r\n+\r\n       }\r\n \r\n       ul {\r\n         li {\r\n"
+                },
+                {
+                    "date": 1651922717789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,8 +84,11 @@\n \r\n       .item2 {\r\n         width: 50%;\r\n \r\n+        .el-progress {\r\n+          line-height: 50px;\r\n+        }\r\n       }\r\n \r\n       ul {\r\n         li {\r\n"
+                },
+                {
+                    "date": 1651922725374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n       .item2 {\r\n         width: 50%;\r\n \r\n         .el-progress {\r\n-          line-height: 50px;\r\n+          line-height: 30px;\r\n         }\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922760071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"true\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :stroke-width=\"26\" :percentage=\"70\" text-inside=\" \"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1651922778282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"true\" :stroke-width=\"26\" :percentage=\"70\" text-inside=\" \"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :stroke-width=\"26\" :percentage=\"70\" format=\" \"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1651922790375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"true\" :stroke-width=\"26\" :percentage=\"70\" format=\" \"></el-progress>\r\n+              <el-progress :text-inside=\"false\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1651922813912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"false\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n+              <el-progress :text-inside=\"false\" show-text=\"\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1651922822708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"false\" show-text=\"\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n+              <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1651922830551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,14 @@\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n               <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n-              <el-progress :text-inside=\"true\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\"></el-progress>\r\n-              <el-progress :text-inside=\"true\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\"></el-progress>\r\n-              <el-progress :text-inside=\"true\" :stroke-width=\"20\" :percentage=\"50\" status=\"exception\"></el-progress>\r\n+              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\">\r\n+              </el-progress>\r\n+              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\">\r\n+              </el-progress>\r\n+              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"20\" :percentage=\"50\"\r\n+                status=\"exception\"></el-progress>\r\n             </div>\r\n           </div>\r\n         </div>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1651922837978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"26\" :percentage=\"70\"></el-progress>\r\n+              <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\">\r\n               </el-progress>\r\n"
+                },
+                {
+                    "date": 1651922853060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,13 @@\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n               <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\"></el-progress>\r\n-              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"24\" :percentage=\"100\" status=\"success\">\r\n+              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n-              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"22\" :percentage=\"80\" status=\"warning\">\r\n+              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"80\" status=\"warning\">\r\n               </el-progress>\r\n-              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"20\" :percentage=\"50\"\r\n+              <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"50\"\r\n                 status=\"exception\"></el-progress>\r\n             </div>\r\n           </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1651922904573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,9 +88,9 @@\n       .item2 {\r\n         width: 50%;\r\n \r\n         .el-progress {\r\n-          line-height: 30px;\r\n+          margin: 10px;\r\n         }\r\n       }\r\n \r\n       ul {\r\n"
+                },
+                {
+                    "date": 1651922983077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\"></el-progress>\r\n+              <el-progress :text-inside=\"false\" format=\"asfdsdf\" :stroke-width=\"10\" :percentage=\"70\"></el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"80\" status=\"warning\">\r\n               </el-progress>\r\n"
+                },
+                {
+                    "date": 1651922995267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <el-progress :text-inside=\"false\" format=\"asfdsdf\" :stroke-width=\"10\" :percentage=\"70\"></el-progress>\r\n+              HTML <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n+              </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"80\" status=\"warning\">\r\n               </el-progress>\r\n"
+                },
+                {
+                    "date": 1651923005078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              HTML <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n+              HTML/css: <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"80\" status=\"warning\">\r\n"
+                },
+                {
+                    "date": 1651923011426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              HTML/css: <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n+              HTML/CSS: <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"80\" status=\"warning\">\r\n"
+                },
+                {
+                    "date": 1651923018920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              HTML/CSS: <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n+              <span>HTML/CSS:</span>\r\n+              <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n               </el-progress>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"80\" status=\"warning\">\r\n"
+                },
+                {
+                    "date": 1651923240777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n               </ul>\r\n             </div>\r\n             <div class=\"item2\">\r\n               <p class=\"body-p\">技能点</p>\r\n-              <div> <span>HTML/CSS:</span>\r\n+              <div>\r\n+                 <span>HTML/CSS:</span>\r\n                 <el-progress :text-inside=\"false\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"70\">\r\n                 </el-progress>\r\n               </div>\r\n               <el-progress :text-inside=\"true\" :show-text=\"false\" :stroke-width=\"10\" :percentage=\"100\" status=\"success\">\r\n"
+                },
+                {
+                    "date": 1651923343069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n         width: 50%;\r\n \r\n         .skillPoints {\r\n           display: flex;\r\n-          flex-direction: column;\r\n+          flex-direction: ;\r\n         }\r\n \r\n         .el-progress {\r\n           margin: 10px;\r\n"
                 }
             ],
             "date": 1651821189463,
