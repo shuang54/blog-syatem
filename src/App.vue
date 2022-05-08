@@ -36,6 +36,16 @@ export default {
 
   // background-color: #ccffcc;
   .el-container {
+    .el-header {
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      z-index: 99;
+    }
+
+    .el-main {
+      margin-top: 60px;
+    }
 
     .el-header,
     .el-footer {

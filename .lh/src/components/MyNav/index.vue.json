@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 103,
+            "activePatchIndex": 111,
             "patches": [
                 {
                     "date": 1645614431496,
@@ -420,6 +420,38 @@
                 {
                     "date": 1651837142141,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  padding: 5px 20px;\r\n   display: flex;\r\n   align-items: center;\r\n \r\n   img {\r\n"
+                },
+                {
+                    "date": 1652010334771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   display: flex;\r\n   align-items: center;\r\n+  position: ;\r\n \r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1652010342377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   display: flex;\r\n   align-items: center;\r\n-  position: ;\r\n+  position: fixed;\r\n \r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1652010353868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,11 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n+  position: fixed;\r\n   display: flex;\r\n   align-items: center;\r\n-  position: fixed;\r\n \r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1652010402244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n #my-nav-container {\r\n   position: fixed;\r\n   display: flex;\r\n   align-items: center;\r\n+  background-color: #c7edcc;\r\n \r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1652010456086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n #my-nav-container {\r\n   position: fixed;\r\n   display: flex;\r\n   align-items: center;\r\n-  background-color: #c7edcc;\r\n \r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n"
+                },
+                {
+                    "date": 1652010507478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n-  position: fixed;\r\n+  // position: fixed;\r\n   display: flex;\r\n   align-items: center;\r\n \r\n   img {\r\n"
+                },
+                {
+                    "date": 1652016196309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n     }\r\n \r\n     .bot {\r\n       border-bottom: 2px solid #13b9e2;\r\n+      caret-color: transparent;\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652016342012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
                 }
             ],
             "date": 1645614431496,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 93,
+            "activePatchIndex": 102,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -380,6 +380,42 @@
                 {
                     "date": 1651807820645,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,12 @@\n }\n </script>\n <style scoped lang=\"less\">\n #app {\n+\n   // background-color: #ccffcc;\n   .el-container {\n+\n     .el-header,\n     .el-footer {\n       background-color: #c7edcc;\n       color: #333;\n@@ -45,8 +47,9 @@\n     .el-main {\n       background-color: #faf9de;\n       color: #333;\n       text-align: center;\n+      padding: 0px;\n     }\n   }\n }\n </style>\n"
+                },
+                {
+                    "date": 1652010403808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,8 @@\n   .el-container {\n \n     .el-header,\n     .el-footer {\n-      background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1652010455579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,11 +35,15 @@\n #app {\n \n   // background-color: #ccffcc;\n   .el-container {\n+    .el-header {\n+      position: fixed;\n+    }\n \n     .el-header,\n     .el-footer {\n+      background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n     }\n \n"
+                },
+                {
+                    "date": 1652010495841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \n   // background-color: #ccffcc;\n   .el-container {\n     .el-header {\n-      position: fixed;\n+      // position: fixed;\n     }\n \n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1652010578641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,11 @@\n \n   // background-color: #ccffcc;\n   .el-container {\n     .el-header {\n-      // position: fixed;\n+      position: fixed;\n+      width: 100%;\n+      height: 50px;\n     }\n \n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1652010596158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,13 +35,9 @@\n #app {\n \n   // background-color: #ccffcc;\n   .el-container {\n-    .el-header {\n-      position: fixed;\n-      width: 100%;\n-      height: 50px;\n-    }\n+    .el-header {}\n \n     .el-header,\n     .el-footer {\n       background-color: #c7edcc;\n"
+                },
+                {
+                    "date": 1652010619935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,18 @@\n #app {\n \n   // background-color: #ccffcc;\n   .el-container {\n-    .el-header {}\n+    .el-header {\n+      position: fixed;\n+      width: 100%;\n+      height: 50px;\n+    }\n \n+    .el-main {\n+      margin-top: 50px;\n+    }\n+\n     .el-header,\n     .el-footer {\n       background-color: #c7edcc;\n       color: #333;\n"
+                },
+                {
+                    "date": 1652010631040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n       height: 50px;\n     }\n \n     .el-main {\n-      margin-top: 50px;\n+      margin-top: 80px;\n     }\n \n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1652010643468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n       height: 50px;\n     }\n \n     .el-main {\n-      margin-top: 80px;\n+      margin-top: 60px;\n     }\n \n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1652010686700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n     .el-header {\n       position: fixed;\n       width: 100%;\n       height: 50px;\n+      z-index: 99;\n     }\n \n     .el-main {\n       margin-top: 60px;\n"
                 }
             ],
             "date": 1645530111266,

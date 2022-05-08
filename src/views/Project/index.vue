@@ -1,0 +1,314 @@
+<template>
+  <div class="container" id="container">
+    <div class="main" id="mainWrap">
+      <div id="mainContent">
+        <!-- 每个大item -->
+        <div class="fe" id="item">
+          <!-- 标题 -->
+          <div class="sub-category">
+            <div>
+              <i class="iconfont icon-zuzhi"></i>
+              标题
+            </div>
+          </div>
+          <div class="item-a">
+            <!--  每个item -->
+            <a target="_blank" href="">
+              <div class="item">
+                <div class="logo">
+                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
+                  名称
+                </div>
+
+                <div class="desc">
+                  描述
+                </div>
+              </div>
+            </a>
+            <a target="_blank" href="">
+              <div class="item">
+                <div class="logo">
+                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
+                  名称
+                </div>
+
+                <div class="desc">
+                  描述
+                </div>
+              </div>
+            </a>
+            <a target="_blank" href="">
+              <div class="item">
+                <div class="logo">
+                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
+                  名称
+                </div>
+
+                <div class="desc">
+                  描述
+                </div>
+              </div>
+            </a>
+            <a target="_blank" href="">
+              <div class="item">
+                <div class="logo">
+                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
+                  名称
+                </div>
+
+                <div class="desc">
+                  描述
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: 'project',
+  data() {
+    return {
+
+    }
+  }
+}
+</script>
+<style lang="less">
+.item-a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content {
+  -webkit-box-flex: 1
+}
+
+@media (min-width:481px) {
+
+
+  .main #mainContent {
+    max-width: 1200px;
+    margin: 0 auto
+  }
+
+  .main .fe .item:hover {
+    transform: translateY(-6px);
+    -webkit-transform: translateY(-6px);
+    -moz-transform: translateY(-6px);
+    box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+    -webkit-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+    -moz-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+    transition: all .3s ease
+  }
+}
+
+
+.container .main {
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-left: 0px;
+}
+
+
+.container .main .fe {
+  overflow: hidden;
+  background: #fff;
+  margin: 20px 30px;
+  padding-bottom: 20px
+}
+
+.container .main .fe .sub-category>div {
+  padding: 12px 0 0 2.1%;
+  font-size: 18px
+}
+
+.container .main .fe .sub-category>div i {
+  font-size: 18px
+}
+
+.container .main .fe:last-child {
+  margin-bottom: 35px
+}
+
+.container .main .fe .item {
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px;
+  width: 20%;
+  min-width: 200px;
+  margin: 22px 0 0 2.1%;
+  float: left;
+  overflow: hidden;
+  border: 1px solid #e4ecf3;
+  box-shadow: 1px 2px 3px #f2f6f8
+}
+
+.container .main .fe .item .title {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 10px;
+  margin-left: 50px;
+  color: #3273dc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 .1rem
+}
+
+.container .main .fe .item .desc {
+  color: gray;
+  font-size: 12px;
+  padding-top: 10px;
+  height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+.container .main .fe .logo {
+  height: 40px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3273dc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 .1rem
+}
+
+.container .main .fe .logo a {
+  display: inline-block;
+  width: 100%
+}
+
+.container .main .fe .logo a:active,
+.container .main .fe .logo a:focus,
+.container .main .fe .logo a:hover,
+.container .main .fe .logo a:visited {
+  background: inherit
+}
+
+.container .main .fe .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle
+}
+
+.container .footer {
+  width: 100%;
+  bottom: 0;
+  line-height: 45px;
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .2)
+}
+
+.container .footer .recommend,
+.container .footer p {
+  display: none
+}
+
+.container .footer .copyright {
+  margin-left: 30px;
+  color: #949494;
+  font-size: 12px
+}
+
+.container .footer .copyright a {
+  text-decoration: none;
+  color: #3a85ff
+}
+
+@media (max-width:480px) {
+
+  .container .main {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    margin: 0;
+    padding-top: 40px
+  }
+
+  .container .main .fe {
+    margin: 16px 3% 0;
+    overflow: hidden
+  }
+
+  .container .main .fe .sub-category>div {
+    padding-left: 3%
+  }
+
+  .container .main .fe .item {
+    width: 39.5%;
+    float: left;
+    min-width: 100px;
+    margin-left: 3%;
+    margin-top: 12px
+  }
+
+  .container .main .fe .item .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 .1rem;
+    margin: .2rem auto
+  }
+
+  .container .main .fe .item .desc {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    height: .58rem;
+    font-size: 12px;
+    line-height: 16px
+  }
+
+  .container .main .fe:last-child {
+    margin-bottom: 16px
+  }
+
+}
+
+@media (min-width:380px) and (max-width:480px) {
+  .container .main .fe .item .desc {
+    height: .52rem
+  }
+}
+
+@media (min-width:481px) {
+  .container .main .fe .item {
+    width: 80%
+  }
+}
+
+@media (min-width:768px) {
+  .container .main .fe .item {
+    width: 43%
+  }
+}
+
+@media (min-width:1040px) {
+  .container .main .fe .item {
+    width: 28%
+  }
+}
+
+@media (min-width:1200px) {
+  .container .main .fe .item {
+    width: 40% !important;
+  }
+}
+</style>

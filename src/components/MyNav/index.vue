@@ -7,7 +7,7 @@
     <nav>
       <router-link active-class="bot" :to="{ path: '/#' }">首页</router-link>
       <router-link active-class="bot" :to="{ path: '/collect' }">收藏</router-link>
-      <router-link active-class="bot" :to="{ path: '/pro' }">个人项目</router-link>
+      <router-link active-class="bot" :to="{ path: '/project' }">个人项目</router-link>
       <router-link active-class="bot" :to="{ path: '/about' }">关于</router-link>
     </nav>
   </div>
@@ -21,6 +21,7 @@ export default {
 
 <style scoped lang="less">
 #my-nav-container {
+  // position: fixed;
   display: flex;
   align-items: center;
 
@@ -50,6 +51,7 @@ export default {
 
     .bot {
       border-bottom: 2px solid #13b9e2;
+      caret-color: transparent;
     }
   }
 }
