@@ -73,7 +73,7 @@ export default {
   props: ['articleList', 'categoryName'],
   data() {
     return {
-      search: ''
+      search: '',
     }
   },
   computed: {

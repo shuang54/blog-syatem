@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 111,
+            "activePatchIndex": 113,
             "patches": [
                 {
                     "date": 1645614431496,
@@ -452,6 +452,14 @@
                 {
                     "date": 1652016342012,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/pro' }\">个人项目</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">个人项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1652101040303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <div>\r\n-      <img src=\"@/assets/images/avataaars.png\" />\r\n+      <img src=\"https://img.shejibiji.com/2022/05/09/62790f8e72257.jpg\" />\r\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n"
+                },
+                {
+                    "date": 1652101063734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <div>\r\n-      <img src=\"https://img.shejibiji.com/2022/05/09/62790f8e72257.jpg\" />\r\n+      <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n"
                 }
             ],
             "date": 1645614431496,

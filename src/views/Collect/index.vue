@@ -3215,7 +3215,7 @@ export default {
 
 @media (min-width:1200px) {
   .container .main .fe .item {
-    width: 20%
+    width: 20%;
   }
 }
 </style>

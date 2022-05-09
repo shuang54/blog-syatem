@@ -5,18 +5,31 @@
         <!-- 每个大item -->
         <div class="fe" id="item">
           <!-- 标题 -->
-          <div class="sub-category">
+          <!-- <div class="sub-category">
             <div>
               <i class="iconfont icon-zuzhi"></i>
               标题
             </div>
-          </div>
+          </div> -->
           <div class="item-a">
             <!--  每个item -->
+            <a target="_blank" href="https://github.com/shuang54/new-tab">
+              <div :style="{
+                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/public/%E9%A6%96%E9%A1%B5.png' + ')', backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }" class="item">
+                <div class="logo">
+                  new-tab
+                </div>
+                <div class="desc">
+                  一款个性化的个性化的浏览器起始页插件
+                </div>
+              </div>
+            </a>
             <a target="_blank" href="">
               <div class="item">
                 <div class="logo">
-                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
                   名称
                 </div>
 
@@ -28,7 +41,6 @@
             <a target="_blank" href="">
               <div class="item">
                 <div class="logo">
-                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
                   名称
                 </div>
 
@@ -40,19 +52,6 @@
             <a target="_blank" href="">
               <div class="item">
                 <div class="logo">
-                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
-                  名称
-                </div>
-
-                <div class="desc">
-                  描述
-                </div>
-              </div>
-            </a>
-            <a target="_blank" href="">
-              <div class="item">
-                <div class="logo">
-                  <img width="100%" class="loaded" alt="图片未显示" v-lazy="">
                   名称
                 </div>
 
@@ -68,23 +67,16 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'project',
   data() {
     return {
-
     }
   }
 }
 </script>
 <style lang="less">
-.item-a {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .content {
   -webkit-box-flex: 1
 }
@@ -97,10 +89,11 @@ export default {
     margin: 0 auto
   }
 
+
+
   .main .fe .item:hover {
-    transform: translateY(-6px);
-    -webkit-transform: translateY(-6px);
-    -moz-transform: translateY(-6px);
+    backdrop-filter: blur(10px);
+    transform: scale(1.1);
     box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
     -webkit-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
     -moz-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
@@ -123,7 +116,7 @@ export default {
 
 .container .main .fe {
   overflow: hidden;
-  background: #fff;
+  // background: #fff;
   margin: 20px 30px;
   padding-bottom: 20px
 }
@@ -170,7 +163,7 @@ export default {
   color: gray;
   font-size: 12px;
   padding-top: 10px;
-  height: 35px;
+  height: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -187,7 +180,8 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 .1rem
+  margin-top: 40px;
+  text-align: center;
 }
 
 .container .main .fe .logo a {
@@ -308,7 +302,7 @@ export default {
 
 @media (min-width:1200px) {
   .container .main .fe .item {
-    width: 40% !important;
+    width: 45% !important;
   }
 }
 </style>
