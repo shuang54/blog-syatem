@@ -70,7 +70,7 @@ const mutations = {
   GETARTICLElIST2(state, data) {
     if (data.length == []) {
       Message({
-        message: '加载失败',
+        message: '暂无数据',
         type: 'error'
       }, true)
     }

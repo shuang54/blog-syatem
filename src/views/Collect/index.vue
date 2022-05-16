@@ -2,13 +2,7 @@
   <div class="container" id="container">
     <div class="left-bar">
       <div class="nav">
-        <div class="home item active">
-          <a href="/">
-            <i class="iconfont icon-daohang"></i>
-            前端导航
-          </a>
-          <i class="hairlines"></i>
-        </div>
+
         <div class="nav-item">
           <div class="category-nav" id="category">
             <ul>
@@ -19,7 +13,6 @@
                   {{ item.category_CN }}
                 </a>
               </li>
-
             </ul>
             <i id="menu-shadow-top" class="menu-list-shadow is-top" style="opacity: 0; transform: scaleY(0);"></i>
             <i id="menu-shadow-bottom" class="menu-list-shadow is-bottom" style="opacity: 1;transform: scaleY(1);;"></i>
@@ -2730,11 +2723,12 @@ export default {
   }
 
   .main #mainContent {
-    max-width: 1200px;
     margin: 0 auto
   }
 
+
   .main .fe .item:hover {
+
     transform: translateY(-6px);
     -webkit-transform: translateY(-6px);
     -moz-transform: translateY(-6px);
@@ -2913,7 +2907,8 @@ export default {
 
 .container .main .fe .sub-category>div {
   padding: 12px 0 0 2.1%;
-  font-size: 18px
+  font-size: 18px;
+  text-align: left;
 }
 
 .container .main .fe .sub-category>div i {

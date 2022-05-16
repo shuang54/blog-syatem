@@ -76,7 +76,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .content {
   -webkit-box-flex: 1
 }
@@ -89,6 +89,9 @@ export default {
     margin: 0 auto
   }
 
+  .main .fe .item {
+    transition-duration: .5s;
+  }
 
 
   .main .fe .item:hover {

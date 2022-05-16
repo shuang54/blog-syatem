@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 102,
+            "activePatchIndex": 104,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -416,6 +416,14 @@
                 {
                     "date": 1652010686700,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n     .el-header {\n       position: fixed;\n       width: 100%;\n       height: 50px;\n+      z-index: 99;\n     }\n \n     .el-main {\n       margin-top: 60px;\n"
+                },
+                {
+                    "date": 1652593847738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,66 @@\n+<template>\n+  <div id=\"app\">\n+    <!-- Container组件 -->\n+    <el-container>\n+      <!-- 顶栏容器 -->\n+      <el-header>\n+        <!-- 自定义的头部组件 -->\n+        <MyNav></MyNav>\n+      </el-header>\n+      <!-- 主要区域容器 -->\n+      <el-main>\n+        <!-- 路由组件在这里展示 -->\n+        <keep-alive include=\"mainvue\">\n+          <router-view></router-view>\n+        </keep-alive>\n+        <!-- <MyMain></MyMain> -->\n+      </el-main>\n+    </el-container>\n+  </div>\n+</template>\n+<script>\n+// 引入组件\n+import MyMain from '@/components/Main/index.vue'\n+import MyNav from '@/components/MyNav'\n+import 'element-ui/lib/theme-chalk/index.css';\n+export default {\n+  /* 注册组件 */\n+  components: {\n+    MyMain,\n+    MyNav,\n+  },\n+}\n+</script>\n+<style scoped lang=\"less\">\n+#app {\n+\n+  // background-color: #ccffcc;\n+  .el-container {\n+    .el-header {\n+      position: fixed;\n+      width: 100%;\n+      height: 50px;\n+      z-index: 99;\n+    }\n+\n+    .el-main {\n+      margin-top: 60px;\n+    }\n+\n+    .el-header,\n+    .el-footer {\n+      background-color: #c7edcc;\n+      color: #333;\n+      text-align: center;\n+    }\n+\n+    .el-main {\n+      background-color: #faf9de;\n+      color: #333;\n+      text-align: center;\n+      padding: 0px;\n+      z-index: -1;\n+    }\n+  }\n+}\n+</style>\n"
+                },
+                {
+                    "date": 1652593873648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,74 +58,8 @@\n       background-color: #faf9de;\n       color: #333;\n       text-align: center;\n       padding: 0px;\n-      z-index: -1;\n     }\n   }\n }\n </style>\n-<template>\n-  <div id=\"app\">\n-    <!-- Container组件 -->\n-    <el-container>\n-      <!-- 顶栏容器 -->\n-      <el-header>\n-        <!-- 自定义的头部组件 -->\n-        <MyNav></MyNav>\n-      </el-header>\n-      <!-- 主要区域容器 -->\n-      <el-main>\n-        <!-- 路由组件在这里展示 -->\n-        <keep-alive include=\"mainvue\">\n-          <router-view></router-view>\n-        </keep-alive>\n-        <!-- <MyMain></MyMain> -->\n-      </el-main>\n-    </el-container>\n-  </div>\n-</template>\n-<script>\n-// 引入组件\n-import MyMain from '@/components/Main/index.vue'\n-import MyNav from '@/components/MyNav'\n-import 'element-ui/lib/theme-chalk/index.css';\n-export default {\n-  /* 注册组件 */\n-  components: {\n-    MyMain,\n-    MyNav,\n-  },\n-}\n-</script>\n-<style scoped lang=\"less\">\n-#app {\n-\n-  // background-color: #ccffcc;\n-  .el-container {\n-    .el-header {\n-      position: fixed;\n-      width: 100%;\n-      height: 50px;\n-      z-index: 99;\n-    }\n-\n-    .el-main {\n-      margin-top: 60px;\n-    }\n-\n-    .el-header,\n-    .el-footer {\n-      background-color: #c7edcc;\n-      color: #333;\n-      text-align: center;\n-    }\n-\n-    .el-main {\n-      background-color: #faf9de;\n-      color: #333;\n-      text-align: center;\n-      padding: 0px;\n-    }\n-  }\n-}\n-</style>\n"
                 }
             ],
             "date": 1645530111266,

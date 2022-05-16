@@ -47,6 +47,7 @@ export default {
   methods: {
     //判断滚动条是否到底部，刷新新的数据
     isRefresh: throttle(function () {
+      if(this.$route.path != '/')return;
       //变量scrollTop是滚动条滚动时，距离顶部的距离
       let scrollTop =
         document.documentElement.scrollTop || document.body.scrollTop;
@@ -74,6 +75,7 @@ export default {
     }, 300),
     //刷新推荐文章
     refresh() {
+       if(this.$route.path != '/')return;
       let that = this;
       let { page, num } = this
       page += num
@@ -124,6 +126,7 @@ export default {
     this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
 
     //监视scroll滚动条
+    // if(this.$router)
     window.addEventListener("scroll", this.isRefresh, true);
     // console.log('created');
     // this.$on('queryArticleByTitle')

@@ -15,8 +15,9 @@
               <span style="font-size: 18px;">更多功能</span>
             </div>
             <ul class="box-ul">
-              <li v-for="o in 4" class="box-li">粘贴板</li>
-              <li class="box-li">个人导航</li>
+              <li class="box-li"><router-link to="/about">个人介绍</router-link></li>
+              <li class="box-li"><router-link to="/project">我的项目</router-link></li>
+              <li class="box-li"><router-link to="/collect">个人导航</router-link></li>
             </ul>
           </el-card>
         </div>
@@ -35,9 +36,15 @@
               </div>
               <time class="time">{{ cTime(item.createTime) }}</time>
             </div>
+          <!-- <el-pagination
+          background
+          layout="prev, pager, next"
+         :total="1000">
+        </el-pagination> -->
           </div>
         </div>
         <el-empty v-show="!isShow" :image-size="200"></el-empty>
+        
       </el-col>
       <el-col :sm="4" :md="4" :lg="3" :xs="0">
         <div class="right">
@@ -53,11 +60,11 @@
               <i v-show="categoryName == item.categoryName" @click="clearCategoryName()" class="el-icon-close"></i>
             </div>
           </el-card>
-          <el-card class="box-card" shadow="hover">
+          <!-- <el-card class="box-card" shadow="hover">
             <div slot="header" class="clearfix">
               <span style="font-size: 18px;">推荐阅读</span>
             </div>
-          </el-card>
+          </el-card> -->
         </div>
       </el-col>
     </el-row>
@@ -290,6 +297,11 @@ export default {
       background-color: #ccc;
       cursor: pointer;
     }
+    a{
+      color: black;
+    }
   }
 }
+
+
 </style>

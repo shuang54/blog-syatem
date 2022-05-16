@@ -126,7 +126,7 @@ export default {
 <style scoped lang="less">
 #article-container {
   margin: 0 auto;
-
+  margin-top: 10px;
   .page-title {
     height: 60px;
     margin: 10px 0 10px 0;
@@ -154,6 +154,7 @@ export default {
   .md {
     height: 100%;
     max-height: 100%;
+    z-index: 0;
   }
 
   .cc {

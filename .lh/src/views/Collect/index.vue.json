@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 81,
+            "activePatchIndex": 89,
             "patches": [
                 {
                     "date": 1651930308133,
@@ -332,6 +332,38 @@
                 {
                     "date": 1652097644841,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3214,8 +3214,8 @@\n }\r\n \r\n @media (min-width:1200px) {\r\n   .container .main .fe .item {\r\n-    width: 45%;\r\n+    width: 20%;\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652183853353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,9 @@\n <template>\r\n   <div class=\"container\" id=\"container\">\r\n     <div class=\"left-bar\">\r\n       <div class=\"nav\">\r\n-        <div class=\"home item active\">\r\n-          <a href=\"/\">\r\n-            <i class=\"iconfont icon-daohang\"></i>\r\n-            前端导航\r\n-          </a>\r\n-          <i class=\"hairlines\"></i>\r\n-        </div>\r\n+\r\n         <div class=\"nav-item\">\r\n           <div class=\"category-nav\" id=\"category\">\r\n             <ul>\r\n               <li v-for=\"(item, index) in webSiteJson\" :key=\"item.Category_id\"\r\n"
+                },
+                {
+                    "date": 1652184214659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n                   <i class=\"iconfont icon-zuzhi\"></i>\r\n                   {{ item.category_CN }}\r\n                 </a>\r\n               </li>\r\n-\r\n             </ul>\r\n             <i id=\"menu-shadow-top\" class=\"menu-list-shadow is-top\" style=\"opacity: 0; transform: scaleY(0);\"></i>\r\n             <i id=\"menu-shadow-bottom\" class=\"menu-list-shadow is-bottom\" style=\"opacity: 1;transform: scaleY(1);;\"></i>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1652184399173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2727,8 +2727,9 @@\n     margin: 0 auto\r\n   }\r\n \r\n   .main .fe .item:hover {\r\n+    transition-duration: 1s;\r\n     transform: translateY(-6px);\r\n     -webkit-transform: translateY(-6px);\r\n     -moz-transform: translateY(-6px);\r\n     box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);\r\n"
+                },
+                {
+                    "date": 1652184430189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2726,10 +2726,12 @@\n     max-width: 1200px;\r\n     margin: 0 auto\r\n   }\r\n \r\n+  .main .fe .item {}\r\n+\r\n   .main .fe .item:hover {\r\n-    transition-duration: 1s;\r\n+\r\n     transform: translateY(-6px);\r\n     -webkit-transform: translateY(-6px);\r\n     -moz-transform: translateY(-6px);\r\n     box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);\r\n"
+                },
+                {
+                    "date": 1652184442160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2726,9 +2726,11 @@\n     max-width: 1200px;\r\n     margin: 0 auto\r\n   }\r\n \r\n-  .main .fe .item {}\r\n+  .main .fe .item {\r\n+    transition-duration: 1s;\r\n+  }\r\n \r\n   .main .fe .item:hover {\r\n \r\n     transform: translateY(-6px);\r\n"
+                },
+                {
+                    "date": 1652184462773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2726,11 +2726,8 @@\n     max-width: 1200px;\r\n     margin: 0 auto\r\n   }\r\n \r\n-  .main .fe .item {\r\n-    transition-duration: 1s;\r\n-  }\r\n \r\n   .main .fe .item:hover {\r\n \r\n     transform: translateY(-6px);\r\n"
+                },
+                {
+                    "date": 1652583308287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2722,9 +2722,9 @@\n     right: 0\r\n   }\r\n \r\n   .main #mainContent {\r\n-    max-width: 1200px;\r\n+    <!-- max-width: 1200px; -->\r\n     margin: 0 auto\r\n   }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1652583438560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2722,9 +2722,8 @@\n     right: 0\r\n   }\r\n \r\n   .main #mainContent {\r\n-    <!-- max-width: 1200px; -->\r\n     margin: 0 auto\r\n   }\r\n \r\n \r\n@@ -2907,9 +2906,10 @@\n }\r\n \r\n .container .main .fe .sub-category>div {\r\n   padding: 12px 0 0 2.1%;\r\n-  font-size: 18px\r\n+  font-size: 18px;\r\n+  text-align: left;\r\n }\r\n \r\n .container .main .fe .sub-category>div i {\r\n   font-size: 18px\r\n"
                 }
             ],
             "date": 1651930308133,
