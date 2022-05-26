@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 89,
+            "activePatchIndex": 91,
             "patches": [
                 {
                     "date": 1651930308133,
@@ -364,6 +364,14 @@
                 {
                     "date": 1652583438560,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2722,9 +2722,8 @@\n     right: 0\r\n   }\r\n \r\n   .main #mainContent {\r\n-    <!-- max-width: 1200px; -->\r\n     margin: 0 auto\r\n   }\r\n \r\n \r\n@@ -2907,9 +2906,10 @@\n }\r\n \r\n .container .main .fe .sub-category>div {\r\n   padding: 12px 0 0 2.1%;\r\n-  font-size: 18px\r\n+  font-size: 18px;\r\n+  text-align: left;\r\n }\r\n \r\n .container .main .fe .sub-category>div i {\r\n   font-size: 18px\r\n"
+                },
+                {
+                    "date": 1653563631702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -321,9 +321,9 @@\n             {\r\n               \"child_name\": \"GitHub\",\r\n               \"img_src\": \"./img/github.png\",\r\n               \"a_href\": \"https://github.com/\",\r\n-              \"child_desc\": \"一个面向开源及私有软件项目的托管平台,全球最大同性交友网站\"\r\n+              \"child_desc\": \"一个面向开源及私有软件项目的托管平台\"\r\n             },\r\n             {\r\n               \"child_name\": \"Stack Overflow\",\r\n               \"img_src\": \"./img/StackOverflow.png\",\r\n"
+                },
+                {
+                    "date": 1653572766747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,30 +49,9 @@\n           </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n-    <div class=\"footer\">\r\n-      <!--<div class=\"recommend\">\r\n-                  <p>Web前端导航，最<strong>贴心</strong>的 前端导航！</p>\r\n \r\n-                  <div>如果你也有好的资源欢迎向我们\r\n-                      <div class=\"recommend-icon\">\r\n-                          <a href=\"\">推荐</a>\r\n-                      </div>\r\n-                  </div>\r\n-                  <div>Thank you!<img src=\"./static/images/kissing.png\" /> </div>\r\n-              </div>-->\r\n-      <p>微信关注 AlloyTeam 公众号，了解我们更多资讯</p>\r\n-      <div class=\"copyright\">\r\n-        <div>\r\n-\r\n-          Copyright © 2011- 2022\r\n-          <a href=\"http://www.alloyteam.com/\">\r\n-            Web前端 腾讯AlloyTeam\r\n-          </a>\r\n-        </div>\r\n-      </div>\r\n-    </div>\r\n   </div>\r\n </template>\r\n <script>\r\n export default {\r\n"
                 }
             ],
             "date": 1651930308133,

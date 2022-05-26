@@ -50,28 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      <!--<div class="recommend">
-                  <p>Web前端导航，最<strong>贴心</strong>的 前端导航！</p>
 
-                  <div>如果你也有好的资源欢迎向我们
-                      <div class="recommend-icon">
-                          <a href="">推荐</a>
-                      </div>
-                  </div>
-                  <div>Thank you!<img src="./static/images/kissing.png" /> </div>
-              </div>-->
-      <p>微信关注 AlloyTeam 公众号，了解我们更多资讯</p>
-      <div class="copyright">
-        <div>
-
-          Copyright © 2011- 2022
-          <a href="http://www.alloyteam.com/">
-            Web前端 腾讯AlloyTeam
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -322,7 +301,7 @@ export default {
               "child_name": "GitHub",
               "img_src": "./img/github.png",
               "a_href": "https://github.com/",
-              "child_desc": "一个面向开源及私有软件项目的托管平台,全球最大同性交友网站"
+              "child_desc": "一个面向开源及私有软件项目的托管平台"
             },
             {
               "child_name": "Stack Overflow",
