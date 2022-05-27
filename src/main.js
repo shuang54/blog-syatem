@@ -7,9 +7,12 @@ import { mavonEditor } from 'mavon-editor'
 import Vuelazyload from 'vue-lazyload'
 
 // import 'mavon-editor/dist/css/index.css'
-import { Button, Input, Select, Pagination, Option, Calendar, Message, Container, Main, Header, Card, Col, Backtop, Row, Icon, Empty, Breadcrumb, BreadcrumbItem, Divider, Progress } from 'element-ui';
+import { Button, Input, Select, TimelineItem,Tag, Timeline, Pagination, Option, Calendar, Message, Container, Main, Header, Card, Col, Backtop, Row, Icon, Empty, Breadcrumb, BreadcrumbItem, Divider, Progress } from 'element-ui';
 Vue.config.productionTip = false
 Vue.use(Calendar)
+Vue.use(TimelineItem)
+Vue.use(Tag)
+Vue.use(Timeline)
 Vue.use(Pagination)
 Vue.use(Button)
 Vue.use(Input)

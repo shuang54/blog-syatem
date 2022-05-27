@@ -1,26 +1,25 @@
 <template>
-  <div id="main-container">
-    <!-- 文章列表 -->
-    <ArticleList v-show="isShow" :articleList="Alist" @queryArticleByTitle="queryArticleByTitle"
-      @queryArticleByCategoryName="queryArticleByCategoryName" @clearInput="clearInput"
-      @clearCategoryName="clearCategoryName" :categoryName="categoryName">
-    </ArticleList>
+   <div id="archive-container">
+     <el-timeline>
+    <el-timeline-item :color="color16m()" v-for="item in Alist" :timestamp="item.createTime" placement="top">
+      <el-card shadow="hover">
+        <div class="card">
 
+          <p>{{item.title}}</p>
+        <el-tag effect="plain" type="success">{{item.categoryName}}</el-tag>
+        </div>
+      </el-card>
+    </el-timeline-item>
+  </el-timeline>
   </div>
-
 </template>
 
 <script>
-import ArticleList from './ArticleList'
-import Article from '../Main/Article'
+
 import { mapState } from 'vuex'
 import { throttle } from 'lodash'
 export default {
   name: 'mainvue',
-  components: {
-    ArticleList,
-    Article,
-  },
   data() {
     return {
       // isRefreshBool: true,
@@ -42,9 +41,17 @@ export default {
     }),
     p() {
       return this.$route.path
-    }
+    },
+       
   },
   methods: {
+             color16m(){//十六进制颜色随机
+						var r = Math.floor(Math.random()*256);
+						var g = Math.floor(Math.random()*256);
+						var b = Math.floor(Math.random()*256);
+						var color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
+						return color;
+					},       
     //判断滚动条是否到底部，刷新新的数据
     isRefresh: throttle(function () {
       if(this.$route.path != '/')return;
@@ -123,18 +130,28 @@ export default {
   },
   created() {
     this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })
-
-    //监视scroll滚动条
-    // if(this.$router)
-    window.addEventListener("scroll", this.isRefresh, true);
-    // console.log('created');
-    // this.$on('queryArticleByTitle')
   },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.isRefresh)
-  }
+
 }
 </script>
+<style lang="less" scoped>
 
-<style scoped lang="less">
+#archive-container{
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 80px;
+  /deep/.el-timeline-item__tail{
+    border-left: 4px solid #409eff;
+  }
+  .card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /deep/.el-card{
+    cursor:pointer;
+  }
+}
 </style>

@@ -1,0 +1,198 @@
+{
+    "sourceFile": "src/views/Archive/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 45,
+            "patches": [
+                {
+                    "date": 1653659856671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653659866994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <template>\r\n   <div>\r\n-\r\n     <el-timeline>\r\n     <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n       <el-card>\r\n         <h4>更新 Github 模板</h4>\r\n"
+                },
+                {
+                    "date": 1653659894993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <template>\r\n-  <div>\r\n-    <el-timeline>\r\n+   \r\n+<el-row>\r\n+  <el-col :span=\"24\">\r\n+  \r\n+   <el-timeline>\r\n     <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n       <el-card>\r\n         <h4>更新 Github 模板</h4>\r\n       </el-card>\r\n@@ -16,9 +19,10 @@\n         <h4>更新 Github 模板</h4>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n-  </div>\r\n+  </el-col>\r\n+</el-row>\r\n </template>\r\n \r\n <script>\r\n </script>\r\n"
+                },
+                {
+                    "date": 1653659961180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n    \r\n <el-row>\r\n-  <el-col :span=\"24\">\r\n+  <el-col :xs=\"8\" :sm=\"6\" :md=\"4\" :lg=\"3\" :xl=\"1\">\r\n   \r\n    <el-timeline>\r\n     <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n       <el-card>\r\n"
+                },
+                {
+                    "date": 1653659998208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n-   \r\n-<el-row>\r\n-  <el-col :xs=\"8\" :sm=\"6\" :md=\"4\" :lg=\"3\" :xl=\"1\">\r\n-  \r\n-   <el-timeline>\r\n+   <div>\r\n+\r\n+\r\n+     \r\n+     <el-timeline>\r\n     <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n       <el-card>\r\n         <h4>更新 Github 模板</h4>\r\n       </el-card>\r\n@@ -19,10 +19,9 @@\n         <h4>更新 Github 模板</h4>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n-  </el-col>\r\n-</el-row>\r\n+        </div>\r\n </template>\r\n \r\n <script>\r\n </script>\r\n"
+                },
+                {
+                    "date": 1653660005069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n <template>\r\n    <div>\r\n-\r\n-\r\n-     \r\n      <el-timeline>\r\n     <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n       <el-card>\r\n         <h4>更新 Github 模板</h4>\r\n@@ -19,9 +16,9 @@\n         <h4>更新 Github 模板</h4>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n-        </div>\r\n+  </div>\r\n </template>\r\n \r\n <script>\r\n </script>\r\n"
+                },
+                {
+                    "date": 1653660061044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-   <div>\r\n+   <div id=\"archive-container\">\r\n      <el-timeline>\r\n     <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n       <el-card>\r\n         <h4>更新 Github 模板</h4>\r\n@@ -20,7 +20,12 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+\r\n </script>\r\n <style lang=\"less\">\r\n+#archive-container{\r\n+  width: 400px;\r\n+  margin: 0 auto;\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653660094025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,7 @@\n <style lang=\"less\">\r\n #archive-container{\r\n   width: 400px;\r\n   margin: 0 auto;\r\n+  text-align: left;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653660104150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,7 @@\n #archive-container{\r\n   width: 400px;\r\n   margin: 0 auto;\r\n   text-align: left;\r\n+  \r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653660119102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n #archive-container{\r\n   width: 400px;\r\n   margin: 0 auto;\r\n   text-align: left;\r\n-  \r\n+  margin-top: 10px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653660134971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n #archive-container{\r\n   width: 400px;\r\n   margin: 0 auto;\r\n   text-align: left;\r\n-  margin-top: 10px;\r\n+  margin-top: 80px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653660337228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,34 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n+import { mapState } from \"vuex\"\r\n \r\n+\r\n+export default {\r\n+  name: 'Article',\r\n+  computed: {\r\n+    ...mapState({\r\n+      articleData: state => state.Article.article\r\n+    }),\r\n+    publicationDate() {\r\n+      let time = `${this.articleData.createTime}`.slice(0, 10).split('-')\r\n+      return `${time[0]}年${time[1]}月${time[2]}日`\r\n+    }\r\n+  },\r\n+  data() {\r\n+    return {\r\n+  \r\n+    }\r\n+  },\r\n+  methods: {\r\n+  },\r\n+  created() {\r\n+    this.id = this.$route.params.id\r\n+    this.$store.dispatch('getArticle', this.id)\r\n+  }\r\n+}\r\n </script>\r\n <style lang=\"less\">\r\n #archive-container{\r\n   width: 400px;\r\n"
+                },
+                {
+                    "date": 1653660354683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,13 @@\n \r\n \r\n export default {\r\n   name: 'Article',\r\n+  data() {\r\n+    return {\r\n+  \r\n+    }\r\n+  },\r\n   computed: {\r\n     ...mapState({\r\n       articleData: state => state.Article.article\r\n     }),\r\n@@ -34,19 +39,12 @@\n       let time = `${this.articleData.createTime}`.slice(0, 10).split('-')\r\n       return `${time[0]}年${time[1]}月${time[2]}日`\r\n     }\r\n   },\r\n-  data() {\r\n-    return {\r\n   \r\n-    }\r\n-  },\r\n   methods: {\r\n   },\r\n-  created() {\r\n-    this.id = this.$route.params.id\r\n-    this.$store.dispatch('getArticle', this.id)\r\n-  }\r\n+\r\n }\r\n </script>\r\n <style lang=\"less\">\r\n #archive-container{\r\n"
+                },
+                {
+                    "date": 1653660397997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,13 @@\n   \r\n   methods: {\r\n   },\r\n \r\n+  mounted () {\r\n+    console.log(articleData);\r\n+    \r\n+  } \r\n+  \r\n }\r\n </script>\r\n <style lang=\"less\">\r\n #archive-container{\r\n"
+                },
+                {
+                    "date": 1653660420494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   methods: {\r\n   },\r\n \r\n   mounted () {\r\n-    console.log(articleData);\r\n+    console.log(this.articleData);\r\n     \r\n   } \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1653660500017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   methods: {\r\n   },\r\n \r\n   mounted () {\r\n-    console.log(this.articleData);\r\n+    console.log(this.articleData.);\r\n     \r\n   } \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1653660576872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   methods: {\r\n   },\r\n \r\n   mounted () {\r\n-    console.log(this.articleData.);\r\n+    console.log(this.articleData);\r\n     \r\n   } \r\n   \r\n }\r\n"
+                },
+                {
+                    "date": 1653660755085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,36 +20,131 @@\n   </div>\r\n </template>\r\n \r\n <script>\r\n-import { mapState } from \"vuex\"\r\n \r\n-\r\n+import ArticleList from './ArticleList'\r\n+import Article from '../Main/Article'\r\n+import { mapState } from 'vuex'\r\n+import { throttle } from 'lodash'\r\n export default {\r\n-  name: 'Article',\r\n+  name: 'mainvue',\r\n+  components: {\r\n+    ArticleList,\r\n+    Article,\r\n+  },\r\n   data() {\r\n     return {\r\n-  \r\n+      // isRefreshBool: true,\r\n+      page: 0,\r\n+      num: 15,\r\n+      categoryName: '',\r\n     }\r\n   },\r\n   computed: {\r\n     ...mapState({\r\n-      articleData: state => state.Article.article\r\n+      Alist: state => state.Article.articleList,\r\n+      isRefreshBool: state => state.Article.isRefreshBool\r\n     }),\r\n-    publicationDate() {\r\n-      let time = `${this.articleData.createTime}`.slice(0, 10).split('-')\r\n-      return `${time[0]}年${time[1]}月${time[2]}日`\r\n+    isShow() {\r\n+      return this.$route.path == '/'\r\n+    },\r\n+    ...mapState({\r\n+      categoryList: state => state.Article.category\r\n+    }),\r\n+    p() {\r\n+      return this.$route.path\r\n     }\r\n   },\r\n-  \r\n   methods: {\r\n+    //判断滚动条是否到底部，刷新新的数据\r\n+    isRefresh: throttle(function () {\r\n+      if(this.$route.path != '/')return;\r\n+      //变量scrollTop是滚动条滚动时，距离顶部的距离\r\n+      let scrollTop =\r\n+        document.documentElement.scrollTop || document.body.scrollTop;\r\n+      //变量windowHeight是可视区的高度\r\n+      let windowHeight =\r\n+        document.documentElement.clientHeight || document.body.clientHeight;\r\n+      //变量scrollHeight是滚动条的总高度\r\n+      let scrollHeight =\r\n+        document.documentElement.scrollHeight || document.body.scrollHeight;\r\n+      //滚动条到底部的条件\r\n+      // console.log(scrollTop + windowHeight + \"--\" + scrollHeight);\r\n+      // console.log(this.isRefreshBool);\r\n+      //  scrollTop + windowHeight\r\n+      let totalHeight = scrollTop + windowHeight\r\n+      // this.$route.meta.y = totalHeight\r\n+      if (\r\n+        totalHeight >= scrollHeight &&\r\n+        this.isRefreshBool\r\n+      ) {\r\n+        // console.log(scrollTop + windowHeight + \"---\" + scrollHeight);\r\n+        // false防止refresh()加载数据函数多次触发\r\n+        this.$store.commit('CHANGEISREGRESHBOOL')\r\n+        this.refresh();\r\n+      }\r\n+    }, 300),\r\n+    //刷新推荐文章\r\n+    refresh() {\r\n+       if(this.$route.path != '/')return;\r\n+      let that = this;\r\n+      let { page, num } = this\r\n+      page += num\r\n+      this.page = page\r\n+      let result = this.$store.dispatch('getArticleList', { page: page, num: num, categoryName: this.categoryName })\r\n+      // result.then(() => {\r\n+      //   this.$store.commit('CHANGEISREGRESHBOOL')\r\n+      // })\r\n+\r\n+    },\r\n+    //\r\n+    async queryArticleByTitle() {\r\n+      await this.$store.dispatch('getArticleListBySearch', { page: 0, num: 15, categoryName: this.categoryName })\r\n+    },\r\n+    async queryArticleByCategoryName(categoryName) {\r\n+      this.page = 0\r\n+      this.num = 15\r\n+      this.categoryName = categoryName\r\n+      await this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })\r\n+    },\r\n+    async clearInput() {\r\n+      this.page = 0\r\n+      this.num = 15\r\n+      await this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })\r\n+\r\n+    },\r\n+    async clearCategoryName() {\r\n+      this.page = 0\r\n+      this.num = 15\r\n+      this.categoryName = ''\r\n+      await this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })\r\n+    }\r\n   },\r\n \r\n-  mounted () {\r\n-    console.log(this.articleData);\r\n-    \r\n-  } \r\n-  \r\n+  watch: {\r\n+    p: function (newVal, oldVal) {\r\n+      if (oldVal == '/addarticle') {\r\n+        this.$store.dispatch('getArticleList', { page: 0, num: 1 })\r\n+      }\r\n+      if (this.$route.query.categoryName != undefined) {\r\n+        this.categoryName = this.$route.query.categoryName\r\n+        this.clearInput()\r\n+      }\r\n+    },\r\n+  },\r\n+  created() {\r\n+    this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })\r\n+\r\n+    //监视scroll滚动条\r\n+    // if(this.$router)\r\n+    window.addEventListener(\"scroll\", this.isRefresh, true);\r\n+    // console.log('created');\r\n+    // this.$on('queryArticleByTitle')\r\n+  },\r\n+  beforeDestroy() {\r\n+    window.removeEventListener('scroll', this.isRefresh)\r\n+  }\r\n }\r\n </script>\r\n <style lang=\"less\">\r\n #archive-container{\r\n"
+                },
+                {
+                    "date": 1653660900616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,12 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n-    <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n+    <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.\" placement=\"top\">\r\n       <el-card>\r\n         <h4>更新 Github 模板</h4>\r\n       </el-card>\r\n     </el-timeline-item>\r\n-    <el-timeline-item timestamp=\"2018/4/3\" placement=\"top\">\r\n-      <el-card>\r\n-        <h4>更新 Github 模板</h4>\r\n-      </el-card>\r\n-    </el-timeline-item>\r\n-    <el-timeline-item timestamp=\"2018/4/2\" placement=\"top\">\r\n-      <el-card>\r\n-        <h4>更新 Github 模板</h4>\r\n-      </el-card>\r\n-    </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1653660972951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n-    <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.\" placement=\"top\">\r\n+    <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n-        <h4>更新 Github 模板</h4>\r\n+        <p>{{item.title}}</p>\r\n+        <button>{{item.categoryName}}</button>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1653661003857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,8 @@\n </template>\r\n \r\n <script>\r\n \r\n-import ArticleList from './ArticleList'\r\n-import Article from '../Main/Article'\r\n import { mapState } from 'vuex'\r\n import { throttle } from 'lodash'\r\n export default {\r\n   name: 'mainvue',\r\n"
+                },
+                {
+                    "date": 1653661034177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,8 @@\n import { mapState } from 'vuex'\r\n import { throttle } from 'lodash'\r\n export default {\r\n   name: 'mainvue',\r\n-  components: {\r\n-    ArticleList,\r\n-    Article,\r\n-  },\r\n   data() {\r\n     return {\r\n       // isRefreshBool: true,\r\n       page: 0,\r\n"
+                },
+                {
+                    "date": 1653661056350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n      <el-timeline>\r\n     <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n-        <button>{{item.categoryName}}</button>\r\n+        <button type=\"success\">{{item.categoryName}}</button>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1653661092745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n      <el-timeline>\r\n     <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n-        <button type=\"success\">{{item.categoryName}}</button>\r\n+        <button type=\"success\"></button>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1653661135125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n      <el-timeline>\r\n     <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n-        <button type=\"success\"></button>\r\n+        <el-tag type=\"\"></el-tag>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1653661224262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n-    <el-timeline-item v-for=\"item in Alist\" timestamp=\"item.createTime\" placement=\"top\">\r\n+    <el-timeline-item v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n-        <el-tag type=\"\"></el-tag>\r\n+        <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1653661315088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,12 +130,16 @@\n     window.removeEventListener('scroll', this.isRefresh)\r\n   }\r\n }\r\n </script>\r\n-<style lang=\"less\">\r\n+<style lang=\"less\" scoped>\r\n+\r\n #archive-container{\r\n   width: 400px;\r\n   margin: 0 auto;\r\n   text-align: left;\r\n   margin-top: 80px;\r\n+  /deep/.el-timeline-item__tail{\r\n+    \r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653661332526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,8 +138,8 @@\n   margin: 0 auto;\r\n   text-align: left;\r\n   margin-top: 80px;\r\n   /deep/.el-timeline-item__tail{\r\n-    \r\n+    border-left: 2px solid #E4E7ED;\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653661346868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,8 +138,8 @@\n   margin: 0 auto;\r\n   text-align: left;\r\n   margin-top: 80px;\r\n   /deep/.el-timeline-item__tail{\r\n-    border-left: 2px solid #E4E7ED;\r\n+    border-left: 2px solid #409eff;\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653661399029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n-    <el-timeline-item v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n+    <el-timeline-item :color=\"\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1653661462787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,15 @@\n       return this.$route.path\r\n     }\r\n   },\r\n   methods: {\r\n+                        color16(){//十六进制颜色随机\r\n+\t\t\t\t\t\tvar r = Math.floor(Math.random()*256);\r\n+\t\t\t\t\t\tvar g = Math.floor(Math.random()*256);\r\n+\t\t\t\t\t\tvar b = Math.floor(Math.random()*256);\r\n+\t\t\t\t\t\tvar color = '#'+r.toString(16)+g.toString(16)+b.toString(16);\r\n+\t\t\t\t\t\treturn color;\r\n+\t\t\t\t\t},\r\n     //判断滚动条是否到底部，刷新新的数据\r\n     isRefresh: throttle(function () {\r\n       if(this.$route.path != '/')return;\r\n       //变量scrollTop是滚动条滚动时，距离顶部的距离\r\n"
+                },
+                {
+                    "date": 1653661470895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n-    <el-timeline-item :color=\"\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n+    <el-timeline-item :color=\"color16\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n       </el-card>\r\n"
+                },
+                {
+                    "date": 1653661522409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,18 +37,19 @@\n       categoryList: state => state.Article.category\r\n     }),\r\n     p() {\r\n       return this.$route.path\r\n-    }\r\n-  },\r\n-  methods: {\r\n-                        color16(){//十六进制颜色随机\r\n+    },\r\n+         color16(){//十六进制颜色随机\r\n \t\t\t\t\t\tvar r = Math.floor(Math.random()*256);\r\n \t\t\t\t\t\tvar g = Math.floor(Math.random()*256);\r\n \t\t\t\t\t\tvar b = Math.floor(Math.random()*256);\r\n \t\t\t\t\t\tvar color = '#'+r.toString(16)+g.toString(16)+b.toString(16);\r\n \t\t\t\t\t\treturn color;\r\n \t\t\t\t\t},\r\n+  },\r\n+  methods: {\r\n+                   \r\n     //判断滚动条是否到底部，刷新新的数据\r\n     isRefresh: throttle(function () {\r\n       if(this.$route.path != '/')return;\r\n       //变量scrollTop是滚动条滚动时，距离顶部的距离\r\n"
+                },
+                {
+                    "date": 1653661593037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,17 +39,19 @@\n     p() {\r\n       return this.$route.path\r\n     },\r\n          color16(){//十六进制颜色随机\r\n+\t\t\t\t\treturn\tthis.color16m()\r\n+\t\t\t\t\t},\r\n+  },\r\n+  methods: {\r\n+             color16m(){//十六进制颜色随机\r\n \t\t\t\t\t\tvar r = Math.floor(Math.random()*256);\r\n \t\t\t\t\t\tvar g = Math.floor(Math.random()*256);\r\n \t\t\t\t\t\tvar b = Math.floor(Math.random()*256);\r\n \t\t\t\t\t\tvar color = '#'+r.toString(16)+g.toString(16)+b.toString(16);\r\n \t\t\t\t\t\treturn color;\r\n-\t\t\t\t\t},\r\n-  },\r\n-  methods: {\r\n-                   \r\n+\t\t\t\t\t},       \r\n     //判断滚动条是否到底部，刷新新的数据\r\n     isRefresh: throttle(function () {\r\n       if(this.$route.path != '/')return;\r\n       //变量scrollTop是滚动条滚动时，距离顶部的距离\r\n"
+                },
+                {
+                    "date": 1653661614587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n-    <el-timeline-item :color=\"color16\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n+    <el-timeline-item :color=\"color16m()\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n       <el-card>\r\n         <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n       </el-card>\r\n@@ -38,11 +38,9 @@\n     }),\r\n     p() {\r\n       return this.$route.path\r\n     },\r\n-         color16(){//十六进制颜色随机\r\n-\t\t\t\t\treturn\tthis.color16m()\r\n-\t\t\t\t\t},\r\n+       \r\n   },\r\n   methods: {\r\n              color16m(){//十六进制颜色随机\r\n \t\t\t\t\t\tvar r = Math.floor(Math.random()*256);\r\n"
+                },
+                {
+                    "date": 1653661668322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,8 +146,8 @@\n   margin: 0 auto;\r\n   text-align: left;\r\n   margin-top: 80px;\r\n   /deep/.el-timeline-item__tail{\r\n-    border-left: 2px solid #409eff;\r\n+    border-left: 4px solid #409eff;\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653661775739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n     <el-timeline-item :color=\"color16m()\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n-      <el-card>\r\n+      <el-card class=\"card\">\r\n         <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n       </el-card>\r\n     </el-timeline-item>\r\n@@ -148,6 +148,11 @@\n   margin-top: 80px;\r\n   /deep/.el-timeline-item__tail{\r\n     border-left: 4px solid #409eff;\r\n   }\r\n+  .card{\r\n+    display: flex;\r\n+    justify-content: center;\r\n+    align-items: center;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653661792654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,8 +150,9 @@\n     border-left: 4px solid #409eff;\r\n   }\r\n   .card{\r\n     display: flex;\r\n+    flex-direction: column;\r\n     justify-content: center;\r\n     align-items: center;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653661820383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n     <el-timeline-item :color=\"color16m()\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n-      <el-card class=\"card\">\r\n-        <p>{{item.title}}</p>\r\n+      <el-card >\r\n+        <div class=\"card\">\r\n+\r\n+          <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n+        </div>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1653661828750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n     border-left: 4px solid #409eff;\r\n   }\r\n   .card{\r\n     display: flex;\r\n-    flex-direction: column;\r\n+    flex-direction: row;\r\n     justify-content: center;\r\n     align-items: center;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653661835286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,9 +154,9 @@\n   }\r\n   .card{\r\n     display: flex;\r\n     flex-direction: row;\r\n-    justify-content: center;\r\n+    justify-content: space-between;\r\n     align-items: center;\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653661908894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n     <el-timeline-item :color=\"color16m()\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n-      <el-card >\r\n+      <el-card shadow=\"\">\r\n         <div class=\"card\">\r\n \r\n           <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n"
+                },
+                {
+                    "date": 1653661950415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n    <div id=\"archive-container\">\r\n      <el-timeline>\r\n     <el-timeline-item :color=\"color16m()\" v-for=\"item in Alist\" :timestamp=\"item.createTime\" placement=\"top\">\r\n-      <el-card shadow=\"\">\r\n+      <el-card shadow=\"hover\">\r\n         <div class=\"card\">\r\n \r\n           <p>{{item.title}}</p>\r\n         <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n@@ -157,6 +157,9 @@\n     flex-direction: row;\r\n     justify-content: space-between;\r\n     align-items: center;\r\n   }\r\n+  /deep/.el-card{\r\n+    cursor:pointer;\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653662005676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n       <el-card shadow=\"hover\">\r\n         <div class=\"card\">\r\n \r\n           <p>{{item.title}}</p>\r\n-        <el-tag type=\"success\">{{item.categoryName}}</el-tag>\r\n+        <el-tag effect=\"\" type=\"success\">{{item.categoryName}}</el-tag>\r\n         </div>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n"
+                },
+                {
+                    "date": 1653662026197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n       <el-card shadow=\"hover\">\r\n         <div class=\"card\">\r\n \r\n           <p>{{item.title}}</p>\r\n-        <el-tag effect=\"\" type=\"success\">{{item.categoryName}}</el-tag>\r\n+        <el-tag effect=\"plain\" type=\"success\">{{item.categoryName}}</el-tag>\r\n         </div>\r\n       </el-card>\r\n     </el-timeline-item>\r\n   </el-timeline>\r\n"
+                },
+                {
+                    "date": 1653662109619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,18 +129,10 @@\n     },\r\n   },\r\n   created() {\r\n     this.$store.dispatch('getArticleList', { page: this.page, num: this.num, categoryName: this.categoryName })\r\n+  },\r\n \r\n-    //监视scroll滚动条\r\n-    // if(this.$router)\r\n-    window.addEventListener(\"scroll\", this.isRefresh, true);\r\n-    // console.log('created');\r\n-    // this.$on('queryArticleByTitle')\r\n-  },\r\n-  beforeDestroy() {\r\n-    window.removeEventListener('scroll', this.isRefresh)\r\n-  }\r\n }\r\n </script>\r\n <style lang=\"less\" scoped>\r\n \r\n"
+                }
+            ],
+            "date": 1653659856671,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div>\r\n\r\n    <el-timeline>\r\n    <el-timeline-item timestamp=\"2018/4/12\" placement=\"top\">\r\n      <el-card>\r\n        <h4>更新 Github 模板</h4>\r\n      </el-card>\r\n    </el-timeline-item>\r\n    <el-timeline-item timestamp=\"2018/4/3\" placement=\"top\">\r\n      <el-card>\r\n        <h4>更新 Github 模板</h4>\r\n      </el-card>\r\n    </el-timeline-item>\r\n    <el-timeline-item timestamp=\"2018/4/2\" placement=\"top\">\r\n      <el-card>\r\n        <h4>更新 Github 模板</h4>\r\n      </el-card>\r\n    </el-timeline-item>\r\n  </el-timeline>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\n</script>\r\n<style lang=\"less\">\r\n</style>"
+        }
+    ]
+}

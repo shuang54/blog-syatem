@@ -6,8 +6,10 @@
     </div>
     <nav>
       <router-link active-class="bot" :to="{ path: '/#' }">首页</router-link>
-      <router-link active-class="bot" :to="{ path: '/collect' }">收藏</router-link>
-      <router-link active-class="bot" :to="{ path: '/project' }">个人项目</router-link>
+      <router-link active-class="bot" :to="{ path: '/essays' }">随笔</router-link>
+      <router-link active-class="bot" :to="{ path: '/archive' }">归档</router-link>
+      <!-- <router-link active-class="bot" :to="{ path: '/collect' }">分享</router-link> -->
+      <router-link active-class="bot" :to="{ path: '/project' }">项目</router-link>
       <router-link active-class="bot" :to="{ path: '/about' }">关于</router-link>
     </nav>
   </div>
