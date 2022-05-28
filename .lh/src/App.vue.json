@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 104,
+            "activePatchIndex": 113,
             "patches": [
                 {
                     "date": 1645530111266,
@@ -424,6 +424,42 @@
                 {
                     "date": 1652593873648,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,74 +58,8 @@\n       background-color: #faf9de;\n       color: #333;\n       text-align: center;\n       padding: 0px;\n-      z-index: -1;\n     }\n   }\n }\n </style>\n-<template>\n-  <div id=\"app\">\n-    <!-- Container组件 -->\n-    <el-container>\n-      <!-- 顶栏容器 -->\n-      <el-header>\n-        <!-- 自定义的头部组件 -->\n-        <MyNav></MyNav>\n-      </el-header>\n-      <!-- 主要区域容器 -->\n-      <el-main>\n-        <!-- 路由组件在这里展示 -->\n-        <keep-alive include=\"mainvue\">\n-          <router-view></router-view>\n-        </keep-alive>\n-        <!-- <MyMain></MyMain> -->\n-      </el-main>\n-    </el-container>\n-  </div>\n-</template>\n-<script>\n-// 引入组件\n-import MyMain from '@/components/Main/index.vue'\n-import MyNav from '@/components/MyNav'\n-import 'element-ui/lib/theme-chalk/index.css';\n-export default {\n-  /* 注册组件 */\n-  components: {\n-    MyMain,\n-    MyNav,\n-  },\n-}\n-</script>\n-<style scoped lang=\"less\">\n-#app {\n-\n-  // background-color: #ccffcc;\n-  .el-container {\n-    .el-header {\n-      position: fixed;\n-      width: 100%;\n-      height: 50px;\n-      z-index: 99;\n-    }\n-\n-    .el-main {\n-      margin-top: 60px;\n-    }\n-\n-    .el-header,\n-    .el-footer {\n-      background-color: #c7edcc;\n-      color: #333;\n-      text-align: center;\n-    }\n-\n-    .el-main {\n-      background-color: #faf9de;\n-      color: #333;\n-      text-align: center;\n-      padding: 0px;\n-    }\n-  }\n-}\n-</style>\n"
+                },
+                {
+                    "date": 1653720545647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n     .el-footer {\n       background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n+      z-index: 999999999999;\n     }\n \n     .el-main {\n       background-color: #faf9de;\n"
+                },
+                {
+                    "date": 1653720805750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,9 @@\n     }\n \n     .el-main {\n       margin-top: 60px;\n+      overflow: hidden;\n     }\n \n     .el-header,\n     .el-footer {\n"
+                },
+                {
+                    "date": 1653734735829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,70 @@\n+<template>\n+  <div id=\"app\">\n+    <!-- Container组件 -->\n+    <el-container>\n+      <!-- 顶栏容器 -->\n+      <el-header>\n+        <!-- 自定义的头部组件 -->\n+        <MyNav></MyNav>\n+      </el-header>\n+      <!-- 主要区域容器 -->\n+      <el-main>\n+        <!-- 路由组件在这里展示 -->\n+        <keep-alive include=\"mainvue\">\n+          <router-view></router-view>\n+        </keep-alive>\n+        <!-- <MyMain></MyMain> -->\n+      </el-main>\n+    </el-container>\n+  </div>\n+</template>\n+<script>\n+// 引入组件\n+import MyMain from '@/components/Main/index.vue'\n+import MyNav from '@/components/MyNav'\n+import 'element-ui/lib/theme-chalk/index.css';\n+export default {\n+  /* 注册组件 */\n+  components: {\n+    MyMain,\n+    MyNav,\n+  },\n+}\n+</script>\n+<style scoped lang=\"less\">\n+.el-message{\n+  z-index:999999999999999;\n+}\n+#app {\n+\n+  // background-color: #ccffcc;\n+  .el-container {\n+    .el-header {\n+      position: fixed;\n+      width: 100%;\n+      height: 50px;\n+      z-index: 99;\n+    }\n+\n+    .el-main {\n+      margin-top: 60px;\n+      overflow: hidden;\n+    }\n+\n+    .el-header,\n+    .el-footer {\n+      background-color: #c7edcc;\n+      color: #333;\n+      text-align: center;\n+      z-index: 999999999999;\n+    }\n+\n+    .el-main {\n+      background-color: #faf9de;\n+      color: #333;\n+      text-align: center;\n+      padding: 0px;\n+    }\n+  }\n+}\n+</style>\n"
+                },
+                {
+                    "date": 1653734756990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   },\n }\n </script>\n <style scoped lang=\"less\">\n-.el-message{\n+/deep/.el-message{\n   z-index:999999999999999;\n }\n #app {\n \n@@ -67,71 +67,4 @@\n     }\n   }\n }\n </style>\n-<template>\n-  <div id=\"app\">\n-    <!-- Container组件 -->\n-    <el-container>\n-      <!-- 顶栏容器 -->\n-      <el-header>\n-        <!-- 自定义的头部组件 -->\n-        <MyNav></MyNav>\n-      </el-header>\n-      <!-- 主要区域容器 -->\n-      <el-main>\n-        <!-- 路由组件在这里展示 -->\n-        <keep-alive include=\"mainvue\">\n-          <router-view></router-view>\n-        </keep-alive>\n-        <!-- <MyMain></MyMain> -->\n-      </el-main>\n-    </el-container>\n-  </div>\n-</template>\n-<script>\n-// 引入组件\n-import MyMain from '@/components/Main/index.vue'\n-import MyNav from '@/components/MyNav'\n-import 'element-ui/lib/theme-chalk/index.css';\n-export default {\n-  /* 注册组件 */\n-  components: {\n-    MyMain,\n-    MyNav,\n-  },\n-}\n-</script>\n-<style scoped lang=\"less\">\n-#app {\n-\n-  // background-color: #ccffcc;\n-  .el-container {\n-    .el-header {\n-      position: fixed;\n-      width: 100%;\n-      height: 50px;\n-      z-index: 99;\n-    }\n-\n-    .el-main {\n-      margin-top: 60px;\n-      overflow: hidden;\n-    }\n-\n-    .el-header,\n-    .el-footer {\n-      background-color: #c7edcc;\n-      color: #333;\n-      text-align: center;\n-      z-index: 999999999999;\n-    }\n-\n-    .el-main {\n-      background-color: #faf9de;\n-      color: #333;\n-      text-align: center;\n-      padding: 0px;\n-    }\n-  }\n-}\n-</style>\n"
+                },
+                {
+                    "date": 1653734820337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,9 @@\n   },\n }\n </script>\n <style scoped lang=\"less\">\n-/deep/.el-message{\n-  z-index:999999999999999;\n-}\n+\n #app {\n \n   // background-color: #ccffcc;\n   .el-container {\n"
+                },
+                {
+                    "date": 1653734916779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     .el-footer {\n       background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n-      z-index: 999999999999;\n+      z-index: 999;\n     }\n \n     .el-main {\n       background-color: #faf9de;\n"
+                },
+                {
+                    "date": 1653741974644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n     }\n \n     .el-header,\n     .el-footer {\n-      background-color: #c7edcc;\n+      // background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n       z-index: 999;\n     }\n"
+                },
+                {
+                    "date": 1653742313156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n       z-index: 99;\n     }\n \n     .el-main {\n-      margin-top: 60px;\n+      // margin-top: 60px;\n       overflow: hidden;\n     }\n \n     .el-header,\n"
+                },
+                {
+                    "date": 1653743250814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n       // background-color: #c7edcc;\n       color: #333;\n       text-align: center;\n       z-index: 999;\n+      padding: 0px;\n     }\n \n     .el-main {\n       background-color: #faf9de;\n"
                 }
             ],
             "date": 1645530111266,

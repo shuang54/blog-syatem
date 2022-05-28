@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 113,
+            "activePatchIndex": 189,
             "patches": [
                 {
                     "date": 1645614431496,
@@ -460,6 +460,310 @@
                 {
                     "date": 1652101063734,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n     <div>\r\n-      <img src=\"https://img.shejibiji.com/2022/05/09/62790f8e72257.jpg\" />\r\n+      <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n"
+                },
+                {
+                    "date": 1653736704257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,12 @@\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">收藏</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">个人项目</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">日常</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n+      <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653736852612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,10 @@\n \r\n   nav {\r\n     flex: 1;\r\n     vertical-align: middle;\r\n-\r\n+display: flex;\r\n+    justify-content: right;\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n"
+                },
+                {
+                    "date": 1653736880175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   nav {\r\n     flex: 1;\r\n     vertical-align: middle;\r\n display: flex;\r\n-    justify-content: right;\r\n+    justify-content: center;\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n"
+                },
+                {
+                    "date": 1653736956198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,18 +25,17 @@\n #my-nav-container {\r\n   // position: fixed;\r\n   display: flex;\r\n   align-items: center;\r\n-\r\n+  justify-content: space-between;\r\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n   }\r\n \r\n   nav {\r\n-    flex: 1;\r\n     vertical-align: middle;\r\n display: flex;\r\n     justify-content: center;\r\n     a {\r\n"
+                },
+                {
+                    "date": 1653737063684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">日常</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n"
+                },
+                {
+                    "date": 1653737152529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div id=\"my-nav-container\">\r\n-    <div>\r\n+    <div >\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n@@ -31,8 +31,9 @@\n     flex: 1;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n+    line-height: 50px;\r\n   }\r\n \r\n   nav {\r\n     vertical-align: middle;\r\n"
+                },
+                {
+                    "date": 1653737164758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     flex: 1;\r\n     width: 50px;\r\n     height: 50px;\r\n     margin-bottom: 13px;\r\n-    line-height: 50px;\r\n+    \r\n   }\r\n \r\n   nav {\r\n     vertical-align: middle;\r\n"
+                },
+                {
+                    "date": 1653737185337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,9 @@\n   img {\r\n     flex: 1;\r\n     width: 50px;\r\n     height: 50px;\r\n-    margin-bottom: 13px;\r\n-    \r\n+    margin: 5px;\r\n   }\r\n \r\n   nav {\r\n     vertical-align: middle;\r\n"
+                },
+                {
+                    "date": 1653737251757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\">首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-delete\"></i>首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n"
+                },
+                {
+                    "date": 1653737302505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-delete\"></i>首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-delete icon\"></i>首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n@@ -34,8 +34,11 @@\n     margin: 5px;\r\n   }\r\n \r\n   nav {\r\n+    .icon{\r\n+      margin-right: 5px;\r\n+    }\r\n     vertical-align: middle;\r\n display: flex;\r\n     justify-content: center;\r\n     a {\r\n"
+                },
+                {
+                    "date": 1653737321385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n   }\r\n \r\n   nav {\r\n     .icon{\r\n-      margin-right: 5px;\r\n     }\r\n     vertical-align: middle;\r\n display: flex;\r\n     justify-content: center;\r\n"
+                },
+                {
+                    "date": 1653737357742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-delete icon\"></i>首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-delete icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n"
+                },
+                {
+                    "date": 1653737384558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,8 @@\n   nav {\r\n     .icon{\r\n     }\r\n     vertical-align: middle;\r\n-display: flex;\r\n-    justify-content: center;\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       padding: 10px 20px;\r\n"
+                },
+                {
+                    "date": 1653737421716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,15 +40,14 @@\n     vertical-align: middle;\r\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n-      padding: 10px 20px;\r\n+      margin: 10px 20px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n \r\n       &:hover {\r\n         border-bottom: 2px solid #13b9e2;\r\n-\r\n       }\r\n     }\r\n \r\n     .bot {\r\n"
+                },
+                {
+                    "date": 1653737432050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       margin: 10px 20px;\r\n+      \r\n       color: #000;\r\n       font-size: 1rem;\r\n \r\n       &:hover {\r\n"
+                },
+                {
+                    "date": 1653737447412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       margin: 10px 20px;\r\n-      \r\n+      padding-bottom: 20px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n \r\n       &:hover {\r\n"
+                },
+                {
+                    "date": 1653737483820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-delete icon\"></i>  首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n@@ -41,9 +41,9 @@\n     a {\r\n       width: 50px;\r\n       height: 100%;\r\n       margin: 10px 20px;\r\n-      padding-bottom: 20px;\r\n+      padding-bottom: 10px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n \r\n       &:hover {\r\n"
+                },
+                {
+                    "date": 1653737494469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\">随笔</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\">归档</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-s-home icon\"></i>  随笔</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-s-home icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\">项目</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/about' }\">关于</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-s-home icon\"></i>  项目</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1653737610363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-s-home icon\"></i>  随笔</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-s-home icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-s-home icon\"></i>  项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n"
+                },
+                {
+                    "date": 1653737643337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-s-home icon\"></i>  归档</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"\r\n+el-icon-folder-opened icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-s-home icon\"></i>  项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n     </nav>\r\n"
+                },
+                {
+                    "date": 1653737688097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,9 @@\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"\r\n-el-icon-folder-opened icon\"></i>  归档</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-coin icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-s-home icon\"></i>  项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n     </nav>\r\n"
+                },
+                {
+                    "date": 1653737829544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-coin icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-s-home icon\"></i>  项目</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"\r\n+el-icon-star-off icon\"></i>  项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653737837768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,9 @@\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-coin icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"\r\n-el-icon-star-off icon\"></i>  项目</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-star-off icon\"></i>  项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653737867303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-coin icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-star-off icon\"></i>  项目</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-s-home icon\"></i>  关于</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-user icon\"></i>  关于</router-link>\r\n     </nav>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1653738487354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-s-home icon\"></i>  首页</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-house icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-coin icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-star-off icon\"></i>  项目</router-link>\r\n"
+                },
+                {
+                    "date": 1653738521416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </div>\r\n     <nav>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-house icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n-      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-coin icon\"></i>  归档</router-link>\r\n+      <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-timer icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/project' }\"><i class=\"el-icon-star-off icon\"></i>  项目</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/about' }\"><i class=\"el-icon-user icon\"></i>  关于</router-link>\r\n     </nav>\r\n"
+                },
+                {
+                    "date": 1653738728635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n     margin: 5px;\r\n   }\r\n \r\n   nav {\r\n+    flex: 1;\r\n     .icon{\r\n     }\r\n     vertical-align: middle;\r\n     a {\r\n"
+                },
+                {
+                    "date": 1653738787732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n+        <el-input placeholder=\"搜索文章\" class=\"search\" prefix-icon=\"el-icon-search\" v-model=\"search\" clearable\r\n+            @keyup.enter.native=\"queryArticleByTitle\" @clear=\"clearInput\"></el-input>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-house icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-timer icon\"></i>  归档</router-link>\r\n       <!-- <router-link active-class=\"bot\" :to=\"{ path: '/collect' }\">分享</router-link> -->\r\n"
+                },
+                {
+                    "date": 1653738815403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,13 @@\n       &:hover {\r\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n-\r\n+  .search {\r\n+      max-width: 220px !important;\r\n+      width: 100%;\r\n+      float: left;\r\n+    }\r\n     .bot {\r\n       border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n     }\r\n"
+                },
+                {
+                    "date": 1653738825349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,8 @@\n     }\r\n   .search {\r\n       max-width: 220px !important;\r\n       width: 100%;\r\n-      float: left;\r\n     }\r\n     .bot {\r\n       border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n"
+                },
+                {
+                    "date": 1653738846144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,8 @@\n       margin: 10px 20px;\r\n       padding-bottom: 10px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n-\r\n       &:hover {\r\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1653738891877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,8 +52,9 @@\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n   .search {\r\n+    \r\n       max-width: 220px !important;\r\n       width: 100%;\r\n     }\r\n     .bot {\r\n"
+                },
+                {
+                    "date": 1653738898798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n   .search {\r\n-    \r\n+    carset\r\n       max-width: 220px !important;\r\n       width: 100%;\r\n     }\r\n     .bot {\r\n"
+                },
+                {
+                    "date": 1653738908832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n   .search {\r\n-    carset\r\n+    caret-color: auto;\r\n       max-width: 220px !important;\r\n       width: 100%;\r\n     }\r\n     .bot {\r\n"
+                },
+                {
+                    "date": 1653738971476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n   .search {\r\n-    caret-color: auto;\r\n+    caret-color: #ccc;\r\n       max-width: 220px !important;\r\n       width: 100%;\r\n     }\r\n     .bot {\r\n"
+                },
+                {
+                    "date": 1653738979927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n   .search {\r\n-    caret-color: #ccc;\r\n+    caret-color: black;\r\n       max-width: 220px !important;\r\n       width: 100%;\r\n     }\r\n     .bot {\r\n"
+                },
+                {
+                    "date": 1653739057619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,11 +52,14 @@\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n   .search {\r\n-    caret-color: black;\r\n-      max-width: 220px !important;\r\n+    max-width: 220px !important;\r\n       width: 100%;\r\n+      /deep/.el-input--prefix .el-input__inner{\r\n+        caret-color: black;\r\n+        \r\n+      }\r\n     }\r\n     .bot {\r\n       border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n"
+                },
+                {
+                    "date": 1653739079121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n       &:hover {\r\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n-  .search {\r\n+  /deep/.search {\r\n     max-width: 220px !important;\r\n       width: 100%;\r\n       /deep/.el-input--prefix .el-input__inner{\r\n         caret-color: black;\r\n"
+                },
+                {
+                    "date": 1653739111608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,16 +54,17 @@\n     }\r\n   /deep/.search {\r\n     max-width: 220px !important;\r\n       width: 100%;\r\n-      /deep/.el-input--prefix .el-input__inner{\r\n-        caret-color: black;\r\n-        \r\n-      }\r\n+    \r\n     }\r\n     .bot {\r\n       border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n     }\r\n   }\r\n }\r\n+  /deep/.el-input--prefix .el-input__inner{\r\n+        caret-color: black;\r\n+        \r\n+      }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653739122064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n       &:hover {\r\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n-  /deep/.search {\r\n+  .search {\r\n     max-width: 220px !important;\r\n       width: 100%;\r\n     \r\n     }\r\n"
+                },
+                {
+                    "date": 1653739248343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,23 @@\n \r\n <script>\r\n export default {\r\n   name: 'MyNav',\r\n+  data () {\r\n+    return {\r\n+      search: '',\r\n+    }\r\n+  },\r\n+  methods: {\r\n+        // 根据input表单进行查询\r\n+    queryArticleByTitle() {\r\n+      this.$emit('queryArticleByTitle')\r\n+    },\r\n+    clearInput() {\r\n+      this.$store.state.Article.search = ''\r\n+      this.$emit('clearInput')\r\n+    },\r\n+  }\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1653739794543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,13 @@\n   },\r\n   methods: {\r\n         // 根据input表单进行查询\r\n     queryArticleByTitle() {\r\n-      this.$emit('queryArticleByTitle')\r\n+      this.$eventBus.$emit('queryArticleByTitle')\r\n     },\r\n     clearInput() {\r\n       this.$store.state.Article.search = ''\r\n-      this.$emit('clearInput')\r\n+      this.$eventBus.$emit('clearInput')\r\n     },\r\n   }\r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1653740640928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,13 @@\n     clearInput() {\r\n       this.$store.state.Article.search = ''\r\n       this.$eventBus.$emit('clearInput')\r\n     },\r\n+  },\r\n+    watch: {\r\n+    search: function (newValue, oldValue) {\r\n+      this.$store.state.Article.search = newValue\r\n+    }\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653742521616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n     margin: 5px;\r\n   }\r\n \r\n   nav {\r\n+    color: white;\r\n     flex: 1;\r\n     .icon{\r\n     }\r\n     vertical-align: middle;\r\n"
+                },
+                {
+                    "date": 1653742608615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,8 @@\n     margin: 5px;\r\n   }\r\n \r\n   nav {\r\n-    color: white;\r\n     flex: 1;\r\n     .icon{\r\n     }\r\n     vertical-align: middle;\r\n@@ -78,8 +77,10 @@\n       width: 100%;\r\n     \r\n     }\r\n     .bot {\r\n+    color: white;\r\n+\r\n       border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653742651796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n       width: 100%;\r\n     \r\n     }\r\n     .bot {\r\n-    color: white;\r\n+    color: #13b9e2;\r\n \r\n       border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n     }\r\n"
+                },
+                {
+                    "date": 1653742672384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,8 +67,9 @@\n       margin: 10px 20px;\r\n       padding-bottom: 10px;\r\n       color: #000;\r\n       font-size: 1rem;\r\n+      color: white;\r\n       &:hover {\r\n         border-bottom: 2px solid #13b9e2;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1653743069374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n   name: 'MyNav',\r\n   data () {\r\n     return {\r\n       search: '',\r\n+       btnFlag: false,\r\n     }\r\n   },\r\n   methods: {\r\n         // 根据input表单进行查询\r\n@@ -33,13 +34,30 @@\n     clearInput() {\r\n       this.$store.state.Article.search = ''\r\n       this.$eventBus.$emit('clearInput')\r\n     },\r\n+    // 监听回到顶部按钮距浏览器顶部的距离，滚动的距离如果大于浏览器高度时，设置 btnFlag 为true,否则就是false\r\n+        scrollToTop() {\r\n+            let that = this;\r\n+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n+            that.scrollTop = scrollTop;\r\n+            console.log(scrollTop)\r\n+            //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n+            if (that.scrollTop > 60) {\r\n+                that.btnFlag = true;\r\n+            } else {\r\n+                that.btnFlag = false;\r\n+            }\r\n+        },\r\n   },\r\n     watch: {\r\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n     }\r\n+  },\r\n+  mounted () {\r\n+     window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n+    \r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653743110337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div id=\"my-nav-container\">\r\n+  <div id=\"my-nav-container\" class=\"btnFlag\">\r\n     <div >\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n@@ -103,8 +103,11 @@\n       caret-color: transparent;\r\n     }\r\n   }\r\n }\r\n+.btnFlag{\r\n+  background-color: black;\r\n+}\r\n   /deep/.el-input--prefix .el-input__inner{\r\n         caret-color: black;\r\n         \r\n       }\r\n"
+                },
+                {
+                    "date": 1653743146706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div id=\"my-nav-container\" class=\"btnFlag\">\r\n+  <div id=\"my-nav-container\" :class=\"btnFlag == true ? 'btnFlag':''\">\r\n     <div >\r\n       <img src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1653743217955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,5 +110,8 @@\n   /deep/.el-input--prefix .el-input__inner{\r\n         caret-color: black;\r\n         \r\n       }\r\n+/deep/.el-header{\r\n+  padding: 0;\r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653743345019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,14 +104,17 @@\n     }\r\n   }\r\n }\r\n .btnFlag{\r\n-  background-color: black;\r\n+  background-color: white;\r\n+  a{\r\n+    color: black;\r\n+  }\r\n }\r\n   /deep/.el-input--prefix .el-input__inner{\r\n         caret-color: black;\r\n         \r\n       }\r\n /deep/.el-header{\r\n-  padding: 0;\r\n+  padding: 0px;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653743355589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n }\r\n .btnFlag{\r\n   background-color: white;\r\n   a{\r\n-    color: black;\r\n+    color: black !important;\r\n   }\r\n }\r\n   /deep/.el-input--prefix .el-input__inner{\r\n         caret-color: black;\r\n"
+                },
+                {
+                    "date": 1653743431070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,8 +105,9 @@\n   }\r\n }\r\n .btnFlag{\r\n   background-color: white;\r\n+  box-shadow: 0;\r\n   a{\r\n     color: black !important;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653743448460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n   }\r\n }\r\n .btnFlag{\r\n   background-color: white;\r\n-  box-shadow: 0;\r\n+  box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.02);\r\n   a{\r\n     color: black !important;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653743510800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n   }\r\n }\r\n .btnFlag{\r\n   background-color: white;\r\n-  box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.02);\r\n+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);\r\n   a{\r\n     color: black !important;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653743630487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   },\r\n     watch: {\r\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n-    }\r\n+    },\r\n   },\r\n   mounted () {\r\n      window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n     \r\n@@ -93,9 +93,8 @@\n     }\r\n   .search {\r\n     max-width: 220px !important;\r\n       width: 100%;\r\n-    \r\n     }\r\n     .bot {\r\n     color: #13b9e2;\r\n \r\n"
+                },
+                {
+                    "date": 1653743669219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,12 @@\n   },\r\n   mounted () {\r\n      window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n     \r\n-  }\r\n+  },\r\n+   destroyed() {\r\n+        window.removeEventListener(\"scroll\", this.scrollToTop,true);\r\n+    },\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1653743745807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,14 @@\n       this.$store.state.Article.search = newValue\r\n     },\r\n   },\r\n   mounted () {\r\n-     window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n+    if(this.$router.path == '/'){\r\n+\r\n+      window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n+    }else{\r\n+      this.btnFlag = true\r\n+    }\r\n     \r\n   },\r\n    destroyed() {\r\n         window.removeEventListener(\"scroll\", this.scrollToTop,true);\r\n"
+                },
+                {
+                    "date": 1653743772179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n       this.$store.state.Article.search = newValue\r\n     },\r\n   },\r\n   mounted () {\r\n+    \r\n     if(this.$router.path == '/'){\r\n \r\n       window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n     }else{\r\n"
+                },
+                {
+                    "date": 1653743784369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n       this.$store.state.Article.search = newValue\r\n     },\r\n   },\r\n   mounted () {\r\n-    \r\n+    console.log(this.$router);\r\n     if(this.$router.path == '/'){\r\n \r\n       window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n     }else{\r\n"
+                },
+                {
+                    "date": 1653743831394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n       this.$store.state.Article.search = newValue\r\n     },\r\n   },\r\n   mounted () {\r\n-    console.log(this.$router);\r\n+    console.log(this.$route);\r\n     if(this.$router.path == '/'){\r\n \r\n       window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n     }else{\r\n"
+                },
+                {
+                    "date": 1653743903843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,15 +54,10 @@\n       this.$store.state.Article.search = newValue\r\n     },\r\n   },\r\n   mounted () {\r\n-    console.log(this.$route);\r\n-    if(this.$router.path == '/'){\r\n \r\n       window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n-    }else{\r\n-      this.btnFlag = true\r\n-    }\r\n     \r\n   },\r\n    destroyed() {\r\n         window.removeEventListener(\"scroll\", this.scrollToTop,true);\r\n"
+                },
+                {
+                    "date": 1653743988012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,11 +39,10 @@\n         scrollToTop() {\r\n             let that = this;\r\n             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n             that.scrollTop = scrollTop;\r\n-            console.log(scrollTop)\r\n             //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n-            if (that.scrollTop > 60) {\r\n+            if (that.scrollTop > 60 || this.$route.path !== '/') {\r\n                 that.btnFlag = true;\r\n             } else {\r\n                 that.btnFlag = false;\r\n             }\r\n"
+                },
+                {
+                    "date": 1653744011576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,10 @@\n             let that = this;\r\n             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n             that.scrollTop = scrollTop;\r\n             //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n-            if (that.scrollTop > 60 || this.$route.path !== '/') {\r\n+            console.log(this.$route.path);\r\n+            if (that.scrollTop > 60 ) {\r\n                 that.btnFlag = true;\r\n             } else {\r\n                 that.btnFlag = false;\r\n             }\r\n"
+                },
+                {
+                    "date": 1653744103677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,20 +40,28 @@\n             let that = this;\r\n             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n             that.scrollTop = scrollTop;\r\n             //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n-            console.log(this.$route.path);\r\n             if (that.scrollTop > 60 ) {\r\n                 that.btnFlag = true;\r\n             } else {\r\n                 that.btnFlag = false;\r\n             }\r\n         },\r\n+        p() {\r\n+      return this.$route.path\r\n+    }\r\n   },\r\n     watch: {\r\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n     },\r\n+      p: function (newVal, oldVal) {\r\n+      if (this.$route.query.categoryName != undefined) {\r\n+        this.categoryName = this.$route.query.categoryName\r\n+        this.clearInput()\r\n+      }\r\n+    },\r\n   },\r\n   mounted () {\r\n \r\n       window.addEventListener(\"scroll\", this.scrollToTop,true);\r\n"
+                },
+                {
+                    "date": 1653744130571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,11 +55,11 @@\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n     },\r\n       p: function (newVal, oldVal) {\r\n-      if (this.$route.query.categoryName != undefined) {\r\n+      if (this.$route.path != '/') {\r\n         this.categoryName = this.$route.query.categoryName\r\n-        this.clearInput()\r\n+        this.btnFlag = true\r\n       }\r\n     },\r\n   },\r\n   mounted () {\r\n"
+                },
+                {
+                    "date": 1653744155615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,9 @@\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n     },\r\n       p: function (newVal, oldVal) {\r\n+        console.log(newVal);\r\n       if (this.$route.path != '/') {\r\n         this.categoryName = this.$route.query.categoryName\r\n         this.btnFlag = true\r\n       }\r\n"
+                },
+                {
+                    "date": 1653744188692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,20 +35,20 @@\n       this.$store.state.Article.search = ''\r\n       this.$eventBus.$emit('clearInput')\r\n     },\r\n     // 监听回到顶部按钮距浏览器顶部的距离，滚动的距离如果大于浏览器高度时，设置 btnFlag 为true,否则就是false\r\n-        scrollToTop() {\r\n-            let that = this;\r\n-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n-            that.scrollTop = scrollTop;\r\n-            //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n-            if (that.scrollTop > 60 ) {\r\n-                that.btnFlag = true;\r\n-            } else {\r\n-                that.btnFlag = false;\r\n-            }\r\n-        },\r\n-        p() {\r\n+    scrollToTop() {\r\n+        let that = this;\r\n+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n+        that.scrollTop = scrollTop;\r\n+        //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n+        if (that.scrollTop > 60 ) {\r\n+            that.btnFlag = true;\r\n+        } else {\r\n+            that.btnFlag = false;\r\n+        }\r\n+    },\r\n+    p() {\r\n       return this.$route.path\r\n     }\r\n   },\r\n     watch: {\r\n"
+                },
+                {
+                    "date": 1653744211971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,12 +46,15 @@\n         } else {\r\n             that.btnFlag = false;\r\n         }\r\n     },\r\n-    p() {\r\n+   \r\n+  },\r\n+  computed: {\r\n+     p() {\r\n       return this.$route.path\r\n     }\r\n-  },\r\n+  }\r\n     watch: {\r\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n     },\r\n"
+                },
+                {
+                    "date": 1653744223730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n   computed: {\r\n      p() {\r\n       return this.$route.path\r\n     }\r\n-  }\r\n+  },\r\n     watch: {\r\n     search: function (newValue, oldValue) {\r\n       this.$store.state.Article.search = newValue\r\n     },\r\n"
+                },
+                {
+                    "date": 1653744323619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,9 @@\n       this.$eventBus.$emit('clearInput')\r\n     },\r\n     // 监听回到顶部按钮距浏览器顶部的距离，滚动的距离如果大于浏览器高度时，设置 btnFlag 为true,否则就是false\r\n     scrollToTop() {\r\n+      if(this.$route.path != '/')return;\r\n         let that = this;\r\n         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;\r\n         that.scrollTop = scrollTop;\r\n         //为了计算距离顶部的高度，当高度大于50显示回顶部图标，小于50则隐藏\r\n"
+                },
+                {
+                    "date": 1653744403685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,11 +112,10 @@\n     max-width: 220px !important;\r\n       width: 100%;\r\n     }\r\n     .bot {\r\n-    color: #13b9e2;\r\n-\r\n-      border-bottom: 2px solid #13b9e2;\r\n+    // color: #13b9e2;\r\n+    //   border-bottom: 2px solid #13b9e2;\r\n       caret-color: transparent;\r\n     }\r\n   }\r\n }\r\n@@ -125,8 +124,12 @@\n   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);\r\n   a{\r\n     color: black !important;\r\n   }\r\n+     .bot {\r\n+    color: #13b9e2;\r\n+      border-bottom: 2px solid #13b9e2;\r\n+     }\r\n }\r\n   /deep/.el-input--prefix .el-input__inner{\r\n         caret-color: black;\r\n         \r\n"
+                },
+                {
+                    "date": 1653744418192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,9 @@\n   a{\r\n     color: black !important;\r\n   }\r\n      .bot {\r\n-    color: #13b9e2;\r\n+    color: #13b9e2 !important;\r\n       border-bottom: 2px solid #13b9e2;\r\n      }\r\n }\r\n   /deep/.el-input--prefix .el-input__inner{\r\n"
+                },
+                {
+                    "date": 1653744461934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <template>\r\n   <div id=\"my-nav-container\" :class=\"btnFlag == true ? 'btnFlag':''\">\r\n     <div >\r\n-      <img src=\"@/assets/images/avataaars.png\" />\r\n+      <img v-show=\"btnFlag\" src=\"@/assets/images/avataaars.png\" />\r\n \r\n     </div>\r\n     <nav>\r\n-        <el-input placeholder=\"搜索文章\" class=\"search\" prefix-icon=\"el-icon-search\" v-model=\"search\" clearable\r\n+        <el-input v-show=\"btnFlag\" placeholder=\"搜索文章\" class=\"search\" prefix-icon=\"el-icon-search\" v-model=\"search\" clearable\r\n             @keyup.enter.native=\"queryArticleByTitle\" @clear=\"clearInput\"></el-input>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/#' }\"><i class=\"el-icon-house icon\"></i>  首页</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/essays' }\"><i class=\"el-icon-notebook-2 icon\"></i>  随笔</router-link>\r\n       <router-link active-class=\"bot\" :to=\"{ path: '/archive' }\"><i class=\"el-icon-timer icon\"></i>  归档</router-link>\r\n"
+                },
+                {
+                    "date": 1653744522759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,9 @@\n \r\n <style scoped lang=\"less\">\r\n #my-nav-container {\r\n   // position: fixed;\r\n+      height: 60px;\r\n   display: flex;\r\n   align-items: center;\r\n   justify-content: space-between;\r\n   img {\r\n"
                 }
             ],
             "date": 1645614431496,

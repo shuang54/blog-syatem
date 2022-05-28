@@ -3,7 +3,7 @@
     <!-- 使用ElementUI中的Layout布局 -->
     <el-row>
       <el-col hidden-lg-and-dow :sm="4" :md="4" :lg="3" :xs="0">
-        <div>
+        <div v-sticky="60" class="right">
           <el-card class="box-card" shadow="hover">
             <div slot="header" class="clearfix">
               <span style="font-size: 18px;">公告栏</span>
@@ -46,11 +46,9 @@
         <el-empty v-show="!isShow" :image-size="200"></el-empty>
         
       </el-col>
-      <el-col :sm="4" :md="4" :lg="3" :xs="0">
-        <div class="right">
-          <el-input placeholder="搜索文章" class="search" prefix-icon="el-icon-search" v-model="search" clearable
-            @keyup.enter.native="queryArticleByTitle" @clear="clearInput"></el-input>
-          <el-card class="box-card" shadow="hover">
+      <el-col :sm="4" :md="4" :lg="3" :xs="0" class="right-box">
+        <div class="right" >
+          <el-card class="box-card" shadow="hover" v-sticky="60">
             <div slot="header" class="clearfix">
               <span style="font-size: 18px;">分类</span>
             </div>
@@ -80,7 +78,7 @@ export default {
   props: ['articleList', 'categoryName'],
   data() {
     return {
-      search: '',
+      
     }
   },
   computed: {
@@ -97,31 +95,13 @@ export default {
     }
   },
   methods: {
-    // 点击分类进行查询
-    queryArticleByCategoryName(categoryName) {
-      this.$emit('queryArticleByCategoryName', categoryName)
-    },
-    // 根据input表单进行查询
-    queryArticleByTitle() {
-      this.$emit('queryArticleByTitle')
-    },
-    clearInput() {
-      this.$store.state.Article.search = ''
-      this.$emit('clearInput')
-    },
-    clearCategoryName() {
-      this.$emit('clearCategoryName')
-    }
+
 
   },
   created() {
     this.$store.dispatch('getCategory')
   },
-  watch: {
-    search: function (newValue, oldValue) {
-      this.$store.state.Article.search = newValue
-    }
-  }
+
 
 }
 </script>
@@ -194,13 +174,15 @@ export default {
       }
     }
   }
-
+  .right-box{
+    position: sticky;
+    top: 10px;
+  }
   .right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     .search {
       max-width: 220px !important;
       width: 100%;
@@ -303,5 +285,7 @@ export default {
   }
 }
 
-
+.right{
+  background-color: transparent;
+}
 </style>

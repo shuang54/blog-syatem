@@ -86,7 +86,9 @@ export default {
 
   .main #mainContent {
     max-width: 1200px;
-    margin: 0 auto
+    margin: 0 auto;
+  margin-top: 35px;
+
   }
 
   .main .fe .item {

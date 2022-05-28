@@ -61,7 +61,7 @@ export default {
     }),
     publicationDate() {
       let time = `${this.articleData.createTime}`.slice(0, 10).split('-')
-      return `${time[0]}年${time[1]}月${time[2]}日`
+      return `${time[0]}年${time[1]}月${time[2]}日 `
     }
   },
   data() {

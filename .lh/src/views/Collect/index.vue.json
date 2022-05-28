@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 91,
+            "activePatchIndex": 92,
             "patches": [
                 {
                     "date": 1651930308133,
@@ -372,6 +372,10 @@
                 {
                     "date": 1653572766747,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,30 +49,9 @@\n           </div>\r\n         </div>\r\n       </div>\r\n     </div>\r\n-    <div class=\"footer\">\r\n-      <!--<div class=\"recommend\">\r\n-                  <p>Web前端导航，最<strong>贴心</strong>的 前端导航！</p>\r\n \r\n-                  <div>如果你也有好的资源欢迎向我们\r\n-                      <div class=\"recommend-icon\">\r\n-                          <a href=\"\">推荐</a>\r\n-                      </div>\r\n-                  </div>\r\n-                  <div>Thank you!<img src=\"./static/images/kissing.png\" /> </div>\r\n-              </div>-->\r\n-      <p>微信关注 AlloyTeam 公众号，了解我们更多资讯</p>\r\n-      <div class=\"copyright\">\r\n-        <div>\r\n-\r\n-          Copyright © 2011- 2022\r\n-          <a href=\"http://www.alloyteam.com/\">\r\n-            Web前端 腾讯AlloyTeam\r\n-          </a>\r\n-        </div>\r\n-      </div>\r\n-    </div>\r\n   </div>\r\n </template>\r\n <script>\r\n export default {\r\n"
+                },
+                {
+                    "date": 1653727018686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2569,9 +2569,9 @@\n   },\r\n   methods: {\r\n     goAnchor(e) {\r\n       this.Category_id = e\r\n-      document.querySelector('#' + e).scrollIntoView({\r\n+      window.document.querySelector('#' + e).scrollIntoView({\r\n         behavior: \"smooth\",\r\n         block: \"center\",\r\n         inline: \"nearest\",\r\n       });\r\n"
                 }
             ],
             "date": 1651930308133,

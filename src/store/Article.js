@@ -1,4 +1,4 @@
-import { reqArticleList, reqUpdateArticle, reqArticle, reqCategory, reqAddArticle } from "@/API/index"
+import { reqArticleList, reqArticEssaysleList, reqArticle, reqCategory, reqAddArticle } from "@/API/index"
 import { Message } from "element-ui"
 const actions = {
   // 获取文章列表
@@ -18,6 +18,14 @@ const actions = {
       }
 
       return commit('GETARTICLElIST', result.data)
+    }
+    return Promise.reject(new Error('获取文章列表失败'))
+  },
+  // 获取随笔文章列表
+  async getArticEssaysleList({ commit, state }, data) {
+    let result = await reqArticEssaysleList(data)
+    if (result.code == 200) {
+      return commit('GETARTICLEESSAYSlIST', result.data)
     }
     return Promise.reject(new Error('获取文章列表失败'))
   },
@@ -54,17 +62,24 @@ const actions = {
 }
 
 const mutations = {
+  
   // 获取文章列表
   GETARTICLElIST(state, data) {
     if (data.length == []) {
       Message({
-        message: '没有更多的文章了',
+        message: '没有更多了',
         type: 'error'
       }, true)
       state.isRefreshBool = false
     }
 
     state.articleList = [...state.articleList, ...data]
+
+  },
+  // 获取随笔文章列表
+  GETARTICLEESSAYSlIST(state, data) {
+
+    state.articleEssaysList = data
 
   },
   GETARTICLElIST2(state, data) {
@@ -113,8 +128,14 @@ const state = {
   category: [],
   isRefreshBool: true,
   search: '',
+  articleEssaysList: [],
 }
 const getters = {
+  essaysListTree(state){
+    state.articleEssaysList.map((item)=>{
+      return 
+    })
+  }
 }
 export default {
   state,

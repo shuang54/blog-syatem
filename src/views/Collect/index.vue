@@ -2570,7 +2570,7 @@ export default {
   methods: {
     goAnchor(e) {
       this.Category_id = e
-      document.querySelector('#' + e).scrollIntoView({
+      window.document.querySelector('#' + e).scrollIntoView({
         behavior: "smooth",
         block: "center",
         inline: "nearest",

@@ -1,0 +1,714 @@
+{
+    "sourceFile": "src/views/Essays/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 174,
+            "patches": [
+                {
+                    "date": 1653701503481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653701612983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,14 @@\n <div>aa</div>\r\n </template>\r\n \r\n <script>\r\n+export default {\r\n+  name:'essays',\r\n+  data(){\r\n+    \r\n+  }\r\n+}\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n \r\n"
+                },
+                {
+                    "date": 1653701647222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n <template>\r\n-<div>aa</div>\r\n+<div>aasdfasda</div>\r\n </template>\r\n \r\n <script>\r\n export default {\r\n   name:'essays',\r\n   data(){\r\n-    \r\n+    return {\r\n+\r\n+    }\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653702698888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,19 @@\n <div>aasdfasda</div>\r\n </template>\r\n \r\n <script>\r\n+import { mapGetters } from 'vuex'\r\n+\r\n export default {\r\n   name:'essays',\r\n   data(){\r\n     return {\r\n \r\n     }\r\n+  },\r\n+  methods:{\r\n+    ...mapGetters([''])\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653702760567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,9 @@\n     return {\r\n \r\n     }\r\n   },\r\n-  methods:{\r\n-    ...mapGetters([''])\r\n-  }\r\n+  <computed:></computed:>\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1653702774578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n     return {\r\n \r\n     }\r\n   },\r\n-  <computed:></computed:>\r\n+  computed:{\r\n+    essaysData:\r\n+  }\r\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n"
+                },
+                {
+                    "date": 1653702793737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,11 @@\n \r\n     }\r\n   },\r\n   computed:{\r\n-    essaysData:\r\n+    essaysData(){\r\n+      return this.$store.\r\n+    }\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653702804831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     }\r\n   },\r\n   computed:{\r\n     essaysData(){\r\n-      return this.$store.\r\n+      return this.$store.getters.essaysData\r\n     }\r\n   }\r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1653702814379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-<div>aasdfasda</div>\r\n+<div>{{essaysData}}</div>\r\n </template>\r\n \r\n <script>\r\n import { mapGetters } from 'vuex'\r\n"
+                },
+                {
+                    "date": 1653703124328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n <div>{{essaysData}}</div>\r\n </template>\r\n \r\n <script>\r\n-import { mapGetters } from 'vuex'\r\n \r\n export default {\r\n   name:'essays',\r\n   data(){\r\n@@ -12,11 +11,8 @@\n \r\n     }\r\n   },\r\n   computed:{\r\n-    essaysData(){\r\n-      return this.$store.getters.essaysData\r\n-    }\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653703836526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n <template>\r\n-<div>{{essaysData}}</div>\r\n+<div id=\"essays-container\">\r\n+  <aside class=\"left\">left</aside>\r\n+  <main class=\"main\">main</main>\r\n+</div>\r\n </template>\r\n \r\n <script>\r\n \r\n"
+                },
+                {
+                    "date": 1653703882998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,9 @@\n }\r\n </script>\r\n \r\n <style scoped lang=\"less\">\r\n-\r\n+#essays-container{\r\n+  display: flex;\r\n+  \r\n+}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653703889844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,7 @@\n \r\n <style scoped lang=\"less\">\r\n #essays-container{\r\n   display: flex;\r\n-  \r\n+  align-items: center;\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653703945395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,11 @@\n <style scoped lang=\"less\">\r\n #essays-container{\r\n   display: flex;\r\n   align-items: center;\r\n+  .left{\r\n+    width: 200px;\r\n+    height: calc(100vh - 80px);\r\n+  }\r\n+  .main{}\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653703958036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n \r\n <style scoped lang=\"less\">\r\n #essays-container{\r\n   display: flex;\r\n+  flex-direction: row;\r\n   align-items: center;\r\n   .left{\r\n     width: 200px;\r\n     height: calc(100vh - 80px);\r\n"
+                },
+                {
+                    "date": 1653703968182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n   align-items: center;\r\n   .left{\r\n     width: 200px;\r\n     height: calc(100vh - 80px);\r\n+    background-color: pink;\r\n   }\r\n   .main{}\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653703982973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   flex-direction: row;\r\n   align-items: center;\r\n   .left{\r\n     width: 200px;\r\n-    height: calc(100vh - 80px);\r\n+    height: calc(100vh - 60px);\r\n     background-color: pink;\r\n   }\r\n   .main{}\r\n }\r\n"
+                },
+                {
+                    "date": 1653704002873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n <style scoped lang=\"less\">\r\n #essays-container{\r\n   display: flex;\r\n   flex-direction: row;\r\n-  align-items: center;\r\n+  // align-items: center;\r\n   .left{\r\n     width: 200px;\r\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n"
+                },
+                {
+                    "date": 1653704022185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   display: flex;\r\n   flex-direction: row;\r\n   // align-items: center;\r\n   .left{\r\n-    width: 200px;\r\n+    width: 400px;\r\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n   }\r\n   .main{}\r\n"
+                },
+                {
+                    "date": 1653704068604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,27 @@\n <template>\r\n <div id=\"essays-container\">\r\n-  <aside class=\"left\">left</aside>\r\n+  <aside class=\"left\">\r\n+    <el-collapse v-model=\"activeName\" accordion>\r\n+  <el-collapse-item title=\"一致性 Consistency\" name=\"1\">\r\n+    <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>\r\n+    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>\r\n+  </el-collapse-item>\r\n+  <el-collapse-item title=\"反馈 Feedback\" name=\"2\">\r\n+    <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>\r\n+    <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>\r\n+  </el-collapse-item>\r\n+  <el-collapse-item title=\"效率 Efficiency\" name=\"3\">\r\n+    <div>简化流程：设计简洁直观的操作流程；</div>\r\n+    <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>\r\n+    <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>\r\n+  </el-collapse-item>\r\n+  <el-collapse-item title=\"可控 Controllability\" name=\"4\">\r\n+    <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>\r\n+    <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>\r\n+  </el-collapse-item>\r\n+</el-collapse>\r\n+  </aside>\r\n   <main class=\"main\">main</main>\r\n </div>\r\n </template>\r\n \r\n@@ -24,9 +44,9 @@\n   display: flex;\r\n   flex-direction: row;\r\n   // align-items: center;\r\n   .left{\r\n-    width: 400px;\r\n+    width: 300px;\r\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n   }\r\n   .main{}\r\n"
+                },
+                {
+                    "date": 1653704095716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n export default {\r\n   name:'essays',\r\n   data(){\r\n     return {\r\n-\r\n+   activeName: '1'\r\n     }\r\n   },\r\n   computed:{\r\n   }\r\n"
+                },
+                {
+                    "date": 1653704105192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n export default {\r\n   name:'essays',\r\n   data(){\r\n     return {\r\n-   activeName: '1'\r\n+     activeName: '1'\r\n     }\r\n   },\r\n   computed:{\r\n   }\r\n"
+                },
+                {
+                    "date": 1653704187125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,11 @@\n   .left{\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n+    /deep/.el-collapse-item__header{\r\n+      padding-left: 20px;\r\n+    }\r\n   }\r\n   .main{}\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653704228406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,11 @@\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n+      .el-collapse-item__content{\r\n+        padding-left: 30px;\r\n+      }\r\n     }\r\n   }\r\n   .main{}\r\n }\r\n"
+                },
+                {
+                    "date": 1653704241697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n-      .el-collapse-item__content{\r\n+      /deep/.el-collapse-item__content{\r\n         padding-left: 30px;\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653704261435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,12 +49,12 @@\n     height: calc(100vh - 60px);\r\n     background-color: pink;\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n+    }\r\n       /deep/.el-collapse-item__content{\r\n         padding-left: 30px;\r\n       }\r\n-    }\r\n   }\r\n   .main{}\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653704318109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,17 +9,9 @@\n   <el-collapse-item title=\"反馈 Feedback\" name=\"2\">\r\n     <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>\r\n     <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>\r\n   </el-collapse-item>\r\n-  <el-collapse-item title=\"效率 Efficiency\" name=\"3\">\r\n-    <div>简化流程：设计简洁直观的操作流程；</div>\r\n-    <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>\r\n-    <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>\r\n-  </el-collapse-item>\r\n-  <el-collapse-item title=\"可控 Controllability\" name=\"4\">\r\n-    <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>\r\n-    <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>\r\n-  </el-collapse-item>\r\n+\r\n </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">main</main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653704349732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,8 @@\n   // align-items: center;\r\n   .left{\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n-    background-color: pink;\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n     }\r\n       /deep/.el-collapse-item__content{\r\n"
+                },
+                {
+                    "date": 1653705786389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,9 @@\n   <el-collapse-item title=\"一致性 Consistency\" name=\"1\">\r\n     <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>\r\n     <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>\r\n   </el-collapse-item>\r\n-  <el-collapse-item title=\"反馈 Feedback\" name=\"2\">\r\n-    <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>\r\n-    <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>\r\n-  </el-collapse-item>\r\n-\r\n-</el-collapse>\r\n+  </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">main</main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653705939812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n <div id=\"essays-container\">\r\n   <aside class=\"left\">\r\n     <el-collapse v-model=\"activeName\" accordion>\r\n-  <el-collapse-item title=\"一致性 Consistency\" name=\"1\">\r\n+  <el-collapse-item title=\"2022\" name=\"1\">\r\n     <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>\r\n     <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n"
+                },
+                {
+                    "date": 1653705946744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n <div id=\"essays-container\">\r\n   <aside class=\"left\">\r\n     <el-collapse v-model=\"activeName\" accordion>\r\n   <el-collapse-item title=\"2022\" name=\"1\">\r\n-    <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>\r\n-    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>\r\n+    <div></div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">main</main>\r\n"
+                },
+                {
+                    "date": 1653705979359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n <div id=\"essays-container\">\r\n   <aside class=\"left\">\r\n     <el-collapse v-model=\"activeName\" accordion>\r\n-  <el-collapse-item title=\"2022\" name=\"1\">\r\n+  <el-collapse-item title=\"2022年\" name=\"1\">\r\n     <div></div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n"
+                },
+                {
+                    "date": 1653705987680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n <div id=\"essays-container\">\r\n   <aside class=\"left\">\r\n     <el-collapse v-model=\"activeName\" accordion>\r\n-  <el-collapse-item title=\"2022年\" name=\"1\">\r\n+  <el-collapse-item center title=\"2022年\" name=\"1\">\r\n     <div></div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n"
+                },
+                {
+                    "date": 1653706275836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n     <div></div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n-  <main class=\"main\">main</main>\r\n+  <main class=\"main\">\r\n+    <div class=\"body\"></div>\r\n+  </main>\r\n </div>\r\n </template>\r\n \r\n <script>\r\n@@ -39,7 +41,13 @@\n       /deep/.el-collapse-item__content{\r\n         padding-left: 30px;\r\n       }\r\n   }\r\n-  .main{}\r\n+  .main{\r\n+    .body{\r\n+      width: 500px;\r\n+      height: auto;\r\n+      background-color: pink;\r\n+    }\r\n+  }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653706304891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   }\r\n   .main{\r\n     .body{\r\n       width: 500px;\r\n-      height: auto;\r\n+      height: 100%;\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706334707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,9 @@\n   .main{\r\n     .body{\r\n       width: 500px;\r\n       height: 100%;\r\n+      margin: 0 auto;\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706356895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,9 @@\n         padding-left: 30px;\r\n       }\r\n   }\r\n   .main{\r\n+    width: 100%;\r\n     .body{\r\n       width: 500px;\r\n       height: 100%;\r\n       margin: 0 auto;\r\n"
+                },
+                {
+                    "date": 1653706365747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   }\r\n   .main{\r\n     width: 100%;\r\n     .body{\r\n-      width: 500px;\r\n+      width: 700px;\r\n       height: 100%;\r\n       margin: 0 auto;\r\n       background-color: pink;\r\n     }\r\n"
+                },
+                {
+                    "date": 1653706395943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n     width: 100%;\r\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n-      margin: 0 auto;\r\n+      transform: translateX(-50%);\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706404240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,9 @@\n     width: 100%;\r\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n+      margin: 0 auto;\r\n       transform: translateX(-50%);\r\n       background-color: pink;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653706410677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n       margin: 0 auto;\r\n-      transform: translateX(-50%);\r\n+      transform: translateX(-25%);\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706430228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,8 @@\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n       margin: 0 auto;\r\n-      transform: translateX(-25%);\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706460609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,10 @@\n     width: 100%;\r\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n-      margin: 0 auto;\r\n+      position: relative;\r\n+      \r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706480433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n       position: relative;\r\n-      \r\n+      transform: translate(-50%,-50%);\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706501198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,10 @@\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n       position: relative;\r\n+      bottom: 50%;\r\n+      right: 50%;\r\n       transform: translate(-50%,-50%);\r\n       background-color: pink;\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653706574136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,15 +43,14 @@\n       }\r\n   }\r\n   .main{\r\n     width: 100%;\r\n+      display: flex;\r\n+\r\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n-      position: relative;\r\n-      bottom: 50%;\r\n-      right: 50%;\r\n-      transform: translate(-50%,-50%);\r\n+      \r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706581952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,10 @@\n   }\r\n   .main{\r\n     width: 100%;\r\n       display: flex;\r\n-\r\n+    justify-content: center;\r\n+    \r\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n       \r\n"
+                },
+                {
+                    "date": 1653706609163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,15 +43,13 @@\n       }\r\n   }\r\n   .main{\r\n     width: 100%;\r\n-      display: flex;\r\n-    justify-content: center;\r\n     \r\n     .body{\r\n       width: 700px;\r\n       height: 100%;\r\n-      \r\n+      margin:0 auto;\r\n       background-color: pink;\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706623992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n   .main{\r\n     width: 100%;\r\n     \r\n     .body{\r\n-      width: 700px;\r\n+      width: 800px;\r\n       height: 100%;\r\n       margin:0 auto;\r\n       background-color: pink;\r\n     }\r\n"
+                },
+                {
+                    "date": 1653706657316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">\r\n-    <div class=\"body\"></div>\r\n+    <div class=\"body\">\r\n+      <h1></h1>\r\n+    </div>\r\n   </main>\r\n </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1653706663485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">\r\n     <div class=\"body\">\r\n-      <h1></h1>\r\n+      <h1>落魂前端的心情日记</h1>\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653706676991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   </aside>\r\n   <main class=\"main\">\r\n     <div class=\"body\">\r\n       <h1>落魂前端的心情日记</h1>\r\n+      <el-\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653706685938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   </aside>\r\n   <main class=\"main\">\r\n     <div class=\"body\">\r\n       <h1>落魂前端的心情日记</h1>\r\n-      <el-\r\n+      <el-divider></el-divider>\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653706718462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,9 @@\n   </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">\r\n     <div class=\"body\">\r\n-      <h1>落魂前端的心情日记</h1>\r\n-      <el-divider></el-divider>\r\n+      <h1 class=\"\">落魂前端的心情日记</h1>\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653706804787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,11 @@\n   </el-collapse>\r\n   </aside>\r\n   <main class=\"main\">\r\n     <div class=\"body\">\r\n-      <h1 class=\"\">落魂前端的心情日记</h1>\r\n+      <div class=\"page-title\">\r\n+        <h1>落魂前端的心情日记</h1>\r\n+      </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653706829547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,11 @@\n       width: 800px;\r\n       height: 100%;\r\n       margin:0 auto;\r\n       background-color: pink;\r\n+      .page-title{\r\n+        \r\n+      }\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653706837617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n       height: 100%;\r\n       margin:0 auto;\r\n       background-color: pink;\r\n       .page-title{\r\n-        \r\n+        margin: 0 auto;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706850852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,9 @@\n       margin:0 auto;\r\n       background-color: pink;\r\n       .page-title{\r\n         margin: 0 auto;\r\n+        text-align: left;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706863703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n       background-color: pink;\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n+        padding: 10px 20px;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706871191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n       background-color: pink;\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n-        padding: 10px 20px;\r\n+        padding: 10px 40px;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706878549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n       background-color: pink;\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n-        padding: 10px 40px;\r\n+        padding: 40px 20px;\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706904873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n       background-color: pink;\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n+        font-weight: 500;\r\n         padding: 40px 20px;\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653706915675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,13 @@\n       background-color: pink;\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n-        font-weight: 500;\r\n         padding: 40px 20px;\r\n+        h1{\r\n+          \r\n+          font-weight: 500;\r\n+        }\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653706936551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n         margin: 0 auto;\r\n         text-align: left;\r\n         padding: 40px 20px;\r\n         h1{\r\n-          \r\n+          font-size: 24px;\r\n           font-weight: 500;\r\n         }\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1653706949194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n         padding: 40px 20px;\r\n         h1{\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n+          color: aliceblue;\r\n         }\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653706966076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         padding: 40px 20px;\r\n         h1{\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n-          color: aliceblue;\r\n+          color: #181818;\r\n         }\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653706998177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,9 @@\n         h1{\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n           color: #181818;\r\n+          border-bottom: 1px solid #ccc;\r\n         }\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653707015343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n         h1{\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n           color: #181818;\r\n-          border-bottom: 1px solid #ccc;\r\n+          border-bottom: 1px solid #eaecef;\r\n         }\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653707022419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n         h1{\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n           color: #181818;\r\n-          border-bottom: 1px solid #eaecef;\r\n+          border-bottom: 2px solid #eaecef;\r\n         }\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653707052408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   </aside>\r\n   <main class=\"main\">\r\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n-        <h1>落魂前端的心情日记</h1>\r\n+        <h1>记录有趣的事物</h1>\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653707101289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n+      \r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653707195034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,8 +59,9 @@\n         margin: 0 auto;\r\n         text-align: left;\r\n         padding: 40px 20px;\r\n         h1{\r\n+          height: 20px;\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n           color: #181818;\r\n           border-bottom: 2px solid #eaecef;\r\n"
+                },
+                {
+                    "date": 1653707219782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         margin: 0 auto;\r\n         text-align: left;\r\n         padding: 40px 20px;\r\n         h1{\r\n-          height: 20px;\r\n+          height: 80px;\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n           color: #181818;\r\n           border-bottom: 2px solid #eaecef;\r\n"
+                },
+                {
+                    "date": 1653707227665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         margin: 0 auto;\r\n         text-align: left;\r\n         padding: 40px 20px;\r\n         h1{\r\n-          height: 80px;\r\n+          height: 50px;\r\n           font-size: 24px;\r\n           font-weight: 500;\r\n           color: #181818;\r\n           border-bottom: 2px solid #eaecef;\r\n"
+                },
+                {
+                    "date": 1653707323019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n-      \r\n+      <div class=\"\">\r\n+\r\n+      </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653707367913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n-      <div class=\"\">\r\n+      <div class=\"content\">\r\n \r\n       </div>\r\n     </div>\r\n   </main>\r\n@@ -67,8 +67,13 @@\n           font-weight: 500;\r\n           color: #181818;\r\n           border-bottom: 2px solid #eaecef;\r\n         }\r\n+        .content{\r\n+          background-color: aqua;\r\n+          width: 100%;\r\n+          height: 100%;\r\n+        }\r\n       }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653707395500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,14 +67,14 @@\n           font-weight: 500;\r\n           color: #181818;\r\n           border-bottom: 2px solid #eaecef;\r\n         }\r\n+          }\r\n         .content{\r\n           background-color: aqua;\r\n           width: 100%;\r\n           height: 100%;\r\n         }\r\n-      }\r\n     }\r\n   }\r\n }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653707448826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n   display: flex;\r\n   flex-direction: row;\r\n   // align-items: center;\r\n   .left{\r\n+    position:sticky\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n"
+                },
+                {
+                    "date": 1653707552228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   display: flex;\r\n   flex-direction: row;\r\n   // align-items: center;\r\n   .left{\r\n-    position:sticky\r\n+    position:fixed;\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n"
+                },
+                {
+                    "date": 1653707564880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n   flex-direction: row;\r\n   // align-items: center;\r\n   .left{\r\n     position:fixed;\r\n+    display: flex;\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n"
+                },
+                {
+                    "date": 1653707579706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,10 +39,9 @@\n   display: flex;\r\n   flex-direction: row;\r\n   // align-items: center;\r\n   .left{\r\n-    position:fixed;\r\n-    display: flex;\r\n+    // position:fixed;\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n"
+                },
+                {
+                    "date": 1653707645571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,12 @@\n   .left{\r\n     // position:fixed;\r\n     width: 300px;\r\n     height: calc(100vh - 60px);\r\n+    /deep/.el-collapse{\r\n+      position: fixed;\r\n+      width:300px;\r\n+    }\r\n     /deep/.el-collapse-item__header{\r\n       padding-left: 20px;\r\n     }\r\n       /deep/.el-collapse-item__content{\r\n"
+                },
+                {
+                    "date": 1653707708821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     .body{\r\n       width: 800px;\r\n       height: 100%;\r\n       margin:0 auto;\r\n-      background-color: pink;\r\n+      background-color: white;\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n         padding: 40px 20px;\r\n"
+                },
+                {
+                    "date": 1653707750678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,9 @@\n       width: 800px;\r\n       height: 100%;\r\n       margin:0 auto;\r\n       background-color: white;\r\n+          box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);\r\n       .page-title{\r\n         margin: 0 auto;\r\n         text-align: left;\r\n         padding: 40px 20px;\r\n"
+                },
+                {
+                    "date": 1653714839235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,11 @@\n      activeName: '1'\r\n     }\r\n   },\r\n   computed:{\r\n+  },\r\n+  created () {\r\n+    this.$store.dispatch('getArticEssaysleList', '2022').\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653714845165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   },\r\n   computed:{\r\n   },\r\n   created () {\r\n-    this.$store.dispatch('getArticEssaysleList', '2022').\r\n+    this.$store.dispatch('getArticEssaysleList', '2022')\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653715123183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-\r\n+        {{}}\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n@@ -29,8 +29,11 @@\n      activeName: '1'\r\n     }\r\n   },\r\n   computed:{\r\n+    essaysList(){\r\n+      return this.$store.Article.articleEssaysList\r\n+    }\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n   }\r\n"
+                },
+                {
+                    "date": 1653715152609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        {{}}\r\n+        {{essaysList}}\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n@@ -30,8 +30,9 @@\n     }\r\n   },\r\n   computed:{\r\n     essaysList(){\r\n+      console.log(this.$store);\r\n       return this.$store.Article.articleEssaysList\r\n     }\r\n   },\r\n   created () {\r\n"
+                },
+                {
+                    "date": 1653715188279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\r\n   },\r\n   computed:{\r\n     essaysList(){\r\n-      console.log(this.$store);\r\n+      console.log(this.$store.state.articleEssaysList);\r\n       return this.$store.Article.articleEssaysList\r\n     }\r\n   },\r\n   created () {\r\n"
+                },
+                {
+                    "date": 1653715198189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     }\r\n   },\r\n   computed:{\r\n     essaysList(){\r\n-      console.log(this.$store.state.articleEssaysList);\r\n+      console.log(this.state.state.articleEssaysList);\r\n       return this.$store.Article.articleEssaysList\r\n     }\r\n   },\r\n   created () {\r\n"
+                },
+                {
+                    "date": 1653715274825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,22 +20,22 @@\n </div>\r\n </template>\r\n \r\n <script>\r\n+import { mapState } from 'vuex'\r\n \r\n+\r\n export default {\r\n   name:'essays',\r\n   data(){\r\n     return {\r\n      activeName: '1'\r\n     }\r\n   },\r\n   computed:{\r\n-    essaysList(){\r\n-      console.log(this.state.state.articleEssaysList);\r\n-      return this.$store.Article.articleEssaysList\r\n-    }\r\n-  },\r\n+        ...mapState({\r\n+      essaysList: state => state.Article.articleEssaysList,\r\n+    }),\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653715285824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n   computed:{\r\n         ...mapState({\r\n       essaysList: state => state.Article.articleEssaysList,\r\n     }),\r\n+  }\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653715461546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n <div id=\"essays-container\">\r\n   <aside class=\"left\">\r\n     <el-collapse v-model=\"activeName\" accordion>\r\n-  <el-collapse-item center title=\"2022年\" name=\"1\">\r\n+  <el-collapse-item center title=\"2022年\" name=\"2022\">\r\n     <div></div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n@@ -27,16 +27,16 @@\n export default {\r\n   name:'essays',\r\n   data(){\r\n     return {\r\n-     activeName: '1'\r\n+     activeName: '2022'\r\n     }\r\n   },\r\n   computed:{\r\n-        ...mapState({\r\n+    ...mapState({\r\n       essaysList: state => state.Article.articleEssaysList,\r\n     }),\r\n-  }\r\n+  },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653715507243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n <div id=\"essays-container\">\r\n   <aside class=\"left\">\r\n     <el-collapse v-model=\"activeName\" accordion>\r\n-  <el-collapse-item center title=\"2022年\" name=\"2022\">\r\n+    <el-collapse-item center title=\"2022年\" name=\"2022\">\r\n     <div></div>\r\n   </el-collapse-item>\r\n   </el-collapse>\r\n   </aside>\r\n"
+                },
+                {
+                    "date": 1653716219419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,31 @@\n     }),\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n+  },\r\n+  mounted () {\r\n+    essaysList.forEach((item) => {\r\n+\t\t\t\tconst { desc: label, score, created_at, src } = item;\r\n+\t\t\t\tconst tag = created_at.slice(0, 7);\r\n+\t\t\t\tconsole.log('tag', tag);\r\n+\t\t\t\tif (this.data.curTag !== tag) {\r\n+\t\t\t\t\tthis.setData({\r\n+\t\t\t\t\t\tcurTag: tag,\r\n+\t\t\t\t\t});\r\n+\t\t\t\t\tarr.push({\r\n+\t\t\t\t\t\ttype: 'tag',\r\n+\t\t\t\t\t\tlabel: tag,\r\n+\t\t\t\t\t});\r\n+\t\t\t\t}\r\n+\t\t\t\tarr.push({\r\n+\t\t\t\t\ttype: 'score',\r\n+\t\t\t\t\tlabel,\r\n+\t\t\t\t\tscore: String(score).replace(/^([1-9])/, '+$1'),\r\n+\t\t\t\t\tdate: created_at,\r\n+\t\t\t\t\tsrc,\r\n+\t\t\t\t});\r\n+\t\t\t});\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653716234520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n \t\t\t\t\tdate: created_at,\r\n \t\t\t\t\tsrc,\r\n \t\t\t\t});\r\n \t\t\t});\r\n+      console.log(essaysList);\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653716250421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n   },\r\n   mounted () {\r\n-    essaysList.forEach((item) => {\r\n+    this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { desc: label, score, created_at, src } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n@@ -60,9 +60,9 @@\n \t\t\t\t\tdate: created_at,\r\n \t\t\t\t\tsrc,\r\n \t\t\t\t});\r\n \t\t\t});\r\n-      console.log(essaysList);\r\n+      console.log(this.essaysList);\r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653716306571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,12 +36,10 @@\n       essaysList: state => state.Article.articleEssaysList,\r\n     }),\r\n   },\r\n   created () {\r\n-    this.$store.dispatch('getArticEssaysleList', '2022')\r\n-  },\r\n-  mounted () {\r\n-    this.essaysList.forEach((item) => {\r\n+    this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n+ this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { desc: label, score, created_at, src } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n@@ -61,8 +59,12 @@\n \t\t\t\t\tsrc,\r\n \t\t\t\t});\r\n \t\t\t});\r\n       console.log(this.essaysList);\r\n+    })\r\n+  },\r\n+  mounted () {\r\n+   \r\n   }\r\n }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1653716327976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n-\t\t\t\tconst { desc: label, score, created_at, src } = item;\r\n+\t\t\t\tconst { desc: label, score, createTime, src } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n"
+                },
+                {
+                    "date": 1653716375623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n-\t\t\t\tconst { desc: label, score, createTime, src } = item;\r\n+\t\t\t\tconst { id, score, createTime, src } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n@@ -51,12 +51,13 @@\n \t\t\t\t\t\tlabel: tag,\r\n \t\t\t\t\t});\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n+          id:'',\r\n \t\t\t\t\ttype: 'score',\r\n \t\t\t\t\tlabel,\r\n \t\t\t\t\tscore: String(score).replace(/^([1-9])/, '+$1'),\r\n-\t\t\t\t\tdate: created_at,\r\n+\t\t\t\t\tdate: createTime,\r\n \t\t\t\t\tsrc,\r\n \t\t\t\t});\r\n \t\t\t});\r\n       console.log(this.essaysList);\r\n"
+                },
+                {
+                    "date": 1653716383420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n-\t\t\t\tconst { id, score, createTime, src } = item;\r\n+\t\t\t\tconst { id, title, createTime, src } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n"
+                },
+                {
+                    "date": 1653716392327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n-\t\t\t\tconst { id, title, createTime, src } = item;\r\n+\t\t\t\tconst { id, title, createTime, markdown,categoryName } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n"
+                },
+                {
+                    "date": 1653716399502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,10 @@\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n-\t\t\t\tconst { id, title, createTime, markdown,categoryName } = item;\r\n+\t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime\r\n+         } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n"
+                },
+                {
+                    "date": 1653716420957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,9 @@\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n-\t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime\r\n-         } = item;\r\n+\t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = created_at.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n"
+                },
+                {
+                    "date": 1653716438466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,16 @@\n \t\t\t\t\t\tlabel: tag,\r\n \t\t\t\t\t});\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n-          id:'',\r\n+           id,\r\n+            title,\r\n+             createTime,\r\n+              markdown,\r\n+              categoryName,\r\n+              categoryId,\r\n+              updateTime\r\n+         \r\n \t\t\t\t\ttype: 'score',\r\n \t\t\t\t\tlabel,\r\n \t\t\t\t\tscore: String(score).replace(/^([1-9])/, '+$1'),\r\n \t\t\t\t\tdate: createTime,\r\n"
+                },
+                {
+                    "date": 1653716444991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,10 +57,9 @@\n              createTime,\r\n               markdown,\r\n               categoryName,\r\n               categoryId,\r\n-              updateTime\r\n-         \r\n+              updateTime,\r\n \t\t\t\t\ttype: 'score',\r\n \t\t\t\t\tlabel,\r\n \t\t\t\t\tscore: String(score).replace(/^([1-9])/, '+$1'),\r\n \t\t\t\t\tdate: createTime,\r\n"
+                },
+                {
+                    "date": 1653716462751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,15 +52,14 @@\n \t\t\t\t\t});\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n-            title,\r\n-             createTime,\r\n-              markdown,\r\n-              categoryName,\r\n-              categoryId,\r\n-              updateTime,\r\n-\t\t\t\t\ttype: 'score',\r\n+          title,\r\n+          createTime,\r\n+           markdown,\r\n+           categoryName,\r\n+           categoryId,\r\n+           updateTime,\r\n \t\t\t\t\tlabel,\r\n \t\t\t\t\tscore: String(score).replace(/^([1-9])/, '+$1'),\r\n \t\t\t\t\tdate: createTime,\r\n \t\t\t\t\tsrc,\r\n"
+                },
+                {
+                    "date": 1653716487508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,12 +58,9 @@\n            markdown,\r\n            categoryName,\r\n            categoryId,\r\n            updateTime,\r\n-\t\t\t\t\tlabel,\r\n-\t\t\t\t\tscore: String(score).replace(/^([1-9])/, '+$1'),\r\n-\t\t\t\t\tdate: createTime,\r\n-\t\t\t\t\tsrc,\r\n+\t\t\t\t\tcreateTime: createTime,\r\n \t\t\t\t});\r\n \t\t\t});\r\n       console.log(this.essaysList);\r\n     })\r\n"
+                },
+                {
+                    "date": 1653716548535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n-\t\t\t\tconst tag = created_at.slice(0, 7);\r\n+\t\t\t\tconst tag = createTime.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.data.curTag !== tag) {\r\n \t\t\t\t\tthis.setData({\r\n \t\t\t\t\t\tcurTag: tag,\r\n"
+                },
+                {
+                    "date": 1653716616082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,10 @@\n export default {\r\n   name:'essays',\r\n   data(){\r\n     return {\r\n-     activeName: '2022'\r\n+     activeName: '2022',\r\n+     curTag:''\r\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1653716756502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,10 @@\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n-\t\t\t\tif (this.data.curTag !== tag) {\r\n-\t\t\t\t\tthis.setData({\r\n-\t\t\t\t\t\tcurTag: tag,\r\n-\t\t\t\t\t});\r\n+\t\t\t\tif (this.curTag !== tag) {\r\n+\t\t\t\t\tthis.curTag = tag\r\n \t\t\t\t\tarr.push({\r\n \t\t\t\t\t\ttype: 'tag',\r\n \t\t\t\t\t\tlabel: tag,\r\n \t\t\t\t\t});\r\n"
+                },
+                {
+                    "date": 1653716790476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n   name:'essays',\r\n   data(){\r\n     return {\r\n      activeName: '2022',\r\n-     curTag:''\r\n+     curTag:'',\r\n+     arr:[]\r\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n@@ -44,22 +45,21 @@\n \t\t\t\tconst tag = createTime.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n \t\t\t\tif (this.curTag !== tag) {\r\n \t\t\t\t\tthis.curTag = tag\r\n-\t\t\t\t\tarr.push({\r\n+\t\t\t\t\tthis.arr.push({\r\n \t\t\t\t\t\ttype: 'tag',\r\n \t\t\t\t\t\tlabel: tag,\r\n \t\t\t\t\t});\r\n \t\t\t\t}\r\n-\t\t\t\tarr.push({\r\n+\t\t\t\tthis.arr.push({\r\n            id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n            categoryName,\r\n            categoryId,\r\n            updateTime,\r\n-\t\t\t\t\tcreateTime: createTime,\r\n \t\t\t\t});\r\n \t\t\t});\r\n       console.log(this.essaysList);\r\n     })\r\n"
+                },
+                {
+                    "date": 1653716857920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,10 @@\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(0, 7);\r\n \t\t\t\tconsole.log('tag', tag);\r\n+        \r\n+        console.log(this.curTag ,tag);\r\n \t\t\t\tif (this.curTag !== tag) {\r\n \t\t\t\t\tthis.curTag = tag\r\n \t\t\t\t\tthis.arr.push({\r\n \t\t\t\t\t\ttype: 'tag',\r\n"
+                },
+                {
+                    "date": 1653716931458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,11 @@\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(0, 7);\r\n-\t\t\t\tconsole.log('tag', tag);\r\n         \r\n-        console.log(this.curTag ,tag);\r\n \t\t\t\tif (this.curTag !== tag) {\r\n+          console.log(this.curTag ,tag);\r\n \t\t\t\t\tthis.curTag = tag\r\n \t\t\t\t\tthis.arr.push({\r\n \t\t\t\t\t\ttype: 'tag',\r\n \t\t\t\t\t\tlabel: tag,\r\n"
+                },
+                {
+                    "date": 1653716975664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n            categoryId,\r\n            updateTime,\r\n \t\t\t\t});\r\n \t\t\t});\r\n-      console.log(this.essaysList);\r\n+      console.log(this.arr);\r\n     })\r\n   },\r\n   mounted () {\r\n    \r\n"
+                },
+                {
+                    "date": 1653717052430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n-\t\t\t\tconst tag = createTime.slice(0, 7);\r\n+\t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (this.curTag !== tag) {\r\n           console.log(this.curTag ,tag);\r\n \t\t\t\t\tthis.curTag = tag\r\n"
+                },
+                {
+                    "date": 1653717080952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,12 +46,9 @@\n         \r\n \t\t\t\tif (this.curTag !== tag) {\r\n           console.log(this.curTag ,tag);\r\n \t\t\t\t\tthis.curTag = tag\r\n-\t\t\t\t\tthis.arr.push({\r\n-\t\t\t\t\t\ttype: 'tag',\r\n-\t\t\t\t\t\tlabel: tag,\r\n-\t\t\t\t\t});\r\n+\t\t\t\t\tthis.arr.push(tag);\r\n \t\t\t\t}\r\n \t\t\t\tthis.arr.push({\r\n            id,\r\n           title,\r\n"
+                },
+                {
+                    "date": 1653717129616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,8 @@\n   name:'essays',\r\n   data(){\r\n     return {\r\n      activeName: '2022',\r\n-     curTag:'',\r\n      arr:[]\r\n     }\r\n   },\r\n   computed:{\r\n@@ -39,15 +38,16 @@\n     }),\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n+      let curTag = '';\r\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n-\t\t\t\tif (this.curTag !== tag) {\r\n-          console.log(this.curTag ,tag);\r\n-\t\t\t\t\tthis.curTag = tag\r\n+\t\t\t\tif (curTag !== tag) {\r\n+          console.log(curTag ,tag);\r\n+\t\t\t\t\tcurTag = tag\r\n \t\t\t\t\tthis.arr.push(tag);\r\n \t\t\t\t}\r\n \t\t\t\tthis.arr.push({\r\n            id,\r\n"
+                },
+                {
+                    "date": 1653717198240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,16 +31,11 @@\n      activeName: '2022',\r\n      arr:[]\r\n     }\r\n   },\r\n-  computed:{\r\n-    ...mapState({\r\n-      essaysList: state => state.Article.articleEssaysList,\r\n-    }),\r\n-  },\r\n-  created () {\r\n-    this.$store.dispatch('getArticEssaysleList', '2022').then(()=>{\r\n-      let curTag = '';\r\n+  methods: {\r\n+    filtersEssaysList(){\r\n+       let curTag = '';\r\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n@@ -58,11 +53,18 @@\n            categoryId,\r\n            updateTime,\r\n \t\t\t\t});\r\n \t\t\t});\r\n-      console.log(this.arr);\r\n-    })\r\n+    }\r\n   },\r\n+  computed:{\r\n+    ...mapState({\r\n+      essaysList: state => state.Article.articleEssaysList,\r\n+    }),\r\n+  },\r\n+  created () {\r\n+    this.$store.dispatch('getArticEssaysleList', '2022')\r\n+  },\r\n   mounted () {\r\n    \r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653717225236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n      arr:[]\r\n     }\r\n   },\r\n   methods: {\r\n-    filtersEssaysList(){\r\n+    filtersEssaysList(item){\r\n        let curTag = '';\r\n  this.essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n@@ -57,9 +57,9 @@\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n-      essaysList: state => state.Article.articleEssaysList,\r\n+      essaysList: state => filtersEssaysList(state.Article.articleEssaysList),\r\n     }),\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n"
+                },
+                {
+                    "date": 1653717240464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n-      essaysList: state => filtersEssaysList(state.Article.articleEssaysList),\r\n+      essaysList: state => this.filtersEssaysList(state.Article.articleEssaysList),\r\n     }),\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n"
+                },
+                {
+                    "date": 1653717322656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,10 +57,13 @@\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n-      essaysList: state => this.filtersEssaysList(state.Article.articleEssaysList),\r\n+      mapEssaysList: state =>state.Article.articleEssaysList,\r\n     }),\r\n+    essaysList(){\r\n+      return this.filtersEssaysList(this.mapEssaysList)\r\n+    }\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n   },\r\n"
+                },
+                {
+                    "date": 1653717357420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n      arr:[]\r\n     }\r\n   },\r\n   methods: {\r\n-    filtersEssaysList(item){\r\n+    filtersEssaysList(essaysList){\r\n        let curTag = '';\r\n- this.essaysList.forEach((item) => {\r\n+ essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n"
+                },
+                {
+                    "date": 1653717398234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,18 +34,19 @@\n   },\r\n   methods: {\r\n     filtersEssaysList(essaysList){\r\n        let curTag = '';\r\n+       let arr = []\r\n  essaysList.forEach((item) => {\r\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n           console.log(curTag ,tag);\r\n \t\t\t\t\tcurTag = tag\r\n-\t\t\t\t\tthis.arr.push(tag);\r\n+\t\t\t\t\tarr.push(tag);\r\n \t\t\t\t}\r\n-\t\t\t\tthis.arr.push({\r\n+\t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n@@ -53,8 +54,10 @@\n            categoryId,\r\n            updateTime,\r\n \t\t\t\t});\r\n \t\t\t});\r\n+      console.log(arr);\r\n+      return arr;\r\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n"
+                },
+                {
+                    "date": 1653717434244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,8 @@\n \t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n-          console.log(curTag ,tag);\r\n \t\t\t\t\tcurTag = tag\r\n \t\t\t\t\tarr.push(tag);\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n@@ -63,9 +62,9 @@\n     ...mapState({\r\n       mapEssaysList: state =>state.Article.articleEssaysList,\r\n     }),\r\n     essaysList(){\r\n-      return this.filtersEssaysList(this.mapEssaysList)\r\n+      // return this.filtersEssaysList(this.mapEssaysList)\r\n     }\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n"
+                },
+                {
+                    "date": 1653717446399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     ...mapState({\r\n       mapEssaysList: state =>state.Article.articleEssaysList,\r\n     }),\r\n     essaysList(){\r\n-      // return this.filtersEssaysList(this.mapEssaysList)\r\n+      return this.filtersEssaysList(this.mapEssaysList)\r\n     }\r\n   },\r\n   created () {\r\n     this.$store.dispatch('getArticEssaysleList', '2022')\r\n"
+                },
+                {
+                    "date": 1653717472548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        {{essaysList}}\r\n+        \r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653717512205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        \r\n+        this.\r\n+        this.\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653717520371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        this.\r\n-        this.\r\n+       \r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653717611507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-       \r\n+       {{essaysList}}\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653717947891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,10 @@\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n-\t\t\t\t\tarr.push(tag);\r\n+          replace(/(0+)/gi,\"\");\r\n+\t\t\t\t\tarr.push([tag,clicked]);\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n"
+                },
+                {
+                    "date": 1653718044743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,10 @@\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n-          replace(/(0+)/gi,\"\");\r\n-\t\t\t\t\tarr.push([tag,clicked]);\r\n+          let tagStr = tag.replace(/(0+)/gi,\"\");\r\n+\t\t\t\t\tarr.push([tag=>tagtagStr,child=>[]]);\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n"
+                },
+                {
+                    "date": 1653718090628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n-          let tagStr = tag.replace(/(0+)/gi,\"\");\r\n+          let tagStr = \"\"+tag.replace(/(0+)/gi,\"\");\r\n \t\t\t\t\tarr.push([tag=>tagtagStr,child=>[]]);\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n"
+                },
+                {
+                    "date": 1653718106974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,10 @@\n \t\t\t\tconst tag = createTime.slice(5, 7);\r\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n-          let tagStr = \"\"+tag.replace(/(0+)/gi,\"\");\r\n-\t\t\t\t\tarr.push([tag=>tagtagStr,child=>[]]);\r\n+          let tagStr =tag.replace(/(0+)/gi,\"\");\r\n+\t\t\t\t\tarr.push([tag=>tagStr,child=>[]]);\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n"
+                },
+                {
+                    "date": 1653718145211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n-\t\t\t\t\tarr.push([tag=>tagStr,child=>[]]);\r\n+\t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n"
+                },
+                {
+                    "date": 1653718213580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n \t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n \t\t\t\t}\r\n-\t\t\t\tarr.push({\r\n+\t\t\t\tarr[arr.length].push({\r\n            id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n"
+                },
+                {
+                    "date": 1653718223634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n \t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n \t\t\t\t}\r\n-\t\t\t\tarr[arr.length].push({\r\n+\t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n"
+                },
+                {
+                    "date": 1653718289237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n \t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n \t\t\t\t}\r\n-\t\t\t\tarr.push({\r\n+\t\t\t\tarr[arr.length].child.push({\r\n            id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n"
+                },
+                {
+                    "date": 1653718324969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,18 +43,18 @@\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n \t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n-\t\t\t\t}\r\n \t\t\t\tarr[arr.length].child.push({\r\n-           id,\r\n+          id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n            categoryName,\r\n            categoryId,\r\n            updateTime,\r\n \t\t\t\t});\r\n+          }\r\n \t\t\t});\r\n       console.log(arr);\r\n       return arr;\r\n     }\r\n"
+                },
+                {
+                    "date": 1653718347687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,18 +43,18 @@\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n \t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n-\t\t\t\tarr[arr.length].child.push({\r\n-          id,\r\n+\t\t\t\t}\r\n+\t\t\t\tarr.push({\r\n+           id,\r\n           title,\r\n           createTime,\r\n            markdown,\r\n            categoryName,\r\n            categoryId,\r\n            updateTime,\r\n \t\t\t\t});\r\n-          }\r\n \t\t\t});\r\n       console.log(arr);\r\n       return arr;\r\n     }\r\n"
+                },
+                {
+                    "date": 1653718378207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-       {{essaysList}}\r\n+        \r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653718429899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,12 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        \r\n+        <div>\r\n+          <h1>月份</h1>\r\n+          \r\n+        </div>\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653718480084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,13 @@\n       </div>\r\n       <div class=\"content\">\r\n         <div>\r\n           <h1>月份</h1>\r\n-          \r\n         </div>\r\n+        <div>\r\n+          <h2>日期--------标题</h2>\r\n+          <p>内容</p>\r\n+        </div>\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653718497535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,8 +126,9 @@\n         .content{\r\n           background-color: aqua;\r\n           width: 100%;\r\n           height: 100%;\r\n+          text-align: left;\r\n         }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653718514803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        <div>\r\n+        <div class=\"mounth\">\r\n           <h1>月份</h1>\r\n         </div>\r\n         <div>\r\n           <h2>日期--------标题</h2>\r\n"
+                },
+                {
+                    "date": 1653718522478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        <div class=\"mounth\">\r\n+        <div class=\"moon\">\r\n           <h1>月份</h1>\r\n         </div>\r\n         <div>\r\n           <h2>日期--------标题</h2>\r\n"
+                },
+                {
+                    "date": 1653718539321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div class=\"content\">\r\n-        <div class=\"moon\">\r\n+        <div class=\"month\">\r\n           <h1>月份</h1>\r\n         </div>\r\n         <div>\r\n           <h2>日期--------标题</h2>\r\n@@ -127,8 +127,11 @@\n           background-color: aqua;\r\n           width: 100%;\r\n           height: 100%;\r\n           text-align: left;\r\n+          .month{\r\n+            font-weight: 400;\r\n+          }\r\n         }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653718544958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n           width: 100%;\r\n           height: 100%;\r\n           text-align: left;\r\n           .month{\r\n-            font-weight: 400;\r\n+            font-weight: t00;\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718564399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,12 @@\n           width: 100%;\r\n           height: 100%;\r\n           text-align: left;\r\n           .month{\r\n-            font-weight: t00;\r\n+            font-weight: 500;\r\n+            h1{\r\n+              font-size: 24px;\r\n+            }\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718582348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,10 +128,10 @@\n           width: 100%;\r\n           height: 100%;\r\n           text-align: left;\r\n           .month{\r\n-            font-weight: 500;\r\n-            h1{\r\n+            h1,h2{\r\n+              font-weight: 500;\r\n               font-size: 24px;\r\n             }\r\n           }\r\n         }\r\n"
+                },
+                {
+                    "date": 1653718617969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,13 +127,15 @@\n           background-color: aqua;\r\n           width: 100%;\r\n           height: 100%;\r\n           text-align: left;\r\n-          .month{\r\n-            h1,h2{\r\n+          h1,h2{\r\n               font-weight: 500;\r\n               font-size: 24px;\r\n             }\r\n+          .month{\r\n+            \r\n+            \r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718631291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,13 +129,14 @@\n           height: 100%;\r\n           text-align: left;\r\n           h1,h2{\r\n               font-weight: 500;\r\n+            }\r\n+          .month{\r\n+            h1{\r\n               font-size: 24px;\r\n             }\r\n-          .month{\r\n             \r\n-            \r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718641918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,8 +126,9 @@\n         .content{\r\n           background-color: aqua;\r\n           width: 100%;\r\n           height: 100%;\r\n+          padding: 20px;\r\n           text-align: left;\r\n           h1,h2{\r\n               font-weight: 500;\r\n             }\r\n"
+                },
+                {
+                    "date": 1653718664917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n       </div>\r\n       <div class=\"content\">\r\n         <div class=\"month\">\r\n           <h1>月份</h1>\r\n+          <el-divider></el-divider>\r\n         </div>\r\n         <div>\r\n           <h2>日期--------标题</h2>\r\n           <p>内容</p>\r\n"
+                },
+                {
+                    "date": 1653718680249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,8 +128,9 @@\n           background-color: aqua;\r\n           width: 100%;\r\n           height: 100%;\r\n           padding: 20px;\r\n+          box-sizing: border-box;\r\n           text-align: left;\r\n           h1,h2{\r\n               font-weight: 500;\r\n             }\r\n"
+                },
+                {
+                    "date": 1653718724344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -136,8 +136,9 @@\n             }\r\n           .month{\r\n             h1{\r\n               font-size: 24px;\r\n+              padding-left: 20px;\r\n             }\r\n             \r\n           }\r\n         }\r\n"
+                },
+                {
+                    "date": 1653718754193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         <div class=\"month\">\r\n           <h1>月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n-        <div>\r\n+        <div class=\"\">\r\n           <h2>日期--------标题</h2>\r\n           <p>内容</p>\r\n         </div>\r\n       </div>\r\n@@ -138,10 +138,10 @@\n             h1{\r\n               font-size: 24px;\r\n               padding-left: 20px;\r\n             }\r\n-            \r\n           }\r\n+          .\r\n         }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653718767777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         <div class=\"month\">\r\n           <h1>月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n-        <div class=\"\">\r\n+        <div class=\"day\">\r\n           <h2>日期--------标题</h2>\r\n           <p>内容</p>\r\n         </div>\r\n       </div>\r\n@@ -139,9 +139,11 @@\n               font-size: 24px;\r\n               padding-left: 20px;\r\n             }\r\n           }\r\n-          .\r\n+          .day{\r\n+            \r\n+          }\r\n         }\r\n     }\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1653718783669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,9 +140,9 @@\n               padding-left: 20px;\r\n             }\r\n           }\r\n           .day{\r\n-            \r\n+            padding: 30px;\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718796983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,9 +140,9 @@\n               padding-left: 20px;\r\n             }\r\n           }\r\n           .day{\r\n-            padding: 30px;\r\n+            padding-left: 30px;\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718818380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,9 +140,9 @@\n               padding-left: 20px;\r\n             }\r\n           }\r\n           .day{\r\n-            padding-left: 30px;\r\n+            padding: 30px;\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718828274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,9 +140,9 @@\n               padding-left: 20px;\r\n             }\r\n           }\r\n           .day{\r\n-            padding: 30px;\r\n+            padding: 20px;\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653718841179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,8 +141,11 @@\n             }\r\n           }\r\n           .day{\r\n             padding: 20px;\r\n+            h2{\r\n+              padding: 10px;\r\n+            }\r\n           }\r\n         }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1653719152349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,153 @@\n+<template>\r\n+<div id=\"essays-container\">\r\n+  <aside class=\"left\">\r\n+    <el-collapse v-model=\"activeName\" accordion>\r\n+    <el-collapse-item center title=\"2022年\" name=\"2022\">\r\n+    <div></div>\r\n+  </el-collapse-item>\r\n+  </el-collapse>\r\n+  </aside>\r\n+  <main class=\"main\">\r\n+    <div class=\"body\">\r\n+      <div class=\"page-title\">\r\n+        <h1>记录有趣的事物</h1>\r\n+      </div>\r\n+      <div  v-for=\"item in arr\" :key=\"index\" class=\"content\">\r\n+        <div v-if=\"item !== {}\" class=\"month\">\r\n+          <h1>月份</h1>\r\n+          <el-divider></el-divider>\r\n+        </div>\r\n+        <div v-else class=\"day\">\r\n+          <h2>日期--------标题</h2>\r\n+          <p>内容</p>\r\n+        </div>\r\n+      </div>\r\n+    </div>\r\n+  </main>\r\n+</div>\r\n+</template>\r\n+\r\n+<script>\r\n+import { mapState } from 'vuex'\r\n+\r\n+\r\n+export default {\r\n+  name:'essays',\r\n+  data(){\r\n+    return {\r\n+     activeName: '2022',\r\n+     arr:[]\r\n+    }\r\n+  },\r\n+  methods: {\r\n+    filtersEssaysList(essaysList){\r\n+       let curTag = '';\r\n+       let arr = []\r\n+ essaysList.forEach((item) => {\r\n+\t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n+\t\t\t\tconst tag = createTime.slice(5, 7);\r\n+        \r\n+\t\t\t\tif (curTag !== tag) {\r\n+\t\t\t\t\tcurTag = tag\r\n+          let tagStr =tag.replace(/(0+)/gi,\"\");\r\n+\t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n+\t\t\t\t}\r\n+\t\t\t\tarr.push({\r\n+           id,\r\n+          title,\r\n+          createTime,\r\n+           markdown,\r\n+           categoryName,\r\n+           categoryId,\r\n+           updateTime,\r\n+\t\t\t\t});\r\n+\t\t\t});\r\n+      console.log(arr);\r\n+      return arr;\r\n+    }\r\n+  },\r\n+  computed:{\r\n+    ...mapState({\r\n+      mapEssaysList: state =>state.Article.articleEssaysList,\r\n+    }),\r\n+    essaysList(){\r\n+      return this.filtersEssaysList(this.mapEssaysList)\r\n+    }\r\n+  },\r\n+  created () {\r\n+    this.$store.dispatch('getArticEssaysleList', '2022')\r\n+  },\r\n+  mounted () {\r\n+   \r\n+  }\r\n+}\r\n+</script>\r\n+\r\n+<style scoped lang=\"less\">\r\n+#essays-container{\r\n+  display: flex;\r\n+  flex-direction: row;\r\n+  // align-items: center;\r\n+  .left{\r\n+    // position:fixed;\r\n+    width: 300px;\r\n+    height: calc(100vh - 60px);\r\n+    /deep/.el-collapse{\r\n+      position: fixed;\r\n+      width:300px;\r\n+    }\r\n+    /deep/.el-collapse-item__header{\r\n+      padding-left: 20px;\r\n+    }\r\n+      /deep/.el-collapse-item__content{\r\n+        padding-left: 30px;\r\n+      }\r\n+  }\r\n+  .main{\r\n+    width: 100%;\r\n+    \r\n+    .body{\r\n+      width: 800px;\r\n+      height: 100%;\r\n+      margin:0 auto;\r\n+      background-color: white;\r\n+          box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);\r\n+      .page-title{\r\n+        margin: 0 auto;\r\n+        text-align: left;\r\n+        padding: 40px 20px;\r\n+        h1{\r\n+          height: 50px;\r\n+          font-size: 24px;\r\n+          font-weight: 500;\r\n+          color: #181818;\r\n+          border-bottom: 2px solid #eaecef;\r\n+        }\r\n+          }\r\n+        .content{\r\n+          background-color: aqua;\r\n+          width: 100%;\r\n+          height: 100%;\r\n+          padding: 20px;\r\n+          box-sizing: border-box;\r\n+          text-align: left;\r\n+          h1,h2{\r\n+              font-weight: 500;\r\n+            }\r\n+          .month{\r\n+            h1{\r\n+              font-size: 24px;\r\n+              padding-left: 20px;\r\n+            }\r\n+          }\r\n+          .day{\r\n+            padding: 20px;\r\n+            h2{\r\n+              padding: 10px;\r\n+            }\r\n+          }\r\n+        }\r\n+    }\r\n+  }\r\n+}\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653719185048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,14 @@\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div  v-for=\"item in arr\" :key=\"index\" class=\"content\">\r\n         <div v-if=\"item !== {}\" class=\"month\">\r\n-          <h1>月份</h1>\r\n+          <h1>{{item}}月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n         <div v-else class=\"day\">\r\n-          <h2>日期--------标题</h2>\r\n-          <p>内容</p>\r\n+          <h2>{{item.createTime}}--------{{item.title}}</h2>\r\n+          <p>{{item.markdown}}</p>\r\n         </div>\r\n       </div>\r\n     </div>\r\n   </main>\r\n@@ -149,158 +149,5 @@\n         }\r\n     }\r\n   }\r\n }\r\n-</style>\n-<template>\r\n-<div id=\"essays-container\">\r\n-  <aside class=\"left\">\r\n-    <el-collapse v-model=\"activeName\" accordion>\r\n-    <el-collapse-item center title=\"2022年\" name=\"2022\">\r\n-    <div></div>\r\n-  </el-collapse-item>\r\n-  </el-collapse>\r\n-  </aside>\r\n-  <main class=\"main\">\r\n-    <div class=\"body\">\r\n-      <div class=\"page-title\">\r\n-        <h1>记录有趣的事物</h1>\r\n-      </div>\r\n-      <div class=\"content\">\r\n-        <div class=\"month\">\r\n-          <h1>月份</h1>\r\n-          <el-divider></el-divider>\r\n-        </div>\r\n-        <div class=\"day\">\r\n-          <h2>日期--------标题</h2>\r\n-          <p>内容</p>\r\n-        </div>\r\n-      </div>\r\n-    </div>\r\n-  </main>\r\n-</div>\r\n-</template>\r\n-\r\n-<script>\r\n-import { mapState } from 'vuex'\r\n-\r\n-\r\n-export default {\r\n-  name:'essays',\r\n-  data(){\r\n-    return {\r\n-     activeName: '2022',\r\n-     arr:[]\r\n-    }\r\n-  },\r\n-  methods: {\r\n-    filtersEssaysList(essaysList){\r\n-       let curTag = '';\r\n-       let arr = []\r\n- essaysList.forEach((item) => {\r\n-\t\t\t\tconst { id, title, createTime, markdown,categoryName,categoryId,updateTime } = item;\r\n-\t\t\t\tconst tag = createTime.slice(5, 7);\r\n-        \r\n-\t\t\t\tif (curTag !== tag) {\r\n-\t\t\t\t\tcurTag = tag\r\n-          let tagStr =tag.replace(/(0+)/gi,\"\");\r\n-\t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n-\t\t\t\t}\r\n-\t\t\t\tarr.push({\r\n-           id,\r\n-          title,\r\n-          createTime,\r\n-           markdown,\r\n-           categoryName,\r\n-           categoryId,\r\n-           updateTime,\r\n-\t\t\t\t});\r\n-\t\t\t});\r\n-      console.log(arr);\r\n-      return arr;\r\n-    }\r\n-  },\r\n-  computed:{\r\n-    ...mapState({\r\n-      mapEssaysList: state =>state.Article.articleEssaysList,\r\n-    }),\r\n-    essaysList(){\r\n-      return this.filtersEssaysList(this.mapEssaysList)\r\n-    }\r\n-  },\r\n-  created () {\r\n-    this.$store.dispatch('getArticEssaysleList', '2022')\r\n-  },\r\n-  mounted () {\r\n-   \r\n-  }\r\n-}\r\n-</script>\r\n-\r\n-<style scoped lang=\"less\">\r\n-#essays-container{\r\n-  display: flex;\r\n-  flex-direction: row;\r\n-  // align-items: center;\r\n-  .left{\r\n-    // position:fixed;\r\n-    width: 300px;\r\n-    height: calc(100vh - 60px);\r\n-    /deep/.el-collapse{\r\n-      position: fixed;\r\n-      width:300px;\r\n-    }\r\n-    /deep/.el-collapse-item__header{\r\n-      padding-left: 20px;\r\n-    }\r\n-      /deep/.el-collapse-item__content{\r\n-        padding-left: 30px;\r\n-      }\r\n-  }\r\n-  .main{\r\n-    width: 100%;\r\n-    \r\n-    .body{\r\n-      width: 800px;\r\n-      height: 100%;\r\n-      margin:0 auto;\r\n-      background-color: white;\r\n-          box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);\r\n-      .page-title{\r\n-        margin: 0 auto;\r\n-        text-align: left;\r\n-        padding: 40px 20px;\r\n-        h1{\r\n-          height: 50px;\r\n-          font-size: 24px;\r\n-          font-weight: 500;\r\n-          color: #181818;\r\n-          border-bottom: 2px solid #eaecef;\r\n-        }\r\n-          }\r\n-        .content{\r\n-          background-color: aqua;\r\n-          width: 100%;\r\n-          height: 100%;\r\n-          padding: 20px;\r\n-          box-sizing: border-box;\r\n-          text-align: left;\r\n-          h1,h2{\r\n-              font-weight: 500;\r\n-            }\r\n-          .month{\r\n-            h1{\r\n-              font-size: 24px;\r\n-              padding-left: 20px;\r\n-            }\r\n-          }\r\n-          .day{\r\n-            padding: 20px;\r\n-            h2{\r\n-              padding: 10px;\r\n-            }\r\n-          }\r\n-        }\r\n-    }\r\n-  }\r\n-}\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653719221018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n       return this.filtersEssaysList(this.mapEssaysList)\r\n     }\r\n   },\r\n   created () {\r\n-    this.$store.dispatch('getArticEssaysleList', '2022')\r\n+    this.$store.dispatch('getArticEssaysleList', '')\r\n   },\r\n   mounted () {\r\n    \r\n   }\r\n"
+                },
+                {
+                    "date": 1653719239674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n           <h2>{{item.createTime}}--------{{item.title}}</h2>\r\n           <p>{{item.markdown}}</p>\r\n         </div>\r\n       </div>\r\n+      {{arr}}\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653719278995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n-      <div  v-for=\"item in arr\" :key=\"index\" class=\"content\">\r\n+      <div  v-for=\"item in essaysList\" :key=\"index\" class=\"content\">\r\n         <div v-if=\"item !== {}\" class=\"month\">\r\n           <h1>{{item}}月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1653719307091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n           <h2>{{item.createTime}}--------{{item.title}}</h2>\r\n           <p>{{item.markdown}}</p>\r\n         </div>\r\n       </div>\r\n-      {{arr}}\r\n+      {{essaysList}}\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n@@ -50,9 +50,9 @@\n         \r\n \t\t\t\tif (curTag !== tag) {\r\n \t\t\t\t\tcurTag = tag\r\n           let tagStr =tag.replace(/(0+)/gi,\"\");\r\n-\t\t\t\t\tarr.push({tag:tagStr,child:[]});\r\n+\t\t\t\t\tarr.push(tagStr);\r\n \t\t\t\t}\r\n \t\t\t\tarr.push({\r\n            id,\r\n           title,\r\n"
+                },
+                {
+                    "date": 1653719336365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n-      <div  v-for=\"item in essaysList\" :key=\"index\" class=\"content\">\r\n+      <div  v-for=\"(item,index) in essaysList\" :key=\"index\" class=\"content\">\r\n         <div v-if=\"item !== {}\" class=\"month\">\r\n           <h1>{{item}}月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1653719345699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n           <h2>{{item.createTime}}--------{{item.title}}</h2>\r\n           <p>{{item.markdown}}</p>\r\n         </div>\r\n       </div>\r\n-      {{essaysList}}\r\n     </div>\r\n   </main>\r\n </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1653719363980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n       <div  v-for=\"(item,index) in essaysList\" :key=\"index\" class=\"content\">\r\n-        <div v-if=\"item !== {}\" class=\"month\">\r\n+        <div v-if=\"item != {}\" class=\"month\">\r\n           <h1>{{item}}月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n         <div v-else class=\"day\">\r\n"
+                },
+                {
+                    "date": 1653719397427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,17 +11,19 @@\n     <div class=\"body\">\r\n       <div class=\"page-title\">\r\n         <h1>记录有趣的事物</h1>\r\n       </div>\r\n-      <div  v-for=\"(item,index) in essaysList\" :key=\"index\" class=\"content\">\r\n-        <div v-if=\"item != {}\" class=\"month\">\r\n+      <div  class=\"content\">\r\n+       <div  v-for=\"(item,index) in essaysList\" :key=\"index\">\r\n+          <div v-if=\"item != {}\" class=\"month\">\r\n           <h1>{{item}}月份</h1>\r\n           <el-divider></el-divider>\r\n         </div>\r\n         <div v-else class=\"day\">\r\n           <h2>{{item.createTime}}--------{{item.title}}</h2>\r\n           <p>{{item.markdown}}</p>\r\n         </div>\r\n+       </div>\r\n       </div>\r\n     </div>\r\n   </main>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1653719596053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       console.log(arr);\r\n       return arr;\r\n     },\r\n     ifString(item){\r\n-      console.log((typeof item) ==\"object\");\r\n+      console.log((typeof item) =\"object\");\r\n       retunr (typeof item) ==\"object\"\r\n     }\r\n   },\r\n   computed:{\r\n"
+                },
+                {
+                    "date": 1653719668426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       console.log(arr);\r\n       return arr;\r\n     },\r\n     ifString(item){\r\n-      retunr (typeof item) ==\"string\"\r\n+      tr (typeof item) ==\"string\"\r\n     }\r\n   },\r\n   computed:{\r\n     ...mapState({\r\n"
+                }
+            ],
+            "date": 1653701503481,
+            "name": "Commit-0",
+            "content": "<template>\r\n<div>aa</div>\r\n</template>\r\n\r\n<script>\r\n</script>\r\n\r\n<style scoped lang=\"less\">\r\n\r\n</style>"
+        }
+    ]
+}

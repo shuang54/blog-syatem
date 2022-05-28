@@ -13,9 +13,9 @@ export default [
   {
     path: '/archive', component: () => import('@/views/Archive'), name: 'archive', meta: { x: 0, y: 0 }
   },
-  // {
-  //   path: '/essays', component: () => import('@/views/Essays'), name: 'essays', meta: { x: 0, y: 0 }
-  // },
+  {
+    path: '/essays', component: () => import('@/views/Essays'), name: 'essays', meta: { x: 0, y: 0 }
+  },
   {
     path: '/project', component: () => import('@/views/Project'), name: 'project', meta: { x: 0, y: 0 }
   }

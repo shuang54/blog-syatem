@@ -32,6 +32,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
+
 #app {
 
   // background-color: #ccffcc;
@@ -44,14 +45,17 @@ export default {
     }
 
     .el-main {
-      margin-top: 60px;
+      // margin-top: 60px;
+      overflow: hidden;
     }
 
     .el-header,
     .el-footer {
-      background-color: #c7edcc;
+      // background-color: #c7edcc;
       color: #333;
       text-align: center;
+      z-index: 999;
+      padding: 0px;
     }
 
     .el-main {
