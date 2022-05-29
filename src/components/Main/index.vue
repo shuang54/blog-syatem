@@ -35,7 +35,6 @@
 <script>
 import ArticleList from './ArticleList'
 import Article from '../Main/Article'
-import { mapState } from 'vuex'
 export default {
   name: 'mainvue',
   components: {
@@ -129,6 +128,10 @@ export default {
     background-color: transparent;
     border-radius: 30px;
     box-shadow: none;
+    &:hover{
+      background-color: #3eaf7c;
+      color: white;
+    }
       }
     }
     }
