@@ -2,62 +2,62 @@
   <div id="article-list-container">
     <!-- 使用ElementUI中的Layout布局 -->
     <el-row>
-      <el-col hidden-lg-and-dow :sm="4" :md="4" :lg="3" :xs="0">
-        <div v-sticky="60" class="right">
-          <el-card class="box-card" shadow="hover">
-            <div slot="header" class="clearfix">
-              <span style="font-size: 18px;">公告栏</span>
-            </div>
-            <p>目前系统还在开发中~~~</p>
-          </el-card>
-          <el-card class="box-card" shadow="hover">
-            <div slot="header" class="clearfix">
-              <span style="font-size: 18px;">更多功能</span>
-            </div>
-            <ul class="box-ul">
-              <li class="box-li"><router-link to="/about">个人介绍</router-link></li>
-              <li class="box-li"><router-link to="/project">我的项目</router-link></li>
-              <li class="box-li"><router-link to="/collect">个人导航</router-link></li>
-            </ul>
-          </el-card>
-        </div>
-      </el-col>
-      <el-col :sm="15" :md="14" :lg="12" :xs="24">
+
+      <el-col :sm="20" :md="18" :lg="10" :xs="24">
         <div v-show="isShow" class="grid-content bg-purple-light">
           <div class="left">
             <!-- 接受父组件传递的数据遍历文章列表 -->
-            <div v-for="item in articleList" :key="item.id" class="list-box">
+            <div 
+             @click="goArticle(item.id)"
+              v-for="item in articleList" 
+              :key="item.id" class="list-box">
               <div class="list">
                 <!-- 使用router-link,当用户点击文章标题时跳转到相应的文章详情页 -->
                 <router-link class="title"
                   :to="{ name: 'article', params: { 'id': item.id, 'categoryName': item.categoryName, 'title': item.title } }">
                   {{ item.title }}</router-link>
-                <span class="classification">{{ item.categoryName }}</span>
               </div>
-              <time class="time">{{ cTime(item.createTime) }}</time>
+              <div class="list-bot">
+                <p class="classification"><i class="el-icon-collection-tag"></i>{{ item.categoryName }}</p>
+                <time class="time"><i class="el-icon-time"></i>{{ cTime(item.createTime) }}</time>
+              </div>
             </div>
-          <!-- <el-pagination
-          background
-          layout="prev, pager, next"
-         :total="1000">
-        </el-pagination> -->
+             <el-pagination
+                background
+               @size-change="handleSizeChange"
+               @current-change="handleCurrentChange"
+               :current-page="currentPage"
+               :page-sizes="[10, 20, 30, 40]"
+               :page-size="pageSize"
+               layout="total, sizes, prev, pager, next, jumper"
+               :total="total">
+             </el-pagination>
           </div>
         </div>
         <el-empty v-show="!isShow" :image-size="200"></el-empty>
         
       </el-col>
-      <el-col :sm="4" :md="4" :lg="3" :xs="0" class="right-box">
-        <div class="right" >
-          <el-card class="box-card" shadow="hover" v-sticky="60">
+      <el-col :sm="5" :md="5" :lg="5" :xs="0" class="right-box">
+
+        <div class="right"  >
+          <div v-sticky="70" class="right-box">
+            <el-card  class="box-card" shadow="always" >
             <div slot="header" class="clearfix">
-              <span style="font-size: 18px;">分类</span>
+              <span style="font-size: 18px;"><i class="el-icon-date"></i>公告栏</span>
             </div>
-            <div v-for="item in categoryList" :key="item.id" class="text item"
+            <p>{{userInfo.bulletin}}</p>
+          </el-card>
+          <el-card  class="box-card" shadow="always"  >
+            <div slot="header" class="clearfix">
+              <span style="font-size: 18px;"><i class="el-icon-collection-tag"></i>分类</span>
+            </div>
+            <div v-for="item in categoryList" :key="item.id" @click="queryArticleByCategoryName(item.categoryName,item.id)" class="text item"
               :class="categoryName == item.categoryName ? 'selected' : ''">
-              <span class="cn" @click="queryArticleByCategoryName(item.categoryName)">{{ item.categoryName }}</span>
-              <i v-show="categoryName == item.categoryName" @click="clearCategoryName()" class="el-icon-close"></i>
+              <span class="cn" >{{ item.categoryName }}</span>
+              <i v-show="categoryName == item.categoryName" @click.stop="clearCategoryName()" class="el-icon-close"></i>
             </div>
           </el-card>
+          </div>
           <!-- <el-card class="box-card" shadow="hover">
             <div slot="header" class="clearfix">
               <span style="font-size: 18px;">推荐阅读</span>
@@ -71,37 +71,98 @@
 </template>
 
 <script>
+
 import { mapState } from "vuex"
 
 export default {
   /* 接受父组件传递的数据 */
-  props: ['articleList', 'categoryName'],
   data() {
     return {
-      
+      currentPage:1,
+      pageSize:10,
+      categoryName: '',
+
     }
   },
   computed: {
+    page(){
+      return (this.currentPage -1) * this.pageSize
+    },
     cTime() {
       return function (time) {
         return time.substring(0, 10)
       }
     },
     ...mapState({
-      categoryList: state => state.Article.category
+      categoryList: state => state.Article.category,
+      articleList: state => state.Article.articleListData,
+      total:state=>state.Article.total,
     }),
     isShow() {
       return this.articleList.length != 0
-    }
+    },
+    queryData(){
+      const {currentPage,pageSize,categoryName} = this
+      return {currentPage,pageSize,categoryName}
+    },
+    
+    ...mapState({
+      userInfo:state=>state.Article.userInfo
+    })
   },
   methods: {
-
-
+    goArticle(id){
+      this.$router.push('/article/'+id)
+    },
+    handleSizeChange(val) {
+      this.pageSize = val
+   },
+   handleCurrentChange(val) {
+     this.currentPage = val
+   },
+     // 搜索文章
+     queryArticleByTitle() {
+     this.$store.dispatch('getArticleListData', { page:(this.currentPage -1) * this.pageSize, num: this.pageSize, categoryName: this.categoryName })
+    },
+    //通过分类名称查询数据
+     queryArticleByCategoryName(categoryName,id) {
+      this.categoryName = categoryName
+      this.$store.state.Article.categoryId = id
+    },
+     clearInput() {
+       this.$store.commit('DELETESEARCH')
+          this.$store.dispatch('getArticleListData', { page:this.page, num: this.pageSize, categoryName: this.categoryName })
+      this.currentPage = 1
+    },
+    // 删除分类名称
+     clearCategoryName() {
+      this.categoryName = ''
+       this.$store.state.Article.categoryId = ""
+    },
+  },
+    watch: {
+    p: function (newVal, oldVal) {
+      if (this.$route.query.categoryName != undefined) {
+        this.categoryName = this.$route.query.categoryName
+        this.clearInput()
+      }
+    },
+    queryData(newVal,oldVal){
+       this.$store.dispatch('getArticleListData', { page:this.page, num: this.pageSize, categoryName: this.categoryName })
+    }
   },
   created() {
     this.$store.dispatch('getCategory')
+    this.$store.dispatch('getArticleListData', { page:this.page, num: this.pageSize, categoryName: this.categoryName })
+    this.$store.dispatch('getTotal',{search:''})
   },
-
+    mounted () {
+    this.$eventBus.$on('queryArticleByTitle',this.queryArticleByTitle)
+    this.$eventBus.$on('clearInput',this.clearInput)
+  },
+  beforeDestroy () {
+    
+  }
 
 }
 </script>
@@ -134,43 +195,58 @@ export default {
     }
 
     .list-box {
+      cursor: pointer;
       margin: 0 auto;
       position: relative;
       padding: 10px 10px;
       margin-top: 10px;
-      border-bottom: 1px solid #ccc;
+        background-color: white;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+       transition: all .5s ease;
+       border-radius: 10px;
+      &:hover{
+           box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.2);
+      }
 
       .list {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-
-        text-align: center;
-        line-height: 50px;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eaecef;
+        
 
         .title {
-          font-size: 1.8rem;
+         font-size: 1.28rem;
+          color:#3eaf7c;
+              font-weight: 500;
         }
 
         a:hover {
-          color: cornflowerblue;
         }
-
         .classification {
           text-align: center;
           line-height: 50px;
           color: darkorange;
+           margin-left: 10px;
+           display: block;
         }
       }
-
+      .list-bot{
+        display: flex;
+        flex-direction: row;
+        line-height: 1.5rem;
+        font-size: 0.9rem;
+        padding-left: 25px;
+        padding-top: 10px;
+        align-items: center;
+      }
       .time {
-        position: absolute;
-        right: 5px;
-        bottom: 5px;
         color: #ccc;
-        font-size: 0.8em;
+        font-size: 0.9rem;
+        margin-left: 10px;
       }
     }
   }
@@ -183,14 +259,19 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .search {
-      max-width: 220px !important;
-      width: 100%;
-      float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    .right-box{
+      width:100%;
+      height: 100%;
     }
-
     .text {
       font-size: 14px;
+      &:hover{
+        color: white;
+        border-radius: 10px;
+        background-color: #3eaf7c;
+      }
     }
 
     .item {
@@ -201,10 +282,6 @@ export default {
         width: 100%;
         height: 100%;
         padding: 9px;
-      }
-
-      .cn:hover {
-        color: dodgerblue;
       }
     }
 
@@ -222,23 +299,26 @@ export default {
   }
 
   @media all and (max-width: 768px) {
-    .backtop {
-      right: 5px !important;
+    /deep/.backtop {
+      bottom: 90px !important;
     }
   }
 }
-
+ /deep/.backtop {
+      bottom: 90px !important;
+    }
 .box-card {
   max-width: 220px !important;
   width: 100%;
   text-align: left;
-  background-color: #ffc;
+  background-color: white;
   margin-bottom: 10px !important;
 
   // background-color: rgba(0, 0, 0, 0);
   .selected {
-    background-color: #c7edcc;
+    background-color: #3eaf7c;
     border-radius: 10px;
+    color: white;
   }
 
   .el-icon-close {
@@ -287,5 +367,14 @@ export default {
 
 .right{
   background-color: transparent;
+}
+/deep/.el-pagination{
+      padding: 20px 16px;
+}
+/deep/.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+  background-color: white !important;
+}
+/deep/.el-card__header{
+  border-left: 8px solid #3eaf7c;
 }
 </style>

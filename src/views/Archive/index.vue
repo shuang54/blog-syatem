@@ -1,7 +1,15 @@
 <template>
    <div id="archive-container">
+
+         <transition
+     :appear="true"
+               name="animate__animated animate__bounce"
+               enter-active-class="animate__fadeInUp"    
+               leave-active-class="animate__backOutDown"
+    >
      <el-timeline>
     <el-timeline-item :color="color16m()" v-for="item in Alist" :timestamp="publicationDate(item.createTime)" placement="top">
+    
       <el-card shadow="hover">
         <div @click="clickCard(item.id)" class="card">
           <p>{{item.title}}</p>
@@ -10,6 +18,7 @@
       </el-card>
     </el-timeline-item>
   </el-timeline>
+        </transition>
   </div>
 </template>
 
@@ -100,7 +109,7 @@ export default {
 <style lang="less" scoped>
 
 #archive-container{
-  
+  min-height: 100vh;
   width: 400px;
   margin: 0 auto;
   text-align: left;

@@ -16,7 +16,7 @@
   <main class="main">
     <div class="body">
       <div class="page-title">
-        <h1>记录有趣的事物</h1>
+        <h1>记录有趣的事</h1>
       </div>
       <div  class="content">
         <h1 class="year">2022年</h1>
@@ -164,6 +164,7 @@ export default {
 
 <style scoped lang="less">
 #essays-container{
+   min-height: 100vh;
   margin-top: 60px;
   width:100%;
   height: 100%;

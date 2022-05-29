@@ -124,9 +124,16 @@ export default {
 </script>
 
 <style scoped lang="less">
+/deep/.v-note-wrapper .v-note-panel .v-note-show.single-show{
+  min-height: 480px;
+}
 #article-container {
+  background: white;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+  min-height: 90vh;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 70px;
   .page-title {
     height: 60px;
     margin: 10px 0 10px 0;

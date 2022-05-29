@@ -15,7 +15,7 @@
             <!--  每个item -->
             <a target="_blank" href="https://github.com/shuang54/new-tab">
               <div :style="{
-                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/public/%E9%A6%96%E9%A1%B5.png' + ')', backgroundSize: 'cover',
+                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/blog/%E9%A6%96%E9%A1%B52.png' + ')', backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
               }" class="item">
@@ -27,39 +27,75 @@
                 </div>
               </div>
             </a>
-            <a target="_blank" href="">
-              <div class="item">
+            <a target="_blank" href="https://gitee.com/foochange/blog-system">
+              <div
+              :style="{
+                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/blog/%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0.png' + ')', backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }" 
+              class="item">
                 <div class="logo">
-                  名称
+                  blog-system
                 </div>
 
                 <div class="desc">
-                  描述
+                  个人博客前台界面
                 </div>
               </div>
             </a>
-            <a target="_blank" href="">
-              <div class="item">
+            <a target="_blank" href="https://gitee.com/foochange/blog-admin">
+              <div
+              :style="{
+                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/blog/%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0.png' + ')', backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }" 
+              class="item">
                 <div class="logo">
-                  名称
+                  blog-admin
                 </div>
 
                 <div class="desc">
-                  描述
+                  个人博客后台管理界面
                 </div>
               </div>
             </a>
-            <a target="_blank" href="">
-              <div class="item">
+             <a target="_blank" href="https://gitee.com/foochange/tic-toc-toe">
+              <div
+              :style="{
+                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/blog/%E4%BA%95%E5%AD%97%E6%B8%B8%E6%88%8F.png' + ')', backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }" 
+              class="item">
                 <div class="logo">
-                  名称
+                  ticTocToe
                 </div>
 
                 <div class="desc">
-                  描述
+                  井字游戏
                 </div>
               </div>
             </a>
+             <a target="_blank" href="https://gitee.com/foochange/greedy-snake">
+              <div
+              :style="{
+                backgroundImage: 'url(' + 'http://niu.foogeoo.ltd/blog/%E8%B4%AA%E5%90%83%E8%9B%87.png' + ')', backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }" 
+              class="item">
+                <div class="logo">
+                  GreedySnake
+                </div>
+
+                <div class="desc">
+                  贪吃蛇
+                </div>
+              </div>
+            </a>
+           
           </div>
         </div>
       </div>
@@ -88,7 +124,7 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
   margin-top: 35px;
-
+    height: calc(100vh - 95px);
   }
 
   .main .fe .item {
@@ -165,8 +201,9 @@ export default {
 }
 
 .container .main .fe .item .desc {
-  color: gray;
-  font-size: 12px;
+  color: #3eaf7c;
+  margin-top: 10px;
+    font-size: 15px;
   padding-top: 10px;
   height: 90px;
   overflow: hidden;
@@ -177,11 +214,12 @@ export default {
 }
 
 .container .main .fe .logo {
+    color: #f58c78;
+
   height: 40px;
   position: relative;
-  font-size: 14px;
+  font-size: 29px;
   font-weight: 700;
-  color: #3273dc;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -271,8 +309,8 @@ export default {
     margin-top: 5px;
     margin-left: 5px;
     height: .58rem;
-    font-size: 12px;
-    line-height: 16px
+    font-size: 18px;
+    line-height: 16px;
   }
 
   .container .main .fe:last-child {

@@ -3,18 +3,18 @@
     <el-col :xl="13" :lg="15" :md="20" :sm="24" :xs="24">
       <el-card>
         <div class="about-me-header clearfix" slot="header">
-          <span style="font-size:18px">个人资料</span>
+          <span style="font-size:18px"><i class="el-icon-user"></i>个人资料</span>
         </div>
         <div>
           <div class="about-me-body">
             <div>
               <p class="body-p">简介</p>
               <div class="introduction">
-                <img src="@/assets/logo.png" alt="">
-
-                <p>欢迎来到FooGeoo博客网站，我是李爽。
-                  <br>喜欢有趣的事物，喜欢各种新奇的技术。
-                </p>
+                <div class="avatar">
+                <img :src="userInfo.imgUrl" alt="头像">
+                <span>{{userInfo.name}}</span>
+                </div>
+                <p>{{userInfo.desc}} </p>
 
 
               </div>
@@ -47,7 +47,7 @@
                 </el-progress>
               </div>
               <div class="skillPoints">
-                <span>Vue框架:</span>
+                <span>Vue:</span>
                 <el-progress :text-inside="true" :show-text="false" :stroke-width="10" :percentage="88"
                   status="warning">
                 </el-progress>
@@ -64,7 +64,7 @@
               </div>
 
               <div class="skillPoints">
-                <span>Express框架:</span>
+                <span>Express:</span>
                 <el-progress :text-inside="true" :show-text="false" :stroke-width="10" :percentage="50"
                   status="exception"></el-progress>
               </div>
@@ -82,9 +82,10 @@
           </div>
         </div>
       </el-card>
-      <el-card>
+      <el-card >
         <div class="about-me-header clearfix" slot="header">
-          <span style="font-size:18px">关于本站</span>
+          <span style="font-size:18px"><i class="el-icon-data-analysis
+"></i>关于本站</span>
         </div>
         <p class="about-me-body">使用 Vue2+VueX+VueRouter+Element+axios 技术搭建
           <br>服务器使用CentOS7系统
@@ -94,13 +95,19 @@
   </el-row>
 </template>
 <script >
+import { mapState } from 'vuex';
+
 export default {
   name: 'about',
-  data: {
+  data() {
+    return {
 
+    }
   },
-  methods: {
-
+  computed: {
+    ...mapState({
+       userInfo:state=>state.Article.userInfo
+    })
   }
 }
 </script>
@@ -115,11 +122,16 @@ export default {
     // background-color: white;
     .el-card {
       margin-top: 50px;
+      margin-bottom: 20px;
     }
-
+/deep/.el-card__header{
+  border-left: 8px solid #3eaf7c !important;
+}
     .about-me-header {
       text-align: left;
+      color: #f58c79;
     }
+
 
     .about-me-body {
       text-align: left;
@@ -128,8 +140,8 @@ export default {
       .body-p {
         width: 100px;
         padding: 0 0 5px 5px;
-        border-bottom: 2px solid pink;
-        color: pink;
+        border-bottom: 2px solid #3eaf7c;
+        color: #3eaf7c;
         margin-top: 10px;
       }
 
@@ -139,13 +151,20 @@ export default {
         padding-left: 20px;
         padding-top: 5px;
         font-size: 14px;
-
+        .avatar{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
         img {
-          width: 50px;
-          height: 50px;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
         }
 
         p {
+          width: 300px;
           margin-left: 30px;
           line-height: 30px;
         }
@@ -189,4 +208,5 @@ export default {
     }
   }
 }
+
 </style>

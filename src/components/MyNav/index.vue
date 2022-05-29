@@ -1,10 +1,17 @@
 <template>
   <div id="my-nav-container" :class="btnFlag == true ? 'btnFlag':''">
     <div >
-      <img v-show="btnFlag" src="@/assets/images/avataaars.png" />
+      <img v-show="btnFlag" :src="userInfo.imgUrl" />
 
     </div>
-    <nav>
+    <transition
+     :appear="true"
+               name="animate__animated animate__bounce"
+               enter-active-class="animate__fadeInDown"    
+               leave-active-class="animate__backOutDown"
+    >
+
+      <nav>
         <el-input v-show="btnFlag" placeholder="搜索文章" class="search" prefix-icon="el-icon-search" v-model="search" clearable
             @keyup.enter.native="queryArticleByTitle" @clear="clearInput"></el-input>
       <router-link active-class="bot" :to="{ path: '/#' }"><i class="el-icon-house icon"></i>  首页</router-link>
@@ -14,10 +21,13 @@
       <router-link active-class="bot" :to="{ path: '/project' }"><i class="el-icon-star-off icon"></i>  项目</router-link>
       <router-link active-class="bot" :to="{ path: '/about' }"><i class="el-icon-user icon"></i>  关于</router-link>
     </nav>
+      </transition>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'MyNav',
   data () {
@@ -53,14 +63,16 @@ export default {
   computed: {
      p() {
       return this.$route.path
-    }
+    },
+    ...mapState({
+      userInfo:state=>state.Article.userInfo
+    })
   },
     watch: {
     search: function (newValue, oldValue) {
       this.$store.state.Article.search = newValue
     },
       p: function (newVal, oldVal) {
-        console.log(newVal);
       if (this.$route.path != '/') {
         this.categoryName = this.$route.query.categoryName
         this.btnFlag = true
@@ -90,6 +102,7 @@ export default {
     width: 50px;
     height: 50px;
     margin: 5px;
+    border-radius: 50%;
   }
 
   nav {
@@ -106,7 +119,7 @@ export default {
       font-size: 1rem;
       color: white;
       &:hover {
-        border-bottom: 2px solid #13b9e2;
+        border-bottom: 2px solid #3eaf7c;
       }
     }
   .search {
@@ -127,8 +140,8 @@ export default {
     color: black !important;
   }
      .bot {
-    color: #13b9e2 !important;
-      border-bottom: 2px solid #13b9e2;
+    color: #3eaf7c !important;
+      border-bottom: 2px solid #3eaf7c;
      }
 }
   /deep/.el-input--prefix .el-input__inner{

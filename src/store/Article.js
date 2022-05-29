@@ -1,6 +1,12 @@
-import { reqArticleList, reqArticEssaysleList, reqArticle, reqCategory, reqAddArticle } from "@/API/index"
+import { reqArticleList, reqArticEssaysleList, reqUserInfo,reqArticle, reqCategory, reqAddArticle, reqTotal } from "@/API/index"
 import { Message } from "element-ui"
 const actions = {
+  async getUserInfo({commit},data){
+    let result = await reqUserInfo()
+    if(result.code == 200){
+      commit('GETUSERINFO',result.data)
+    }
+  },
   // 获取文章列表
   async getArticleList({ commit, state }, data) {
     data.search = state.search
@@ -21,6 +27,18 @@ const actions = {
     }
     return Promise.reject(new Error('获取文章列表失败'))
   },
+  // 获取首页文章列表
+  async getArticleListData({ commit, state }, data) {
+
+    data.search = state.search
+    data.categoryName = data.categoryName || ""
+    let result = await reqArticleList(data)
+    if (result.code == 200) {
+      this.dispatch('getTotal',{search:'',categoryId:state.categoryId})
+      return commit('GETARTICLElISTDATA', result.data)
+    }
+    return Promise.reject(new Error('获取文章列表失败'))
+  },
   // 获取随笔文章列表
   async getArticEssaysleList({ commit, state }, data) {
     let result = await reqArticEssaysleList(data)
@@ -34,7 +52,7 @@ const actions = {
     data.search = state.search
     let result = await reqArticleList(data)
     if (result.code == 200) {
-      state.isRefreshBool = true
+      // state.isRefreshBool = true
       return commit('GETARTICLElISTBYSEARCH', result.data)
     }
     return Promise.reject(new Error('获取文章列表失败'))
@@ -54,15 +72,28 @@ const actions = {
     }
     return Promise.reject(new Error('获取分类消息失败'))
   },
-  // 添加文章
-  async AddArticle({ commit }, data) {
-    let result = await reqAddArticle(data)
-    return result.code
+  async getTotal({ commit,state }, data) {
+    data.search = state.search
+    data.categoryId = data.categoryId || ""
+    let result = await reqTotal(data)
+    if(result.code==200){
+      commit('GETTOTAL',result.data)
+    }
   },
 }
 
 const mutations = {
-  
+  GETUSERINFO(state,data){
+    state.userInfo = data
+  },
+  // 清空search
+  DELETESEARCH(state){
+    state.search = ''
+  },
+  // 获取总数
+  GETTOTAL(state,data){
+    state.total = data
+  },
   // 获取文章列表
   GETARTICLElIST(state, data) {
     if (data.length == []) {
@@ -75,6 +106,9 @@ const mutations = {
 
     state.articleList = [...state.articleList, ...data]
 
+  }, 
+  GETARTICLElISTDATA(state,data){
+    state.articleListData = data
   },
   // 获取随笔文章列表
   GETARTICLEESSAYSlIST(state, data) {
@@ -104,7 +138,7 @@ const mutations = {
       state.isRefreshBool = false
     }
 
-    state.articleList = data
+    state.articleListData = data
 
   },
   // 获取文章内容
@@ -123,19 +157,19 @@ const mutations = {
 
 }
 const state = {
-  articleList: [],
-  article: [],
-  category: [],
-  isRefreshBool: true,
-  search: '',
-  articleEssaysList: [],
+  articleList: [],        //归档数据
+  article: [],            //文章数据
+  category: [],           //分类列表
+  isRefreshBool: true,    //是否刷新
+  search: '',             //搜索内容
+  articleEssaysList: [],  //随笔文章列表
+  articleListData:[],   //首页文章数据
+  total:0,
+  categoryId:'',
+  userInfo:{},
 }
 const getters = {
-  essaysListTree(state){
-    state.articleEssaysList.map((item)=>{
-      return 
-    })
-  }
+  
 }
 export default {
   state,
